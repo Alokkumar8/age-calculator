@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Age Calculator Online</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="age calculator, age calculator online, dob calculator" name="keywords">
+    <meta content="Online age calculator allows you to calculate your age using your date of birth and dob." name="description">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
+    
+<style media="screen">
+    body{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #2782e3;
+	font-size: 15px;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+}
+* {
+	box-sizing: border-box;
+}
+.container{
+	width:520px;
+	height: auto;
+	margin: 100px auto;
+	background-color: #eee;
+	border-radius: 5px;
+}
+.text-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.base{
+	width: 100%;
+	 
+	margin: 0;
+	overflow: hidden;
+	display: block;
+	float: none;
+}
+.block{
+	width: 135px;
+	padding: 5px 20px;
+ 
+	margin-left: 20px;
+	display: inline-block;
+	float: left;
+}
+.base h1{
+	font-size: 26px;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: normal;
+  margin-top: 0px;
+  box-shadow: 0px 2px #bababa;
+  background: white;
+  font-size: 34px;
+	color: navy;
+}
+ 
+.title{
+	font-size: 20px;
+	text-align: left;
+	font-family: sans-serif;
+	font-weight: normal;
+	line-height: 0.5;
+	letter-spacing: 0.5px;
+	word-spacing: 2.7px;
+	color: #1073d0;
+}
+input[type=text] {
+	width: 140px;
+	margin: auto;
+	outline: none;
+    min-height: 50px;
+	border: 2px solid #1073d0;
+	padding: 12px;
+	background-color: #f7f7f7;
+    border-radius: 2px;
+    color: #1073d0;
+    font-size: 17px;
+}
+input[type=text]:focus{
+	background-color: #ffffff;
+	border: 2px solid orange;
+	outline: none;
+}
+input[type=button]{
+	width: 150px;
+	margin-left: 35%;
+  margin-top: 40px;
+	outline: none;
+	border: none;
+	border-radius: 2px;
+	background-color: #0761b6;
+	color: #ffffff;
+	padding: 14px 16px;
+	text-align: center;
+	font-size: 16px;
+}
+input[type=button]:hover{
+	background-color: #003669;
+}
+ 
+#age{
+	display: block;
+	margin: 10px;
+    margin-top: 35px;
+	padding: 10px;
+    padding-bottom: 20px;
+	overflow: hidden;
+	font-family: verdana;
+	font-size: 23px;
+	font-weight: normal;
+	line-height: 1.5;
+	word-spacing: 2.7px;
+	color: navy;
+}
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <form>
+  	<div class="base">
+  		<div class="enter">
+  		<h1>Age Calculator</h1>
+  	</div>
+  <div class="block">
+  	<p class="title">Date</p>
+  	<input type="text" name="date" id="date" placeholder="dd" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">Month</p>
+    <input type="text" name="month" id="month" placeholder="mm" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">Year</p>
+    <input type="text" name="year" id="year" placeholder="yyyy" required="required" minlength="4" maxlength="4" />
+  </div>
+  </div>
+  <div class="base">
+  	<div class="enter">
+    <input type="button" name="submit" value="Submit" onclick="age()" />
+    </div>
+  </div>
+    <div id="age"></div>
+  </form>
+
+  <div class="text-content">
+    <p>This age calculator computes the age of a person given a date of birth. There are many different ways a person&#39;s age can be calculated depending upon the culture they belong to. However, the most commonly accepted way is to increment a person&#39;s age by 1 year on their birthday.</p>
+
+    <p>This online age calculator is a free and simple yet important tool that can be used in a variety of contexts, from calculating the age of a newborn kid to calculating the age of a senior citizen. They typically calculate the age in years, months, and days once the date of birth and the current date is given.</p>
+    
+    <div id="calc">
+    <h2>What is an Age Calculator?</h2>
+    </div>
+    
+    <p><strong>Age calculator</strong> is an online tool that helps to calculate the age of a person on any particular day given that his date of birth is known. Most Western cultures use the age system wherein if a person has lived for 7 years and 10 months his/her age will be 7 years.</p>
+    
+    <h3>Date of Birth (DOB) Calculator</h3>
+    
+    <p>DOB calculator allows us to calculate age from date of birth. To use this age calculator, enter the following values in the input box.</p>
+    
+    <ul>
+        <li>DOB in the form of DD/MM/YYYY</li>
+        <li>The day as on when you want to calculate the age in the same form as above.</li>
+    </ul>
+    
+    <p style="text-align: center;"><img src="img/screenshot-1.jpg" style="max-width:100%; max-height:100%;"></img></p>
+    
+    <h2>How to Use the Age Calculator?</h2>
+    
+    <p>Follow these steps to find the age of a person using a birthday calculator:</p>
+    
+    <ul>
+        <li><strong>Step 1</strong>: Go to www.agecalculator.com</li>
+        <li><strong>Step 2</strong>: Enter the date of birth and the present date in the input box of the age calculator in the form of DD/MM/YYYY.</li>
+        <li><strong>Step 3</strong>: Click on the <strong>&quot;Submit&quot;</strong> button to find the age of a person.</li>
+        <li><strong>Step 4</strong>: Click on the <strong>&quot;Reset&quot;</strong> button to clear the fields and enter new values.</li>
+    </ul>
+    
+    <div id="formula">
+    <h2>Age Calculator Formula</h2>
+    </div>
+    
+    <p>The Oxford Dictionary defines &ldquo;Age&rdquo; as the length of time that a person has lived or a thing has existed. The method of calculating age involves the comparison of a person&#39;s date of birth with the date on which the age needs to be calculated. The date of birth is subtracted from the given date, which gives the age of the person. i.e., Age formula = Given date - Date of birth. The steps to calculate a person&#39;s age from his date of birth to a given date are listed below.</p>
+    
+    <ul>
+        <li><strong>Step 1:</strong> First, calculate the number of full years by subtracting the birth year from the current year. For example, if the current year is 2023 and the birth year is 2000, then the number of full years is 23.</li>
+        <li><strong>Step 2:</strong> Next, calculate the number of full months by subtracting the birth month from the current month. If the current month is <a href="https://www.oxfordreference.com/display/10.1093/oi/authority.20110803095355563">less than</a> the birth month, then subtract 1 from the number of full years and add 12 to the current month to compensate. Then do something (current month - birth month) For example, if the birth month is February and the current month is April, then the number of full months is 2. If the birth month is November and the current month is April, then the number of full months is 4 + 12 = 16 and the difference is 16 - 11 = 5.</li>
+        <li><strong>Step 3:</strong> Just as in <strong>Step 2</strong>, we calculate the number of days as well using the current date - birth date. But here, if current date &lt; birth date, then subtract 1 from the number of full months and add 30/31/28/29 to the current date depending upon the number of days present in the previous month of the current month.</li>
+        <li><strong>Step 4:</strong> Finally, the age calculator expresses the age in years, months and days.</li>
+    </ul>
+    
+    <h2>Solved Examples of How to Calculate Age</h2>
+    
+    <p>Here are some examples that would give us more clarity on how to calculate age and what is the strategy used by the birthday calculator.</p>
+    
+    <p><strong>Example 1:</strong> The date of birth of Ron is July 25, 1985 (25/07/1985). Find his age on January 28, 2021, and verify it using the age calculator.</p>
+    
+    <p><strong>Solution:</strong></p>
+    
+    <p>Using the formula to calculate Ron&#39;s age:</p>
+    
+    <p>Age of a Person = Given date - Date of birth.</p>
+    
+    <p>Ron&#39;s Date of Birth = July 25, 1985.</p>
+    
+    <p>Given date = January 28, 2021.</p>
+    
+    <p>Note that the current month &lt; birth month. i.e., January (1) &lt; July (7). So we need to consider 2021 - 1 = 2020 as the current year and also do 12 + 1 (Jan) - 7 (July) = 6 months.</p>
+    
+    <p>Years&#39; Difference = 2020 - 1985 = 35 years.</p>
+    
+    <p>Number of remaining days = 3 days.</p>
+    
+    <p><strong>Answer:</strong> &there4; Ron&#39;s age is 35 years, 6 months, 3 days.</p>
+    
+    <p><strong>Example 2:</strong> Harry&#39;s date of birth is July 13, 1992. Find his age on April 21, 2016, and verify it using the age calculator.</p>
+    
+    <p><strong>Solution:</strong></p>
+    
+    <p>Using the formula to calculate Harry&#39;s age:</p>
+    
+    <p>Age of a Person = Present date - Date of birth.</p>
+    
+    <p>Here is a little different procedure to understand the age formula in a better way.</p>
+    
+    <p>Harry&#39;s Date of Birth = July 13, 1992.</p>
+    
+    <p>Years&#39; Difference = 2015 - 1992 = 23 years. (This has been calculated from July 13, 1992 to July 13, 2015)</p>
+    
+    <p>Number of remaining months from 13 July 2015 to 13 April 2016 = 9 months.</p>
+    
+    <p>Number of remaining days from 13 April 2016 to 21 April 2016 = 8 days.</p>
+    
+    <p><strong>Answer:</strong> &there4; Harry&#39;s age will be 23 years, 10 months, and 8 days.</p>
+    
+    <p>Similarly, you can try the age calculator to find the age of the people with the following birth date and current date till August 26, 2021.</p>
+    
+    <ul>
+        <li>13/07/1992</li>
+        <li>21/04/2016</li>
+    </ul>
+    
+    <p><b>☛ References:</b></p>
+    
+    <table border="1">
+        <tbody>
+            <tr>
+                <td>
+                <p><a href="https://www.cuemath.com/calculators/statistics-calculator/">Statistics Calculator</a></p>
+                </td>
+                <td>
+                <p><a href="https://www.cuemath.com/calculators/compound-interest-calculator/">Compound Interest Calculator</a></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <p><a href="https://www.cuemath.com/calculators/fraction-calculator/">Fraction Calculator</a></p>
+                </td>
+                <td>
+                <p><a href="https://www.cuemath.com/calculators/derivative-calculator/">Derivative Calculator</a></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <p><a href="https://www.cuemath.com/calculators/percentage-calculator/">Percentage Calculator</a></p>
+                </td>
+                <td>
+                <p><a href="https://www.cuemath.com/calculators/integral-calculator/">Integral Calculator</a></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h2>FAQs on Age Calculator</h2>
+    
+    <h3>How to Calculate Age Using Age Calculator?</h3>
+    
+    <p>Our <strong>online age calculator</strong> allows us to calculate age provided the date of birth and the current/required date by which the age needs to be calculated. Note that the dates have to be in the DD/MM/YYYY format. Click <a href="https://agecalculator.com">here</a> to access he date of birth calculator.</p>
+    
+    <h3>What is the Use of the DOB Calculator?</h3>
+    
+    <p>The DOB calculator is used to calculate the age of a person or a thing in the complete form including years, months, and days. All we need to do is to provide the DOB and the current date in the specified format.</p>
+    
+    <h3>How to Calculate My Age?</h3>
+    
+    <p>To calculate the age either we can use the &quot;<a href="https://agecalculator.com/how-to-know-my-age">How Old Am I Calculator?</a>&quot; or we can calculate the age manually as described in <a href="https://agecalculator.com/5-ways-to-calculate-age">this section</a>.</p>
+    
+    <h3>How to Find the Number of Years Using Date of Birth Calculator?</h3>
+    
+    <p>To calculate the number of years using the age calculator, first enter the date of birth and the current date in the mentioned format. It actually gives the age in terms of years, months, and days. Here, the &quot;years&quot; would be the age/number of years.</p>
+     
+  </div>
+</div>
+<script type="text/javascript">
+  function age() {
+  var d1 = document.getElementById('date').value;
+  var m1 = document.getElementById('month').value;
+  var y1 = document.getElementById('year').value;
+
+  var date = new Date();
+  var d2 = date.getDate();
+  var m2 = 1 + date.getMonth();
+  var y2 = date.getFullYear();
+  var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  if(d1 > d2){
+  	d2 = d2 + month[m2 - 1];
+  	m2 = m2 - 1;
+  }
+  if(m1 > m2){
+  	m2 = m2 + 12;
+  	y2 = y2 - 1;
+  }
+  var d = d2 - d1;
+  var m = m2 - m1;
+  var y = y2 - y1;
+
+  document.getElementById('age').innerHTML = 'Your Age is '+y+' Years '+m+' Months '+d+' Days';
+}
+</script>
+<body>
+<html>
