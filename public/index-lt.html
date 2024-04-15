@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Amžiaus skaičiuoklis - Age Calculator Online</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   
+    <meta content="Interneto amžiaus skaičiuoklis leidžia jums apskaičiuoti savo amžių naudojant gimimo datą ir gimimo dieną ir greitai rasti savo amžių, nereikalaujant jokios sudėtingos matematikos. Tai grąžins atsakymą metais, mėnesiais ir dienomis.
+    " name="description">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
+    
+<style media="screen">
+    body{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #2782e3;
+	font-size: 15px;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+}
+* {
+	box-sizing: border-box;
+}
+.container{
+	width:520px;
+	height: auto;
+	margin: 100px auto;
+	background-color: #eee;
+	border-radius: 5px;
+}
+.text-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.base{
+	width: 100%;
+	 
+	margin: 0;
+	overflow: hidden;
+	display: block;
+	float: none;
+}
+.block{
+	width: 135px;
+	padding: 5px 20px;
+ 
+	margin-left: 20px;
+	display: inline-block;
+	float: left;
+}
+.base h1{
+	font-size: 26px;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: normal;
+  margin-top: 0px;
+  box-shadow: 0px 2px #bababa;
+  background: white;
+  font-size: 34px;
+	color: navy;
+}
+ 
+.title{
+	font-size: 20px;
+	text-align: left;
+	font-family: sans-serif;
+	font-weight: normal;
+	line-height: 0.5;
+	letter-spacing: 0.5px;
+	word-spacing: 2.7px;
+	color: #1073d0;
+}
+input[type=text] {
+	width: 140px;
+	margin: auto;
+	outline: none;
+    min-height: 50px;
+	border: 2px solid #1073d0;
+	padding: 12px;
+	background-color: #f7f7f7;
+    border-radius: 2px;
+    color: #1073d0;
+    font-size: 17px;
+}
+input[type=text]:focus{
+	background-color: #ffffff;
+	border: 2px solid orange;
+	outline: none;
+}
+input[type=button]{
+	width: 150px;
+	margin-left: 35%;
+  margin-top: 40px;
+	outline: none;
+	border: none;
+	border-radius: 2px;
+	background-color: #0761b6;
+	color: #ffffff;
+	padding: 14px 16px;
+	text-align: center;
+	font-size: 16px;
+}
+input[type=button]:hover{
+	background-color: #003669;
+}
+ 
+#age{
+	display: block;
+	margin: 10px;
+    margin-top: 35px;
+	padding: 10px;
+    padding-bottom: 20px;
+	overflow: hidden;
+	font-family: verdana;
+	font-size: 23px;
+	font-weight: normal;
+	line-height: 1.5;
+	word-spacing: 2.7px;
+	color: navy;
+}
+
+      footer {
+        margin: 0 auto 10px;
+      }
+
+      footer nav {
+        padding: 2px 2px;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 0 5px #ddd;
+      }
+
+      footer li {
+        margin: 5px;
+        display: inline-block;
+      }
+
+      /* footer li:last-child {
+        float: center;
+      } */
+
+      footer a {
+        color: #999;
+        font-size: 0.8rem;
+        text-decoration: none;
+
+        -webkit-transition: 0.5s;
+           -moz-transition: 0.5s;
+                transition: 0.5s;
+      }
+
+      footer a:hover {
+        color: #333;
+      }
+
+  </style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Age Calculator",
+    "applicationCategory": "UtilitiesApplication",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "ratingCount": "5"
+    }
+  }
+  </script>
+
+  <link rel="canonical" href="https://agecalculator.com/lt/">
+<link rel="alternate" hreflang="ar" href="https://agecalculator.com/ar/">
+<link rel="alternate" hreflang="bg" href="https://agecalculator.com/bg/">
+<link rel="alternate" hreflang="cs" href="https://agecalculator.com/cs/">
+<link rel="alternate" hreflang="da" href="https://agecalculator.com/da/">
+<link rel="alternate" hreflang="de" href="https://agecalculator.com/de/">
+<link rel="alternate" hreflang="el" href="https://agecalculator.com/el/">
+<link rel="alternate" hreflang="en" href="https://agecalculator.com/">
+<link rel="alternate" hreflang="es" href="https://agecalculator.com/es/">
+<link rel="alternate" hreflang="et" href="https://agecalculator.com/et/">
+<link rel="alternate" hreflang="fi" href="https://agecalculator.com/fi/">
+<link rel="alternate" hreflang="fr" href="https://agecalculator.com/fr/">
+<link rel="alternate" hreflang="he" href="https://agecalculator.com/he/">
+<link rel="alternate" hreflang="hi" href="https://agecalculator.com/hi/">
+<link rel="alternate" hreflang="hu" href="https://agecalculator.com/hu/">
+<link rel="alternate" hreflang="id" href="https://agecalculator.com/id/">
+<link rel="alternate" hreflang="it" href="https://agecalculator.com/it/">
+<link rel="alternate" hreflang="ja" href="https://agecalculator.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://agecalculator.com/ko/">
+<link rel="alternate" hreflang="lt" href="https://agecalculator.com/lt/">
+<link rel="alternate" hreflang="lv" href="https://agecalculator.com/lv/">
+<link rel="alternate" hreflang="nb" href="https://agecalculator.com/nb/">
+<link rel="alternate" hreflang="nl" href="https://agecalculator.com/nl/">
+<link rel="alternate" hreflang="pl" href="https://agecalculator.com/pl/">
+<link rel="alternate" hreflang="pt" href="https://agecalculator.com/pt/">
+<link rel="alternate" hreflang="ro" href="https://agecalculator.com/ro/">
+<link rel="alternate" hreflang="ru" href="https://agecalculator.com/ru/">
+<link rel="alternate" hreflang="sk" href="https://agecalculator.com/sk/">
+<link rel="alternate" hreflang="sl" href="https://agecalculator.com/sl/">
+<link rel="alternate" hreflang="sv" href="https://agecalculator.com/sv/">
+<link rel="alternate" hreflang="th" href="https://agecalculator.com/th/">
+<link rel="alternate" hreflang="tr" href="https://agecalculator.com/tr/">
+<link rel="alternate" hreflang="uk" href="https://agecalculator.com/uk/">
+<link rel="alternate" hreflang="vi" href="https://agecalculator.com/vi/">
+<link rel="alternate" hreflang="zh" href="https://agecalculator.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://agecalculator.com/">
+
+</head>
+<body>
+
+<div class="container">
+
+  
+  <form>
+    <div class="base">
+        <div class="enter">
+            <h1>Amžiaus skaičiuoklis</h1>
+        </div>
+        <div class="block">
+            <p class="title">Diena</p>
+            <input type="text" name="date" id="date" placeholder="dd" required="required" minlength="1" maxlength="2" />
+        </div>
+        <div class="block">
+            <p class="title">Mėnuo</p>
+            <input type="text" name="month" id="month" placeholder="mm" required="required" minlength="1" maxlength="2" />
+        </div>
+        <div class="block">
+            <p class="title">Metai</p>
+            <input type="text" name="year" id="year" placeholder="yyyy" required="required" minlength="4" maxlength="4" />
+        </div>
+    </div>
+    <div class="base">
+        <div class="enter">
+            <input type="button" name="submit" value="Pateikti" onclick="age()" />
+        </div>
+    </div>
+    <div id="age"></div>
+</form>
+
+
+  
+  <div class="text-content">
+    <p>Šis amžiaus skaičiuoklis nustato asmens amžių pagal jo gimimo datą. Amžiaus skaičiavimo metodai gali skirtis skirtingose kultūrose, bet apskritai amžius padidėja 1 metai su kiekviena gimtadieniu.</p>
+
+<p>Šis nemokamas internetinis amžiaus skaičiuoklis yra vertingas ir paprastas įrankis, taikomas įvairiose situacijose. Jis gali nustatyti individualių asmenų amžių nuo kūdikių iki senjorų skaičiuojant metus, mėnesius ir dienas, naudojant jų gimimo datą ir dabartinę datą.</p>
+
+<div id="calc">
+    <h2>Ką daro Amžiaus Skaičiuoklis?</h2>
+</div>
+
+<p><strong>Internetinis amžiaus skaičiuoklis yra internetinis įrankis</strong>, skirtas apskaičiuoti asmens amžių konkrečią datą, jei žinoma jo gimimo data (DOB). Daugelyje vakarietiškų kultūrų amžiaus skaičiavimas paprastai yra apvalinamas žemyn, todėl jei asmuo gyveno 8 metus ir 9 mėnesius, jo amžius laikomas 8 metai.</p>
+
+<h3>Gimimo datos (DOB) Skaičiuoklis</h3>
+
+<p>Gimimo datos DOB skaičiuoklis leidžia mums nustatyti amžių pagal gimimo datą. Norėdami naudotis šia amžiaus skaičiuokle, įveskite reikiamus duomenis į pateiktą įvesties lauką.</p>
+
+<ul>
+    <li>Gimimo data formato DD/MM/YYYY</li>
+    <li>Konkrečiame formate dd/mm/yyyy įveskite datą, kuriai norite apskaičiuoti amžių.</li>
+</ul>
+
+<p style="text-align: center;"><img src="img/screenshot-1.jpg" style="max-width:100%; max-height:100%;"></p>
+
+<h2>Kaip naudoti Amžiaus Skaičiuoklį?</h2>
+
+<p>Norėdami nustatyti asmens amžių naudodami gimtadienio skaičiuoklį, vadovaukitės šiais žingsniais:</p>
+
+<ul>
+    <li><strong>Žingsnis 1</strong>: Eikite į www.agecalculator.com</li>
+    <li><strong>Žingsnis 2</strong>: Gimimo datą įveskite į amžiaus skaičiuoklio įvesties lauką, naudodami formatą DD/MM/YYYY.</li>
+    <li><strong>Žingsnis 3</strong>: Paspauskite mygtuką <strong>&quot;Pateikti&quot;</strong>, kad apskaičiuotumėte asmens amžių.</li>
+    <li><strong>Žingsnis 4</strong>: Spustelėkite mygtuką <strong>&quot;Išvalyti&quot;</strong>, norėdami išvalyti įvesties tekstą ir įvesti naujus duomenis.</li>
+</ul>
+
+<div id="formula">
+    <h2>Formulė Amžiaus Skaičiuokliui</h2>
+</div>
+
+<p>Pagal Oksfordo žodyną, „Amžius“ reiškia asmens gyvenimo trukmę arba objekto egzistavimą. Amžiaus skaičiavimas apima asmens gimimo datą palyginant su datą, kuriai reikalingas amžius. Atimdami gimimo datą nuo duotos datos gauname asmens amžių, kurį reprezentuoja formulė: Amžius = Duota data - Gimimo data. Žemiau pateikiami žingsniai, kaip apskaičiuoti asmens amžių nuo jo gimimo datos iki nurodytos datos.</p>
+
+<ul>
+    <li><strong>Žingsnis 1:</strong> Iš pradžių apskaičiuokite visų pilnų metų skaičių atimdami gimimo metus nuo dabartinių metų. Pavyzdžiui, jei dabartiniai metai yra 2024 ir gimimo metai yra 1998, pilnų metų skaičius yra 26.</li>
+    <li><strong>Žingsnis 2:</strong> Vėliau nustatykite pilnų mėnesių skaičių atimdami gimimo mėnesį nuo <a href="https://www.oxfordreference.com/display/10.1093/oi/authority.20110803095355563">dabartinio mėnesio</a>. Jei dabartinis mėnuo ankstesnis nei gimimo mėnuo, sumažinkite pilnų metų skaičių vienetu ir prie dabartinio mėnesio pridėkite 12, kad prisitaikytumėte. Tada apskaičiuokite skirtumą (dabartinis mėnuo - gimimo mėnuo). Pavyzdžiui, jei gimimo mėnuo yra vasaris, o dabartinis mėnuo yra balandis, bendras mėnesių skaičius yra 2. Jei gimimo mėnuo yra lapkritis, o dabartinis mėnuo yra balandis, bendras mėnesių skaičius yra 4 + 12 = 16, o skirtumas yra 16 - 11 = 5.</li>
+    <li><strong>Žingsnis 3:</strong> Panašiai į ankstesnį žingsnį, taip pat nustatome dienų skaičių atimdami gimimo datą nuo dabartinės datos. Tačiau jei dabartinė data ankstesnė nei gimimo data, iš pilnų mėnesių skaičiaus atimame 1 ir prie dabartinės datos pridedame 30/31/28/29, priklausomai nuo dienų skaičiaus ankstesniame mėnesyje, prieš dabartinį mėnesį.</li>
+    <li><strong>Žingsnis 4:</strong> Pabaigoje amžiaus skaičiuoklis duoda amžių dienomis, mėnesiais ir metais.</li>
+</ul>
+
+<h2>Pavyzdžiai, Rodantys, Kaip Skaičiuoti Amžių</h2>
+
+<p>Žemiau pateikiami pavyzdžiai, parodantys, kaip skaičiuoti amžių ir metodiką, kurią naudoja gimtadienio skaičiuoklis, aiškesniam supratimui.</p>
+
+<p><strong>Pavyzdys 1:</strong> Jonas gimė liepos 25 dieną 1985 m. (25/07/1985). Nustatykite jo amžių sausio 28 dieną 2021 m. ir patvirtinkite jį, naudodami amžiaus skaičiuoklį.</p>
+
+
+
+
+
+
+<p><strong>Sprendimas:</strong></p>
+
+<p>Taikant formulę skaičiuoti Johno amžių:</p>
+
+<p>Asmens amžius = Duota data - Gimimo data.</p>
+
+<p>Johno Gimimo Data = Liepos 25, 1985.</p>
+
+<p>Duota data = Sausio 28, 2021.</p>
+
+<p>Atkreipkite dėmesį, kad dabartinis mėnuo yra mažesnis nei gimimo mėnuo. Tai yra, Sausis (1) mažesnis nei Liepa (7). Todėl laikome 2020 metus esamu metu ir taip pat atsižvelgiame į 12 + 1 (Sausis) - 7 (Liepa) = 6 mėnesius.</p>
+
+<p>Skirtumas metų = 2020 - 1985 = 35 metai.</p>
+
+<p>Likusių dienų skaičius = 3 dienos.</p>
+
+<p><strong>Atsakymas:</strong> Taigi, Johno amžius yra 35 metai, 6 mėnesiai ir 3 dienos.</p>
+
+<p><strong>Pavyzdys 2:</strong> Peterio gimimo data yra Liepos 13, 1992. Apskaičiuokite jo amžių balandžio 21, 2016 ir patvirtinkite tai, naudodami amžiaus skaičiuoklę.</p>
+
+<p><strong>Sprendimas:</strong></p>
+
+<p>Naudodami formulę skaičiuoti Peterio amžių:</p>
+
+<p>Asmens amžius = Dabartinė data - Gimimo data.</p>
+
+<p>Čia yra šiek tiek kitokia metodika, skirta suprasti amžiaus formulę aiškiau.</p>
+
+<p>Peterio Gimimo Data = Liepos 13, 1992.</p>
+
+<p>Metų skirtumas = 2015 - 1992 = 23 metai. (Šis skaičiavimas vyksta nuo Liepos 13, 1992 iki Liepos 13, 2015).</p>
+
+<p>Likusių mėnesių skaičius nuo Liepos 13, 2015 iki Balandžio 13, 2016 = 9 mėnesiai.</p>
+
+<p>Likusių dienų skaičius nuo Balandžio 13, 2016 iki Balandžio 21, 2016 = 8 dienos.</p>
+
+<p><strong>Atsakymas:</strong> Todėl Peterio amžius yra 23 metai, 9 mėnesiai ir 8 dienos.</p>
+
+<p>Panašiai, galite naudoti amžiaus skaičiuoklę, kad nustatytumėte asmenų amžius su gimimo datomis ir dabartinėmis datomis iki 2021 m. Rugpjūčio 26 d.:</p>
+
+<ul>
+    <li>Liepos 13, 1992</li>
+    <li>Balandžio 21, 2016</li>
+</ul>
+
+<p><b>☛ Daugiau skaičiuoklių:</b></p>
+
+<table border="1">
+    <tbody>
+        <tr>
+            <td>
+                <p><a href="https://select-statistics.co.uk/calculators/">Statistika</a></p>
+            </td>
+            <td>
+                <p><a href="https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/">Sudėtinė Palūkanų Norma</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><a href="https://www.dadsworksheets.com/fraction-calculator.html">Dalelių skaičiuoklė</a></p>
+            </td>
+            <td>
+                <p><a href="https://mathforyou.net/en/online/calculus/derivative/">Diferenciacinė</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><a href="https://www.wikihow.com/Calculate-Percentages">Procentai</a></p>
+            </td>
+            <td>
+                <p><a href="https://www.cuemath.com/calculators/integral-calculator/">Integralinė</a></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Amžiaus Skaičiuoklio DUK</h2>
+
+<h3>Kaip skaičiuoti amžių naudojant amžiaus skaičiuoklį?</h3>
+
+<p>Šią <strong>internetinę amžiaus skaičiuoklę</strong> galite naudoti nustatyti amžių pagal duotą gimimo datą ir esamą ar norimą datą amžiaus skaičiavimui. Įsitikinkite, kad abu datų formatai yra DD/MM/YYYY. Pasiekite gimimo datos skaičiuoklę apsilankę <a href="https://agecalculator.com">Amžiaus Skaičiuoklis</a>.</p>
+
+<h3>Kokį naudojimą turi DOB skaičiuoklis?</h3>
+
+<p>DOB skaičiuoklis apskaičiuoja asmenų ar objektų dabartinį amžių, atsižvelgiant į metus, mėnesius ir dienas. Paprasčiausiai įveskite DOB ir dabartinę datą formato dd/mm/yyyy, kad gautumėte savo amžių.</p>
+
+<h3>Kaip nustatyti metų skaičių, naudojant gimimo datos skaičiuoklę?</h3>
+
+<p>Norėdami apskaičiuoti metų skaičių naudodami amžiaus skaičiuoklę, pradėkite įvesdami gimimo datą ir dabartinę datą nurodytu formatu. Skaičiuoklis pateikia amžių metais, mėnesiais ir dienomis, kur „metai“ reiškia amžių arba metų skaičių.</p>
+
+<h3>Kaip naudoti amžiaus skaičiuoklį?</h3>
+
+<p>Daugiau informacijos galite rasti mūsų straipsnyje "<a href="how-to-use-age-calculator.html">Kaip naudoti amžiaus skaičiuoklį?</a>" arba galite perskaityti mūsų įdomius tinklaraščio įrašus. <a href="top-10-famous-animals-and-their-age.html">Top 10 žinomiausių gyvūnų ir jų amžius</a>.</p>
+    
+   
+    
+
+
+
+<footer>
+  <nav>
+      <ul>
+          <li>
+              <a href="privacy-policy.html" target="_blank">Privatumo politika</a>
+          </li>
+          <li><a href="terms-and-conditions.html">Sąlygos</a></li>
+          <li><a href="faq.html" target="_blank">DUK</a></li>
+          <li><a href="about-us.html" target="_blank">Apie mus</a></li>
+          <li><a href="blog-home.html" target="_blank">Tinklaraštis</a></li>
+          <li><a href="api-docs.html" target="_blank">API dokumentacija</a></li>
+          <li><a href="api-status.html" target="_blank">API būsena</a></li>
+          <li>
+              <a href="contact-us.html" target="_blank">Susisiekite su mumis</a>
+          </li>
+          <li><a href="mailto:hello@agecalculator.com" target="_blank">hello@agecalculator.com</a></li>
+      </ul>
+  </nav>
+</footer>
+
+
+  </div>
+</div>
+<script type="text/javascript">
+  function age() {
+  var d1 = document.getElementById('date').value;
+  var m1 = document.getElementById('month').value;
+  var y1 = document.getElementById('year').value;
+
+  var date = new Date();
+  var d2 = date.getDate();
+  var m2 = 1 + date.getMonth();
+  var y2 = date.getFullYear();
+  var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  if(d1 > d2){
+  	d2 = d2 + month[m2 - 1];
+  	m2 = m2 - 1;
+  }
+  if(m1 > m2){
+  	m2 = m2 + 12;
+  	y2 = y2 - 1;
+  }
+  var d = d2 - d1;
+  var m = m2 - m1;
+  var y = y2 - y1;
+
+  document.getElementById('age').innerHTML = 'Your Age is '+y+' Years '+m+' Months '+d+' Days';
+}
+</script>
+</body>
+</html>

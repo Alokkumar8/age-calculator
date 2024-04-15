@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Kalkulator Usia - Age Calculator Online</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   
+    <meta content="Kalkulator usia online memungkinkan Anda untuk menghitung usia Anda menggunakan tanggal lahir dan dob Anda dan menemukan usia Anda dengan cepat tanpa perlu melakukan matematika yang kompleks. Ini akan mengembalikan jawaban dalam tahun, bulan, dan hari." name="description">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
+    
+<style media="screen">
+    body{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #2782e3;
+	font-size: 15px;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+}
+* {
+	box-sizing: border-box;
+}
+.container{
+	width:520px;
+	height: auto;
+	margin: 100px auto;
+	background-color: #eee;
+	border-radius: 5px;
+}
+.text-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.base{
+	width: 100%;
+	 
+	margin: 0;
+	overflow: hidden;
+	display: block;
+	float: none;
+}
+.block{
+	width: 135px;
+	padding: 5px 20px;
+ 
+	margin-left: 20px;
+	display: inline-block;
+	float: left;
+}
+.base h1{
+	font-size: 26px;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: normal;
+  margin-top: 0px;
+  box-shadow: 0px 2px #bababa;
+  background: white;
+  font-size: 34px;
+	color: navy;
+}
+ 
+.title{
+	font-size: 20px;
+	text-align: left;
+	font-family: sans-serif;
+	font-weight: normal;
+	line-height: 0.5;
+	letter-spacing: 0.5px;
+	word-spacing: 2.7px;
+	color: #1073d0;
+}
+input[type=text] {
+	width: 140px;
+	margin: auto;
+	outline: none;
+    min-height: 50px;
+	border: 2px solid #1073d0;
+	padding: 12px;
+	background-color: #f7f7f7;
+    border-radius: 2px;
+    color: #1073d0;
+    font-size: 17px;
+}
+input[type=text]:focus{
+	background-color: #ffffff;
+	border: 2px solid orange;
+	outline: none;
+}
+input[type=button]{
+	width: 150px;
+	margin-left: 35%;
+  margin-top: 40px;
+	outline: none;
+	border: none;
+	border-radius: 2px;
+	background-color: #0761b6;
+	color: #ffffff;
+	padding: 14px 16px;
+	text-align: center;
+	font-size: 16px;
+}
+input[type=button]:hover{
+	background-color: #003669;
+}
+ 
+#age{
+	display: block;
+	margin: 10px;
+    margin-top: 35px;
+	padding: 10px;
+    padding-bottom: 20px;
+	overflow: hidden;
+	font-family: verdana;
+	font-size: 23px;
+	font-weight: normal;
+	line-height: 1.5;
+	word-spacing: 2.7px;
+	color: navy;
+}
+
+      footer {
+        margin: 0 auto 10px;
+      }
+
+      footer nav {
+        padding: 2px 2px;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 0 5px #ddd;
+      }
+
+      footer li {
+        margin: 5px;
+        display: inline-block;
+      }
+
+      /* footer li:last-child {
+        float: center;
+      } */
+
+      footer a {
+        color: #999;
+        font-size: 0.8rem;
+        text-decoration: none;
+
+        -webkit-transition: 0.5s;
+           -moz-transition: 0.5s;
+                transition: 0.5s;
+      }
+
+      footer a:hover {
+        color: #333;
+      }
+
+  </style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Age Calculator",
+    "applicationCategory": "UtilitiesApplication",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "ratingCount": "5"
+    }
+  }
+  </script>
+
+  <link rel="canonical" href="https://agecalculator.com/id/">
+<link rel="alternate" hreflang="ar" href="https://agecalculator.com/ar/">
+<link rel="alternate" hreflang="bg" href="https://agecalculator.com/bg/">
+<link rel="alternate" hreflang="cs" href="https://agecalculator.com/cs/">
+<link rel="alternate" hreflang="da" href="https://agecalculator.com/da/">
+<link rel="alternate" hreflang="de" href="https://agecalculator.com/de/">
+<link rel="alternate" hreflang="el" href="https://agecalculator.com/el/">
+<link rel="alternate" hreflang="en" href="https://agecalculator.com/">
+<link rel="alternate" hreflang="es" href="https://agecalculator.com/es/">
+<link rel="alternate" hreflang="et" href="https://agecalculator.com/et/">
+<link rel="alternate" hreflang="fi" href="https://agecalculator.com/fi/">
+<link rel="alternate" hreflang="fr" href="https://agecalculator.com/fr/">
+<link rel="alternate" hreflang="he" href="https://agecalculator.com/he/">
+<link rel="alternate" hreflang="hi" href="https://agecalculator.com/hi/">
+<link rel="alternate" hreflang="hu" href="https://agecalculator.com/hu/">
+<link rel="alternate" hreflang="id" href="https://agecalculator.com/id/">
+<link rel="alternate" hreflang="it" href="https://agecalculator.com/it/">
+<link rel="alternate" hreflang="ja" href="https://agecalculator.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://agecalculator.com/ko/">
+<link rel="alternate" hreflang="lt" href="https://agecalculator.com/lt/">
+<link rel="alternate" hreflang="lv" href="https://agecalculator.com/lv/">
+<link rel="alternate" hreflang="nb" href="https://agecalculator.com/nb/">
+<link rel="alternate" hreflang="nl" href="https://agecalculator.com/nl/">
+<link rel="alternate" hreflang="pl" href="https://agecalculator.com/pl/">
+<link rel="alternate" hreflang="pt" href="https://agecalculator.com/pt/">
+<link rel="alternate" hreflang="ro" href="https://agecalculator.com/ro/">
+<link rel="alternate" hreflang="ru" href="https://agecalculator.com/ru/">
+<link rel="alternate" hreflang="sk" href="https://agecalculator.com/sk/">
+<link rel="alternate" hreflang="sl" href="https://agecalculator.com/sl/">
+<link rel="alternate" hreflang="sv" href="https://agecalculator.com/sv/">
+<link rel="alternate" hreflang="th" href="https://agecalculator.com/th/">
+<link rel="alternate" hreflang="tr" href="https://agecalculator.com/tr/">
+<link rel="alternate" hreflang="uk" href="https://agecalculator.com/uk/">
+<link rel="alternate" hreflang="vi" href="https://agecalculator.com/vi/">
+<link rel="alternate" hreflang="zh" href="https://agecalculator.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://agecalculator.com/">
+</head>
+<body>
+
+<div class="container">
+
+  
+  <form>
+  	<div class="base">
+  		<div class="enter">
+  		<h1>Kalkulator Usia</h1>
+  	</div>
+  <div class="block">
+  	<p class="title">Tanggal</p>
+  	<input type="text" name="date" id="date" placeholder="dd" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">Bulan</p>
+    <input type="text" name="month" id="month" placeholder="mm" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">Tahun</p>
+    <input type="text" name="year" id="year" placeholder="yyyy" required="required" minlength="4" maxlength="4" />
+  </div>
+  </div>
+  <div class="base">
+  	<div class="enter">
+    <input type="button" name="submit" value="Submit" onclick="age()" />
+    </div>
+  </div>
+    <div id="age"></div>
+  </form>
+
+
+  <div class="text-content">
+    <p>Kalkulator usia ini menentukan usia seseorang berdasarkan tanggal lahir mereka. Metode perhitungan usia dapat bervariasi antar budaya, namun umumnya, usia seseorang ditambah 1 tahun setiap ulang tahunnya.</p>
+
+    <p>Kalkulator usia online ini adalah alat yang berharga dan sederhana yang dapat digunakan dalam berbagai situasi. Ini dapat menentukan usia individu mulai dari bayi hingga lanjut usia dengan menghitung tahun, bulan, dan hari, menggunakan input tanggal lahir mereka dan tanggal saat ini.</p>
+    
+    <div id="calc">
+    <h2>Apa yang Dilakukan oleh Kalkulator Usia?</h2>
+    </div>
+    
+    <p><strong>Kalkulator usia online adalah alat berbasis web</strong> yang dirancang untuk menghitung usia seseorang pada tanggal tertentu, asalkan tanggal lahir (dob) mereka diketahui. Dalam banyak budaya Barat, perhitungan usia biasanya dibulatkan ke bawah, jadi jika seseorang telah hidup selama 8 tahun dan 9 bulan, usianya dianggap 8 tahun.</p>
+    
+    <h3>Kalkulator Tanggal Lahir (DOB)</h3>
+    
+    <p>Kalkulator tanggal lahir (DOB) memungkinkan kita untuk menentukan usia berdasarkan tanggal lahir. Untuk menggunakan kalkulator usia ini, masukkan nilai yang diperlukan ke dalam kotak input yang disediakan.</p>
+    
+    <ul>
+        <li>DOB dalam format DD/MM/YYYY</li>
+        <li>Tanggal tertentu untuk dihitung usianya harus dimasukkan dalam format yang sama, yaitu dd/mm/yyyy</li>
+    </ul>
+    
+    <p style="text-align: center;"><img src="img/screenshot-1.jpg" style="max-width:100%; max-height:100%;"></img></p>
+    
+    <h2>Bagaimana Cara Menggunakan Kalkulator Usia?</h2>
+    
+    <p>Untuk menentukan usia seseorang menggunakan kalkulator ulang tahun, ikuti langkah-langkah ini:</p>
+    
+    <ul>
+        <li><strong>Langkah 1</strong>: Buka www.agecalculator.com</li>
+        <li><strong>Langkah 2</strong>: Masukkan tanggal lahir ke dalam kotak input kalkulator usia menggunakan format DD/MM/YYYY.</li>
+        <li><strong>Langkah 3</strong>: Tekan tombol <strong>&quot;Submit&quot;</strong> untuk menghitung usia seseorang.</li>
+        <li><strong>Langkah 4</strong>: Klik tombol <strong>&quot;Reset&quot;</strong> untuk menghapus teks input dan memasukkan nilai baru.</li>
+    </ul>
+    
+    <div id="formula">
+    <h2>Rumus untuk Kalkulator Usia</h2>
+    </div>
+    
+    <p>Menurut Kamus Oxford, &ldquo;Usia&rdquo; merujuk pada durasi hidup seseorang atau keberadaan suatu objek. Menghitung usia melibatkan membandingkan tanggal lahir seseorang dengan tanggal di mana usia tersebut dibutuhkan. Mengurangkan tanggal lahir dari tanggal yang diberikan menghasilkan usia seseorang, direpresentasikan oleh rumus: Usia = Tanggal yang diberikan - Tanggal lahir. Berikut adalah langkah-langkah untuk menghitung usia seseorang dari tanggal lahir mereka hingga tanggal tertentu.</p>
+    
+    <ul>
+        <li><strong>Langkah 1:</strong> Awalnya, hitung total jumlah tahun lengkap dengan mengurangkan tahun kelahiran dari tahun sekarang. Misalnya, jika tahun sekarang adalah 2024 dan tahun kelahiran adalah 1998, jumlah tahun lengkap adalah 26.</li>
+        <li><strong>Langkah 2:</strong> Selanjutnya, tentukan jumlah bulan lengkap dengan mengurangkan bulan kelahiran dari <a href="https://www.oxfordreference.com/display/10.1093/oi/authority.20110803095355563">bulan sekarang</a>. Jika bulan sekarang lebih awal dari bulan kelahiran, kurangi jumlah tahun lengkap sebesar 1 dan tambahkan 12 bulan ke bulan sekarang untuk penyesuaian. Kemudian, hitung selisih (bulan sekarang - bulan kelahiran). Misalnya, jika bulan kelahiran adalah Februari dan bulan sekarang adalah April, total jumlah bulan adalah 2. Jika bulan kelahiran adalah November dan bulan sekarang adalah April, total jumlah bulan adalah 4 + 12 = 16, dan selisihnya adalah 16 - 11 = 5.</li>
+        <li><strong>Langkah 3:</strong> Mirip dengan langkah sebelumnya, kita juga menentukan jumlah hari dengan mengurangkan tanggal lahir dari tanggal sekarang. Namun, jika tanggal sekarang lebih awal dari tanggal lahir, kita mengurangi 1 dari jumlah bulan lengkap dan menambahkan 30/31/28/29 ke tanggal sekarang, tergantung pada jumlah hari dalam bulan sebelumnya sebelum bulan sekarang.</li>
+        <li><strong>Langkah 4:</strong> Kesimpulannya, kalkulator usia memberikan usia dalam hari, bulan, dan tahun.</li>
+    </ul>
+    
+    <h2>Contoh Menunjukkan Cara Menghitung Usia</h2>
+    
+    <p>Berikut adalah contoh yang mengilustrasikan cara menghitung usia dan metodologi yang digunakan oleh kalkulator ulang tahun untuk pemahaman yang lebih jelas.</p>
+    
+    <p><strong>Contoh 1:</strong> Tanggal lahir John adalah 25 Juli 1985 (25/07/1985). Tentukan usianya pada 28 Januari 2021, dan validasi menggunakan kalkulator usia.</p>
+    
+
+
+
+
+
+
+    <p><strong>Penyelesaian:</strong></p>
+    
+    <p>Menerapkan rumus untuk menghitung usia John:</p>
+        
+    <p>Usia Seseorang = Tanggal yang diberikan - Tanggal lahir.</p>
+        
+    <p>Tanggal Lahir John = 25 Juli 1985.</p>
+        
+    <p>Tanggal yang diberikan = 28 Januari 2021.</p>
+        
+    <p>Perhatikan bahwa bulan saat ini lebih kecil dari bulan kelahiran. Yaitu, Januari (1) lebih kecil dari Juli (7). Oleh karena itu, kita menganggap tahun 2020 sebagai tahun saat ini dan juga memperhitungkan 12 + 1 (Januari) - 7 (Juli) = 6 bulan.</p>
+        
+    <p>Perbedaan Tahun = 2020 - 1985 = 35 tahun.</p>
+        
+    <p>Jumlah hari yang tersisa = 3 hari.</p>
+        
+    <p><strong>Jawaban:</strong> Oleh karena itu, usia John adalah 35 tahun, 6 bulan, dan 3 hari.</p>
+        
+    <p><strong>Contoh 2:</strong> Tanggal lahir Peter adalah 13 Juli 1992. Hitung usianya pada 21 April 2016, dan konfirmasi menggunakan kalkulator usia.</p>
+        
+    <p><strong>Penyelesaian:</strong></p>
+        
+    <p>Memanfaatkan rumus untuk menghitung usia Peter:</p>
+        
+    <p>Usia Seseorang = Tanggal sekarang - Tanggal lahir.</p>
+        
+    <p>Berikut adalah pendekatan yang sedikit berbeda untuk memahami rumus usia dengan lebih jelas.</p>
+        
+    <p>Tanggal Lahir Peter = 13 Juli 1992.</p>
+        
+    <p>Perbedaan Tahun = 2015 - 1992 = 23 tahun. (Perhitungan ini membentang dari 13 Juli 1992, hingga 13 Juli 2015).</p>
+        
+    <p>Jumlah bulan yang tersisa dari 13 Juli 2015, hingga 13 April 2016 = 9 bulan.</p>
+        
+    <p>Jumlah hari yang tersisa dari 13 April 2016, hingga 21 April 2016 = 8 hari.</p>
+        
+    <p><strong>Jawaban:</strong> Oleh karena itu, usia Peter adalah 23 tahun, 9 bulan, dan 8 hari.</p>
+        
+    <p>Demikian pula, Anda dapat menggunakan kalkulator usia untuk memastikan usia individu dengan tanggal lahir dan tanggal saat ini yang disediakan hingga 26 Agustus 2021:</p>
+        
+    <ul>
+        <li>13 Juli 1992</li>
+        <li>21 April 2016</li>
+    </ul>
+        
+        <p><b>☛ Lebih banyak kalkulator:</b></p>
+        
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td>
+                    <p><a href="https://select-statistics.co.uk/calculators/">Statistik</a></p>
+                    </td>
+                    <td>
+                    <p><a href="https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/">Bunga Majemuk</a></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <p><a href="https://www.dadsworksheets.com/fraction-calculator.html">Pecahan</a></p>
+                    </td>
+                    <td>
+                    <p><a href="https://mathforyou.net/en/online/calculus/derivative/">Turunan</a></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <p><a href="https://www.wikihow.com/Calculate-Percentages">Persentase</a></p>
+                    </td>
+                    <td>
+                    <p><a href="https://www.cuemath.com/calculators/integral-calculator/">Integral</a></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h2>Pertanyaan Umum tentang Kalkulator Usia</h2>
+        
+        <h3>Bagaimana Cara Menghitung Usia di Kalkulator Usia?</h3>
+        
+        <p>Anda dapat menggunakan <strong>kalkulator usia online</strong> ini untuk menentukan usia berdasarkan tanggal lahir yang diberikan dan tanggal saat ini atau tanggal yang diinginkan untuk perhitungan usia. Pastikan bahwa kedua tanggal diformat sebagai DD/MM/YYYY. Akses kalkulator tanggal lahir dengan mengunjungi <a href="https://agecalculator.com">Kalkulator Usia</a>.</p>
+        
+        <h3>Apa Penggunaan Kalkulator DOB?</h3>
+        
+        <p>Kalkulator DOB menghitung usia seseorang atau objek saat ini, dengan memperhitungkan tahun, bulan, dan hari. Cukup masukkan DOB dan tanggal saat ini dalam format dd/mm/yyyy untuk mendapatkan usia Anda.</p>
+    
+        <h3>Bagaimana Cara Menentukan Jumlah Tahun Menggunakan Kalkulator Tanggal Lahir?</h3>
+        
+        <p>Untuk menghitung jumlah tahun menggunakan kalkulator usia, mulailah dengan memasukkan tanggal lahir dan tanggal saat ini dalam format yang ditentukan. Kalkulator menyediakan usia dalam tahun, bulan, dan hari, dengan "tahun" mewakili usia atau jumlah tahun.</p>
+    
+        <h3>Bagaimana Cara Menggunakan kalkulator usia?</h3>
+        
+        <p>Untuk mempelajari lebih lanjut, Anda dapat mengunjungi artikel kami "<a href="how-to-use-age-calculator.html">Bagaimana cara menggunakan kalkulator usia?</a>" atau Anda dapat membaca posting blog menarik kami. <a href="top-10-famous-animals-and-their-age.html">10 hewan terkenal dan usia mereka</a>.</p>
+    
+    
+
+
+
+        <footer>
+          <nav>
+            <ul>
+              <li>
+                <a href="privacy-policy.html" target="_blank">Kebijakan Privasi</a>
+              </li>
+              <li><a href="terms-and-conditions.html">Syarat</a></li>
+              <li><a href="faq.html" target="_blank">FAQ</a></li>
+              <li><a href="about-us.html" target="_blank">Tentang Kami</a></li>
+              <li><a href="blog-home.html" target="_blank">Blog</a></li>
+              <li><a href="api-docs.html" target="_blank">Dokumentasi API</a></li>
+              <li><a href="api-status.html" target="_blank">Status API</a></li>
+              <li>
+                <a href="contact-us.html" target="_blank">Hubungi Kami</a>
+              </li>
+              <li><a href="mailto:hello@agecalculator.com" target="_blank">hello@agecalculator.com</a></li>
+            </ul>
+          </nav>
+        </footer>
+        
+
+  </div>
+</div>
+<script type="text/javascript">
+  function age() {
+  var d1 = document.getElementById('date').value;
+  var m1 = document.getElementById('month').value;
+  var y1 = document.getElementById('year').value;
+
+  var date = new Date();
+  var d2 = date.getDate();
+  var m2 = 1 + date.getMonth();
+  var y2 = date.getFullYear();
+  var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  if(d1 > d2){
+  	d2 = d2 + month[m2 - 1];
+  	m2 = m2 - 1;
+  }
+  if(m1 > m2){
+  	m2 = m2 + 12;
+  	y2 = y2 - 1;
+  }
+  var d = d2 - d1;
+  var m = m2 - m1;
+  var y = y2 - y1;
+
+  document.getElementById('age').innerHTML = 'Your Age is '+y+' Years '+m+' Months '+d+' Days';
+}
+</script>
+</body>
+</html>

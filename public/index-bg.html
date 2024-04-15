@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Калкулатор за възраст - Age Calculator</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    
+    <meta content="Онлайн калкулаторът за възраст ви позволява да изчислите вашата възраст, използвайки вашата дата на раждане и намирането на вашия рожден ден, без да е необходимо да правите някакъв вид сложни математически изчисления. Той ще ви върне отговор в години, месеци и дни." name="description">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
+    
+    <style media="screen">
+    body{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #2782e3;
+	font-size: 15px;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+}
+* {
+	box-sizing: border-box;
+}
+.container{
+	width:520px;
+	height: auto;
+	margin: 100px auto;
+	background-color: #eee;
+	border-radius: 5px;
+}
+.text-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.base{
+	width: 100%;
+	 
+	margin: 0;
+	overflow: hidden;
+	display: block;
+	float: none;
+}
+.block{
+	width: 135px;
+	padding: 5px 20px;
+ 
+	margin-left: 20px;
+	display: inline-block;
+	float: left;
+}
+.base h1{
+	font-size: 26px;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: normal;
+  margin-top: 0px;
+  box-shadow: 0px 2px #bababa;
+  background: white;
+  font-size: 34px;
+	color: navy;
+}
+ 
+.title{
+	font-size: 20px;
+	text-align: left;
+	font-family: sans-serif;
+	font-weight: normal;
+	line-height: 0.5;
+	letter-spacing: 0.5px;
+	word-spacing: 2.7px;
+	color: #1073d0;
+}
+input[type=text] {
+	width: 140px;
+	margin: auto;
+	outline: none;
+    min-height: 50px;
+	border: 2px solid #1073d0;
+	padding: 12px;
+	background-color: #f7f7f7;
+    border-radius: 2px;
+    color: #1073d0;
+    font-size: 17px;
+}
+input[type=text]:focus{
+	background-color: #ffffff;
+	border: 2px solid orange;
+	outline: none;
+}
+input[type=button]{
+	width: 150px;
+	margin-left: 35%;
+  margin-top: 40px;
+	outline: none;
+	border: none;
+	border-radius: 2px;
+	background-color: #0761b6;
+	color: #ffffff;
+	padding: 14px 16px;
+	text-align: center;
+	font-size: 16px;
+}
+input[type=button]:hover{
+	background-color: #003669;
+}
+ 
+#age{
+	display: block;
+	margin: 10px;
+    margin-top: 35px;
+	padding: 10px;
+    padding-bottom: 20px;
+	overflow: hidden;
+	font-family: verdana;
+	font-size: 23px;
+	font-weight: normal;
+	line-height: 1.5;
+	word-spacing: 2.7px;
+	color: navy;
+}
+
+      footer {
+        margin: 0 auto 10px;
+      }
+
+      footer nav {
+        padding: 2px 2px;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 0 5px #ddd;
+      }
+
+      footer li {
+        margin: 5px;
+        display: inline-block;
+      }
+
+      /* footer li:last-child {
+        float: center;
+      } */
+
+      footer a {
+        color: #999;
+        font-size: 0.8rem;
+        text-decoration: none;
+
+        -webkit-transition: 0.5s;
+           -moz-transition: 0.5s;
+                transition: 0.5s;
+      }
+
+      footer a:hover {
+        color: #333;
+      }
+
+    </style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Age Calculator",
+    "applicationCategory": "UtilitiesApplication",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "ratingCount": "5"
+    }
+  }
+  </script>
+
+  <link rel="canonical" href="https://agecalculator.com/bg/">
+<link rel="alternate" hreflang="ar" href="https://agecalculator.com/ar/">
+<link rel="alternate" hreflang="bg" href="https://agecalculator.com/bg/">
+<link rel="alternate" hreflang="cs" href="https://agecalculator.com/cs/">
+<link rel="alternate" hreflang="da" href="https://agecalculator.com/da/">
+<link rel="alternate" hreflang="de" href="https://agecalculator.com/de/">
+<link rel="alternate" hreflang="el" href="https://agecalculator.com/el/">
+<link rel="alternate" hreflang="en" href="https://agecalculator.com/">
+<link rel="alternate" hreflang="es" href="https://agecalculator.com/es/">
+<link rel="alternate" hreflang="et" href="https://agecalculator.com/et/">
+<link rel="alternate" hreflang="fi" href="https://agecalculator.com/fi/">
+<link rel="alternate" hreflang="fr" href="https://agecalculator.com/fr/">
+<link rel="alternate" hreflang="he" href="https://agecalculator.com/he/">
+<link rel="alternate" hreflang="hi" href="https://agecalculator.com/hi/">
+<link rel="alternate" hreflang="hu" href="https://agecalculator.com/hu/">
+<link rel="alternate" hreflang="id" href="https://agecalculator.com/id/">
+<link rel="alternate" hreflang="it" href="https://agecalculator.com/it/">
+<link rel="alternate" hreflang="ja" href="https://agecalculator.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://agecalculator.com/ko/">
+<link rel="alternate" hreflang="lt" href="https://agecalculator.com/lt/">
+<link rel="alternate" hreflang="lv" href="https://agecalculator.com/lv/">
+<link rel="alternate" hreflang="nb" href="https://agecalculator.com/nb/">
+<link rel="alternate" hreflang="nl" href="https://agecalculator.com/nl/">
+<link rel="alternate" hreflang="pl" href="https://agecalculator.com/pl/">
+<link rel="alternate" hreflang="pt" href="https://agecalculator.com/pt/">
+<link rel="alternate" hreflang="ro" href="https://agecalculator.com/ro/">
+<link rel="alternate" hreflang="ru" href="https://agecalculator.com/ru/">
+<link rel="alternate" hreflang="sk" href="https://agecalculator.com/sk/">
+<link rel="alternate" hreflang="sl" href="https://agecalculator.com/sl/">
+<link rel="alternate" hreflang="sv" href="https://agecalculator.com/sv/">
+<link rel="alternate" hreflang="th" href="https://agecalculator.com/th/">
+<link rel="alternate" hreflang="tr" href="https://agecalculator.com/tr/">
+<link rel="alternate" hreflang="uk" href="https://agecalculator.com/uk/">
+<link rel="alternate" hreflang="vi" href="https://agecalculator.com/vi/">
+<link rel="alternate" hreflang="zh" href="https://agecalculator.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://agecalculator.com/">
+
+</head>
+<body>
+
+<div class="container">
+  <form>
+  	<div class="base">
+  		<div class="enter">
+  		<h1>Калкулатор за възраст</h1>
+  	</div>
+  <div class="block">
+  	<p class="title">Ден</p>
+  	<input type="text" name="date" id="date" placeholder="дд" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">Месец</p>
+    <input type="text" name="month" id="month" placeholder="мм" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">Година</p>
+    <input type="text" name="year" id="year" placeholder="гггг" required="required" minlength="4" maxlength="4" />
+  </div>
+  </div>
+  <div class="base">
+  	<div class="enter">
+    <input type="button" name="submit" value="Изпращане" onclick="age()" />
+    </div>
+  </div>
+    <div id="age"></div>
+</form>
+
+  <div class="text-content">
+    <p>Този калкулатор за възраст определя възрастта на човек на базата на неговата дата на раждане. Методите за изчисляване на възрастта могат да варират в различните култури, но обикновено възрастта на човек се увеличава с 1 година на всеки рожден ден.</p>
+
+    <p>Този безплатен онлайн калкулатор за възраст е ценен и лесен за използване инструмент, приложим в множество сценарии. Той може да определи възрастта на лица от новородени до възрастни, изчислявайки години, месеци и дни, използвайки въведението на техните дата на раждане и текущата дата.</p>
+    
+    <div id="calc">
+    <h2>Какво прави калкулатора за възраст?</h2>
+    </div>
+    
+    <p><strong>Онлайн калкулатор за възраст</strong> е уеб-базиран инструмент, предназначен да изчисли възрастта на човек на конкретна дата, при условие, че неговата дата на раждане (dob) е известна. В много западни култури изчисляването на възрастта обикновено закръгля до по-ниска стойност, така че ако един човек е живял 8 години и 9 месеца, неговата възраст се счита за 8 години.</p>
+    
+    <h3>Калкулатор за дата на раждане (DOB)</h3>
+    
+    <p>Калкулаторът за дата на раждане (DOB) ни позволява да определим възрастта на база на датата на раждане. За да използвате този калкулатор за възраст, въведете необходимите стойности в предоставеното поле за въвеждане.</p>
+    
+    <ul>
+        <li>DOB във формат ДД/ММ/ГГГГ</li>
+        <li>Конкретната дата, за която желаете да изчислите възрастта, трябва да бъде въведена в същия формат като дд/мм/гггг</li>
+    </ul>
+    
+    <p style="text-align: center;"><img src="img/screenshot-1.jpg" style="max-width:100%; max-height:100%;"></img></p>
+    
+    <h2>Как да използвам калкулатора за възраст?</h2>
+    
+    <p>За да определите възрастта на човек чрез калкулатор за рожден ден, следвайте тези стъпки:</p>
+    
+    <ul>
+        <li><strong>Стъпка 1</strong>: Отидете на www.agecalculator.com</li>
+        <li><strong>Стъпка 2</strong>: Въведете датата на раждане в полето за въвеждане на калкулатора за възраст с формата ДД/ММ/ГГГГ.</li>
+        <li><strong>Стъпка 3</strong>: Натиснете бутона <strong>"Изпрати"</strong>, за да изчислите възрастта на човека.</li>
+        <li><strong>Стъпка 4</strong>: Натиснете бутона <strong>"Нулиране"</strong>, за да изчистите входния текст и да въведете нови стойности.</li>
+    </ul>
+    
+    <div id="formula">
+    <h2>Формула за age calculator</h2>
+    </div>
+    
+    <p>Според Оксфордския речник, "Възраст" се отнася до продължителността на живота на човек или на съществуването на обект. Изчисляването на възрастта включва сравняване на датата на раждане на човек с датата, за която се изисква възрастта. Изваждането на датата на раждане от дадената дата дава възрастта на човека, представена от формулата: Възраст = Дадена дата - Дата на раждане. По-долу са стъпките за изчисляване на възрастта на човек от неговата дата на раждане до определена дата.</p>
+    
+    <ul>
+        <li><strong>Стъпка 1:</strong> Начално изчисляване на общия брой завършени години, като се извади годината на раждане от текущата година. Например, ако текущата година е 2024, а годината на раждане е 1998, броят на завършените години е 26.</li>
+        <li><strong>Стъпка 2:</strong> В последствие определянето на броя завършени месеци чрез изваждане на месеца на раждане от <a href="https://www.oxfordreference.com/display/10.1093/oi/authority.20110803095355563">текущия месец</a>. Ако текущият месец е преди месеца на раждане, намалете броя на завършените години с 1 и добавете 12 към текущия месец, за да се коригира. След това изчислете разликата (текущ месец - месец на раждане). Например, ако месецът на раждане е февруари, а текущият месец е април, общият брой месеци е 2. Ако месецът на раждане е ноември, а текущият месец е април, общият брой месеци е 4 + 12 = 16, а разликата е 16 - 11 = 5.</li>
+        <li><strong>Стъпка 3:</strong> Подобно на предходната стъпка, определяме и броя на дните чрез изваждане на датата на раждане от текущата дата. В случай че текущата дата е преди датата на раждане, изваждаме 1 от броя на завършените месеци и добавяме 30/31/28/29 към текущата дата, в зависимост от броя на дните в предходния месец преди текущия месец.</li>
+        <li><strong>Стъпка 4:</strong> В заключение, калкулаторът за възраст дава възрастта в дни, месеци и години.</li>
+    </ul>
+    
+    <h2>Примери, показващи как се изчислява възрастта</h2>
+    
+    <p>По-долу са представени примери, илюстриращи как да се изчисли възрастта и методологията, приложена от калкулатора за рожден ден за по-ясно разбиране.</p>
+    
+    <p><strong>Пример 1:</strong> Джон има дата на раждане 25 юли 1985 г. (25/07/1985). Определете неговата възраст на 28 януари 2021 г. и потвърдете с калкулатора за възраст.</p>
+    
+    <p><strong>Решение:</strong></p>
+    
+    <p>Приложение на формулата за изчисляване на възрастта на Джон:</p>
+    
+    <p>Възраст на Човек = Дадена дата - Дата на раждане.</p>
+    
+    <p>Дата на раждане на Джон = 25 юли 1985 г.</p>
+    
+    <p>Дадена дата = 28 януари 2021 г.</p>
+    
+    <p>Отбележете, че текущият месец е по-малък от месеца на раждане. Това е, януари (1) е по-малък от юли (7). Следователно считаме годината 2020 за текуща година и също така добавяме 12 + 1 (януари) - 7 (юли) = 6 месеца.</p>
+    
+    <p>Разлика в годините = 2020 - 1985 = 35 години.</p>
+    
+    <p>Брой останали дни = 3 дни.</p>
+    
+    <p><strong>Отговор:</strong> Следователно възрастта на Джон е 35 години, 6 месеца и 3 дни.</p>
+    
+    <p><strong>Пример 2:</strong> Дата на раждане на Питър е 13 юли 1992 г. Изчислете неговата възраст на 21 април 2016 г. и потвърдете с калкулатора за възраст.</p>
+     
+
+
+
+
+
+
+    <p><strong>Решение:</strong></p>
+    
+    <p>Използвайки формулата за изчисляване на възрастта на Питър:</p>
+        
+    <p>Възраст на Човек = Текуща дата - Дата на раждане.</p>
+        
+    <p>Ето един малко различен подход, за да разберете по-ясно формулата за възрастта.</p>
+        
+    <p>Дата на раждане на Питър = 13 юли 1992 г.</p>
+        
+    <p>Разлика в годините = 2015 - 1992 = 23 години. (Това изчисление се простира от 13 юли 1992 г. до 13 юли 2015 г.)</p>
+        
+    <p>Брой останали месеци от 13 юли 2015 г. до 13 април 2016 г. = 9 месеца.</p>
+        
+    <p>Брой останали дни от 13 април 2016 г. до 21 април 2016 г. = 8 дни.</p>
+        
+    <p><strong>Отговор:</strong> Следователно, възрастта на Питър е 23 години, 9 месеца и 8 дни.</p>
+        
+    <p>Подобно на това, можете да използвате калкулатора за възраст, за да определите възрастта на лица с предоставените дати на раждане и текущи дати до 26 август 2021 г.:</p>
+        
+    <ul>
+        <li>13 юли 1992 г.</li>
+        <li>21 април 2016 г.</li>
+    </ul>
+        
+    <p><b>☛ Повече калкулатори:</b></p>
+        
+    <table border="1">
+        <tbody>
+            <tr>
+                <td>
+                <p><a href="https://select-statistics.co.uk/calculators/">Статистика</a></p>
+                </td>
+                <td>
+                <p><a href="https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/">Сложен интерес</a></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <p><a href="https://www.dadsworksheets.com/fraction-calculator.html">Дроб</a></p>
+                </td>
+                <td>
+                <p><a href="https://mathforyou.net/en/online/calculus/derivative/">Производна</a></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <p><a href="https://www.wikihow.com/Calculate-Percentages">Процент</a></p>
+                </td>
+                <td>
+                <p><a href="https://www.cuemath.com/calculators/integral-calculator/">Интеграл</a></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+        
+    <h2>ЧЗВ Калкулатор ПЧЗ</h2>
+        
+    <h3>Как се Изчислява Възрастта на Калкулатора за Възраст?</h3>
+        
+    <p>Можете да използвате този <strong>онлайн калкулатор за възраст</strong>, за да определите възрастта на база на предоставената дата на раждане и текущата или желаната дата за изчисляване на възрастта. Уверете се, че и двете дати са форматирани като ДД/ММ/ГГГГ. Достъпът до калкулатора за дата на раждане е чрез посещение на <a href="https://agecalculator.com">Калкулатор за Възраст</a>.</p>
+        
+    <h3>Какво е Използването на Калкулатора за Дата на Раждане (DOB)?</h3>
+        
+    <p>Калкулаторът за Дата на Раждане изчислява текущата възраст на човек или обект, като взема предвид годините, месеците и дните. Просто въведете ДОБ и текущата дата във формат ДД/ММ/ГГГГ, за да получите вашата възраст.</p>
+    
+    <h3>Как да Определите Броя Години С Използване на Калкулатора за Дата на Раждане?</h3>
+        
+    <p>За да изчислите броя години с калкулатора за възраст, започнете като въведете датата на раждане и текущата дата в посочения формат. Калкулаторът предоставя възрастта в години, месеци и дни, като "годините" представляват възрастта или броя на годините.</p>
+    
+    <h3>Как се Използва Калкулатора за Възраст?</h3>
+        
+    <p>За да научите повече можете да посетите нашия артикул "<a href="how-to-use-age-calculator.html">Как да използваме калкулатор за възраст?</a>" или можете да прочетете нашите интересни блог публикации. <a href="top-10-famous-animals-and-their-age.html">Топ 10 известни животни и тяхната възраст</a>.</p>
+       
+    
+
+    <footer>
+      <nav>
+        <ul>
+          <li>
+            <a href="privacy-policy.html" target="_blank">Политика за поверителност</a>
+          </li>
+          <li><a href="terms-and-conditions.html">Условия</a></li>
+          <li><a href="faq.html" target="_blank">ЧЗВ</a></li>
+          <li><a href="about-us.html" target="_blank">Относно нас</a></li>
+          <li><a href="blog-home.html" target="_blank">Блог</a></li>
+          <li><a href="api-docs.html" target="_blank">Документация на API</a></li>
+          <li><a href="api-status.html" target="_blank">Статус на API</a></li>
+          <li>
+            <a href="contact-us.html" target="_blank">Свържете се с нас</a>
+          </li>
+          <li><a href="mailto:hello@agecalculator.com" target="_blank">hello@agecalculator.com</a></li>
+        </ul>
+      </nav>
+    </footer>
+    
+
+  </div>
+</div>
+<script type="text/javascript">
+  function age() {
+  var d1 = document.getElementById('date').value;
+  var m1 = document.getElementById('month').value;
+  var y1 = document.getElementById('year').value;
+
+  var date = new Date();
+  var d2 = date.getDate();
+  var m2 = 1 + date.getMonth();
+  var y2 = date.getFullYear();
+  var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  if(d1 > d2){
+  	d2 = d2 + month[m2 - 1];
+  	m2 = m2 - 1;
+  }
+  if(m1 > m2){
+  	m2 = m2 + 12;
+  	y2 = y2 - 1;
+  }
+  var d = d2 - d1;
+  var m = m2 - m1;
+  var y = y2 - y1;
+
+  document.getElementById('age').innerHTML = 'Your Age is '+y+' Years '+m+' Months '+d+' Days';
+}
+</script>
+</body>
+</html>

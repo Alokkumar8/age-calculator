@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>年龄计算器 - Age Calculator Online</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   
+    <meta content="Online age calculator allows you to calculate your age using your date of birth and dob and find your age quickly without having to do any kind of complex math. It will return answer in years, months and days." name="description">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
+    
+<style media="screen">
+    body{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #2782e3;
+	font-size: 15px;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+}
+* {
+	box-sizing: border-box;
+}
+.container{
+	width:520px;
+	height: auto;
+	margin: 100px auto;
+	background-color: #eee;
+	border-radius: 5px;
+}
+.text-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.base{
+	width: 100%;
+	 
+	margin: 0;
+	overflow: hidden;
+	display: block;
+	float: none;
+}
+.block{
+	width: 135px;
+	padding: 5px 20px;
+ 
+	margin-left: 20px;
+	display: inline-block;
+	float: left;
+}
+.base h1{
+	font-size: 26px;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: normal;
+  margin-top: 0px;
+  box-shadow: 0px 2px #bababa;
+  background: white;
+  font-size: 34px;
+	color: navy;
+}
+ 
+.title{
+	font-size: 20px;
+	text-align: left;
+	font-family: sans-serif;
+	font-weight: normal;
+	line-height: 0.5;
+	letter-spacing: 0.5px;
+	word-spacing: 2.7px;
+	color: #1073d0;
+}
+input[type=text] {
+	width: 140px;
+	margin: auto;
+	outline: none;
+    min-height: 50px;
+	border: 2px solid #1073d0;
+	padding: 12px;
+	background-color: #f7f7f7;
+    border-radius: 2px;
+    color: #1073d0;
+    font-size: 17px;
+}
+input[type=text]:focus{
+	background-color: #ffffff;
+	border: 2px solid orange;
+	outline: none;
+}
+input[type=button]{
+	width: 150px;
+	margin-left: 35%;
+  margin-top: 40px;
+	outline: none;
+	border: none;
+	border-radius: 2px;
+	background-color: #0761b6;
+	color: #ffffff;
+	padding: 14px 16px;
+	text-align: center;
+	font-size: 16px;
+}
+input[type=button]:hover{
+	background-color: #003669;
+}
+ 
+#age{
+	display: block;
+	margin: 10px;
+    margin-top: 35px;
+	padding: 10px;
+    padding-bottom: 20px;
+	overflow: hidden;
+	font-family: verdana;
+	font-size: 23px;
+	font-weight: normal;
+	line-height: 1.5;
+	word-spacing: 2.7px;
+	color: navy;
+}
+
+      footer {
+        margin: 0 auto 10px;
+      }
+
+      footer nav {
+        padding: 2px 2px;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 0 5px #ddd;
+      }
+
+      footer li {
+        margin: 5px;
+        display: inline-block;
+      }
+
+      /* footer li:last-child {
+        float: center;
+      } */
+
+      footer a {
+        color: #999;
+        font-size: 0.8rem;
+        text-decoration: none;
+
+        -webkit-transition: 0.5s;
+           -moz-transition: 0.5s;
+                transition: 0.5s;
+      }
+
+      footer a:hover {
+        color: #333;
+      }
+
+  </style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "operatingSystem": "Windows, Mac, Linux, Chromebook, Andriod, iOS",
+    "name": "Age Calculator",
+    "applicationCategory": "UtilitiesApplication",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.7,
+      "worstRating": 1,
+      "bestRating": 5,
+      "reviewCount": 5
+    },
+  }
+  </script>
+
+  <link rel="canonical" href="https://agecalculator.com/zh/">
+<link rel="alternate" hreflang="ar" href="https://agecalculator.com/ar/">
+<link rel="alternate" hreflang="bg" href="https://agecalculator.com/bg/">
+<link rel="alternate" hreflang="cs" href="https://agecalculator.com/cs/">
+<link rel="alternate" hreflang="da" href="https://agecalculator.com/da/">
+<link rel="alternate" hreflang="de" href="https://agecalculator.com/de/">
+<link rel="alternate" hreflang="el" href="https://agecalculator.com/el/">
+<link rel="alternate" hreflang="en" href="https://agecalculator.com/">
+<link rel="alternate" hreflang="es" href="https://agecalculator.com/es/">
+<link rel="alternate" hreflang="et" href="https://agecalculator.com/et/">
+<link rel="alternate" hreflang="fi" href="https://agecalculator.com/fi/">
+<link rel="alternate" hreflang="fr" href="https://agecalculator.com/fr/">
+<link rel="alternate" hreflang="he" href="https://agecalculator.com/he/">
+<link rel="alternate" hreflang="hi" href="https://agecalculator.com/hi/">
+<link rel="alternate" hreflang="hu" href="https://agecalculator.com/hu/">
+<link rel="alternate" hreflang="id" href="https://agecalculator.com/id/">
+<link rel="alternate" hreflang="it" href="https://agecalculator.com/it/">
+<link rel="alternate" hreflang="ja" href="https://agecalculator.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://agecalculator.com/ko/">
+<link rel="alternate" hreflang="lt" href="https://agecalculator.com/lt/">
+<link rel="alternate" hreflang="lv" href="https://agecalculator.com/lv/">
+<link rel="alternate" hreflang="nb" href="https://agecalculator.com/nb/">
+<link rel="alternate" hreflang="nl" href="https://agecalculator.com/nl/">
+<link rel="alternate" hreflang="pl" href="https://agecalculator.com/pl/">
+<link rel="alternate" hreflang="pt" href="https://agecalculator.com/pt/">
+<link rel="alternate" hreflang="ro" href="https://agecalculator.com/ro/">
+<link rel="alternate" hreflang="ru" href="https://agecalculator.com/ru/">
+<link rel="alternate" hreflang="sk" href="https://agecalculator.com/sk/">
+<link rel="alternate" hreflang="sl" href="https://agecalculator.com/sl/">
+<link rel="alternate" hreflang="sv" href="https://agecalculator.com/sv/">
+<link rel="alternate" hreflang="th" href="https://agecalculator.com/th/">
+<link rel="alternate" hreflang="tr" href="https://agecalculator.com/tr/">
+<link rel="alternate" hreflang="uk" href="https://agecalculator.com/uk/">
+<link rel="alternate" hreflang="vi" href="https://agecalculator.com/vi/">
+<link rel="alternate" hreflang="zh" href="https://agecalculator.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://agecalculator.com/">
+</head>
+<body>
+
+<div class="container">
+
+  
+  <form>
+  	<div class="base">
+  		<div class="enter">
+  		<h1>年龄计算器</h1>
+  	</div>
+  <div class="block">
+  	<p class="title">日期</p>
+  	<input type="text" name="date" id="date" placeholder="日" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">月份</p>
+    <input type="text" name="month" id="month" placeholder="月" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">年份</p>
+    <input type="text" name="year" id="year" placeholder="年" required="required" minlength="4" maxlength="4" />
+  </div>
+  </div>
+  <div class="base">
+  	<div class="enter">
+    <input type="button" name="submit" value="提交" onclick="age()" />
+    </div>
+  </div>
+    <div id="age"></div>
+  </form>
+
+
+
+
+  
+  <div class="text-content">
+    <p>这个年龄计算器根据一个人的出生日期确定其年龄。年龄计算方法可能因文化而异，但通常情况下，一个人的年龄在每个生日时增加1岁。</p>
+
+    <p>这个免费在线年龄计算器是一个宝贵而简单的工具，在许多情况下都适用。它可以通过输入他们的出生日期和当前日期来计算从新生儿到老年人的年龄，包括年、月和日。</p>
+    
+    <div id="calc">
+    <h2>年龄计算器的功能是什么？</h2>
+    </div>
+    
+    <p><strong>在线年龄计算器是一个基于网络的工具</strong>，旨在根据已知的出生日期（DOB）计算特定日期的一个人的年龄。在许多西方文化中，年龄计算通常向下取整，因此如果一个人已经活了8年零9个月，他们的年龄被认为是8岁。</p>
+    
+    <h3>出生日期（DOB）计算器</h3>
+    
+    <p>出生日期（DOB）计算器使我们能够根据出生日期确定年龄。要使用这个年龄计算器，将所需的值输入到提供的输入框中。</p>
+    
+    <ul>
+        <li>DOB的格式为DD/MM/YYYY</li>
+        <li>您希望计算年龄的具体日期应以dd/mm/yyyy的格式输入</li>
+    </ul>
+    
+    <p style="text-align: center;"><img src="img/screenshot-1.jpg" style="max-width:100%; max-height:100%;"></img></p>
+    
+    <h2>我如何使用年龄计算器？</h2>
+    
+    <p>要使用生日计算器确定一个人的年龄，请按照以下步骤进行：</p>
+    
+    <ul>
+        <li><strong>步骤 1</strong>：转到www.agecalculator.com</li>
+        <li><strong>步骤 2</strong>：使用DD/MM/YYYY格式将出生日期输入到年龄计算器的输入框中。</li>
+        <li><strong>步骤 3</strong>：点击<strong>&quot;提交&quot;</strong>按钮计算出该人的年龄。</li>
+        <li><strong>步骤 4</strong>：点击<strong>&quot;重置&quot;</strong>按钮清除输入文本并输入新值。</li>
+    </ul>
+    
+    <div id="formula">
+    <h2>年龄计算器公式</h2>
+    </div>
+    
+    <p>根据牛津词典的解释，&ldquo;年龄&rdquo;指的是一个人的生活期或物体的存在期。计算年龄涉及将一个人的出生日期与需要年龄的日期进行比较。从给定日期中减去出生日期可以得到一个人的年龄，其公式表示为：年龄=给定日期-出生日期。以下是从一个人的出生日期到指定日期计算年龄的步骤。</p>
+    
+    <ul>
+        <li><strong>步骤 1：</strong>首先，通过将出生年份从当前年份中减去来计算总的完整年数。例如，如果当前年份是2024年，出生年份是1998年，则完整年数为26。</li>
+        <li><strong>步骤 2：</strong>随后，通过将出生月份从当前月份中减去来确定完整月数。如果当前月份早于出生月份，则将完整年数减去1，并将12加到当前月份以进行调整。然后，计算差值（当前月份-出生月份）。例如，如果出生月份是2月，当前月份是4月，则总月数为2。如果出生月份是11月，当前月份是4月，则总月数为4 + 12 = 16，差值为16 - 11 = 5。</li>
+        <li><strong>步骤 3：</strong>与前一个步骤类似，我们还确定出生日期和当前日期之间的天数。然而，如果当前日期早于出生日期，则我们将完整月数减去1，并根据前一个月的天数（前一个月）添加30/31/28/29到当前日期，具体取决于前一个月在当前月份之前的天数。</li>
+        <li><strong>步骤 4：</strong>最后，年龄计算器以天、月和年的形式给出年龄。</li>
+    </ul>
+    
+    <h2>示例显示如何计算年龄</h2>
+    
+    <p>以下是示例，说明如何计算年龄以及生日计算器采用的方法，以便更清楚地理解。</p>
+    
+    <p><strong>示例 1：</strong>约翰的出生日期是1985年7月25日（25/07/1985）。确定他在2021年1月28日的年龄，并使用年龄计算器验证。</p>
+    
+
+
+
+
+
+    <p><strong>解决方案：</strong></p>
+
+    <p>应用公式计算约翰的年龄：</p>
+    
+    <p>一个人的年龄 = 给定日期 - 出生日期。</p>
+    
+    <p>约翰的出生日期 = 1985年7月25日。</p>
+    
+    <p>给定日期 = 2021年1月28日。</p>
+    
+    <p>请注意，当前月份小于出生月份。也就是说，1月（1）小于7月（7）。因此，我们将2020年视为当前年份，还要考虑12 + 1（1月） - 7（7月）= 6个月。</p>
+    
+    <p>年份差异 = 2020年 - 1985年 = 35年。</p>
+    
+    <p>剩余天数 = 3天。</p>
+    
+    <p><strong>答案：</strong>因此，约翰的年龄为35年6个月3天。</p>
+    
+    <p><strong>示例 2：</strong> 彼得的出生日期是1992年7月13日。 计算他在2016年4月21日的年龄，并使用年龄计算器确认。</p>
+    
+    <p><strong>解决方案：</strong></p>
+    
+    <p>利用公式计算彼得的年龄：</p>
+    
+    <p>一个人的年龄 = 当前日期 - 出生日期。</p>
+    
+    <p>这里有一个稍微不同的方法来更清楚地理解年龄公式。</p>
+    
+    <p>彼得的出生日期 = 1992年7月13日。</p>
+    
+    <p>年份差异 = 2015年 - 1992年 = 23年。（这个计算从1992年7月13日到2015年7月13日延伸）。</p>
+    
+    <p>从2015年7月13日到2016年4月13日剩余的月数 = 9个月。</p>
+    
+    <p>从2016年4月13日到2016年4月21日剩余的天数 = 8天。</p>
+    
+    <p><strong>答案：</strong>因此，彼得的年龄为23年9个月8天。</p>
+    
+    <p>类似地，您可以使用年龄计算器来确定提供的出生日期和当前日期的个人年龄，直到2021年8月26日：</p>
+    
+    <ul>
+        <li>1992年7月13日</li>
+        <li>2016年4月21日</li>
+    </ul>
+    
+
+
+
+
+
+
+    <p><b>☛ 更多计算器：</b></p>
+
+    <table border="1">
+        <tbody>
+            <tr>
+                <td>
+                <p><a href="https://select-statistics.co.uk/calculators/">统计学</a></p>
+                </td>
+                <td>
+                <p><a href="https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/">复利</a></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <p><a href="https://www.dadsworksheets.com/fraction-calculator.html">分数</a></p>
+                </td>
+                <td>
+                <p><a href="https://mathforyou.net/en/online/calculus/derivative/">导数</a></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <p><a href="https://www.wikihow.com/Calculate-Percentages">百分比</a></p>
+                </td>
+                <td>
+                <p><a href="https://www.cuemath.com/calculators/integral-calculator/">积分</a></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h2>年龄计算器常见问题解答</h2>
+    
+    <h3>如何在年龄计算器上计算年龄？</h3>
+    
+    <p>您可以使用这个<strong>在线年龄计算器</strong>根据给定的出生日期和当前或所需的日期来确定年龄。确保两个日期的格式为DD/MM/YYYY。访问出生日期计算器，请访问<a href="https://agecalculator.com">年龄计算器</a>。</p>
+    
+    <h3>DOB计算器的用途是什么？</h3>
+    
+    <p>DOB计算器计算一个人或物体的当前年龄，考虑到年、月和日。只需以dd/mm/yyyy格式输入DOB和当前日期即可获得您的年龄。</p>
+    
+    <h3>如何使用出生日期计算器确定年数？</h3>
+    
+    <p>要使用年龄计算器计算年数，请首先按指定格式输入出生日期和当前日期。该计算器提供年、月和日的年龄，其中"年"代表年龄或年数。</p>
+    
+    <h3>如何使用年龄计算器？</h3>
+    
+    <p>了解更多信息，您可以访问我们的文章"<a href="how-to-use-age-calculator.html">如何使用年龄计算器？</a>"，或者您可以阅读我们有趣的博客文章。<a href="top-10-famous-animals-and-their-age.html">前10位著名动物及其年龄</a>。</p>
+    
+   
+    
+
+
+
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="privacy-policy.html" target="_blank">隐私政策</a></li>
+          <li><a href="terms-and-conditions.html">条款</a></li>
+          <li><a href="faq.html" target="_blank">常见问题</a></li>
+          <li><a href="about-us.html" target="_blank">关于我们</a></li>
+          <li><a href="blog-home.html" target="_blank">博客</a></li>
+          <li><a href="api-docs.html" target="_blank">API 文档</a></li>
+          <li><a href="api-status.html" target="_blank">API 状态</a></li>
+          <li><a href="contact-us.html" target="_blank">联系我们</a></li>
+          <li><a href="mailto:hello@agecalculator.com" target="_blank">hello@agecalculator.com</a></li>
+        </ul>
+      </nav>
+    </footer>
+    
+
+  </div>
+</div>
+<script type="text/javascript">
+  function age() {
+  var d1 = document.getElementById('date').value;
+  var m1 = document.getElementById('month').value;
+  var y1 = document.getElementById('year').value;
+
+  var date = new Date();
+  var d2 = date.getDate();
+  var m2 = 1 + date.getMonth();
+  var y2 = date.getFullYear();
+  var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  if(d1 > d2){
+  	d2 = d2 + month[m2 - 1];
+  	m2 = m2 - 1;
+  }
+  if(m1 > m2){
+  	m2 = m2 + 12;
+  	y2 = y2 - 1;
+  }
+  var d = d2 - d1;
+  var m = m2 - m1;
+  var y = y2 - y1;
+
+  document.getElementById('age').innerHTML = 'Your Age is '+y+' Years '+m+' Months '+d+' Days';
+}
+</script>
+</body>
+</html>

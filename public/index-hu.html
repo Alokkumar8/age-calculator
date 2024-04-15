@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Kor Kalkulátor - Age Calculator Online</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   
+    <meta content="Az online életkor számológép lehetővé teszi az életkor kiszámítását a születési dátum és születési idő alapján, így gyorsan megtudhatja életkorát anélkül, hogy bonyolult matematikai műveleteket kellene végeznie. Az eredmény években, hónapokban és napokban kerül visszaadásra." name="description">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
+    
+<style media="screen">
+    body{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #2782e3;
+	font-size: 15px;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+}
+* {
+	box-sizing: border-box;
+}
+.container{
+	width:520px;
+	height: auto;
+	margin: 100px auto;
+	background-color: #eee;
+	border-radius: 5px;
+}
+.text-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.base{
+	width: 100%;
+	 
+	margin: 0;
+	overflow: hidden;
+	display: block;
+	float: none;
+}
+.block{
+	width: 135px;
+	padding: 5px 20px;
+ 
+	margin-left: 20px;
+	display: inline-block;
+	float: left;
+}
+.base h1{
+	font-size: 26px;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: normal;
+  margin-top: 0px;
+  box-shadow: 0px 2px #bababa;
+  background: white;
+  font-size: 34px;
+	color: navy;
+}
+ 
+.title{
+	font-size: 20px;
+	text-align: left;
+	font-family: sans-serif;
+	font-weight: normal;
+	line-height: 0.5;
+	letter-spacing: 0.5px;
+	word-spacing: 2.7px;
+	color: #1073d0;
+}
+input[type=text] {
+	width: 140px;
+	margin: auto;
+	outline: none;
+    min-height: 50px;
+	border: 2px solid #1073d0;
+	padding: 12px;
+	background-color: #f7f7f7;
+    border-radius: 2px;
+    color: #1073d0;
+    font-size: 17px;
+}
+input[type=text]:focus{
+	background-color: #ffffff;
+	border: 2px solid orange;
+	outline: none;
+}
+input[type=button]{
+	width: 150px;
+	margin-left: 35%;
+  margin-top: 40px;
+	outline: none;
+	border: none;
+	border-radius: 2px;
+	background-color: #0761b6;
+	color: #ffffff;
+	padding: 14px 16px;
+	text-align: center;
+	font-size: 16px;
+}
+input[type=button]:hover{
+	background-color: #003669;
+}
+ 
+#age{
+	display: block;
+	margin: 10px;
+    margin-top: 35px;
+	padding: 10px;
+    padding-bottom: 20px;
+	overflow: hidden;
+	font-family: verdana;
+	font-size: 23px;
+	font-weight: normal;
+	line-height: 1.5;
+	word-spacing: 2.7px;
+	color: navy;
+}
+
+      footer {
+        margin: 0 auto 10px;
+      }
+
+      footer nav {
+        padding: 2px 2px;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 0 5px #ddd;
+      }
+
+      footer li {
+        margin: 5px;
+        display: inline-block;
+      }
+
+      /* footer li:last-child {
+        float: center;
+      } */
+
+      footer a {
+        color: #999;
+        font-size: 0.8rem;
+        text-decoration: none;
+
+        -webkit-transition: 0.5s;
+           -moz-transition: 0.5s;
+                transition: 0.5s;
+      }
+
+      footer a:hover {
+        color: #333;
+      }
+
+  </style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Age Calculator",
+    "applicationCategory": "UtilitiesApplication",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "ratingCount": "5"
+    }
+  }
+  </script>
+
+  <link rel="canonical" href="https://agecalculator.com/hu/">
+<link rel="alternate" hreflang="ar" href="https://agecalculator.com/ar/">
+<link rel="alternate" hreflang="bg" href="https://agecalculator.com/bg/">
+<link rel="alternate" hreflang="cs" href="https://agecalculator.com/cs/">
+<link rel="alternate" hreflang="da" href="https://agecalculator.com/da/">
+<link rel="alternate" hreflang="de" href="https://agecalculator.com/de/">
+<link rel="alternate" hreflang="el" href="https://agecalculator.com/el/">
+<link rel="alternate" hreflang="en" href="https://agecalculator.com/">
+<link rel="alternate" hreflang="es" href="https://agecalculator.com/es/">
+<link rel="alternate" hreflang="et" href="https://agecalculator.com/et/">
+<link rel="alternate" hreflang="fi" href="https://agecalculator.com/fi/">
+<link rel="alternate" hreflang="fr" href="https://agecalculator.com/fr/">
+<link rel="alternate" hreflang="he" href="https://agecalculator.com/he/">
+<link rel="alternate" hreflang="hi" href="https://agecalculator.com/hi/">
+<link rel="alternate" hreflang="hu" href="https://agecalculator.com/hu/">
+<link rel="alternate" hreflang="id" href="https://agecalculator.com/id/">
+<link rel="alternate" hreflang="it" href="https://agecalculator.com/it/">
+<link rel="alternate" hreflang="ja" href="https://agecalculator.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://agecalculator.com/ko/">
+<link rel="alternate" hreflang="lt" href="https://agecalculator.com/lt/">
+<link rel="alternate" hreflang="lv" href="https://agecalculator.com/lv/">
+<link rel="alternate" hreflang="nb" href="https://agecalculator.com/nb/">
+<link rel="alternate" hreflang="nl" href="https://agecalculator.com/nl/">
+<link rel="alternate" hreflang="pl" href="https://agecalculator.com/pl/">
+<link rel="alternate" hreflang="pt" href="https://agecalculator.com/pt/">
+<link rel="alternate" hreflang="ro" href="https://agecalculator.com/ro/">
+<link rel="alternate" hreflang="ru" href="https://agecalculator.com/ru/">
+<link rel="alternate" hreflang="sk" href="https://agecalculator.com/sk/">
+<link rel="alternate" hreflang="sl" href="https://agecalculator.com/sl/">
+<link rel="alternate" hreflang="sv" href="https://agecalculator.com/sv/">
+<link rel="alternate" hreflang="th" href="https://agecalculator.com/th/">
+<link rel="alternate" hreflang="tr" href="https://agecalculator.com/tr/">
+<link rel="alternate" hreflang="uk" href="https://agecalculator.com/uk/">
+<link rel="alternate" hreflang="vi" href="https://agecalculator.com/vi/">
+<link rel="alternate" hreflang="zh" href="https://agecalculator.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://agecalculator.com/">
+</head>
+<body>
+
+<div class="container">
+
+  
+  <form>
+  	<div class="base">
+  		<div class="enter">
+  		<h1>Kor Kalkulátor</h1>
+  	</div>
+  <div class="block">
+  	<p class="title">Dátum</p>
+  	<input type="text" name="date" id="date" placeholder="nn" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">Hónap</p>
+    <input type="text" name="month" id="month" placeholder="hh" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">Év</p>
+    <input type="text" name="year" id="year" placeholder="éééé" required="required" minlength="4" maxlength="4" />
+  </div>
+  </div>
+  <div class="base">
+  	<div class="enter">
+    <input type="button" name="submit" value="Beküldés" onclick="age()" />
+    </div>
+  </div>
+    <div id="age"></div>
+</form>
+
+
+
+
+  <div class="text-content">
+    <p>Ez az életkor-kalkulátor az egyén születési dátuma alapján határozza meg az életkort. Az életkor számítási módszerek különbözőek lehetnek a kultúrák szerint, általában azonban egy személy életkora minden születésnapján egy évvel növekszik.</p>
+
+    <p>Ez a ingyenes online életkor-kalkulátor értékes és egyszerű eszköz, amely számos helyzetben alkalmazható. Meghatározhatja az egyének életkorát a születési dátumuk és az aktuális dátum bevitelével, és kiszámítja az éveket, hónapokat és napokat.</p>
+    
+    <div id="calc">
+    <h2>Mire való az életkor-kalkulátor?</h2>
+    </div>
+    
+    <p><strong>Az online életkor-kalkulátor</strong> egy webes alapú eszköz, amelyet arra terveztek, hogy kiszámolja egy személy életkorát egy adott dátumon, feltéve, hogy ismert a születési dátuma (szül. dátum). Sok nyugati kultúrában az életkor-kiszámítás általában lefelé kerekít, tehát ha valaki 8 évet és 9 hónapot élt, akkor az életkorát 8 évesnek tekintik.</p>
+    
+    <h3>Születési Dátum (szül. dátum) Kalkulátor</h3>
+    
+    <p>A születési dátum kalkulátor lehetővé teszi számunkra, hogy az életkort a születési dátum alapján határozzuk meg. Ehhez az életkor-kalkulátorhoz adja meg a szükséges értékeket a megadott beviteli mezőbe.</p>
+    
+    <ul>
+        <li>A szül. dátum formátuma: ÉÉÉÉ/HH/NN</li>
+        <li>Az életkor kiszámítására kívánt konkrét dátumot ugyanabban a formátumban (ÉÉÉÉ/HH/NN) kell megadni.</li>
+    </ul>
+    
+    <p style="text-align: center;"><img src="img/screenshot-1.jpg" style="max-width:100%; max-height:100%;"></p>
+    
+    <h2>Hogyan használhatom az Életkor-kalkulátort?</h2>
+    
+    <p>Az életkor kiszámításához kövesse ezeket a lépéseket a születésnapi kalkulátorral:</p>
+    
+    <ul>
+        <li><strong>Lépés 1</strong>: Menjen az www.agecalculator.com webhelyre</li>
+        <li><strong>Lépés 2</strong>: Adja meg a születési dátumot az életkor-kalkulátor beviteli mezőjébe az ÉÉÉÉ/HH/NN formátumban.</li>
+        <li><strong>Lépés 3</strong>: Nyomja meg a <strong>"Beküldés"</strong> gombot a személy életkorának kiszámításához.</li>
+        <li><strong>Lépés 4</strong>: Kattintson az <strong>"Újrakezdés"</strong> gombra az input szöveg törléséhez és új értékek megadásához.</li>
+    </ul>
+    
+    <div id="formula">
+    <h2>Életkor-kalkulátor Formula</h2>
+    </div>
+    
+    <p>A Oxfordi Szótár szerint az "Életkor" az egyén életének vagy egy tárgy létezésének időtartamát jelenti. Az életkor kiszámítása a személy születési dátumának összehasonlítását jelenti a megadott dátummal. Az adott dátumból a születési dátum kivonásával megkapjuk a személy életkorát, amit a következő képlettel fejezünk ki: Életkor = Adott dátum - Születési dátum. Az alábbiakban bemutatjuk a lépéseket egy személy életkorának kiszámításához a születési dátumától egy meghatározott dátumig.</p>
+    
+    <ul>
+        <li><strong>Lépés 1:</strong> Először számoljuk ki a teljes évek számát, az aktuális évből kivonva a születési évet. Például, ha az aktuális év 2024, és a születési év 1998, akkor a teljes évek száma 26.</li>
+        <li><strong>Lépés 2:</strong> Ezután határozzuk meg a teljes hónapok számát az aktuális hónapból kivonva a születési hónapot. Ha az aktuális hónap korábbi, mint a születési hónap, csökkentsük a teljes évek számát 1-gyel, és adjunk hozzá 12-t az aktuális hónaphoz az igazításhoz. Ezután számoljuk ki a különbséget (aktuális hónap - születési hónap). Például, ha a születési hónap február, és az aktuális hónap április, akkor az összes hónap száma 2. Ha a születési hónap november, és az aktuális hónap április, akkor az összes hónap száma 4 + 12 = 16, és a különbség 16 - 11 = 5.</li>
+        <li><strong>Lépés 3:</strong> Hasonlóan az előző lépéshez, határozzuk meg a napok számát a születési dátumból az aktuális dátumig. Azonban, ha az aktuális dátum korábbi, mint a születési dátum, akkor 1-et vonunk le a teljes hónapok számából, és hozzáadunk 30/31/28/29 napot az aktuális dátumhoz, attól függően, hogy a korábbi hónapban hány nap van az aktuális hónap előtt.</li>
+        <li><strong>Lépés 4:</strong> Végül az életkor-kalkulátor megadja az életkort napokban, hónapokban és években.</li>
+    </ul>
+    
+    <h2>Példák az Életkor Kiszámítására</h2>
+    
+    <p>Az alábbiakban példákat láthatunk az életkor kiszámítására és az életkor-kalkulátor által alkalmazott módszertanra a jobb megértés érdekében.</p>
+    
+    <p><strong>Példa 1:</strong> John születési dátuma 1985. július 25. (1985/07/25). Határozza meg az életkorát 2021. január 28-án, és ellenőrizze azt az életkor-kalkulátorral.</p>
+    
+
+
+
+
+
+    <p><strong>Megoldás:</strong></p>
+    
+    <p>John életkorának kiszámítása a következő képlettel:</p>
+        
+    <p>Egy személy életkora = Adott dátum - Születési dátum.</p>
+        
+    <p>John születési dátuma = 1985. július 25.</p>
+        
+    <p>Adott dátum = 2021. január 28.</p>
+        
+    <p>Figyelembe véve, hogy az aktuális hónap kisebb, mint a születési hónap. Tehát, január (1) kisebb, mint július (7). Ezért azt vesszük, hogy 2020 az aktuális év, és továbbá számoljuk be a 12 + 1 (január) - 7 (július) = 6 hónapot.</p>
+        
+    <p>Évek különbsége = 2020 - 1985 = 35 év.</p>
+        
+    <p>Hátralévő napok száma = 3 nap.</p>
+        
+    <p><strong>Válasz:</strong> Tehát John életkora 35 év, 6 hónap és 3 nap.</p>
+        
+    <p><strong>Példa 2:</strong> Péter születési dátuma 1992. július 13. Számítsa ki az életkorát 2016. április 21-én, és ellenőrizze azt az életkor-kalkulátor segítségével.</p>
+        
+    <p><strong>Megoldás:</strong></p>
+        
+    <p>Péter életkorának kiszámítása a következő képlettel:</p>
+        
+    <p>Egy személy életkora = Jelenlegi dátum - Születési dátum.</p>
+        
+    <p>Itt egy kicsit más megközelítés, hogy világosabban megértsük az életkor képletét.</p>
+        
+    <p>Péter születési dátuma = 1992. július 13.</p>
+        
+    <p>Évek különbsége = 2015 - 1992 = 23 év. (Ez a számítás 1992. július 13-tól 2015. július 13-ig terjed).</p>
+        
+    <p>Hátralévő hónapok száma 2015. július 13-tól 2016. április 13-ig = 9 hónap.</p>
+        
+    <p>Hátralévő napok száma 2016. április 13-tól 2016. április 21-ig = 8 nap.</p>
+        
+    <p><strong>Válasz:</strong> Tehát Péter életkora 23 év, 9 hónap és 8 nap.</p>
+        
+    <p>Hasonlóképpen, az életkor-kalkulátort használhatja az egyének életkorának meghatározására a megadott születési és aktuális dátumok alapján egészen 2021. augusztus 26-ig:</p>
+        
+    <ul>
+        <li>1992. július 13.</li>
+        <li>2016. április 21.</li>
+    </ul>
+        
+    <p><b>☛ További kalkulátorok:</b></p>
+        
+    <table border="1">
+        <tbody>
+            <tr>
+                <td>
+                <p><a href="https://select-statistics.co.uk/calculators/">Statisztika</a></p>
+                </td>
+                <td>
+                <p><a href="https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/">Kamat</a></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <p><a href="https://www.dadsworksheets.com/fraction-calculator.html">Törtszám</a></p>
+                </td>
+                <td>
+                <p><a href="https://mathforyou.net/en/online/calculus/derivative/">Derivált</a></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <p><a href="https://www.wikihow.com/Calculate-Percentages">Százalék</a></p>
+                </td>
+                <td>
+                <p><a href="https://www.cuemath.com/calculators/integral-calculator/">Integrál</a></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+        
+    <h2>Életkor-kalkulátor Gyakran Ismételt Kérdések</h2>
+        
+    <h3>Hogyan lehet kiszámítani az életkort az életkor-kalkulátorral?</h3>
+        
+    <p>Ezt az <strong>online életkor-kalkulátort</strong> használhatja az életkor meghatározásához a megadott születési dátum és az aktuális vagy kívánt dátum alapján. Győződjön meg róla, hogy mindkét dátumot DD/HH/ÉÉÉÉ formátumban adja meg. Az életkor-kalkulátorhoz való hozzáféréshez látogasson el az <a href="https://agecalculator.com">Életkor-kalkulátor</a> webhelyre.</p>
+        
+    <h3>Mi a szerepe a születési dátum-kalkulátornak?</h3>
+        
+    <p>A születési dátum-kalkulátor kiszámítja egy személy vagy tárgy aktuális életkorát, figyelembe véve az éveket, hónapokat és napokat. Egyszerűen adja meg a születési dátumot és az aktuális dátumot dd/hh/éééé formátumban az életkor kiszámításához.</p>
+    
+    <h3>Hogyan lehet meghatározni a évek számát az életkor-kalkulátorral?</h3>
+        
+    <p>Az életkor-kalkulátor használatával az évek számának kiszámításához kezdje el a születési dátum és az aktuális dátum megadásával a megadott formátumban. A kalkulátor az életkort években, hónapokban és napokban adja meg, a "évek" az életkort vagy az évek számát jelenti.</p>
+    
+    <h3>Hogyan használjam az életkor-kalkulátort?</h3>
+        
+    <p>További információért látogasson el cikkünk "<a href="how-to-use-age-calculator.html">Hogyan használható az életkor-kalkulátor?</a>" vagy olvassa el érdekes blogbejegyzéseinket. <a href="top-10-famous-animals-and-their-age.html">Top 10 híres állat és életkoruk</a>.</p>
+    
+   
+    
+
+
+
+    <footer>
+      <nav>
+        <ul>
+          <li>
+            <a href="privacy-policy.html" target="_blank">Adatvédelmi irányelvek</a>
+          </li>
+          <li><a href="terms-and-conditions.html">Feltételek</a></li>
+          <li><a href="faq.html" target="_blank">GYIK</a></li>
+          <li><a href="about-us.html" target="_blank">Rólunk</a></li>
+          <li><a href="blog-home.html" target="_blank">Blog</a></li>
+          <li><a href="api-docs.html" target="_blank">API dokumentáció</a></li>
+          <li><a href="api-status.html" target="_blank">API állapot</a></li>
+          <li>
+            <a href="contact-us.html" target="_blank">Kapcsolat</a>
+          </li>
+          <li><a href="mailto:hello@agecalculator.com" target="_blank">hello@agecalculator.com</a></li>
+        
+        </ul>
+      </nav>
+    </footer>
+
+
+  </div>
+</div>
+<script type="text/javascript">
+  function age() {
+  var d1 = document.getElementById('date').value;
+  var m1 = document.getElementById('month').value;
+  var y1 = document.getElementById('year').value;
+
+  var date = new Date();
+  var d2 = date.getDate();
+  var m2 = 1 + date.getMonth();
+  var y2 = date.getFullYear();
+  var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  if(d1 > d2){
+  	d2 = d2 + month[m2 - 1];
+  	m2 = m2 - 1;
+  }
+  if(m1 > m2){
+  	m2 = m2 + 12;
+  	y2 = y2 - 1;
+  }
+  var d = d2 - d1;
+  var m = m2 - m1;
+  var y = y2 - y1;
+
+  document.getElementById('age').innerHTML = 'Your Age is '+y+' Years '+m+' Months '+d+' Days';
+}
+</script>
+</body>
+</html>

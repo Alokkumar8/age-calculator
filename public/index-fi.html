@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Iän laskin - Age Calculator</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   
+    <meta content="Verkkopohjainen ikälaskuri mahdollistaa ikäsi laskemisen käyttäen syntymäaikaasi ilman monimutkaista matematiikkaa. Se palauttaa vastauksen vuosina, kuukausina ja päivinä." name="description">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
+    
+<style media="screen">
+    body{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #2782e3;
+	font-size: 15px;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+}
+* {
+	box-sizing: border-box;
+}
+.container{
+	width:520px;
+	height: auto;
+	margin: 100px auto;
+	background-color: #eee;
+	border-radius: 5px;
+}
+.text-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.base{
+	width: 100%;
+	 
+	margin: 0;
+	overflow: hidden;
+	display: block;
+	float: none;
+}
+.block{
+	width: 135px;
+	padding: 5px 20px;
+ 
+	margin-left: 20px;
+	display: inline-block;
+	float: left;
+}
+.base h1{
+	font-size: 26px;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: normal;
+  margin-top: 0px;
+  box-shadow: 0px 2px #bababa;
+  background: white;
+  font-size: 34px;
+	color: navy;
+}
+ 
+.title{
+	font-size: 20px;
+	text-align: left;
+	font-family: sans-serif;
+	font-weight: normal;
+	line-height: 0.5;
+	letter-spacing: 0.5px;
+	word-spacing: 2.7px;
+	color: #1073d0;
+}
+input[type=text] {
+	width: 140px;
+	margin: auto;
+	outline: none;
+    min-height: 50px;
+	border: 2px solid #1073d0;
+	padding: 12px;
+	background-color: #f7f7f7;
+    border-radius: 2px;
+    color: #1073d0;
+    font-size: 17px;
+}
+input[type=text]:focus{
+	background-color: #ffffff;
+	border: 2px solid orange;
+	outline: none;
+}
+input[type=button]{
+	width: 150px;
+	margin-left: 35%;
+  margin-top: 40px;
+	outline: none;
+	border: none;
+	border-radius: 2px;
+	background-color: #0761b6;
+	color: #ffffff;
+	padding: 14px 16px;
+	text-align: center;
+	font-size: 16px;
+}
+input[type=button]:hover{
+	background-color: #003669;
+}
+ 
+#age{
+	display: block;
+	margin: 10px;
+    margin-top: 35px;
+	padding: 10px;
+    padding-bottom: 20px;
+	overflow: hidden;
+	font-family: verdana;
+	font-size: 23px;
+	font-weight: normal;
+	line-height: 1.5;
+	word-spacing: 2.7px;
+	color: navy;
+}
+
+      footer {
+        margin: 0 auto 10px;
+      }
+
+      footer nav {
+        padding: 2px 2px;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 0 5px #ddd;
+      }
+
+      footer li {
+        margin: 5px;
+        display: inline-block;
+      }
+
+      /* footer li:last-child {
+        float: center;
+      } */
+
+      footer a {
+        color: #999;
+        font-size: 0.8rem;
+        text-decoration: none;
+
+        -webkit-transition: 0.5s;
+           -moz-transition: 0.5s;
+                transition: 0.5s;
+      }
+
+      footer a:hover {
+        color: #333;
+      }
+
+  </style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Age Calculator",
+    "applicationCategory": "UtilitiesApplication",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "ratingCount": "5"
+    }
+  }
+  </script>
+
+  <link rel="canonical" href="https://agecalculator.com/fi/">
+<link rel="alternate" hreflang="ar" href="https://agecalculator.com/ar/">
+<link rel="alternate" hreflang="bg" href="https://agecalculator.com/bg/">
+<link rel="alternate" hreflang="cs" href="https://agecalculator.com/cs/">
+<link rel="alternate" hreflang="da" href="https://agecalculator.com/da/">
+<link rel="alternate" hreflang="de" href="https://agecalculator.com/de/">
+<link rel="alternate" hreflang="el" href="https://agecalculator.com/el/">
+<link rel="alternate" hreflang="en" href="https://agecalculator.com/">
+<link rel="alternate" hreflang="es" href="https://agecalculator.com/es/">
+<link rel="alternate" hreflang="et" href="https://agecalculator.com/et/">
+<link rel="alternate" hreflang="fi" href="https://agecalculator.com/fi/">
+<link rel="alternate" hreflang="fr" href="https://agecalculator.com/fr/">
+<link rel="alternate" hreflang="he" href="https://agecalculator.com/he/">
+<link rel="alternate" hreflang="hi" href="https://agecalculator.com/hi/">
+<link rel="alternate" hreflang="hu" href="https://agecalculator.com/hu/">
+<link rel="alternate" hreflang="id" href="https://agecalculator.com/id/">
+<link rel="alternate" hreflang="it" href="https://agecalculator.com/it/">
+<link rel="alternate" hreflang="ja" href="https://agecalculator.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://agecalculator.com/ko/">
+<link rel="alternate" hreflang="lt" href="https://agecalculator.com/lt/">
+<link rel="alternate" hreflang="lv" href="https://agecalculator.com/lv/">
+<link rel="alternate" hreflang="nb" href="https://agecalculator.com/nb/">
+<link rel="alternate" hreflang="nl" href="https://agecalculator.com/nl/">
+<link rel="alternate" hreflang="pl" href="https://agecalculator.com/pl/">
+<link rel="alternate" hreflang="pt" href="https://agecalculator.com/pt/">
+<link rel="alternate" hreflang="ro" href="https://agecalculator.com/ro/">
+<link rel="alternate" hreflang="ru" href="https://agecalculator.com/ru/">
+<link rel="alternate" hreflang="sk" href="https://agecalculator.com/sk/">
+<link rel="alternate" hreflang="sl" href="https://agecalculator.com/sl/">
+<link rel="alternate" hreflang="sv" href="https://agecalculator.com/sv/">
+<link rel="alternate" hreflang="th" href="https://agecalculator.com/th/">
+<link rel="alternate" hreflang="tr" href="https://agecalculator.com/tr/">
+<link rel="alternate" hreflang="uk" href="https://agecalculator.com/uk/">
+<link rel="alternate" hreflang="vi" href="https://agecalculator.com/vi/">
+<link rel="alternate" hreflang="zh" href="https://agecalculator.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://agecalculator.com/">
+</head>
+<body>
+
+<div class="container">
+
+  
+  <form>
+  	<div class="base">
+  		<div class="enter">
+  		<h1>Iän laskin</h1>
+  	</div>
+  <div class="block">
+  	<p class="title">Päivä</p>
+  	<input type="text" name="date" id="date" placeholder="pp" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">Kuukausi</p>
+    <input type="text" name="month" id="month" placeholder="kk" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">Vuosi</p>
+    <input type="text" name="year" id="year" placeholder="vvvv" required="required" minlength="4" maxlength="4" />
+  </div>
+  </div>
+  <div class="base">
+  	<div class="enter">
+    <input type="button" name="submit" value="Lähetä" onclick="age()" />
+    </div>
+  </div>
+    <div id="age"></div>
+  </form>
+
+
+  <div class="text-content">
+    <p>Tämä ikälaskin määrittää henkilön iän heidän syntymäpäivänsä perusteella. Ikälaskentamenetelmät voivat vaihdella eri kulttuureissa, mutta yleisesti ottaen henkilön ikä kasvaa yhdellä vuodella jokaista syntymäpäivää kohti.</p>
+
+<p>Tämä ilmainen verkkopohjainen ikälaskin on arvokas ja helppokäyttöinen työkalu monissa tilanteissa. Se pystyy määrittämään yksilöiden iän vastasyntyneistä ikäihmisiin laskemalla vuosia, kuukausia ja päiviä heidän syntymäpäivänsä ja nykyisen päivämäärän perusteella.</p>
+
+<div id="calc">
+<h2>Mitä ikälaskin tekee?</h2>
+</div>
+
+<p><strong>Verkkopohjainen ikälaskin</strong> on suunniteltu laskemaan henkilön ikä tiettynä päivämääränä, kun heidän syntymäpäivänsä (dob) on tiedossa. Monissa länsimaissa ikälaskenta pyöristetään yleensä alaspäin, joten jos henkilö on elänyt 8 vuotta ja 9 kuukautta, heidän ikänsä on 8 vuotta.</p>
+
+<h3>Syntymäpäivän (DOB) laskin</h3>
+
+<p>Syntymäpäivän (DOB) laskin mahdollistaa iän määrittämisen syntymäpäivän perusteella. Käyttääksesi tätä ikälaskinta, syötä tarvittavat arvot annettuun syöttökenttään.</p>
+
+<ul>
+    <li>Syntymäpäivä muodossa PP/KK/VVVV</li>
+    <li>Tietty päivämäärä, jonka ikää haluat laskea, tulee syöttää samaan muotoon kuin pp/kk/vvvv</li>
+</ul>
+
+<p style="text-align: center;"><img src="img/screenshot-1.jpg" style="max-width:100%; max-height:100%;"></p>
+
+<h2>Kuinka käytän ikälaskinta?</h2>
+
+<p>Henkilön iän määrittämiseksi syntymäpäivälaskimella noudata näitä vaiheita:</p>
+
+<ul>
+    <li><strong>Vaihe 1</strong>: Siirry osoitteeseen www.agecalculator.com</li>
+    <li><strong>Vaihe 2</strong>: Syötä syntymäpäivä ikälaskimen syöttökenttään käyttäen muotoa PP/KK/VVVV.</li>
+    <li><strong>Vaihe 3</strong>: Paina <strong>"Lähetä"</strong> -painiketta henkilön iän laskemiseksi.</li>
+    <li><strong>Vaihe 4</strong>: Klikkaa <strong>"Nollaa"</strong> -painiketta tyhjentääksesi syöttökentän ja syöttääksesi uudet arvot.</li>
+</ul>
+
+<div id="formula">
+<h2>Kaava ikälaskimelle</h2>
+</div>
+
+<p>Oxfordin sanakirjan mukaan &ldquo;Ikä&rdquo; viittaa henkilön elämän kestoon tai kohteen olemassaoloon. Iän laskeminen edellyttää henkilön syntymäpäivän vertaamista siihen päivämäärään, jolle ikää tarvitaan. Vähentämällä syntymäpäivän annetusta päivämäärästä saadaan henkilön ikä, joka esitetään kaavalla: Ikä = Annettu päivämäärä - Syntymäpäivä. Alla on vaiheet henkilön iän laskemiseksi heidän syntymäpäivästään tiettyyn päivämäärään.</p>
+
+<ul>
+    <li><strong>Vaihe 1:</strong> Aluksi lasketaan kokonaisten vuosien määrä vähentämällä syntymävuosi nykyvuodesta. Esimerkiksi, jos nykyvuosi on 2024 ja syntymävuosi on 1998, kokonaisten vuosien määrä on 26.</li>
+    <li><strong>Vaihe 2:</strong> Tämän jälkeen määritellään kokonaisten kuukausien määrä vähentämällä syntymäkuukausi <a href="https://www.oxfordreference.com/display/10.1093/oi/authority.20110803095355563">nykykuukaudesta</a>. Jos nykykuukausi on aiemmin kuin syntymäkuukausi, vähennetään kokonaisten vuosien määrää yhdellä ja lisätään 12 nykykuukauteen mukauttamiseksi. Sen jälkeen lasketaan erotus (nykykuukausi - syntymäkuukausi). Esimerkiksi, jos syntymäkuukausi on helmikuu ja nykykuukausi on huhtikuu, kokonaisten kuukausien määrä on 2. Jos syntymäkuukausi on marraskuu ja nykykuukausi on huhtikuu, kokonaisten kuukausien määrä on 4 + 12 = 16, ja erotus on 16 - 11 = 5.</li>
+    <li><strong>Vaihe 3:</strong> Samalla tavalla kuin edellisessä vaiheessa, määritetään päivien määrä vähentämällä syntymäpäivä nykyisestä päivästä. Jos nykyinen päivä on aikaisempi kuin syntymäpäivä, vähennetään yksi kokonaisen kuukauden määrästä ja lisätään nykyiseen päivään 30/31/28/29 riippuen päivien määrästä edellisessä kuussa nykykuukauden edellä.</li>
+    <li><strong>Vaihe 4:</strong> Lopuksi ikälaskin antaa iän päivinä, kuukausina ja vuosina.</li>
+</ul>
+
+<h2>Esimerkkejä ikälaskennasta</h2>
+
+<p>Alla on esimerkkejä, jotka havainnollistavat iän laskemista ja syntymäpäivälaskimen käyttämää menetelmää selkeyden vuoksi.</p>
+
+<p><strong>Esimerkki 1:</strong> Johnin syntymäpäivä on 25. heinäkuuta 1985 (25/07/1985). Määritä hänen ikänsä 28. tammikuuta 2021 ja vahvista se käyttämällä ikälaskinta.</p>
+
+
+
+
+
+
+
+<p><strong>Ratkaisu:</strong></p>
+
+<p>Johnin iän laskeminen kaavan avulla:</p>
+
+<p>Henkilön ikä = Annettu päivämäärä - Syntymäpäivä.</p>
+
+<p>Johnin syntymäpäivä = 25. heinäkuuta 1985.</p>
+
+<p>Annettu päivämäärä = 28. tammikuuta 2021.</p>
+
+<p>Huomaa, että nykyinen kuukausi on pienempi kuin syntymäkuukausi. Eli tammikuu (1) on pienempi kuin heinäkuu (7). Siksi otamme vuoden 2020 nykyisenä vuotena ja otamme myös huomioon 12 + 1 (tammikuu) - 7 (heinäkuu) = 6 kuukautta.</p>
+
+<p>Vuosien ero = 2020 - 1985 = 35 vuotta.</p>
+
+<p>Jäljellä olevien päivien määrä = 3 päivää.</p>
+
+<p><strong>Vastaus:</strong> Näin ollen Johnin ikä on 35 vuotta, 6 kuukautta ja 3 päivää.</p>
+
+<p><strong>Esimerkki 2:</strong> Peterin syntymäpäivä on 13. heinäkuuta 1992. Laske hänen ikänsä 21. huhtikuuta 2016 ja vahvista se ikälaskimella.</p>
+
+<p><strong>Ratkaisu:</strong></p>
+
+<p>Peterin iän laskeminen kaavan avulla:</p>
+
+<p>Henkilön ikä = Nykyinen päivämäärä - Syntymäpäivä.</p>
+
+<p>Tässä on hieman erilainen lähestymistapa iän kaavan ymmärtämiseksi selvemmin.</p>
+
+<p>Peterin syntymäpäivä = 13. heinäkuuta 1992.</p>
+
+<p>Vuosien ero = 2015 - 1992 = 23 vuotta. (Tämä laskenta ulottuu 13. heinäkuuta 1992, 13. heinäkuuta 2015).</p>
+
+<p>Jäljellä olevien kuukausien määrä 13. heinäkuuta 2015 - 13. huhtikuuta 2016 = 9 kuukautta.</p>
+
+<p>Jäljellä olevien päivien määrä 13. huhtikuuta 2016 - 21. huhtikuuta 2016 = 8 päivää.</p>
+
+<p><strong>Vastaus:</strong> Siksi Peterin ikä on 23 vuotta, 9 kuukautta ja 8 päivää.</p>
+
+<p>Samanlaisesti voit käyttää ikälaskinta selvittääksesi henkilöiden iät syntymäpäivien ja nykyisten päivämäärien avulla elokuun 26. päivään 2021 saakka:</p>
+
+<ul>
+    <li>Heinäkuu 13, 1992</li>
+    <li>Huhtikuu 21, 2016</li>
+</ul>
+
+<p><b>☛ Lisää laskimia:</b></p>
+
+<table border="1">
+    <tbody>
+        <tr>
+            <td>
+            <p><a href="https://select-statistics.co.uk/calculators/">Tilastot</a></p>
+            </td>
+            <td>
+            <p><a href="https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/">Korkoa korolle</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><a href="https://www.dadsworksheets.com/fraction-calculator.html">Murtoluvut</a></p>
+            </td>
+            <td>
+            <p><a href="https://mathforyou.net/en/online/calculus/derivative/">Derivaatta</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><a href="https://www.wikihow.com/Calculate-Percentages">Prosentti</a></p>
+            </td>
+            <td>
+            <p><a href="https://www.cuemath.com/calculators/integral-calculator/">Integraali</a></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Ikälaskimen usein kysytyt kysymykset</h2>
+
+<h3>Kuinka laskea ikä ikälaskimella?</h3>
+
+<p>Voit käyttää tätä <strong>verkkopohjaista ikälaskinta</strong> henkilön iän määrittämiseen annetun syntymäpäivän ja nykyisen tai halutun iän laskentapäivän perusteella. Varmista, että molemmat päivämäärät on muotoiltu PP/KK/VVVV-muotoon. Pääset syntymäpäivän laskimeen vierailemalla <a href="https://agecalculator.com">Ikälaskin</a>-sivustolla.</p>
+
+<h3>Mikä on syntymäpäivän laskimen käyttötarkoitus?</h3>
+
+<p>Syntymäpäivän laskin laskee henkilön tai kohteen nykyisen iän, ottaen huomioon vuodet, kuukaudet ja päivät. Syötä yksinkertaisesti syntymäpäivä ja nykyinen päivämäärä muodossa PP/KK/VVVV saadaksesi ikäsi.</p>
+
+<h3>Kuinka määritetään vuosien määrä syntymäpäivän laskimella?</h3>
+
+<p>Ikälaskinta käyttäen voit laskea vuosien määrän aloittamalla syöttämällä syntymäpäivän ja nykyisen päivämäärän määritetyssä muodossa. Laskin antaa iän vuosina, kuukausina ja päivinä, "vuodet" edustaen ikää tai vuosien määrää.</p>
+
+<h3>Kuinka käyttää ikälaskinta?</h3>
+
+<p>Jos haluat lisätietoja, voit vierailla artikkelissamme "<a href="how-to-use-age-calculator.html">Kuinka käyttää ikälaskinta?</a>" tai voit lukea mielenkiintoisia blogikirjoituksiamme. <a href="top-10-famous-animals-and-their-age.html">Top 10 kuuluisaa eläintä ja niiden ikä</a>.</p>
+
+   
+    
+
+
+
+<footer>
+  <nav>
+      <ul>
+          <li>
+              <a href="privacy-policy.html" target="_blank">Tietosuojakäytäntö</a>
+          </li>
+          <li><a href="terms-and-conditions.html">Käyttöehdot</a></li>
+          <li><a href="faq.html" target="_blank">UKK</a></li>
+          <li><a href="about-us.html" target="_blank">Tietoa meistä</a></li>
+          <li><a href="blog-home.html" target="_blank">Blogi</a></li>
+          <li><a href="api-docs.html" target="_blank">API-dokumentaatio</a></li>
+          <li><a href="api-status.html" target="_blank">API-tila</a></li>
+          <li>
+              <a href="contact-us.html" target="_blank">Ota yhteyttä</a>
+          </li>
+          <li><a href="mailto:hello@agecalculator.com" target="_blank">hello@agecalculator.com</a></li>
+      </ul>
+  </nav>
+</footer>
+
+  </div>
+</div>
+<script type="text/javascript">
+  function age() {
+  var d1 = document.getElementById('date').value;
+  var m1 = document.getElementById('month').value;
+  var y1 = document.getElementById('year').value;
+
+  var date = new Date();
+  var d2 = date.getDate();
+  var m2 = 1 + date.getMonth();
+  var y2 = date.getFullYear();
+  var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  if(d1 > d2){
+  	d2 = d2 + month[m2 - 1];
+  	m2 = m2 - 1;
+  }
+  if(m1 > m2){
+  	m2 = m2 + 12;
+  	y2 = y2 - 1;
+  }
+  var d = d2 - d1;
+  var m = m2 - m1;
+  var y = y2 - y1;
+
+  document.getElementById('age').innerHTML = 'Your Age is '+y+' Years '+m+' Months '+d+' Days';
+}
+</script>
+</body>
+</html>

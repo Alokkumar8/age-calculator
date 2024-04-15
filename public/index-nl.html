@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Leeftijdsberekening - Age Calculator Online</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   
+    <meta content="Online leeftijdsberekenaar stelt u in staat om uw leeftijd te berekenen met behulp van uw geboortedatum en dob en snel uw leeftijd te vinden zonder enige vorm van ingewikkelde wiskunde te hoeven doen. Het zal antwoord geven in jaren, maanden en dagen." name="description">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
+    
+<style media="screen">
+    body{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #2782e3;
+	font-size: 15px;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+}
+* {
+	box-sizing: border-box;
+}
+.container{
+	width:520px;
+	height: auto;
+	margin: 100px auto;
+	background-color: #eee;
+	border-radius: 5px;
+}
+.text-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.base{
+	width: 100%;
+	 
+	margin: 0;
+	overflow: hidden;
+	display: block;
+	float: none;
+}
+.block{
+	width: 135px;
+	padding: 5px 20px;
+ 
+	margin-left: 20px;
+	display: inline-block;
+	float: left;
+}
+.base h1{
+	font-size: 26px;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: normal;
+  margin-top: 0px;
+  box-shadow: 0px 2px #bababa;
+  background: white;
+  font-size: 34px;
+	color: navy;
+}
+ 
+.title{
+	font-size: 20px;
+	text-align: left;
+	font-family: sans-serif;
+	font-weight: normal;
+	line-height: 0.5;
+	letter-spacing: 0.5px;
+	word-spacing: 2.7px;
+	color: #1073d0;
+}
+input[type=text] {
+	width: 140px;
+	margin: auto;
+	outline: none;
+    min-height: 50px;
+	border: 2px solid #1073d0;
+	padding: 12px;
+	background-color: #f7f7f7;
+    border-radius: 2px;
+    color: #1073d0;
+    font-size: 17px;
+}
+input[type=text]:focus{
+	background-color: #ffffff;
+	border: 2px solid orange;
+	outline: none;
+}
+input[type=button]{
+	width: 150px;
+	margin-left: 35%;
+  margin-top: 40px;
+	outline: none;
+	border: none;
+	border-radius: 2px;
+	background-color: #0761b6;
+	color: #ffffff;
+	padding: 14px 16px;
+	text-align: center;
+	font-size: 16px;
+}
+input[type=button]:hover{
+	background-color: #003669;
+}
+ 
+#age{
+	display: block;
+	margin: 10px;
+    margin-top: 35px;
+	padding: 10px;
+    padding-bottom: 20px;
+	overflow: hidden;
+	font-family: verdana;
+	font-size: 23px;
+	font-weight: normal;
+	line-height: 1.5;
+	word-spacing: 2.7px;
+	color: navy;
+}
+
+      footer {
+        margin: 0 auto 10px;
+      }
+
+      footer nav {
+        padding: 2px 2px;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 0 5px #ddd;
+      }
+
+      footer li {
+        margin: 5px;
+        display: inline-block;
+      }
+
+      /* footer li:last-child {
+        float: center;
+      } */
+
+      footer a {
+        color: #999;
+        font-size: 0.8rem;
+        text-decoration: none;
+
+        -webkit-transition: 0.5s;
+           -moz-transition: 0.5s;
+                transition: 0.5s;
+      }
+
+      footer a:hover {
+        color: #333;
+      }
+
+  </style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Age Calculator",
+    "applicationCategory": "UtilitiesApplication",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "ratingCount": "5"
+    }
+  }
+  </script>
+
+  <link rel="canonical" href="https://agecalculator.com/nl/">
+<link rel="alternate" hreflang="ar" href="https://agecalculator.com/ar/">
+<link rel="alternate" hreflang="bg" href="https://agecalculator.com/bg/">
+<link rel="alternate" hreflang="cs" href="https://agecalculator.com/cs/">
+<link rel="alternate" hreflang="da" href="https://agecalculator.com/da/">
+<link rel="alternate" hreflang="de" href="https://agecalculator.com/de/">
+<link rel="alternate" hreflang="el" href="https://agecalculator.com/el/">
+<link rel="alternate" hreflang="en" href="https://agecalculator.com/">
+<link rel="alternate" hreflang="es" href="https://agecalculator.com/es/">
+<link rel="alternate" hreflang="et" href="https://agecalculator.com/et/">
+<link rel="alternate" hreflang="fi" href="https://agecalculator.com/fi/">
+<link rel="alternate" hreflang="fr" href="https://agecalculator.com/fr/">
+<link rel="alternate" hreflang="he" href="https://agecalculator.com/he/">
+<link rel="alternate" hreflang="hi" href="https://agecalculator.com/hi/">
+<link rel="alternate" hreflang="hu" href="https://agecalculator.com/hu/">
+<link rel="alternate" hreflang="id" href="https://agecalculator.com/id/">
+<link rel="alternate" hreflang="it" href="https://agecalculator.com/it/">
+<link rel="alternate" hreflang="ja" href="https://agecalculator.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://agecalculator.com/ko/">
+<link rel="alternate" hreflang="lt" href="https://agecalculator.com/lt/">
+<link rel="alternate" hreflang="lv" href="https://agecalculator.com/lv/">
+<link rel="alternate" hreflang="nb" href="https://agecalculator.com/nb/">
+<link rel="alternate" hreflang="nl" href="https://agecalculator.com/nl/">
+<link rel="alternate" hreflang="pl" href="https://agecalculator.com/pl/">
+<link rel="alternate" hreflang="pt" href="https://agecalculator.com/pt/">
+<link rel="alternate" hreflang="ro" href="https://agecalculator.com/ro/">
+<link rel="alternate" hreflang="ru" href="https://agecalculator.com/ru/">
+<link rel="alternate" hreflang="sk" href="https://agecalculator.com/sk/">
+<link rel="alternate" hreflang="sl" href="https://agecalculator.com/sl/">
+<link rel="alternate" hreflang="sv" href="https://agecalculator.com/sv/">
+<link rel="alternate" hreflang="th" href="https://agecalculator.com/th/">
+<link rel="alternate" hreflang="tr" href="https://agecalculator.com/tr/">
+<link rel="alternate" hreflang="uk" href="https://agecalculator.com/uk/">
+<link rel="alternate" hreflang="vi" href="https://agecalculator.com/vi/">
+<link rel="alternate" hreflang="zh" href="https://agecalculator.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://agecalculator.com/">
+</head>
+<body>
+
+<div class="container">
+
+  
+  <form>
+  	<div class="base">
+  		<div class="enter">
+  		<h1>Leeftijdsberekening</h1>
+  	</div>
+  <div class="block">
+  	<p class="title">Datum</p>
+  	<input type="text" name="date" id="date" placeholder="dd" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">Maand</p>
+    <input type="text" name="month" id="month" placeholder="mm" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">Jaar</p>
+    <input type="text" name="year" id="year" placeholder="jjjj" required="required" minlength="4" maxlength="4" />
+  </div>
+  </div>
+  <div class="base">
+  	<div class="enter">
+    <input type="button" name="submit" value="Indienen" onclick="age()" />
+    </div>
+  </div>
+    <div id="age"></div>
+</form>
+
+
+
+  
+  <div class="text-content">
+    <p>Deze leeftijdsberekenaar bepaalt de leeftijd van een persoon op basis van hun geboortedatum. Methoden voor het berekenen van leeftijd kunnen verschillen tussen culturen, maar over het algemeen wordt de leeftijd van een persoon met 1 jaar verhoogd op elke verjaardag.</p>
+
+<p>Deze gratis online leeftijdsberekenaar is een waardevol en eenvoudig te gebruiken hulpmiddel dat toepasbaar is in tal van situaties. Het kan de leeftijd van individuen bepalen, variërend van pasgeborenen tot senioren, door jaren, maanden en dagen te berekenen op basis van hun geboortedatum en de huidige datum.</p>
+
+<div id="calc">
+<h2>Wat doet een Leeftijdsberekenaar?</h2>
+</div>
+
+<p><strong>Online leeftijdsberekenaar is een webgebaseerd hulpmiddel</strong> ontworpen om de leeftijd van een persoon op een specifieke datum te berekenen, mits hun geboortedatum (dob) bekend is. In veel westerse culturen wordt de leeftijd meestal naar beneden afgerond, dus als iemand 8 jaar en 9 maanden heeft geleefd, wordt hun leeftijd beschouwd als 8 jaar.</p>
+
+<h3>Geboortedatum (DOB) Calculator</h3>
+
+<p>De geboortedatum DOB-calculator stelt ons in staat om de leeftijd te bepalen op basis van de geboortedatum. Om deze leeftijdsberekenaar te gebruiken, voert u de vereiste waarden in in het daarvoor bestemde invoervak.</p>
+
+<ul>
+<li>DOB in de vorm van DD/MM/JJJJ</li>
+<li>De specifieke datum waarvoor u de leeftijd wilt berekenen, moet worden ingevoerd in dezelfde indeling als dd/mm/jjjj</li>
+</ul>
+
+<p style="text-align: center;"><img src="img/screenshot-1.jpg" style="max-width:100%; max-height:100%;"></img></p>
+
+<h2>Hoe gebruik ik de Leeftijdsberekenaar?</h2>
+
+<p>Om de leeftijd van een persoon te bepalen met behulp van een verjaardagscalculator, volgt u deze stappen:</p>
+
+<ul>
+<li><strong>Stap 1</strong>: Ga naar www.agecalculator.com</li>
+<li><strong>Stap 2</strong>: Voer de geboortedatum in in het invoervak van de leeftijdsberekenaar met behulp van het formaat DD/MM/JJJJ.</li>
+<li><strong>Stap 3</strong>: Druk op de <strong>"Verzenden"</strong>-knop om de leeftijd van de persoon te berekenen.</li>
+<li><strong>Stap 4</strong>: Klik op de <strong>"Reset"</strong>-knop om de invoertekst te wissen en nieuwe waarden in te voeren.</li>
+</ul>
+
+<div id="formula">
+<h2>Formule voor Leeftijdsberekenaar</h2>
+</div>
+
+<p>Volgens het Oxford Dictionary verwijst &ldquo;Leeftijd&rdquo; naar de duur van iemands leven of het bestaan van een object. Het berekenen van de leeftijd houdt in dat de geboortedatum van een persoon wordt vergeleken met de datum waarvoor de leeftijd nodig is. Het aftrekken van de geboortedatum van de opgegeven datum levert de leeftijd van de persoon op, vertegenwoordigd door de formule: Leeftijd = Gegeven datum - Geboortedatum. Hieronder staan de stappen om de leeftijd van een persoon te berekenen vanaf hun geboortedatum tot een gespecificeerde datum.</p>
+
+<ul>
+<li><strong>Stap 1:</strong> Bereken aanvankelijk het totale aantal volledige jaren door het geboortejaar af te trekken van het huidige jaar. Als bijvoorbeeld het huidige jaar 2024 is en het geboortejaar 1998 is, is het aantal volledige jaren 26.</li>
+<li><strong>Stap 2:</strong> Bepaal vervolgens het aantal volledige maanden door de geboortemaand af te trekken van de <a href="https://www.oxfordreference.com/display/10.1093/oi/authority.20110803095355563">huidige maand</a>. Als de huidige maand eerder is dan de geboortemaand, verminder dan het aantal volledige jaren met 1 en tel 12 op bij de huidige maand om aan te passen. Bereken vervolgens het verschil (huidige maand - geboortemaand). Als bijvoorbeeld de geboortemaand februari is en de huidige maand april is, is het totale aantal maanden 2. Als de geboortemaand november is en de huidige maand april is, is het totale aantal maanden 4 + 12 = 16, en het verschil is 16 - 11 = 5.</li>
+<li><strong>Stap 3:</strong> Net als in de vorige stap bepalen we ook het aantal dagen door de geboortedatum af te trekken van de huidige datum. Als de huidige datum eerder is dan de geboortedatum, trekken we 1 af van het aantal volledige maanden en voegen we 30/31/28/29 toe aan de huidige datum, afhankelijk van het aantal dagen in de vorige maand voorafgaand aan de huidige maand.</li>
+<li><strong>Stap 4:</strong> Tot slot geeft de leeftijdsberekenaar de leeftijd in dagen, maanden en jaren.</li>
+</ul>
+
+<h2>Voorbeelden die tonen hoe leeftijd te berekenen</h2>
+
+<p>Hieronder staan voorbeelden die illustreren hoe leeftijd te berekenen en de methodologie die wordt gebruikt door de verjaardagscalculator voor een duidelijker begrip.</p>
+
+<p><strong>Voorbeeld 1:</strong> De geboortedatum van John is 25 juli 1985 (25/07/1985). Bepaal zijn leeftijd op 28 januari 2021 en valideer dit met behulp van de leeftijdsberekenaar.</p>
+
+
+
+
+<p><strong>Oplossing:</strong></p>
+
+<p>Door de formule toe te passen om John's leeftijd te berekenen:</p>
+
+<p>Leeftijd van een persoon = Gegeven datum - Geboortedatum.</p>
+
+<p>John's Geboortedatum = 25 juli 1985.</p>
+
+<p>Gegeven datum = 28 januari 2021.</p>
+
+<p>Merk op dat de huidige maand minder is dan de geboortemaand. Dat wil zeggen, januari (1) is minder dan juli (7). Daarom beschouwen we het jaar 2020 als het huidige jaar en houden we ook rekening met 12 + 1 (januari) - 7 (juli) = 6 maanden.</p>
+
+<p>Verschil in jaren = 2020 - 1985 = 35 jaar.</p>
+
+<p>Aantal resterende dagen = 3 dagen.</p>
+
+<p><strong>Antwoord:</strong> Daarom is John's leeftijd 35 jaar, 6 maanden en 3 dagen.</p>
+
+<p><strong>Voorbeeld 2:</strong> De geboortedatum van Peter is 13 juli 1992. Bereken zijn leeftijd op 21 april 2016 en bevestig dit met behulp van de leeftijdsberekenaar.</p>
+
+<p><strong>Oplossing:</strong></p>
+
+<p>Gebruikmakend van de formule om Peter's leeftijd te berekenen:</p>
+
+<p>Leeftijd van een persoon = Huidige datum - Geboortedatum.</p>
+
+<p>Hier is een iets andere benadering om de leeftijdsformule duidelijker te begrijpen.</p>
+
+<p>Peter's Geboortedatum = 13 juli 1992.</p>
+
+<p>Verschil in jaren = 2015 - 1992 = 23 jaar. (Deze berekening loopt van 13 juli 1992 tot 13 juli 2015).</p>
+
+<p>Aantal resterende maanden vanaf 13 juli 2015 tot 13 april 2016 = 9 maanden.</p>
+
+<p>Aantal resterende dagen vanaf 13 april 2016 tot 21 april 2016 = 8 dagen.</p>
+
+<p><strong>Antwoord:</strong> Daarom is Peter's leeftijd 23 jaar, 9 maanden en 8 dagen.</p>
+
+<p>Op dezelfde manier kunt u de leeftijdsberekenaar gebruiken om de leeftijden van personen te bepalen met de opgegeven geboortedata en huidige data tot en met 26 augustus 2021:</p>
+
+<ul>
+<li>13 juli 1992</li>
+<li>21 april 2016</li>
+</ul>
+
+<p><b>☛ Meer rekenmachines:</b></p>
+
+<table border="1">
+<tbody>
+<tr>
+<td>
+<p><a href="https://select-statistics.co.uk/calculators/">Statistieken</a></p>
+</td>
+<td>
+<p><a href="https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/">Samengestelde Rente</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="https://www.dadsworksheets.com/fraction-calculator.html">Breuk</a></p>
+</td>
+<td>
+<p><a href="https://mathforyou.net/en/online/calculus/derivative/">Afgeleide</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="https://www.wikihow.com/Calculate-Percentages">Percentage</a></p>
+</td>
+<td>
+<p><a href="https://www.cuemath.com/calculators/integral-calculator/">Integraal</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Veelgestelde vragen over de Leeftijdsberekenaar</h2>
+
+<h3>Hoe leeftijd berekenen op de Leeftijdsberekenaar?</h3>
+
+<p>U kunt deze <strong>online leeftijdsberekenaar</strong> gebruiken om de leeftijd te bepalen op basis van de opgegeven geboortedatum en de huidige of gewenste datum voor leeftijdsberekening. Zorg ervoor dat beide datums zijn opgemaakt als DD/MM/JJJJ. Ga naar de geboortedatumcalculator door <a href="https://agecalculator.com">Leeftijdsberekenaar</a> te bezoeken.</p>
+
+<h3>Wat is het gebruik van de DOB-calculator?</h3>
+
+<p>De DOB-calculator berekent de huidige leeftijd van een persoon of object, rekening houdend met jaren, maanden en dagen. Voer eenvoudig de DOB en de huidige datum in dd/mm/jjjj-formaat in om uw leeftijd te verkrijgen.</p>
+
+<h3>Hoe het aantal jaren bepalen met behulp van de geboortedatumcalculator?</h3>
+
+<p>Om het aantal jaren te berekenen met behulp van de leeftijdsberekenaar, begint u met het invoeren van de geboortedatum en de huidige datum in het opgegeven formaat. De calculator geeft de leeftijd in jaren, maanden en dagen, waarbij de "jaren" de leeftijd of het aantal jaren vertegenwoordigen.</p>
+
+<h3>Hoe de age calculator gebruiken?</h3>
+
+<p>Voor meer informatie kunt u ons artikel "<a href="how-to-use-age-calculator.html">Hoe leeftijdsberekenaar te gebruiken?</a>" bezoeken of onze interessante blogposts lezen. <a href="top-10-famous-animals-and-their-age.html">Top 10 beroemde dieren en hun leeftijd</a>.</p>
+   
+    
+
+
+
+<footer>
+  <nav>
+    <ul>
+      <li>
+        <a href="privacy-policy.html" target="_blank">Privacybeleid</a>
+      </li>
+      <li><a href="terms-and-conditions.html">Voorwaarden</a></li>
+      <li><a href="faq.html" target="_blank">Veelgestelde vragen</a></li>
+      <li><a href="about-us.html" target="_blank">Over ons</a></li>
+      <li><a href="blog-home.html" target="_blank">Blog</a></li>
+      <li><a href="api-docs.html" target="_blank">API-documentatie</a></li>
+      <li><a href="api-status.html" target="_blank">API-status</a></li>
+      <li>
+        <a href="contact-us.html" target="_blank">Neem contact op</a>
+      </li>
+      <li><a href="mailto:hello@agecalculator.com" target="_blank">hello@agecalculator.com</a></li>
+    </ul>
+  </nav>
+</footer>
+
+  </div>
+</div>
+<script type="text/javascript">
+  function age() {
+  var d1 = document.getElementById('date').value;
+  var m1 = document.getElementById('month').value;
+  var y1 = document.getElementById('year').value;
+
+  var date = new Date();
+  var d2 = date.getDate();
+  var m2 = 1 + date.getMonth();
+  var y2 = date.getFullYear();
+  var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  if(d1 > d2){
+  	d2 = d2 + month[m2 - 1];
+  	m2 = m2 - 1;
+  }
+  if(m1 > m2){
+  	m2 = m2 + 12;
+  	y2 = y2 - 1;
+  }
+  var d = d2 - d1;
+  var m = m2 - m1;
+  var y = y2 - y1;
+
+  document.getElementById('age').innerHTML = 'Your Age is '+y+' Years '+m+' Months '+d+' Days';
+}
+</script>
+</body>
+</html>

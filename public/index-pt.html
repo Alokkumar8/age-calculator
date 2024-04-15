@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Calculadora de Idade - Age Calculator Online</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   
+    <meta content="Calculadora de idade online permite que você calcule sua idade usando sua data de nascimento e encontre sua idade rapidamente sem precisar fazer nenhum tipo de cálculo complexo. Ela retornará a resposta em anos, meses e dias.
+    " name="description">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
+    
+<style media="screen">
+    body{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #2782e3;
+	font-size: 15px;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+}
+* {
+	box-sizing: border-box;
+}
+.container{
+	width:520px;
+	height: auto;
+	margin: 100px auto;
+	background-color: #eee;
+	border-radius: 5px;
+}
+.text-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.base{
+	width: 100%;
+	 
+	margin: 0;
+	overflow: hidden;
+	display: block;
+	float: none;
+}
+.block{
+	width: 135px;
+	padding: 5px 20px;
+ 
+	margin-left: 20px;
+	display: inline-block;
+	float: left;
+}
+.base h1{
+	font-size: 26px;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: normal;
+  margin-top: 0px;
+  box-shadow: 0px 2px #bababa;
+  background: white;
+  font-size: 34px;
+	color: navy;
+}
+ 
+.title{
+	font-size: 20px;
+	text-align: left;
+	font-family: sans-serif;
+	font-weight: normal;
+	line-height: 0.5;
+	letter-spacing: 0.5px;
+	word-spacing: 2.7px;
+	color: #1073d0;
+}
+input[type=text] {
+	width: 140px;
+	margin: auto;
+	outline: none;
+    min-height: 50px;
+	border: 2px solid #1073d0;
+	padding: 12px;
+	background-color: #f7f7f7;
+    border-radius: 2px;
+    color: #1073d0;
+    font-size: 17px;
+}
+input[type=text]:focus{
+	background-color: #ffffff;
+	border: 2px solid orange;
+	outline: none;
+}
+input[type=button]{
+	width: 150px;
+	margin-left: 35%;
+  margin-top: 40px;
+	outline: none;
+	border: none;
+	border-radius: 2px;
+	background-color: #0761b6;
+	color: #ffffff;
+	padding: 14px 16px;
+	text-align: center;
+	font-size: 16px;
+}
+input[type=button]:hover{
+	background-color: #003669;
+}
+ 
+#age{
+	display: block;
+	margin: 10px;
+    margin-top: 35px;
+	padding: 10px;
+    padding-bottom: 20px;
+	overflow: hidden;
+	font-family: verdana;
+	font-size: 23px;
+	font-weight: normal;
+	line-height: 1.5;
+	word-spacing: 2.7px;
+	color: navy;
+}
+
+      footer {
+        margin: 0 auto 10px;
+      }
+
+      footer nav {
+        padding: 2px 2px;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 0 5px #ddd;
+      }
+
+      footer li {
+        margin: 5px;
+        display: inline-block;
+      }
+
+      /* footer li:last-child {
+        float: center;
+      } */
+
+      footer a {
+        color: #999;
+        font-size: 0.8rem;
+        text-decoration: none;
+
+        -webkit-transition: 0.5s;
+           -moz-transition: 0.5s;
+                transition: 0.5s;
+      }
+
+      footer a:hover {
+        color: #333;
+      }
+
+  </style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Age Calculator",
+    "applicationCategory": "UtilitiesApplication",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "ratingCount": "5"
+    }
+  }
+  </script>
+
+  <link rel="canonical" href="https://agecalculator.com/pt/">
+<link rel="alternate" hreflang="ar" href="https://agecalculator.com/ar/">
+<link rel="alternate" hreflang="bg" href="https://agecalculator.com/bg/">
+<link rel="alternate" hreflang="cs" href="https://agecalculator.com/cs/">
+<link rel="alternate" hreflang="da" href="https://agecalculator.com/da/">
+<link rel="alternate" hreflang="de" href="https://agecalculator.com/de/">
+<link rel="alternate" hreflang="el" href="https://agecalculator.com/el/">
+<link rel="alternate" hreflang="en" href="https://agecalculator.com/">
+<link rel="alternate" hreflang="es" href="https://agecalculator.com/es/">
+<link rel="alternate" hreflang="et" href="https://agecalculator.com/et/">
+<link rel="alternate" hreflang="fi" href="https://agecalculator.com/fi/">
+<link rel="alternate" hreflang="fr" href="https://agecalculator.com/fr/">
+<link rel="alternate" hreflang="he" href="https://agecalculator.com/he/">
+<link rel="alternate" hreflang="hi" href="https://agecalculator.com/hi/">
+<link rel="alternate" hreflang="hu" href="https://agecalculator.com/hu/">
+<link rel="alternate" hreflang="id" href="https://agecalculator.com/id/">
+<link rel="alternate" hreflang="it" href="https://agecalculator.com/it/">
+<link rel="alternate" hreflang="ja" href="https://agecalculator.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://agecalculator.com/ko/">
+<link rel="alternate" hreflang="lt" href="https://agecalculator.com/lt/">
+<link rel="alternate" hreflang="lv" href="https://agecalculator.com/lv/">
+<link rel="alternate" hreflang="nb" href="https://agecalculator.com/nb/">
+<link rel="alternate" hreflang="nl" href="https://agecalculator.com/nl/">
+<link rel="alternate" hreflang="pl" href="https://agecalculator.com/pl/">
+<link rel="alternate" hreflang="pt" href="https://agecalculator.com/pt/">
+<link rel="alternate" hreflang="ro" href="https://agecalculator.com/ro/">
+<link rel="alternate" hreflang="ru" href="https://agecalculator.com/ru/">
+<link rel="alternate" hreflang="sk" href="https://agecalculator.com/sk/">
+<link rel="alternate" hreflang="sl" href="https://agecalculator.com/sl/">
+<link rel="alternate" hreflang="sv" href="https://agecalculator.com/sv/">
+<link rel="alternate" hreflang="th" href="https://agecalculator.com/th/">
+<link rel="alternate" hreflang="tr" href="https://agecalculator.com/tr/">
+<link rel="alternate" hreflang="uk" href="https://agecalculator.com/uk/">
+<link rel="alternate" hreflang="vi" href="https://agecalculator.com/vi/">
+<link rel="alternate" hreflang="zh" href="https://agecalculator.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://agecalculator.com/">
+</head>
+<body>
+
+<div class="container">
+
+  
+  <form>
+  	<div class="base">
+  		<div class="enter">
+  		<h1>Calculadora de Idade</h1>
+  	</div>
+  <div class="block">
+  	<p class="title">Data</p>
+  	<input type="text" name="date" id="date" placeholder="dd" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">Mês</p>
+    <input type="text" name="month" id="month" placeholder="mm" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">Ano</p>
+    <input type="text" name="year" id="year" placeholder="aaaa" required="required" minlength="4" maxlength="4" />
+  </div>
+  </div>
+  <div class="base">
+  	<div class="enter">
+    <input type="button" name="submit" value="Enviar" onclick="age()" />
+    </div>
+  </div>
+    <div id="age"></div>
+</form>
+
+
+
+  
+  <div class="text-content">
+    <p>Esta calculadora de idade determina a idade de uma pessoa com base na sua data de nascimento. Os métodos de cálculo de idade podem variar entre culturas, mas geralmente, a idade de uma pessoa é incrementada em 1 ano a cada aniversário.</p>
+
+    <p>Esta calculadora de idade online gratuita é uma ferramenta valiosa e simples aplicável em inúmeras situações. Ela pode determinar a idade de indivíduos desde recém-nascidos até idosos, calculando anos, meses e dias, utilizando a data de nascimento e a data atual.</p>
+    
+    <div id="calc">
+    <h2>O que faz uma Calculadora de Idade?</h2>
+    </div>
+    
+    <p><strong>A calculadora de idade online é uma ferramenta baseada na web</strong> projetada para calcular a idade de uma pessoa em uma data específica, desde que sua data de nascimento (dob) seja conhecida. Em muitas culturas ocidentais, o cálculo de idade geralmente arredonda para baixo, então se uma pessoa viveu por 8 anos e 9 meses, sua idade é considerada 8 anos.</p>
+    
+    <h3>Calculadora de Data de Nascimento (DOB)</h3>
+    
+    <p>A calculadora de data de nascimento DOB nos permite determinar a idade com base na data de nascimento. Para utilizar esta calculadora de idade, insira os valores necessários na caixa de entrada fornecida.</p>
+    
+    <ul>
+        <li>DOB no formato DD/MM/AAAA</li>
+        <li>A data específica para a qual você deseja calcular a idade deve ser inserida no mesmo formato dd/mm/aaaa</li>
+    </ul>
+    
+    <p style="text-align: center;"><img src="img/screenshot-1.jpg" style="max-width:100%; max-height:100%;"></img></p>
+    
+    <h2>Como usar a Calculadora de Idade?</h2>
+    
+    <p>Para determinar a idade de uma pessoa usando uma calculadora de aniversário, siga estas etapas:</p>
+    
+    <ul>
+        <li><strong>Passo 1</strong>: Acesse www.agecalculator.com</li>
+        <li><strong>Passo 2</strong>: Insira a data de nascimento na caixa de entrada da calculadora de idade usando o formato DD/MM/AAAA.</li>
+        <li><strong>Passo 3</strong>: Pressione o botão <strong>&quot;Enviar&quot;</strong> para calcular a idade da pessoa.</li>
+        <li><strong>Passo 4</strong>: Clique no botão <strong>&quot;Limpar&quot;</strong> para limpar o texto inserido e inserir novos valores.</li>
+    </ul>
+    
+    <div id="formula">
+    <h2>Fórmula para Calculadora de Idade</h2>
+    </div>
+    
+    <p>De acordo com o Oxford Dictionary, &ldquo;Idade&rdquo; se refere à duração da vida de uma pessoa ou à existência de um objeto. Calcular a idade envolve comparar a data de nascimento de uma pessoa com a data para a qual a idade é necessária. Subtraindo a data de nascimento da data fornecida, obtemos a idade da pessoa, representada pela fórmula: Idade = Data fornecida - Data de nascimento. Abaixo estão os passos para calcular a idade de uma pessoa a partir de sua data de nascimento até uma data específica.</p>
+    
+    <ul>
+        <li><strong>Passo 1:</strong> Inicialmente, calcule o número total de anos completos subtraindo o ano de nascimento do ano atual. Por exemplo, se o ano atual for 2024 e o ano de nascimento for 1998, o total de anos completos é 26.</li>
+        <li><strong>Passo 2:</strong> Em seguida, determine o número de meses completos subtraindo o mês de nascimento do <a href="https://www.oxfordreference.com/display/10.1093/oi/authority.20110803095355563">mês atual</a>. Se o mês atual for anterior ao mês de nascimento, diminua o total de anos completos em 1 e adicione 12 ao mês atual para ajustar. Em seguida, calcule a diferença (mês atual - mês de nascimento). Por exemplo, se o mês de nascimento for fevereiro e o mês atual for abril, o total de meses é 2. Se o mês de nascimento for novembro e o mês atual for abril, o total de meses é 4 + 12 = 16, e a diferença é 16 - 11 = 5.</li>
+        <li><strong>Passo 3:</strong> Semelhante ao passo anterior, também determinamos o número de dias subtraindo a data de nascimento da data atual. No entanto, se a data atual for anterior à data de nascimento, subtraímos 1 do total de meses completos e adicionamos 30/31/28/29 à data atual, dependendo do número de dias no mês anterior ao mês atual.</li>
+        <li><strong>Passo 4:</strong> Em conclusão, a calculadora de idade fornece a idade em dias, meses e anos.</li>
+    </ul>
+    
+    <h2>Exemplos Demonstrando Como Calcular a Idade</h2>
+    
+    <p>Abaixo estão exemplos ilustrando como calcular a idade e a metodologia empregada pela calculadora de aniversário para uma compreensão mais clara.</p>
+    
+    <p><strong>Exemplo 1:</strong> A data de nascimento de John é 25 de julho de 1985 (25/07/1985). Determine sua idade em 28 de janeiro de 2021 e valide-a usando a age calculator.</p>
+    
+
+
+
+
+
+
+    <p><strong>Solução:</strong></p>
+
+    <p>Aplicando a fórmula para calcular a idade de John:</p>
+    
+    <p>Idade de uma Pessoa = Data fornecida - Data de nascimento.</p>
+    
+    <p>Data de Nascimento de John = 25 de julho de 1985.</p>
+    
+    <p>Data fornecida = 28 de janeiro de 2021.</p>
+    
+    <p>Observe que o mês atual é menor que o mês de nascimento. Ou seja, janeiro (1) é menor que julho (7). Portanto, consideramos o ano de 2020 como o ano atual e também contabilizamos 12 + 1 (jan) - 7 (julho) = 6 meses.</p>
+    
+    <p>Diferença de anos = 2020 - 1985 = 35 anos.</p>
+    
+    <p>Número de dias restantes = 3 dias.</p>
+    
+    <p><strong>Resposta:</strong> Portanto, a idade de John é de 35 anos, 6 meses e 3 dias.</p>
+    
+    <p><strong>Exemplo 2:</strong> A data de nascimento de Peter é 13 de julho de 1992. Calcule sua idade em 21 de abril de 2016 e confirme utilizando a calculadora de idade.</p>
+    
+    <p><strong>Solução:</strong></p>
+    
+    <p>Utilizando a fórmula para calcular a idade de Peter:</p>
+    
+    <p>Idade de uma Pessoa = Data atual - Data de nascimento.</p>
+    
+    <p>Aqui está uma abordagem ligeiramente diferente para compreender mais claramente a fórmula de idade.</p>
+    
+    <p>Data de Nascimento de Peter = 13 de julho de 1992.</p>
+    
+    <p>Diferença de anos = 2015 - 1992 = 23 anos. (Este cálculo se estende de 13 de julho de 1992 a 13 de julho de 2015).</p>
+    
+    <p>Número de meses restantes de 13 de julho de 2015 a 13 de abril de 2016 = 9 meses.</p>
+    
+    <p>Número de dias restantes de 13 de abril de 2016 a 21 de abril de 2016 = 8 dias.</p>
+    
+    <p><strong>Resposta:</strong> Portanto, a idade de Peter é de 23 anos, 9 meses e 8 dias.</p>
+    
+    <p>Da mesma forma, você pode usar a calculadora de idade para determinar as idades de indivíduos com as datas de nascimento e as datas atuais fornecidas até 26 de agosto de 2021:</p>
+    
+    <ul>
+        <li>13 de julho de 1992</li>
+        <li>21 de abril de 2016</li>
+    </ul>
+    
+    <p><b>☛ Mais calculadoras:</b></p>
+
+    
+    <table border="1">
+      <tbody>
+          <tr>
+              <td>
+                  <p><a href="https://select-statistics.co.uk/calculators/">Estatísticas</a></p>
+              </td>
+              <td>
+                  <p><a href="https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/">Juros Compostos</a></p>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <p><a href="https://www.dadsworksheets.com/fraction-calculator.html">Fração</a></p>
+              </td>
+              <td>
+                  <p><a href="https://mathforyou.net/en/online/calculus/derivative/">Derivada</a></p>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <p><a href="https://www.wikihow.com/Calculate-Percentages">Percentagem</a></p>
+              </td>
+              <td>
+                  <p><a href="https://www.cuemath.com/calculators/integral-calculator/">Integral</a></p>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+  
+  <h2>FAQs da Calculadora de Idade</h2>
+  
+  <h3>Como Calcular a Idade na Calculadora de Idade?</h3>
+  
+  <p>Você pode utilizar esta <strong>calculadora de idade online</strong> para determinar a idade com base na data de nascimento fornecida e na data atual ou desejada para o cálculo da idade. Certifique-se de que ambas as datas estejam formatadas como DD/MM/AAAA. Acesse a calculadora de data de nascimento visitando <a href="https://agecalculator.com">Calculadora de Idade</a>.</p>
+  
+  <h3>Qual é o Uso do Calculadora de Data de Nascimento?</h3>
+  
+  <p>A calculadora de data de nascimento calcula a idade atual de uma pessoa ou objeto, levando em consideração anos, meses e dias. Basta inserir a data de nascimento e a data atual no formato dd/mm/aaaa para obter sua idade.</p>
+  
+  <h3>Como Determinar o Número de Anos Usando a Calculadora de Data de Nascimento?</h3>
+  
+  <p>Para calcular o número de anos usando a calculadora de idade, comece inserindo a data de nascimento e a data atual no formato especificado. A calculadora fornece a idade em anos, meses e dias, sendo os "anos" representando a idade ou o número de anos.</p>
+  
+  <h3>Como Usar a Calculadora de Idade?</h3>
+  
+  <p>Para saber mais, você pode visitar nosso artigo "<a href="how-to-use-age-calculator.html">Como usar a calculadora de idade?</a>" ou pode ler nossos posts interessantes do blog. <a href="top-10-famous-animals-and-their-age.html">Top 10 animais famosos e suas idades</a>.</p>
+  
+
+
+
+  <footer>
+    <nav>
+        <ul>
+            <li>
+                <a href="privacy-policy.html" target="_blank">Política de Privacidade</a>
+            </li>
+            <li><a href="terms-and-conditions.html">Termos</a></li>
+            <li><a href="faq.html" target="_blank">FAQ</a></li>
+            <li><a href="about-us.html" target="_blank">Sobre</a></li>
+            <li><a href="blog-home.html" target="_blank">Blog</a></li>
+            <li><a href="api-docs.html" target="_blank">Documentação da API</a></li>
+            <li><a href="api-status.html" target="_blank">Status da API</a></li>
+            <li>
+                <a href="contact-us.html" target="_blank">Contate-nos</a>
+            </li>
+            <li><a href="mailto:hello@agecalculator.com" target="_blank">hello@agecalculator.com</a></li>
+        </ul>
+    </nav>
+</footer>
+
+
+  </div>
+</div>
+<script type="text/javascript">
+  function age() {
+  var d1 = document.getElementById('date').value;
+  var m1 = document.getElementById('month').value;
+  var y1 = document.getElementById('year').value;
+
+  var date = new Date();
+  var d2 = date.getDate();
+  var m2 = 1 + date.getMonth();
+  var y2 = date.getFullYear();
+  var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  if(d1 > d2){
+  	d2 = d2 + month[m2 - 1];
+  	m2 = m2 - 1;
+  }
+  if(m1 > m2){
+  	m2 = m2 + 12;
+  	y2 = y2 - 1;
+  }
+  var d = d2 - d1;
+  var m = m2 - m1;
+  var y = y2 - y1;
+
+  document.getElementById('age').innerHTML = 'Your Age is '+y+' Years '+m+' Months '+d+' Days';
+}
+</script>
+</body>
+</html>

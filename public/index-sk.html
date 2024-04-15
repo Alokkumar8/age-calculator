@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Kalkulačka veku - Age Calculator Online</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   
+    <meta content="Online vekový kalkulátor vám umožňuje vypočítať váš vek pomocou vášho dátumu narodenia a nájde váš vek rýchlo bez potreby akéhokoľvek druhu zložitej matematiky. Vráti odpoveď v rokoch, mesiacoch a dňoch." name="description">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
+    
+<style media="screen">
+    body{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #2782e3;
+	font-size: 15px;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+}
+* {
+	box-sizing: border-box;
+}
+.container{
+	width:520px;
+	height: auto;
+	margin: 100px auto;
+	background-color: #eee;
+	border-radius: 5px;
+}
+.text-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.base{
+	width: 100%;
+	 
+	margin: 0;
+	overflow: hidden;
+	display: block;
+	float: none;
+}
+.block{
+	width: 135px;
+	padding: 5px 20px;
+ 
+	margin-left: 20px;
+	display: inline-block;
+	float: left;
+}
+.base h1{
+	font-size: 26px;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: normal;
+  margin-top: 0px;
+  box-shadow: 0px 2px #bababa;
+  background: white;
+  font-size: 34px;
+	color: navy;
+}
+ 
+.title{
+	font-size: 20px;
+	text-align: left;
+	font-family: sans-serif;
+	font-weight: normal;
+	line-height: 0.5;
+	letter-spacing: 0.5px;
+	word-spacing: 2.7px;
+	color: #1073d0;
+}
+input[type=text] {
+	width: 140px;
+	margin: auto;
+	outline: none;
+    min-height: 50px;
+	border: 2px solid #1073d0;
+	padding: 12px;
+	background-color: #f7f7f7;
+    border-radius: 2px;
+    color: #1073d0;
+    font-size: 17px;
+}
+input[type=text]:focus{
+	background-color: #ffffff;
+	border: 2px solid orange;
+	outline: none;
+}
+input[type=button]{
+	width: 150px;
+	margin-left: 35%;
+  margin-top: 40px;
+	outline: none;
+	border: none;
+	border-radius: 2px;
+	background-color: #0761b6;
+	color: #ffffff;
+	padding: 14px 16px;
+	text-align: center;
+	font-size: 16px;
+}
+input[type=button]:hover{
+	background-color: #003669;
+}
+ 
+#age{
+	display: block;
+	margin: 10px;
+    margin-top: 35px;
+	padding: 10px;
+    padding-bottom: 20px;
+	overflow: hidden;
+	font-family: verdana;
+	font-size: 23px;
+	font-weight: normal;
+	line-height: 1.5;
+	word-spacing: 2.7px;
+	color: navy;
+}
+
+      footer {
+        margin: 0 auto 10px;
+      }
+
+      footer nav {
+        padding: 2px 2px;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 0 5px #ddd;
+      }
+
+      footer li {
+        margin: 5px;
+        display: inline-block;
+      }
+
+      /* footer li:last-child {
+        float: center;
+      } */
+
+      footer a {
+        color: #999;
+        font-size: 0.8rem;
+        text-decoration: none;
+
+        -webkit-transition: 0.5s;
+           -moz-transition: 0.5s;
+                transition: 0.5s;
+      }
+
+      footer a:hover {
+        color: #333;
+      }
+
+  </style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Age Calculator",
+    "applicationCategory": "UtilitiesApplication",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "ratingCount": "5"
+    }
+  }
+  </script>
+
+  <link rel="canonical" href="https://vocalremover.org/sk/">
+<link rel="alternate" hreflang="ar" href="https://vocalremover.org/ar/">
+<link rel="alternate" hreflang="bg" href="https://vocalremover.org/bg/">
+<link rel="alternate" hreflang="cs" href="https://vocalremover.org/cs/">
+<link rel="alternate" hreflang="da" href="https://vocalremover.org/da/">
+<link rel="alternate" hreflang="de" href="https://vocalremover.org/de/">
+<link rel="alternate" hreflang="el" href="https://vocalremover.org/el/">
+<link rel="alternate" hreflang="en" href="https://vocalremover.org/">
+<link rel="alternate" hreflang="es" href="https://vocalremover.org/es/">
+<link rel="alternate" hreflang="et" href="https://vocalremover.org/et/">
+<link rel="alternate" hreflang="fi" href="https://vocalremover.org/fi/">
+<link rel="alternate" hreflang="fr" href="https://vocalremover.org/fr/">
+<link rel="alternate" hreflang="he" href="https://vocalremover.org/he/">
+<link rel="alternate" hreflang="hi" href="https://vocalremover.org/hi/">
+<link rel="alternate" hreflang="hu" href="https://vocalremover.org/hu/">
+<link rel="alternate" hreflang="id" href="https://vocalremover.org/id/">
+<link rel="alternate" hreflang="it" href="https://vocalremover.org/it/">
+<link rel="alternate" hreflang="ja" href="https://vocalremover.org/ja/">
+<link rel="alternate" hreflang="ko" href="https://vocalremover.org/ko/">
+<link rel="alternate" hreflang="lt" href="https://vocalremover.org/lt/">
+<link rel="alternate" hreflang="lv" href="https://vocalremover.org/lv/">
+<link rel="alternate" hreflang="nb" href="https://vocalremover.org/nb/">
+<link rel="alternate" hreflang="nl" href="https://vocalremover.org/nl/">
+<link rel="alternate" hreflang="pl" href="https://vocalremover.org/pl/">
+<link rel="alternate" hreflang="pt" href="https://vocalremover.org/pt/">
+<link rel="alternate" hreflang="ro" href="https://vocalremover.org/ro/">
+<link rel="alternate" hreflang="ru" href="https://vocalremover.org/ru/">
+<link rel="alternate" hreflang="sk" href="https://vocalremover.org/sk/">
+<link rel="alternate" hreflang="sl" href="https://vocalremover.org/sl/">
+<link rel="alternate" hreflang="sv" href="https://vocalremover.org/sv/">
+<link rel="alternate" hreflang="th" href="https://vocalremover.org/th/">
+<link rel="alternate" hreflang="tr" href="https://vocalremover.org/tr/">
+<link rel="alternate" hreflang="uk" href="https://vocalremover.org/uk/">
+<link rel="alternate" hreflang="vi" href="https://vocalremover.org/vi/">
+<link rel="alternate" hreflang="zh" href="https://vocalremover.org/zh/">
+<link rel="alternate" hreflang="x-default" href="https://vocalremover.org/">
+</head>
+<body>
+
+<div class="container">
+
+  
+  <form>
+  	<div class="base">
+  		<div class="enter">
+  			<h1>Kalkulačka veku</h1>
+  		</div>
+  	<div class="block">
+  		<p class="title">Dátum</p>
+  		<input type="text" name="date" id="date" placeholder="dd" required="required" minlength="1" maxlength="2" />
+  	</div>
+  	<div class="block">
+  		<p class="title">Mesiac</p>
+  		<input type="text" name="month" id="month" placeholder="mm" required="required" minlength="1" maxlength="2" />
+  	</div>
+  	<div class="block">
+  		<p class="title">Rok</p>
+  		<input type="text" name="year" id="year" placeholder="yyyy" required="required" minlength="4" maxlength="4" />
+  	</div>
+  	</div>
+  	<div class="base">
+  		<div class="enter">
+    		<input type="button" name="submit" value="Odoslať" onclick="age()" />
+    	</div>
+  	</div>
+    <div id="age"></div>
+</form>
+
+
+
+
+  
+  <div class="text-content">
+    <p>Táto kalkulačka veku určuje vek osoby na základe ich dátumu narodenia. Metódy výpočtu veku sa môžu líšiť v rôznych kultúrach, ale zvyčajne sa vek osoby zvyšuje o 1 rok každým narodeninám.</p>
+
+<p>Táto bezplatná online kalkulačka veku je cenným a jednoduchým nástrojom, ktorý je použiteľný v mnohých situáciách. Dokáže určiť vek jednotlivcov od novorodencov po seniorov vypočítaním rokov, mesiacov a dní na základe ich dátumu narodenia a aktuálneho dátumu.</p>
+
+<div id="calc">
+  <h2>Čo robí age calculator?</h2>
+</div>
+
+<p><strong>Online kalkulačka veku je internetový nástroj</strong>, určený na výpočet veku osoby na konkrétny dátum, pokiaľ je známy ich dátum narodenia (DOB). Vo väčšine západných kultúr sa vek zvyčajne zaokrúhľuje nadol, takže ak osoba žila 8 rokov a 9 mesiacov, ich vek sa považuje za 8 rokov.</p>
+
+<h3>Kalkulačka Dátumu Narodenia (DOB)</h3>
+
+<p>Kalkulačka dátumu narodenia DOB nám umožňuje určiť vek na základe dátumu narodenia. Na využitie tejto kalkulačky veku zadajte požadované hodnoty do príslušného vstupného políčka.</p>
+
+<ul>
+    <li>Dátum narodenia vo formáte DD/MM/YYYY</li>
+    <li>Špecifický dátum, pre ktorý chcete vek vypočítať, by mal byť zadaný vo forme dd/mm/yyyy</li>
+</ul>
+
+<p style="text-align: center;"><img src="img/screenshot-1.jpg" style="max-width:100%; max-height:100%;"></img></p>
+
+<h2>Ako použiť age calculator?</h2>
+
+<p>Aby ste určili vek osoby pomocou kalkulačky narodenin, postupujte týmito krokmi:</p>
+
+<ul>
+    <li><strong>Krok 1</strong>: Prejdite na www.agecalculator.com</li>
+    <li><strong>Krok 2</strong>: Zadajte dátum narodenia do vstupného poľa kalkulačky veku vo formáte DD/MM/YYYY.</li>
+    <li><strong>Krok 3</strong>: Stlačte tlačidlo <strong>"Odoslať"</strong> pre výpočet veku osoby.</li>
+    <li><strong>Krok 4</strong>: Kliknite na tlačidlo <strong>"Reset"</strong> pre vymazanie textu vstupu a zadanie nových hodnôt.</li>
+</ul>
+
+<div id="formula">
+  <h2>Vzorec pre Kalkulačku Veku</h2>
+</div>
+
+<p>Podľa Oxford Dictionary sa výraz "Vek" odkazuje na trvanie života osoby alebo existenciu objektu. Výpočet veku zahŕňa porovnanie dátumu narodenia osoby s dátumom, pre ktorý je požadovaný vek. Odčítanie dátumu narodenia od daného dátumu dáva vek osoby, ktorý je reprezentovaný vzorcom: Vek = Daný dátum - Dátum narodenia. Nižšie sú uvedené kroky na výpočet veku osoby od ich dátumu narodenia po určený dátum.</p>
+
+<ul>
+    <li><strong>Krok 1:</strong> Na začiatku spočítajte celkový počet úplných rokov odčítaním roka narodenia od aktuálneho roku. Napríklad, ak je aktuálny rok 2024 a rok narodenia je 1998, počet úplných rokov je 26.</li>
+    <li><strong>Krok 2:</strong> Následne určte počet úplných mesiacov odčítaním mesiaca narodenia od <a href="https://www.oxfordreference.com/display/10.1093/oi/authority.20110803095355563">aktuálneho mesiaca</a>. Ak je aktuálny mesiac skôr ako mesiac narodenia, znížte počet úplných rokov o 1 a pripočítajte k aktuálnemu mesiacu 12 na úpravu. Potom spočítajte rozdiel (aktuálny mesiac - mesiac narodenia). Napríklad, ak je mesiac narodenia február a aktuálny mesiac je apríl, celkový počet mesiacov je 2. Ak je mesiac narodenia november a aktuálny mesiac je apríl, celkový počet mesiacov je 4 + 12 = 16 a rozdiel je 16 - 11 = 5.</li>
+    <li><strong>Krok 3:</strong> Podobne ako v predchádzajúcom kroku, určíme aj počet dní odčítaním dátumu narodenia od aktuálneho dátumu. Ak je aktuálny dátum skôr ako dátum narodenia, odpočítame 1 z počtu úplných mesiacov a pripočítame k aktuálnemu dátumu 30/31/28/29 dní v závislosti na počte dní v predchádzajúcom mesiaci pred aktuálnym mesiacom.</li>
+    <li><strong>Krok 4:</strong> Na záver vám kalkulačka veku poskytuje vek v dňoch, mesiacoch a rokoch.</li>
+</ul>
+
+<h2>Príklady, ktoré ukazujú, ako vypočítať vek</h2>
+
+<p>Nižšie sú uvedené príklady, ktoré ilustrujú, ako vypočítať vek a použitú metodológiu kalkulačky narodenin pre lepšie porozumenie.</p>
+
+<p><strong>Príklad 1:</strong> Johnov dátum narodenia je 25. júl 1985 (25/07/1985). Určte jeho vek k 28. januáru 2021 a overte ho pomocou kalkulačky veku.</p>
+
+
+
+
+
+
+<p><strong>Riešenie:</strong></p>
+
+<p>Aplikovanie vzorca na výpočet Johnovho veku:</p>
+
+<p>Vek osoby = Daný dátum - Dátum narodenia.</p>
+
+<p>Johnov dátum narodenia = 25. júl 1985.</p>
+
+<p>Daný dátum = 28. január 2021.</p>
+
+<p>Je potrebné poznamenať, že aktuálny mesiac je menší než mesiac narodenia. To znamená, že január (1) je menší ako júl (7). Preto berieme rok 2020 ako aktuálny rok a tiež zohľadňujeme 12 + 1 (január) - 7 (júl) = 6 mesiacov.</p>
+
+<p>Rozdiel v rokoch = 2020 - 1985 = 35 rokov.</p>
+
+<p>Počet zostávajúcich dní = 3 dni.</p>
+
+<p><strong>Odpoveď:</strong> Teda Johnov vek je 35 rokov, 6 mesiacov a 3 dni.</p>
+
+<p><strong>Príklad 2:</strong> Peterov dátum narodenia je 13. júl 1992. Vypočítajte jeho vek k 21. aprílu 2016 a potvrďte ho pomocou kalkulačky veku.</p>
+
+<p><strong>Riešenie:</strong></p>
+
+<p>Použitie vzorca na výpočet Peterovho veku:</p>
+
+<p>Vek osoby = Súčasný dátum - Dátum narodenia.</p>
+
+<p>Tu je trochu odlišný prístup na lepšie pochopenie vzorca veku.</p>
+
+<p>Peterov dátum narodenia = 13. júl 1992.</p>
+
+<p>Rozdiel v rokoch = 2015 - 1992 = 23 rokov. (Tento výpočet sa rozprestiera od 13. júla 1992 do 13. júla 2015).</p>
+
+<p>Počet zostávajúcich mesiacov od 13. júla 2015 do 13. apríla 2016 = 9 mesiacov.</p>
+
+<p>Počet zostávajúcich dní od 13. apríla 2016 do 21. apríla 2016 = 8 dní.</p>
+
+<p><strong>Odpoveď:</strong> Preto je Peterov vek 23 rokov, 9 mesiacov a 8 dní.</p>
+
+<p>Podobne môžete použiť kalkulačku veku na zistenie veku jednotlivcov s danými dátumami narodenia a aktuálnymi dátumami až do 26. augusta 2021:</p>
+
+<ul>
+    <li>13. júl 1992</li>
+    <li>21. apríl 2016</li>
+</ul>
+
+
+
+
+
+
+
+<p><b>☛ Ďalšie kalkulačky:</b></p>
+
+<table border="1">
+    <tbody>
+        <tr>
+            <td>
+            <p><a href="https://select-statistics.co.uk/calculators/">Štatistika</a></p>
+            </td>
+            <td>
+            <p><a href="https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/">Súčin úročenia</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><a href="https://www.dadsworksheets.com/fraction-calculator.html">Zlomky</a></p>
+            </td>
+            <td>
+            <p><a href="https://mathforyou.net/en/online/calculus/derivative/">Derivácia</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><a href="https://www.wikihow.com/Calculate-Percentages">Percentá</a></p>
+            </td>
+            <td>
+            <p><a href="https://www.cuemath.com/calculators/integral-calculator/">Integrál</a></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>FAQs kalkulačky veku</h2>
+
+<h3>Ako vypočítať vek na kalkulačke veku?</h3>
+
+<p>Môžete využiť túto <strong>online kalkulačku veku</strong> na určenie veku na základe zadaného dátumu narodenia a aktuálneho alebo požadovaného dátumu pre výpočet veku. Uistite sa, že oba dátumy sú vo formáte DD/MM/YYYY. Prístup k dátumu narodenia kalkulačky nájdete na adrese <a href="https://agecalculator.com">Kalkulačka veku</a>.</p>
+
+<h3>Aký je účel kalkulačky DOB?</h3>
+
+<p>Kalkulačka DOB vypočíta súčasný vek osoby alebo objektu, pričom berie do úvahy roky, mesiace a dni. Stačí zadať DOB a aktuálny dátum vo formáte dd/mm/yyyy a získať svoj vek.</p>
+
+<h3>Ako určiť počet rokov pomocou kalkulačky dátumu narodenia?</h3>
+
+<p>Aby ste vypočítali počet rokov pomocou kalkulačky veku, začnite zadaním dátumu narodenia a aktuálneho dátumu vo špecifikovanom formáte. Kalkulačka poskytuje vek v rokoch, mesiacoch a dňoch, pričom "roky" predstavujú vek alebo počet rokov.</p>
+
+<h3>Ako použiť kalkulačku veku?</h3>
+
+<p>Ak chcete získať ďalšie informácie, navštívte náš článok "<a href="how-to-use-age-calculator.html">Ako použiť kalkulačku veku?</a>" alebo si prečítajte naše zaujímavé blogové príspevky. <a href="top-10-famous-animals-and-their-age.html">Top 10 slávnych zvierat a ich vek</a>.</p>
+
+    
+
+
+
+<footer>
+  <nav>
+    <ul>
+      <li>
+        <a href="privacy-policy.html" target="_blank">Zásady ochrany osobných údajov</a>
+      </li>
+      <li><a href="terms-and-conditions.html">Podmienky</a></li>
+      <li><a href="faq.html" target="_blank">Často kladené otázky</a></li>
+      <li><a href="about-us.html" target="_blank">O nás</a></li>
+      <li><a href="blog-home.html" target="_blank">Blog</a></li>
+      <li><a href="api-docs.html" target="_blank">API dokumentácia</a></li>
+      <li><a href="api-status.html" target="_blank">Stav API</a></li>
+      <li>
+        <a href="contact-us.html" target="_blank">Kontaktujte nás</a>
+      </li>
+      <li><a href="mailto:hello@agecalculator.com" target="_blank">hello@agecalculator.com</a></li>
+    </ul>
+  </nav>
+</footer>
+
+
+  </div>
+</div>
+<script type="text/javascript">
+  function age() {
+  var d1 = document.getElementById('date').value;
+  var m1 = document.getElementById('month').value;
+  var y1 = document.getElementById('year').value;
+
+  var date = new Date();
+  var d2 = date.getDate();
+  var m2 = 1 + date.getMonth();
+  var y2 = date.getFullYear();
+  var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  if(d1 > d2){
+  	d2 = d2 + month[m2 - 1];
+  	m2 = m2 - 1;
+  }
+  if(m1 > m2){
+  	m2 = m2 + 12;
+  	y2 = y2 - 1;
+  }
+  var d = d2 - d1;
+  var m = m2 - m1;
+  var y = y2 - y1;
+
+  document.getElementById('age').innerHTML = 'Your Age is '+y+' Years '+m+' Months '+d+' Days';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>About us - Age Calculator Online</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Roboto");
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto", sans-serif;
+        position: relative;
+      }
+      nav {
+        width: 100%;
+        height: 100px;
+        background-color: rgba(51, 51, 51, 0.3);
+        position: absolute;
+        top: 0;
+        z-index: 5;
+      }
+      .header {
+        width: 100%;
+        height: 500px;
+        opacity: 0.8;
+        background-color: rgb(154, 175, 187);
+        background-image: url("https://res.cloudinary.com/arpr/image/upload/v1541394028/architecture-building-campus-207684.jpg");
+        background-size: cover;
+        background-position: bottom;
+      }
+      .container {
+        width: 100%;
+      }
+      .container h1 {
+        font-size: 50px;
+      }
+      .about {
+        padding: 5% 0;
+        width: 100%;
+        height: auto;
+        background-color: #fff;
+      }
+      .about .left {
+        padding: 2% 0;
+        float: left;
+        width: 50%;
+        display: inline-block;
+      }
+      .about .right {
+        width: 50%;
+        display: inline-block;
+      }
+      .about .right img {
+        width: 100%;
+      }
+      .about .left h1 {
+        text-align: center;
+        color: #1eadff;
+        margin: 0 0 10px 0;
+      }
+      .about .left hr {
+        width: 20%;
+        border-top: 2px solid #000;
+        border-bottom: none;
+      }
+      .about .left p {
+        font-size: 1rem;
+        margin: 40px auto;
+        width: 80%;
+      }
+
+      .mission {
+        padding: 5% 0;
+        width: 100%;
+        height: auto;
+        background-color: #fff;
+      }
+      .mission .right {
+        padding: 2% 0;
+        width: 50%;
+
+        display: inline-block;
+      }
+      .mission .left {
+        float: left;
+        width: 50%;
+
+        display: inline-block;
+      }
+      .mission .left img {
+        width: 100%;
+      }
+      .mission .right h1 {
+        text-align: center;
+        color: #1eadff;
+        margin: 0 0 20px 0;
+      }
+      .mission .right hr {
+        width: 35%;
+        border-top: 2px solid #000;
+        border-bottom: none;
+      }
+      .mission .right p {
+        font-size: 1rem;
+        margin: 40px auto;
+        width: 80%;
+      }
+
+      .team {
+        width: 90%;
+        margin: auto;
+        padding: 5% 5%;
+        over-flow: hidden;
+      }
+      .team h1 {
+        text-align: center;
+        color: #1eadff;
+      }
+      .team h1 hr {
+        width: 15%;
+        border-top: 2px solid #000;
+        background-color: transperant;
+        border-bottom: none;
+        margin-bottom: 50px;
+      }
+      .team .card {
+        padding-bottom: 20px;
+        padding-top: 20px;
+        position: relative;
+        min-width: 20%;
+        height: 500px !important;
+        height: auto;
+        background-color: #fff;
+        display: inline-block;
+        margin: 40px 6.5%;
+        box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5);
+        text-align: center;
+      }
+      .card .circle-container {
+        position: relative;
+        background-color: #579f79;
+        width: 250px;
+        height: 250px;
+        border: none;
+        border-radius: 50%;
+        margin: auto;
+        color: #fff;
+      }
+      .circle-container h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        font-size: 60px;
+      }
+
+      .team .card h2 {
+        text-align: center;
+        margin: 30px 0 0 0;
+      }
+      .team .card h4 {
+        text-align: center;
+        margin: 10px 0 0 0;
+      }
+      .team .card p {
+        width: 250px;
+        margin: 30px auto;
+        text-align: center;
+      }
+      .clear {
+        clear: both;
+      }
+
+      footer {
+        width: 100%;
+        height: 100px;
+        background-color: #bbff00;
+      }
+      footer p {
+        text-align: center;
+        padding: 0 2%;
+      }
+
+      /* media */
+      @media (max-width: 1200px) {
+        .mission .right p {
+          font-size: 0.8rem;
+          margin: 20px auto;
+        }
+        .about .left p {
+          font-size: 0.8rem;
+          margin: 20px auto;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .about .left {
+          width: 100%;
+        }
+        .about .right {
+          width: 100%;
+        }
+        .mission .left {
+          width: 100%;
+        }
+        .mission .right {
+          width: 100%;
+        }
+        .team .card {
+          width: 40%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .team .card {
+          width: 100%;
+        }
+        nav {
+          height: 80px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav></nav>
+    <div class="header"></div>
+
+    <div class="container">
+      <div class="about">
+        <div class="left">
+          <h1>About us</h1>
+          <hr />
+          <p>
+            We are a group of enthusiastic IT professionals committed to
+            creating high-quality tools and materials for the online community.
+            Our objective is straightforward: to provide a diverse range of
+            user-friendly <a href="index.html">online age calculator</a> for effortless everyday
+            computations. Our journey commenced in 2024 with the launch of our
+            website agecalculator.org By 2008, where our growth and development
+            have persisted.
+          </p>
+
+          <p>
+            Our calculators span various categories, encompassing finance,
+            fitness and health, mathematics, and more. Each calculator undergoes
+            meticulous in-house development, with some incorporating open-source
+            JavaScript components subject to different licenses. We take pride
+            in the precision and dependability of our tools, with over 90% of
+            them relying on established formulas and equations derived from
+            reputable textbooks.
+          </p>
+
+          <p>
+            In instances where formulas might be disputed, we present results
+            from multiple popular formulas to ensure transparency and clarity.
+            For instance, consider our dob Calculator.
+          </p>
+        </div>
+        <div class="right">
+          <img
+            src="https://res.cloudinary.com/arpr/image/upload/v1540359700/adult-affection-baby-755028.jpg"
+          />
+        </div>
+        <div class="clear"></div>
+      </div>
+
+      <div class="mission">
+        <div class="left">
+          <img
+            src="https://res.cloudinary.com/arpr/image/upload/v1540359700/adult-affection-baby-755028.jpg"
+          />
+        </div>
+        <div class="right">
+          <h1>Mission Statement</h1>
+          <hr />
+          <p>
+            In upholding our commitment to excellence, the outcomes generated by
+            our financial calculators are subjected to thorough scrutiny by our
+            team of financial advisors. These professionals bring with them
+            extensive expertise gained from prominent personal financial
+            advising firms.
+          </p>
+
+          <p>
+            In terms of content creation, we take great pride in producing over
+            99% of our material internally. For a small fraction, we have
+            referenced trusted sources such as Wikipedia, adhering to the GNU
+            Free Documentation License. Our financial content is meticulously
+            curated and reviewed by our dedicated financial team, while our
+            health-related information is meticulously vetted for accuracy by
+            medical experts.
+          </p>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+      <div class="team">
+        <h1>
+          Our Team
+          <hr />
+        </h1>
+
+        <div class="card">
+          <div class="circle-container">
+            <h1 style="color: #fff">M</h1>
+          </div>
+          <h2>Mahesh E U</h2>
+          <h4>Technical Lead</h4>
+          <p>
+            Mahesh E U is a tech lead with a passion for coding and
+            problem-solving. With years of experience, he's a master at leading
+            teams and bringing innovative tech ideas to life.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="circle-container">
+            <h1 style="color: #fff">M</h1>
+          </div>
+          <h2>Mridul</h2>
+          <h4>UX designer</h4>
+          <p>
+            Mridul is a friendly guy who loves computers and playing soccer with
+            his friends. He's always curious about how things work and enjoys
+            helping others learn new things too.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="circle-container">
+            <h1 style="color: #fff">R</h1>
+          </div>
+          <h2>Rajesh</h2>
+          <h4>Evangelist</h4>
+          <p>
+            Rajesh is a friendly guy who loves computers and making new friends.
+            He enjoys playing video games and learning about new technologies.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="circle-container">
+            <h1 style="color: #fff">B</h1>
+          </div>
+          <h2>Bharti</h2>
+          <h4>Backend developer</h4>
+          <p>
+            Bharti is a friendly and hardworking individual who loves helping
+            others. She enjoys spending time with family and friends and is
+            always ready for new adventures.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="circle-container">
+            <h1 style="color: #fff">A</h1>
+          </div>
+          <h2>Anhsuman</h2>
+          <h4>Advisor</h4>
+          <p>
+            Anhsuman is a friendly and curious person who loves exploring new
+            ideas and meeting people from all walks of life. They enjoy spending
+            time outdoors, playing sports, and sharing laughter with friends and
+            family.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="circle-container">
+            <h1 style="color: #fff">S</h1>
+          </div>
+          <h2>Shruti</h2>
+          <h4>Intern</h4>
+          <p>
+            Shruti is a friendly and creative student. She loves to draw and
+            play with her pet cat. She enjoys spending time with her friends and
+            exploring new places.
+          </p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <br />
+      <p>Copyright ©2024 <a href="index.html">Age Calculator</a>. All rights reserved</p>
+    </footer>
+  </body>
+</html>

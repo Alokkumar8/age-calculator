@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>आयु कैलकुलेटर - Age Calculator Online</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   
+    <meta content="ऑनलाइन आयु कैलकुलेटर आपको अपनी जन्म तिथि और जन्म दिनांक का उपयोग करके अपनी आयु की गणना करने देता है और किसी भी प्रकार की जटिल गणित करने की आवश्यकता नहीं होती है। यह उत्तर वर्षों, महीनों और दिनों में देगा।" name="description">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
+    
+<style media="screen">
+    body{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #2782e3;
+	font-size: 15px;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+}
+* {
+	box-sizing: border-box;
+}
+.container{
+	width:520px;
+	height: auto;
+	margin: 100px auto;
+	background-color: #eee;
+	border-radius: 5px;
+}
+.text-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.base{
+	width: 100%;
+	 
+	margin: 0;
+	overflow: hidden;
+	display: block;
+	float: none;
+}
+.block{
+	width: 135px;
+	padding: 5px 20px;
+ 
+	margin-left: 20px;
+	display: inline-block;
+	float: left;
+}
+.base h1{
+	font-size: 26px;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: normal;
+  margin-top: 0px;
+  box-shadow: 0px 2px #bababa;
+  background: white;
+  font-size: 34px;
+	color: navy;
+}
+ 
+.title{
+	font-size: 20px;
+	text-align: left;
+	font-family: sans-serif;
+	font-weight: normal;
+	line-height: 0.5;
+	letter-spacing: 0.5px;
+	word-spacing: 2.7px;
+	color: #1073d0;
+}
+input[type=text] {
+	width: 140px;
+	margin: auto;
+	outline: none;
+    min-height: 50px;
+	border: 2px solid #1073d0;
+	padding: 12px;
+	background-color: #f7f7f7;
+    border-radius: 2px;
+    color: #1073d0;
+    font-size: 17px;
+}
+input[type=text]:focus{
+	background-color: #ffffff;
+	border: 2px solid orange;
+	outline: none;
+}
+input[type=button]{
+	width: 150px;
+	margin-left: 35%;
+  margin-top: 40px;
+	outline: none;
+	border: none;
+	border-radius: 2px;
+	background-color: #0761b6;
+	color: #ffffff;
+	padding: 14px 16px;
+	text-align: center;
+	font-size: 16px;
+}
+input[type=button]:hover{
+	background-color: #003669;
+}
+ 
+#age{
+	display: block;
+	margin: 10px;
+    margin-top: 35px;
+	padding: 10px;
+    padding-bottom: 20px;
+	overflow: hidden;
+	font-family: verdana;
+	font-size: 23px;
+	font-weight: normal;
+	line-height: 1.5;
+	word-spacing: 2.7px;
+	color: navy;
+}
+
+      footer {
+        margin: 0 auto 10px;
+      }
+
+      footer nav {
+        padding: 2px 2px;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 0 5px #ddd;
+      }
+
+      footer li {
+        margin: 5px;
+        display: inline-block;
+      }
+
+      /* footer li:last-child {
+        float: center;
+      } */
+
+      footer a {
+        color: #999;
+        font-size: 0.8rem;
+        text-decoration: none;
+
+        -webkit-transition: 0.5s;
+           -moz-transition: 0.5s;
+                transition: 0.5s;
+      }
+
+      footer a:hover {
+        color: #333;
+      }
+
+  </style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Age Calculator",
+    "applicationCategory": "UtilitiesApplication",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "ratingCount": "5"
+    }
+  }
+  </script>
+
+  <link rel="canonical" href="https://agecalculator.com/hi/">
+<link rel="alternate" hreflang="ar" href="https://agecalculator.com/ar/">
+<link rel="alternate" hreflang="bg" href="https://agecalculator.com/bg/">
+<link rel="alternate" hreflang="cs" href="https://agecalculator.com/cs/">
+<link rel="alternate" hreflang="da" href="https://agecalculator.com/da/">
+<link rel="alternate" hreflang="de" href="https://agecalculator.com/de/">
+<link rel="alternate" hreflang="el" href="https://agecalculator.com/el/">
+<link rel="alternate" hreflang="en" href="https://agecalculator.com/">
+<link rel="alternate" hreflang="es" href="https://agecalculator.com/es/">
+<link rel="alternate" hreflang="et" href="https://agecalculator.com/et/">
+<link rel="alternate" hreflang="fi" href="https://agecalculator.com/fi/">
+<link rel="alternate" hreflang="fr" href="https://agecalculator.com/fr/">
+<link rel="alternate" hreflang="he" href="https://agecalculator.com/he/">
+<link rel="alternate" hreflang="hi" href="https://agecalculator.com/hi/">
+<link rel="alternate" hreflang="hu" href="https://agecalculator.com/hu/">
+<link rel="alternate" hreflang="id" href="https://agecalculator.com/id/">
+<link rel="alternate" hreflang="it" href="https://agecalculator.com/it/">
+<link rel="alternate" hreflang="ja" href="https://agecalculator.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://agecalculator.com/ko/">
+<link rel="alternate" hreflang="lt" href="https://agecalculator.com/lt/">
+<link rel="alternate" hreflang="lv" href="https://agecalculator.com/lv/">
+<link rel="alternate" hreflang="nb" href="https://agecalculator.com/nb/">
+<link rel="alternate" hreflang="nl" href="https://agecalculator.com/nl/">
+<link rel="alternate" hreflang="pl" href="https://agecalculator.com/pl/">
+<link rel="alternate" hreflang="pt" href="https://agecalculator.com/pt/">
+<link rel="alternate" hreflang="ro" href="https://agecalculator.com/ro/">
+<link rel="alternate" hreflang="ru" href="https://agecalculator.com/ru/">
+<link rel="alternate" hreflang="sk" href="https://agecalculator.com/sk/">
+<link rel="alternate" hreflang="sl" href="https://agecalculator.com/sl/">
+<link rel="alternate" hreflang="sv" href="https://agecalculator.com/sv/">
+<link rel="alternate" hreflang="th" href="https://agecalculator.com/th/">
+<link rel="alternate" hreflang="tr" href="https://agecalculator.com/tr/">
+<link rel="alternate" hreflang="uk" href="https://agecalculator.com/uk/">
+<link rel="alternate" hreflang="vi" href="https://agecalculator.com/vi/">
+<link rel="alternate" hreflang="zh" href="https://agecalculator.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://agecalculator.com/">
+</head>
+<body>
+
+<div class="container">
+
+  
+  <form>
+    <div class="base">
+        <div class="enter">
+            <h1>आयु कैलकुलेटर</h1>
+        </div>
+        <div class="block">
+            <p class="title">तारीख</p>
+            <input type="text" name="date" id="date" placeholder="दिन" required="required" minlength="1" maxlength="2" />
+        </div>
+        <div class="block">
+            <p class="title">महीना</p>
+            <input type="text" name="month" id="month" placeholder="महीना" required="required" minlength="1" maxlength="2" />
+        </div>
+        <div class="block">
+            <p class="title">वर्ष</p>
+            <input type="text" name="year" id="year" placeholder="वर्ष" required="required" minlength="4" maxlength="4" />
+        </div>
+    </div>
+    <div class="base">
+        <div class="enter">
+            <input type="button" name="submit" value="सबमिट" onclick="age()" />
+        </div>
+    </div>
+    <div id="age"></div>
+</form>
+
+
+  <div class="text-content">
+    <p>यह आयु कैलकुलेटर व्यक्ति की आयु को उनकी जन्मतिथि के आधार पर निर्धारित करता है। आयु गणना के तरीके संस्कृतियों के अनुसार भिन्न हो सकते हैं, लेकिन सामान्यतः, व्यक्ति की आयु को प्रत्येक जन्मदिन पर 1 वर्ष से बढ़ाया जाता है।</p>
+
+<p>यह मुफ्त ऑनलाइन आयु कैलकुलेटर एक मूल्यवान और सीधा उपकरण है जो अनेक परिस्थितियों में लागू होता है। यह उनकी जन्मतिथि और वर्तमान तिथि के इनपुट का उपयोग करके वर्षों, महीनों और दिनों को गणित करके नवजात शिशु से वृद्धों तक व्यक्तियों की आयु निर्धारित कर सकता है।</p>
+
+<div id="calc">
+    <h2>आयु कैलकुलेटर क्या करता है?</h2>
+</div>
+
+<p><strong>ऑनलाइन आयु कैलकुलेटर</strong> एक वेब-आधारित उपकरण है जो व्यक्ति की आयु को एक विशिष्ट तिथि पर निर्धारित करने के लिए डिज़ाइन किया गया है, प्रायः उनकी जन्मतिथि (DOB) जानी जाती है। कई पश्चिमी संस्कृतियों में, आयु गणना सामान्यतः नीचे ले जाती है, इसलिए अगर किसी व्यक्ति की उम्र 8 वर्ष और 9 महीने हैं, तो उनकी उम्र को 8 वर्ष माना जाता है।</p>
+
+<h3>जन्मतिथि (DOB) कैलकुलेटर</h3>
+
+<p>जन्मतिथि या DOB कैलकुलेटर हमें जन्मतिथि के आधार पर आयु निर्धारित करने की स्वीकृति देता है। इस आयु कैलकुलेटर का उपयोग करने के लिए, प्रदान किए गए इनपुट बॉक्स में आवश्यक मानों को इनपुट करें।</p>
+
+<ul>
+    <li>जन्मतिथि जैसे DD/MM/YYYY के रूप में</li>
+    <li>आप उम्र निकालना चाहते हैं उस विशिष्ट तिथि को एक ही रूप में दर्ज करें जैसे dd/mm/yyyy</li>
+</ul>
+
+<p style="text-align: center;"><img src="img/screenshot-1.jpg" style="max-width:100%; max-height:100%;"></img></p>
+
+<h2>मैं आयु कैलकुलेटर का उपयोग कैसे करूँ?</h2>
+
+<p>जन्मदिन कैलकुलेटर का उपयोग करके किसी की आयु निर्धारित करने के लिए निम्नलिखित चरणों का पालन करें:</p>
+
+<ul>
+    <li><strong>चरण 1</strong>: www.agecalculator.com पर जाएं</li>
+    <li><strong>चरण 2</strong>: DD/MM/YYYY प्रारूप का जन्मतिथि आयु कैलकुलेटर के इनपुट बॉक्स में दर्ज करें।</li>
+    <li><strong>चरण 3</strong>: व्यक्ति की आयु की गणना करने के लिए <strong>&quot;सबमिट&quot;</strong> बटन दबाएं।</li>
+    <li><strong>चरण 4</strong>: इनपुट पाठ को साफ करने और नए मान दर्ज करने के लिए <strong>&quot;रीसेट&quot;</strong> बटन पर क्लिक करें।</li>
+</ul>
+
+<div id="formula">
+    <h2>आयु कैलकुलेटर के लिए सूत्र</h2>
+</div>
+
+<p>ऑक्सफ़ोर्ड शब्दकोश के अनुसार, &ldquo;आयु&rdquo; किसी व्यक्ति के जीवन की अवधि या वस्तु के अस्तित्व का समय है। आयु की गणना एक व्यक्ति की जन्मतिथि को दी गई तिथि के साथ तुलना करने से होती है। दी गई तिथि से जन्मतिथि को घटाकर व्यक्ति की आयु मिलती है, जिसे सूत्र से प्रतिनिधित किया जाता है: आयु = दी गई तिथि - जन्मतिथि। नीचे उन चरणों को दिया गया है जिनसे व्यक्ति की आयु की गणना उनकी जन्मतिथि से निर्दिष्ट तिथि तक की जाती है।</p>
+
+<ul>
+    <li><strong>चरण 1:</strong> पहले, वर्तमान वर्ष से जन्म वर्ष को घटाकर पूर्ण वर्षों की कुल संख्या की गणना करें। उदाहरण के लिए, यदि वर्तमान वर्ष 2024 है और जन्म वर्ष 1998 है, तो पूर्ण वर्षों की गणना 26 है।</li>
+    <li><strong>चरण 2:</strong> इसके बाद, वर्तमान महीने से जन्म माह को घटाएं। यदि वर्तमान माह जन्म माह से पहले है, तो पूर्ण वर्षों की गणना को 1 से कम करें और वर्तमान महीने को संशोधित करने के लिए वर्तमान महीने में 12 जोड़ें। फिर, अंतर (वर्तमान माह - जन्म माह) की गणना करें। उदाहरण के लिए, यदि जन्म माह फ़रवरी है और वर्तमान माह अप्रैल है, तो कुल महीनों की गणना 2 है। यदि जन्म माह नवंबर है और वर्तमान माह अप्रैल है, तो कुल महीनों की गणना 4 + 12 = 16 है, और अंतर 16 - 11 = 5 है।</li>
+    <li><strong>चरण 3:</strong> पिछले चरण की तरह, हम वर्तमान तिथि से जन्म तिथि को घटाकर दिनों की संख्या को निर्धारित करते हैं। हालांकि, यदि वर्तमान तिथि जन्म तिथि से पहले है, तो हम पूर्ण महीनों की संख्या से 1 कम करते हैं और पिछले महीने के पिछले महीने में दिनों की संख्या को जोड़ते हैं।</li>
+    <li><strong>चरण 4:</strong> अंत में, आयु कैलकुलेटर उम्र को दिनों, महीनों और वर्षों में देता है।</li>
+</ul>
+
+<h2>आयु की गणना कैसे की जाती है इसका उदाहरण</h2>
+
+<p>नीचे उदाहरण हैं जो स्पष्टता से समझने के लिए आयु की गणना और जन्मदिन कैलकुलेटर द्वारा उपयोग किये गए तरीके को दिखाते हैं।</p>
+
+<p><strong>उदाहरण 1:</strong> जॉन की जन्मतिथि 25 जुलाई 1985 (25/07/1985) है। उसकी आयु 28 जनवरी 2021 को क्या है, और उसे आयु कैलकुलेटर का उपयोग करके सत्यापित करें।</p>
+
+
+
+
+
+<p><strong>समाधान:</strong></p>
+
+<p>जॉन की आयु की गणना करने के लिए सूत्र लागू करें:</p>
+
+<p>व्यक्ति की आयु = दी गई तिथि - जन्मतिथि।</p>
+
+<p>जॉन की जन्मतिथि = 25 जुलाई, 1985।</p>
+
+<p>दी गई तिथि = 28 जनवरी, 2021।</p>
+
+<p>ध्यान दें कि वर्तमान महीना जन्म माह से कम है। अर्थात्, जनवरी (1) जुलाई (7) से कम है। इसलिए, हम वर्तमान वर्ष के रूप में 2020 को मानते हैं और 12 + 1 (जनवरी) - 7 (जुलाई) = 6 महीने का भी ध्यान रखते हैं।</p>
+
+<p>वर्षों का अंतर = 2020 - 1985 = 35 वर्ष।</p>
+
+<p>शेष दिनों की संख्या = 3 दिन।</p>
+
+<p><strong>उत्तर:</strong> इसलिए, जॉन की आयु 35 वर्ष, 6 महीने और 3 दिन है।</p>
+
+<p><strong>उदाहरण 2:</strong> पीटर की जन्मतिथि 13 जुलाई, 1992 है। अप्रैल 21, 2016 को उसकी आयु निर्धारित करें और आयु कैलकुलेटर का उपयोग करके इसे सत्यापित करें।</p>
+
+<p><strong>समाधान:</strong></p>
+
+<p>पीटर की आयु की गणना करने के लिए सूत्र का उपयोग करें:</p>
+
+<p>व्यक्ति की आयु = वर्तमान तिथि - जन्मतिथि।</p>
+
+<p>यहां आयु सूत्र को समझने के लिए थोड़ा अलग तरीके से प्रयोग करें।</p>
+
+<p>पीटर की जन्मतिथि = 13 जुलाई, 1992।</p>
+
+<p>वर्षों का अंतर = 2015 - 1992 = 23 वर्ष। (यह गणना 13 जुलाई, 1992 से 13 जुलाई, 2015 तक होती है)।</p>
+
+<p>अप्रैल 13, 2016 से अप्रैल 21, 2016 तक शेष महीनों की संख्या = 9 महीने।</p>
+
+<p>अप्रैल 13, 2016 से अप्रैल 21, 2016 तक शेष दिनों की संख्या = 8 दिन।</p>
+
+<p><strong>उत्तर:</strong> इसलिए, पीटर की आयु 23 वर्ष, 9 महीने और 8 दिन है।</p>
+
+<p>इसी तरह, जन्मतिथि और वर्तमान तिथियों के साथ व्यक्तियों की आयु की जानकारी प्रदान करने के लिए आप आयु कैलकुलेटर का उपयोग कर सकते हैं जो 26 अगस्त, 2021 तक है:</p>
+
+<ul>
+    <li>13 जुलाई, 1992</li>
+    <li>21 अप्रैल, 2016</li>
+</ul>
+
+<p><b>☛ अधिक कैलकुलेटर:</b></p>
+
+<table border="1">
+    <tbody>
+        <tr>
+            <td>
+            <p><a href="https://select-statistics.co.uk/calculators/">आंकड़े</a></p>
+            </td>
+            <td>
+            <p><a href="https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/">ब्याज</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><a href="https://www.dadsworksheets.com/fraction-calculator.html">भिन्न</a></p>
+            </td>
+            <td>
+            <p><a href="https://mathforyou.net/en/online/calculus/derivative/">परिवर्तन</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><a href="https://www.wikihow.com/Calculate-Percentages">प्रतिशत</a></p>
+            </td>
+            <td>
+            <p><a href="https://www.cuemath.com/calculators/integral-calculator/">अंतर</a></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>आयु कैलकुलेटर पूछे जाने वाले प्रश्न</h2>
+
+<h3>आयु कैलकुलेटर पर आयु की गणना कैसे करें?</h3>
+
+<p>आप इस <strong>ऑनलाइन आयु कैलकुलेटर</strong> का उपयोग करके निर्धारित दिनांक और मौजूदा या वांछित आयु के आधार पर आयु निर्धारित कर सकते हैं। सुनिश्चित करें कि दोनों तिथियां डीडी/एमएम/व्हाईव्हाईव्हाई के रूप में प्रारूपित हैं। <a href="https://agecalculator.com/hi">age calculator</a> पर जन्मतिथि कैलकुलेटर का उपयोग करने के लिए जाएं।</p>
+
+<h3>डीओबी कैलकुलेटर का उपयोग क्या है?</h3>
+
+<p>डीओबी कैलकुलेटर व्यक्ति या वस्तु की वर्तमान आयु का निर्धारण करता है, जो वर्षों, महीनों और दिनों को ध्यान में रखता है। आपकी आयु प्राप्त करने के लिए डीओबी और वर्तमान तिथि को dd/mm/yyyy प्रारूप में प्रदान करें।</p>
+
+<h3>जन्मतिथि कैलकुलेटर का उपयोग करके वर्षों की संख्या कैसे निर्धारित की जाती है?</h3>
+
+<p>आयु कैलकुलेटर का उपयोग करके वर्षों की संख्या को निर्धारित करने के लिए, स्पष्टिकरण के लिए जन्मतिथि और वर्तमान तिथि को निर्धारित प्रारूप में डालें। कैलकुलेटर आपको वर्षों, महीनों और दिनों में आयु प्रदान करता है, जिसमें "वर्ष" आयु या वर्षों की संख्या को प्रतिनिधित करता है।</p>
+
+<h3>आयु कैलकुलेटर का उपयोग कैसे करें?</h3>
+
+<p>अधिक जानकारी के लिए आप हमारे लेख "<a href="how-to-use-age-calculator.html">आयु कैलकुलेटर का उपयोग कैसे करें?</a>" या आप हमारे रोचक ब्लॉग पोस्ट पढ़ सकते हैं। <a href="top-10-famous-animals-and-their-age.html">शीर्ष 10 प्रसिद्ध जानवर और उनकी आयु</a>।</p>
+   
+    
+
+
+
+<footer>
+  <nav>
+    <ul>
+      <li>
+        <a href="privacy-policy.html" target="_blank">गोपनीयता नीति</a>
+      </li>
+      <li><a href="terms-and-conditions.html">शर्तें</a></li>
+      <li><a href="faq.html" target="_blank">सामान्य प्रश्न</a></li>
+      <li><a href="about-us.html" target="_blank">हमारे बारे में</a></li>
+      <li><a href="blog-home.html" target="_blank">ब्लॉग</a></li>
+      <li><a href="api-docs.html" target="_blank">API दस्तावेज़</a></li>
+      <li><a href="api-status.html" target="_blank">API स्थिति</a></li>
+      <li>
+        <a href="contact-us.html" target="_blank">हमसे संपर्क करें</a>
+      </li>
+      <li><a href="mailto:hello@agecalculator.com" target="_blank">hello@agecalculator.com</a></li>
+    
+    </ul>
+  </nav>
+</footer>
+
+
+  </div>
+</div>
+<script type="text/javascript">
+  function age() {
+  var d1 = document.getElementById('date').value;
+  var m1 = document.getElementById('month').value;
+  var y1 = document.getElementById('year').value;
+
+  var date = new Date();
+  var d2 = date.getDate();
+  var m2 = 1 + date.getMonth();
+  var y2 = date.getFullYear();
+  var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  if(d1 > d2){
+  	d2 = d2 + month[m2 - 1];
+  	m2 = m2 - 1;
+  }
+  if(m1 > m2){
+  	m2 = m2 + 12;
+  	y2 = y2 - 1;
+  }
+  var d = d2 - d1;
+  var m = m2 - m1;
+  var y = y2 - y1;
+
+  document.getElementById('age').innerHTML = 'Your Age is '+y+' Years '+m+' Months '+d+' Days';
+}
+</script>
+</body>
+</html>

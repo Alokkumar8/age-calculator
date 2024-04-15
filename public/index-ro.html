@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Calculator de vârstă - Age Calculator Online</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   
+    <meta content="Calculatorul de vârstă online vă permite să calculați vârsta folosind data dvs. de naștere și dob și să vă găsiți vârsta rapid fără a fi nevoie să faceți vreun fel de matematică complexă. Va returna răspunsul în ani, luni și zile." name="description">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
+    
+<style media="screen">
+    body{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #2782e3;
+	font-size: 15px;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+}
+* {
+	box-sizing: border-box;
+}
+.container{
+	width:520px;
+	height: auto;
+	margin: 100px auto;
+	background-color: #eee;
+	border-radius: 5px;
+}
+.text-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.base{
+	width: 100%;
+	 
+	margin: 0;
+	overflow: hidden;
+	display: block;
+	float: none;
+}
+.block{
+	width: 135px;
+	padding: 5px 20px;
+ 
+	margin-left: 20px;
+	display: inline-block;
+	float: left;
+}
+.base h1{
+	font-size: 26px;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: normal;
+  margin-top: 0px;
+  box-shadow: 0px 2px #bababa;
+  background: white;
+  font-size: 34px;
+	color: navy;
+}
+ 
+.title{
+	font-size: 20px;
+	text-align: left;
+	font-family: sans-serif;
+	font-weight: normal;
+	line-height: 0.5;
+	letter-spacing: 0.5px;
+	word-spacing: 2.7px;
+	color: #1073d0;
+}
+input[type=text] {
+	width: 140px;
+	margin: auto;
+	outline: none;
+    min-height: 50px;
+	border: 2px solid #1073d0;
+	padding: 12px;
+	background-color: #f7f7f7;
+    border-radius: 2px;
+    color: #1073d0;
+    font-size: 17px;
+}
+input[type=text]:focus{
+	background-color: #ffffff;
+	border: 2px solid orange;
+	outline: none;
+}
+input[type=button]{
+	width: 150px;
+	margin-left: 35%;
+  margin-top: 40px;
+	outline: none;
+	border: none;
+	border-radius: 2px;
+	background-color: #0761b6;
+	color: #ffffff;
+	padding: 14px 16px;
+	text-align: center;
+	font-size: 16px;
+}
+input[type=button]:hover{
+	background-color: #003669;
+}
+ 
+#age{
+	display: block;
+	margin: 10px;
+    margin-top: 35px;
+	padding: 10px;
+    padding-bottom: 20px;
+	overflow: hidden;
+	font-family: verdana;
+	font-size: 23px;
+	font-weight: normal;
+	line-height: 1.5;
+	word-spacing: 2.7px;
+	color: navy;
+}
+
+      footer {
+        margin: 0 auto 10px;
+      }
+
+      footer nav {
+        padding: 2px 2px;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 0 5px #ddd;
+      }
+
+      footer li {
+        margin: 5px;
+        display: inline-block;
+      }
+
+      /* footer li:last-child {
+        float: center;
+      } */
+
+      footer a {
+        color: #999;
+        font-size: 0.8rem;
+        text-decoration: none;
+
+        -webkit-transition: 0.5s;
+           -moz-transition: 0.5s;
+                transition: 0.5s;
+      }
+
+      footer a:hover {
+        color: #333;
+      }
+
+  </style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Age Calculator",
+    "applicationCategory": "UtilitiesApplication",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "ratingCount": "5"
+    }
+  }
+  </script>
+
+  <link rel="canonical" href="https://agecalculator.com/ro/">
+<link rel="alternate" hreflang="ar" href="https://agecalculator.com/ar/">
+<link rel="alternate" hreflang="bg" href="https://agecalculator.com/bg/">
+<link rel="alternate" hreflang="cs" href="https://agecalculator.com/cs/">
+<link rel="alternate" hreflang="da" href="https://agecalculator.com/da/">
+<link rel="alternate" hreflang="de" href="https://agecalculator.com/de/">
+<link rel="alternate" hreflang="el" href="https://agecalculator.com/el/">
+<link rel="alternate" hreflang="en" href="https://agecalculator.com/">
+<link rel="alternate" hreflang="es" href="https://agecalculator.com/es/">
+<link rel="alternate" hreflang="et" href="https://agecalculator.com/et/">
+<link rel="alternate" hreflang="fi" href="https://agecalculator.com/fi/">
+<link rel="alternate" hreflang="fr" href="https://agecalculator.com/fr/">
+<link rel="alternate" hreflang="he" href="https://agecalculator.com/he/">
+<link rel="alternate" hreflang="hi" href="https://agecalculator.com/hi/">
+<link rel="alternate" hreflang="hu" href="https://agecalculator.com/hu/">
+<link rel="alternate" hreflang="id" href="https://agecalculator.com/id/">
+<link rel="alternate" hreflang="it" href="https://agecalculator.com/it/">
+<link rel="alternate" hreflang="ja" href="https://agecalculator.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://agecalculator.com/ko/">
+<link rel="alternate" hreflang="lt" href="https://agecalculator.com/lt/">
+<link rel="alternate" hreflang="lv" href="https://agecalculator.com/lv/">
+<link rel="alternate" hreflang="nb" href="https://agecalculator.com/nb/">
+<link rel="alternate" hreflang="nl" href="https://agecalculator.com/nl/">
+<link rel="alternate" hreflang="pl" href="https://agecalculator.com/pl/">
+<link rel="alternate" hreflang="pt" href="https://agecalculator.com/pt/">
+<link rel="alternate" hreflang="ro" href="https://agecalculator.com/ro/">
+<link rel="alternate" hreflang="ru" href="https://agecalculator.com/ru/">
+<link rel="alternate" hreflang="sk" href="https://agecalculator.com/sk/">
+<link rel="alternate" hreflang="sl" href="https://agecalculator.com/sl/">
+<link rel="alternate" hreflang="sv" href="https://agecalculator.com/sv/">
+<link rel="alternate" hreflang="th" href="https://agecalculator.com/th/">
+<link rel="alternate" hreflang="tr" href="https://agecalculator.com/tr/">
+<link rel="alternate" hreflang="uk" href="https://agecalculator.com/uk/">
+<link rel="alternate" hreflang="vi" href="https://agecalculator.com/vi/">
+<link rel="alternate" hreflang="zh" href="https://agecalculator.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://agecalculator.com/">
+</head>
+<body>
+
+<div class="container">
+
+  
+  <form>
+  	<div class="base">
+  		<div class="enter">
+  		<h1>Calculator de vârstă</h1>
+  	</div>
+  <div class="block">
+  	<p class="title">Zi</p>
+  	<input type="text" name="date" id="date" placeholder="dd" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">Lună</p>
+    <input type="text" name="month" id="month" placeholder="mm" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">An</p>
+    <input type="text" name="year" id="year" placeholder="aaaa" required="required" minlength="4" maxlength="4" />
+  </div>
+  </div>
+  <div class="base">
+  	<div class="enter">
+    <input type="button" name="submit" value="Trimite" onclick="age()" />
+    </div>
+  </div>
+    <div id="age"></div>
+  </form>
+
+
+
+  
+  <div class="text-content">
+    <p>Acest calculator de vârstă determină vârsta unei persoane pe baza datei lor de naștere. Metodele de calcul al vârstei pot varia în funcție de culturi, dar în general, vârsta unei persoane este incrementată cu 1 an la fiecare aniversare.</p>
+
+    <p>Acest calculator gratuit de vârstă online este o unealtă valoroasă și simplă, aplicabilă în numeroase scenarii. Poate determina vârsta indivizilor, începând de la nou-născuți până la vârstnici, calculând ani, luni și zile, folosind data lor de naștere și data curentă.</p>
+    
+    <div id="calc">
+    <h2>Ce face un age calculator?</h2>
+    </div>
+    
+    <p><strong>Calculatorul de vârstă online</strong> este o unealtă bazată pe web concepută pentru a calcula vârsta unei persoane la o dată specifică, cu condiția să se cunoască data de naștere (DOB) a acesteia. În multe culturi occidentale, calculul vârstei rotunjește în jos, astfel că dacă o persoană a trăit 8 ani și 9 luni, vârsta lor este considerată 8 ani.</p>
+    
+    <h3>Calculator de Data Nașterii (DOB)</h3>
+    
+    <p>Calculatorul de data nașterii ne permite să determinăm vârsta pe baza datei de naștere. Pentru a utiliza acest calculator de vârstă, introduceți valorile necesare în caseta de introducere furnizată.</p>
+    
+    <ul>
+        <li>DOB în forma ZZ/LL/AAAA</li>
+        <li>Data specifică pentru care doriți să calculați vârsta trebuie introdusă în același format ca și zz/ll/aaaa</li>
+    </ul>
+    
+    <p style="text-align: center;"><img src="img/screenshot-1.jpg" style="max-width:100%; max-height:100%;"></img></p>
+    
+    <h2>Cum folosesc Calculatorul de Vârstă?</h2>
+    
+    <p>Pentru a determina vârsta unei persoane folosind un calculator de naștere, urmați acești pași:</p>
+    
+    <ul>
+        <li><strong>Pasul 1:</strong> Accesați www.agecalculator.com</li>
+        <li><strong>Pasul 2:</strong> Introduceți data de naștere în caseta de introducere a calculatorului de vârstă folosind formatul ZZ/LL/AAAA.</li>
+        <li><strong>Pasul 3:</strong> Apăsați butonul <strong>"Submit"</strong> pentru a calcula vârsta persoanei.</li>
+        <li><strong>Pasul 4:</strong> Faceți clic pe butonul <strong>"Reset"</strong> pentru a șterge textul introdus și pentru a introduce valori noi.</li>
+    </ul>
+    
+    <div id="formula">
+    <h2>Formulă pentru Calculatorul de Vârstă</h2>
+    </div>
+    
+    <p>Conform Dicționarului Oxford, termenul "Vârstă" se referă la durata vieții unei persoane sau la existența unui obiect. Calcularea vârstei implică compararea datei de naștere a unei persoane cu data pentru care este necesară vârsta. Scăderea datei de naștere din data dată produce vârsta persoanei, reprezentată de formula: Vârstă = Data dată - Data de naștere. Mai jos sunt pașii pentru calcularea vârstei unei persoane de la data de naștere la o dată specificată.</p>
+    
+    <ul>
+        <li><strong>Pasul 1:</strong> Inițial, calculați numărul total de ani completi scăzând anul nașterii din anul curent. De exemplu, dacă anul curent este 2024 și anul nașterii este 1998, numărul total de ani este 26.</li>
+        <li><strong>Pasul 2:</strong> Ulterior, determinați numărul de luni completi scăzând luna nașterii din <a href="https://www.oxfordreference.com/display/10.1093/oi/authority.20110803095355563">luna curentă</a>. Dacă luna curentă este anterioară luni de naștere, reduceți numărul de ani completi cu 1 și adăugați 12 lunilor curente pentru a ajusta. Apoi, calculați diferența (luna curentă - luna naștere). De exemplu, dacă luna nașterii este februarie și luna curentă este aprilie, numărul total de luni este 2. Dacă luna nașterii este noiembrie și luna curentă este aprilie, numărul total de luni este 4 + 12 = 16, iar diferența este 16 - 11 = 5.</li>
+        <li><strong>Pasul 3:</strong> Similar pasului anterior, determinăm și numărăm zilele scăzând data nașterii din data curentă. Cu toate acestea, dacă data curentă este anterioară datei de naștere, scădem 1 din numărul de luni complete și adăugăm 30/31/28/29 la data curentă, în funcție de numărul de zile din luna precedentă înaintea luni curente.</li>
+        <li><strong>Pasul 4:</strong> În concluzie, calculatorul de vârstă furnizează vârsta în zile, luni și ani.</li>
+    </ul>
+    
+    <h2>Exemple care arată cum să Calculați Vârsta</h2>
+    
+    <p>Mai jos sunt exemple care ilustrează cum să calculați vârsta și metodologia folosită de calculatorul de naștere pentru o înțelegere mai clară.</p>
+    
+    <p><strong>Exemplu 1:</strong> Data de naștere a lui John este 25 iulie 1985 (25/07/1985). Determinați vârsta sa la 28 ianuarie 2021 și validați-o folosind calculatorul de
+    
+     vârstă.</p>
+
+
+
+
+
+     <p><strong>Soluție:</strong></p>
+    
+     <p>Aplicând formula pentru a calcula vârsta lui John:</p>
+         
+     <p>Vârsta unei Persoane = Data dată - Data de naștere.</p>
+         
+     <p>Data de Naștere a lui John = 25 iulie 1985.</p>
+         
+     <p>Data dată = 28 ianuarie 2021.</p>
+         
+     <p>Observați că luna curentă este mai mică decât luna nașterii. Adică, ianuarie (1) este mai mică decât iulie (7). Prin urmare, considerăm anul 2020 ca fiind anul curent și luăm în considerare și 12 + 1 (Ian) - 7 (Iul) = 6 luni.</p>
+         
+     <p>Diferența în Ani = 2020 - 1985 = 35 de ani.</p>
+         
+     <p>Numărul de zile rămase = 3 zile.</p>
+         
+     <p><strong>Răspuns:</strong> Prin urmare, vârsta lui John este de 35 de ani, 6 luni și 3 zile.</p>
+         
+     <p><strong>Exemplul 2:</strong> Data de naștere a lui Peter este 13 iulie 1992. Calculați vârsta lui la 21 aprilie 2016 și confirmați-o folosind calculatorul de vârstă.</p>
+         
+     <p><strong>Soluție:</strong></p>
+         
+     <p>Folosind formula pentru a calcula vârsta lui Peter:</p>
+         
+     <p>Vârsta unei Persoane = Data prezentă - Data de naștere.</p>
+         
+     <p>Iată o abordare ușor diferită pentru a înțelege mai clar formula vârstei.</p>
+         
+     <p>Data de Naștere a lui Peter = 13 iulie 1992.</p>
+         
+     <p>Diferența în Ani = 2015 - 1992 = 23 de ani. (Această calculație se extinde de la 13 iulie 1992, la 13 iulie 2015).</p>
+         
+     <p>Numărul de luni rămase de la 13 iulie 2015, la 13 aprilie 2016 = 9 luni.</p>
+         
+     <p>Numărul de zile rămase de la 13 aprilie 2016, la 21 aprilie 2016 = 8 zile.</p>
+         
+     <p><strong>Răspuns:</strong> Prin urmare, vârsta lui Peter este de 23 de ani, 9 luni și 8 zile.</p>
+         
+     <p>Similar, puteți folosi calculatorul de vârstă pentru a determina vârsta persoanelor cu datele de naștere și datele curente furnizate până în data de 26 august 2021:</p>
+         
+     <ul>
+         <li>13 iulie 1992</li>
+         <li>21 aprilie 2016</li>
+     </ul>
+
+
+
+
+
+
+
+     <p><b>☛ Mai multe calculatoare:</b></p>
+    
+     <table border="1">
+         <tbody>
+             <tr>
+                 <td>
+                 <p><a href="https://select-statistics.co.uk/calculators/">Statistică</a></p>
+                 </td>
+                 <td>
+                 <p><a href="https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/">Dobândă Compusă</a></p>
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                 <p><a href="https://www.dadsworksheets.com/fraction-calculator.html">Fractie</a></p>
+                 </td>
+                 <td>
+                 <p><a href="https://mathforyou.net/en/online/calculus/derivative/">Derivată</a></p>
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                 <p><a href="https://www.wikihow.com/Calculate-Percentages">Procent</a></p>
+                 </td>
+                 <td>
+                 <p><a href="https://www.cuemath.com/calculators/integral-calculator/">Integrală</a></p>
+                 </td>
+             </tr>
+         </tbody>
+     </table>
+     
+     <h2>Întrebări frecvente despre Calculatorul de Vârstă</h2>
+     
+     <h3>Cum să Calculezi Vârsta folosind Calculatorul de Vârstă?</h3>
+     
+     <p>Puteți utiliza acest <strong>calculator de vârstă online</strong> pentru a determina vârsta pe baza datei de naștere furnizate și a datei curente sau a datei dorite pentru calculul vârstei. Asigurați-vă că ambele date sunt formatate ca ZZ/LL/AAAA. Accesați calculatorul de data nașterii vizitând <a href="https://agecalculator.com">Calculator de Vârstă</a>.</p>
+     
+     <h3>Care este Utilizarea Calculatorului DOB?</h3>
+     
+     <p>Calculatorul DOB calculează vârsta actuală a unei persoane sau a unui obiect, ținând cont de ani, luni și zile. Introduceți pur și simplu DOB-ul și data curentă în format zz/ll/aaaa pentru a obține vârsta.</p>
+     
+     <h3>Cum să Determini Numărul de Ani Utilizând Calculatorul de Data Nașterii?</h3>
+     
+     <p>Pentru a calcula numărul de ani folosind calculatorul de vârstă, începeți prin introducerea datei de naștere și a datei curente în formatul specificat. Calculatorul furnizează vârsta în ani, luni și zile, iar "ani" reprezintă vârsta sau numărul de ani.</p>
+     
+     <h3>Cum să Folosești calculatorul de vârstă?</h3>
+     
+     <p>Pentru a afla mai multe puteți vizita articolul nostru "<a href="how-to-use-age-calculator.html">Cum să folosești calculatorul de vârstă?</a>" sau puteți citi postările noastre de blog interesante. <a href="top-10-famous-animals-and-their-age.html">Top 10 animale celebre și vârsta lor</a>.</p>
+
+
+
+
+     <footer>
+      <nav>
+        <ul>
+          <li><a href="privacy-policy.html" target="_blank">Politica de confidențialitate</a></li>
+          <li><a href="terms-and-conditions.html">Termeni și condiții</a></li>
+          <li><a href="faq.html" target="_blank">Întrebări frecvente</a></li>
+          <li><a href="about-us.html" target="_blank">Despre noi</a></li>
+          <li><a href="blog-home.html" target="_blank">Blog</a></li>
+          <li><a href="api-docs.html" target="_blank">Documentația API</a></li>
+          <li><a href="api-status.html" target="_blank">Starea API-ului</a></li>
+          <li><a href="contact-us.html" target="_blank">Contactează-ne</a></li>
+          <li><a href="mailto:hello@agecalculator.com" target="_blank">hello@agecalculator.com</a></li>
+        </ul>
+      </nav>
+    </footer>
+
+  </div>
+</div>
+<script type="text/javascript">
+  function age() {
+  var d1 = document.getElementById('date').value;
+  var m1 = document.getElementById('month').value;
+  var y1 = document.getElementById('year').value;
+
+  var date = new Date();
+  var d2 = date.getDate();
+  var m2 = 1 + date.getMonth();
+  var y2 = date.getFullYear();
+  var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  if(d1 > d2){
+  	d2 = d2 + month[m2 - 1];
+  	m2 = m2 - 1;
+  }
+  if(m1 > m2){
+  	m2 = m2 + 12;
+  	y2 = y2 - 1;
+  }
+  var d = d2 - d1;
+  var m = m2 - m1;
+  var y = y2 - y1;
+
+  document.getElementById('age').innerHTML = 'Your Age is '+y+' Years '+m+' Months '+d+' Days';
+}
+</script>
+</body>
+</html>

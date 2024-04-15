@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Yaş Hesaplama - Age Calculator Online</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   
+    <meta content="Çevrimiçi yaş hesaplayıcısı, doğum tarihinizi kullanarak yaşınızı hesaplamanıza ve herhangi bir karmaşık matematik yapmadan yaşınızı hızlı bir şekilde bulmanıza olanak tanır. Yanıtı yıllar, aylar ve günler olarak döndürecektir" name="description">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
+    
+<style media="screen">
+    body{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #2782e3;
+	font-size: 15px;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+}
+* {
+	box-sizing: border-box;
+}
+.container{
+	width:520px;
+	height: auto;
+	margin: 100px auto;
+	background-color: #eee;
+	border-radius: 5px;
+}
+.text-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.base{
+	width: 100%;
+	 
+	margin: 0;
+	overflow: hidden;
+	display: block;
+	float: none;
+}
+.block{
+	width: 135px;
+	padding: 5px 20px;
+ 
+	margin-left: 20px;
+	display: inline-block;
+	float: left;
+}
+.base h1{
+	font-size: 26px;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: normal;
+  margin-top: 0px;
+  box-shadow: 0px 2px #bababa;
+  background: white;
+  font-size: 34px;
+	color: navy;
+}
+ 
+.title{
+	font-size: 20px;
+	text-align: left;
+	font-family: sans-serif;
+	font-weight: normal;
+	line-height: 0.5;
+	letter-spacing: 0.5px;
+	word-spacing: 2.7px;
+	color: #1073d0;
+}
+input[type=text] {
+	width: 140px;
+	margin: auto;
+	outline: none;
+    min-height: 50px;
+	border: 2px solid #1073d0;
+	padding: 12px;
+	background-color: #f7f7f7;
+    border-radius: 2px;
+    color: #1073d0;
+    font-size: 17px;
+}
+input[type=text]:focus{
+	background-color: #ffffff;
+	border: 2px solid orange;
+	outline: none;
+}
+input[type=button]{
+	width: 150px;
+	margin-left: 35%;
+  margin-top: 40px;
+	outline: none;
+	border: none;
+	border-radius: 2px;
+	background-color: #0761b6;
+	color: #ffffff;
+	padding: 14px 16px;
+	text-align: center;
+	font-size: 16px;
+}
+input[type=button]:hover{
+	background-color: #003669;
+}
+ 
+#age{
+	display: block;
+	margin: 10px;
+    margin-top: 35px;
+	padding: 10px;
+    padding-bottom: 20px;
+	overflow: hidden;
+	font-family: verdana;
+	font-size: 23px;
+	font-weight: normal;
+	line-height: 1.5;
+	word-spacing: 2.7px;
+	color: navy;
+}
+
+      footer {
+        margin: 0 auto 10px;
+      }
+
+      footer nav {
+        padding: 2px 2px;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 0 5px #ddd;
+      }
+
+      footer li {
+        margin: 5px;
+        display: inline-block;
+      }
+
+      /* footer li:last-child {
+        float: center;
+      } */
+
+      footer a {
+        color: #999;
+        font-size: 0.8rem;
+        text-decoration: none;
+
+        -webkit-transition: 0.5s;
+           -moz-transition: 0.5s;
+                transition: 0.5s;
+      }
+
+      footer a:hover {
+        color: #333;
+      }
+
+  </style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "operatingSystem": "Windows, Mac, Linux, Chromebook, Andriod, iOS",
+    "name": "Age Calculator",
+    "applicationCategory": "UtilitiesApplication",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.7,
+      "worstRating": 1,
+      "bestRating": 5,
+      "reviewCount": 5
+    },
+  }
+  </script>
+
+  <link rel="canonical" href="https://agecalculator.com/tr/">
+<link rel="alternate" hreflang="ar" href="https://agecalculator.com/ar/">
+<link rel="alternate" hreflang="bg" href="https://agecalculator.com/bg/">
+<link rel="alternate" hreflang="cs" href="https://agecalculator.com/cs/">
+<link rel="alternate" hreflang="da" href="https://agecalculator.com/da/">
+<link rel="alternate" hreflang="de" href="https://agecalculator.com/de/">
+<link rel="alternate" hreflang="el" href="https://agecalculator.com/el/">
+<link rel="alternate" hreflang="en" href="https://agecalculator.com/">
+<link rel="alternate" hreflang="es" href="https://agecalculator.com/es/">
+<link rel="alternate" hreflang="et" href="https://agecalculator.com/et/">
+<link rel="alternate" hreflang="fi" href="https://agecalculator.com/fi/">
+<link rel="alternate" hreflang="fr" href="https://agecalculator.com/fr/">
+<link rel="alternate" hreflang="he" href="https://agecalculator.com/he/">
+<link rel="alternate" hreflang="hi" href="https://agecalculator.com/hi/">
+<link rel="alternate" hreflang="hu" href="https://agecalculator.com/hu/">
+<link rel="alternate" hreflang="id" href="https://agecalculator.com/id/">
+<link rel="alternate" hreflang="it" href="https://agecalculator.com/it/">
+<link rel="alternate" hreflang="ja" href="https://agecalculator.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://agecalculator.com/ko/">
+<link rel="alternate" hreflang="lt" href="https://agecalculator.com/lt/">
+<link rel="alternate" hreflang="lv" href="https://agecalculator.com/lv/">
+<link rel="alternate" hreflang="nb" href="https://agecalculator.com/nb/">
+<link rel="alternate" hreflang="nl" href="https://agecalculator.com/nl/">
+<link rel="alternate" hreflang="pl" href="https://agecalculator.com/pl/">
+<link rel="alternate" hreflang="pt" href="https://agecalculator.com/pt/">
+<link rel="alternate" hreflang="ro" href="https://agecalculator.com/ro/">
+<link rel="alternate" hreflang="ru" href="https://agecalculator.com/ru/">
+<link rel="alternate" hreflang="sk" href="https://agecalculator.com/sk/">
+<link rel="alternate" hreflang="sl" href="https://agecalculator.com/sl/">
+<link rel="alternate" hreflang="sv" href="https://agecalculator.com/sv/">
+<link rel="alternate" hreflang="th" href="https://agecalculator.com/th/">
+<link rel="alternate" hreflang="tr" href="https://agecalculator.com/tr/">
+<link rel="alternate" hreflang="uk" href="https://agecalculator.com/uk/">
+<link rel="alternate" hreflang="vi" href="https://agecalculator.com/vi/">
+<link rel="alternate" hreflang="zh" href="https://agecalculator.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://agecalculator.com/">
+</head>
+<body>
+
+<div class="container">
+
+  
+  <form>
+  	<div class="base">
+  		<div class="enter">
+  		<h1>Yaş Hesaplama</h1>
+  	</div>
+  <div class="block">
+  	<p class="title">Tarih</p>
+  	<input type="text" name="date" id="date" placeholder="gg" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">Ay</p>
+    <input type="text" name="month" id="month" placeholder="aa" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">Yıl</p>
+    <input type="text" name="year" id="year" placeholder="yyyy" required="required" minlength="4" maxlength="4" />
+  </div>
+  </div>
+  <div class="base">
+  	<div class="enter">
+    <input type="button" name="submit" value="Gönder" onclick="age()" />
+    </div>
+  </div>
+    <div id="age"></div>
+  </form>
+
+
+
+
+  
+  <div class="text-content">
+    <p>Bu yaş hesaplayıcı, bir kişinin doğum tarihine dayalı olarak yaşını belirler. Yaş hesaplama yöntemleri kültürlere göre değişebilir, ancak genellikle bir kişinin yaşı her doğum gününde 1 yıl artar.</p>
+
+    <p>Bu ücretsiz çevrimiçi yaş hesaplayıcı, birçok senaryoda kullanılabilen değerli ve anlaşılır bir araçtır. Yeni doğmuşlardan yaşlılara kadar bireylerin yaşını, doğum tarihleri ve mevcut tarih bilgilerini kullanarak yıl, ay ve gün cinsinden hesaplayabilir.</p>
+    
+    <div id="calc">
+    <h2>Yaş Hesaplayıcı Ne İşe Yarar?</h2>
+    </div>
+    
+    <p><strong>Çevrimiçi yaş hesaplayıcı, </strong>belirli bir tarihte bir kişinin yağını hesaplamak için tasarlanmış web tabanlı bir araçtır. Birçok Batı kültüründe, yaş hesaplama genellikle aşağı yuvarlanır, bu nedenle bir kişi 8 yaşında ve 9 ay yaşamışsa, yaşları 8 olarak kabul edilir.</p>
+    
+    <h3>Doğum Tarihi (DT) Hesaplayıcı</h3>
+    
+    <p>Doğum tarihi DT hesaplayıcısı, doğum tarihine dayanarak yaşını belirlememizi sağlar. Bu yaş hesaplayıcıyı kullanmak için gerekli değerleri sağlanan giriş kutusuna girin.</p>
+    
+    <ul>
+        <li>GG/AA/YYYY formatında DT</li>
+        <li>Yaşını hesaplamak istediğiniz belirli tarih, dd/aa/yyyy formatında girilmelidir.</li>
+    </ul>
+    
+    <p style="text-align: center;"><img src="img/screenshot-1.jpg" style="max-width:100%; max-height:100%;"></img></p>
+    
+    <h2>Yaş Hesaplayıcıyı Nasıl Kullanırım?</h2>
+    
+    <p>Doğum günü hesaplayıcısını kullanarak bir kişinin yaşını belirlemek için şu adımları izleyin:</p>
+    
+    <ul>
+        <li><strong>Adım 1</strong>: www.agecalculator.com adresine gidin</li>
+        <li><strong>Adım 2</strong>: Doğum tarihini GG/AA/YYYY formatında yaş hesaplayıcının giriş kutusuna girin.</li>
+        <li><strong>Adım 3</strong>: Kişinin yaşını hesaplamak için <strong>&quot;Gönder&quot;</strong> düğmesine basın.</li>
+        <li><strong>Adım 4</strong>: Giriş metnini temizlemek ve yeni değerler girmek için <strong>&quot;Sıfırla&quot;</strong> düğmesine tıklayın.</li>
+    </ul>
+    
+    <div id="formula">
+    <h2>Yaş Hesaplayıcı İçin Formül</h2>
+    </div>
+    
+    <p>Oxford Sözlüğü'ne göre, &ldquo;Yaş&rdquo;, bir kişinin yaşam süresi veya bir nesnenin varoluşu anlamına gelir. Yaşın hesaplanması, bir kişinin doğum tarihini istenen tarihle karşılaştırarak gerçekleştirilir. Doğum tarihini verilen tarihten çıkarmak, kişinin yaşını verir ve formülle temsil edilir: Yaş = Verilen tarih - Doğum tarihi. Bir kişinin yaşını doğum tarihinden belirli bir tarihe kadar hesaplamak için aşağıdaki adımlar izlenir.</p>
+    
+    <ul>
+        <li><strong>Adım 1:</strong> İlk olarak, mevcut yılı doğum yılından çıkararak tam yılların toplam sayısını hesaplayın. Örneğin, mevcut yıl 2024 ise ve doğum yılı 1998 ise, tam yılların sayısı 26'dır.</li>
+        <li><strong>Adım 2:</strong> Sonra, tam ayların sayısını belirleyin, doğum ayını mevcut aydan çıkararak. Eğer mevcut ay, doğum ayından önceyse, tam yılların sayısını 1 azaltın ve mevcut ayı ayarlamak için 12 ekleyin. Ardından, farkı hesaplayın (mevcut ay - doğum ayı). Örneğin, doğum ayı Şubat ise ve mevcut ay Nisan ise, toplam ay sayısı 2'dir. Doğum ayı Kasım ise ve mevcut ay Nisan ise, toplam ay sayısı 4 + 12 = 16, ve fark 16 - 11 = 5'tir.</li>
+        <li><strong>Adım 3:</strong> Önceki adıma benzer şekilde, tam gün sayısını belirleriz, doğum tarihini mevcut tarihten çıkararak. Ancak, mevcut tarih doğum tarihinden önceyse, tam ayların sayısından 1 çıkarırız ve mevcut ayı takip eden önceki ayın gün sayısını (ayın gün sayısı) ekleriz.</li>
+        <li><strong>Adım 4:</strong> Son olarak, yaş hesaplayıcı, yaşını gün, ay ve yıl olarak verir.</li>
+    </ul>
+    
+    <h2>Yaş Hesaplaması Nasıl Yapılır Örnekler</h2>
+    
+    <p>Aşağıda, yaş hesaplamak için örnekler ve doğum günü hesaplayıcısı tarafından kullanılan metodolojinin daha iyi anlaşılması için kullanılan örnekler bulunmaktadır.</p>
+    
+    <p><strong>Örnek 1:</strong> John'un doğum tarihi 25 Temmuz 1985 (25/07/1985). Onun yaşını 28 Ocak 2021 tarihinde belirleyin ve yaş hesaplayıcıyı kullanarak doğrulayın.</p>
+    
+
+
+
+    <p><strong>Çözüm:</strong></p>
+
+    <p>John'un yaşını hesaplamak için formülü uygulayalım:</p>
+    
+    <p>Bir Kişinin Yaşı = Verilen tarih - Doğum tarihi.</p>
+    
+    <p>John'un Doğum Tarihi = 25 Temmuz 1985.</p>
+    
+    <p>Verilen tarih = 28 Ocak 2021.</p>
+    
+    <p>Dikkat edilmesi gereken nokta, mevcut ayın doğum ayından daha küçük olmasıdır. Yani, Ocak (1), Temmuz (7)'dan daha küçüktür. Bu nedenle, mevcut yılı 2020 olarak kabul ederiz ve 12 + 1 (Ocağın) - 7 (Temmuzun) = 6 ayı da dikkate alırız.</p>
+    
+    <p>Yıllar Farkı = 2020 - 1985 = 35 yıl.</p>
+    
+    <p>Kalan gün sayısı = 3 gün.</p>
+    
+    <p><strong>Cevap:</strong> Dolayısıyla, John'un yaşı 35 yıl, 6 ay ve 3 gündür.</p>
+    
+    <p><strong>Örnek 2:</strong> Peter'ın doğum tarihi 13 Temmuz 1992. 21 Nisan 2016 tarihindeki yaşını hesaplayın ve yaş hesaplayıcıyı kullanarak doğrulayın.</p>
+    
+    <p><strong>Çözüm:</strong></p>
+    
+    <p>Peter'ın yaşını hesaplamak için formülü kullanma:</p>
+    
+    <p>Bir Kişinin Yaşı = Mevcut tarih - Doğum tarihi.</p>
+    
+    <p>Burada yaş formülünü daha net anlamak için biraz farklı bir yaklaşım bulunmaktadır.</p>
+    
+    <p>Peter'ın Doğum Tarihi = 13 Temmuz 1992.</p>
+    
+    <p>Yıllar Farkı = 2015 - 1992 = 23 yıl. (Bu hesaplama 13 Temmuz 1992'den 13 Temmuz 2015'e kadar uzanır).</p>
+    
+    <p>13 Temmuz 2015'ten 21 Nisan 2016'ya kadar kalan ay sayısı = 9 ay.</p>
+    
+    <p>13 Nisan 2016'dan 21 Nisan 2016'ya kadar kalan gün sayısı = 8 gün.</p>
+    
+    <p><strong>Cevap:</strong> Dolayısıyla, Peter'ın yaşı 23 yıl, 9 ay ve 8 gündür.</p>
+    
+    <p>Aynı şekilde, 26 Ağustos 2021'e kadar doğum tarihleri ve mevcut tarihler verilen bireylerin yaşlarını belirlemek için yaş hesaplayıcıyı kullanabilirsiniz:</p>
+    
+    <ul>
+        <li>13 Temmuz 1992</li>
+        <li>21 Nisan 2016</li>
+    </ul>
+    
+
+
+
+
+
+
+
+    <p><b>☛ Daha fazla hesap makinesi:</b></p>
+    
+<table border="1">
+    <tbody>
+        <tr>
+            <td>
+            <p><a href="https://select-statistics.co.uk/calculators/">İstatistik</a></p>
+            </td>
+            <td>
+            <p><a href="https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/">Bileşik Faiz</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><a href="https://www.dadsworksheets.com/fraction-calculator.html">Kesir</a></p>
+            </td>
+            <td>
+            <p><a href="https://mathforyou.net/en/online/calculus/derivative/">Türev</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><a href="https://www.wikihow.com/Calculate-Percentages">Yüzde</a></p>
+            </td>
+            <td>
+            <p><a href="https://www.cuemath.com/calculators/integral-calculator/">İntegral</a></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Yaş Hesaplayıcı SSS</h2>
+
+<h3>Yaş Hesaplayıcıyı Nasıl Kullanılır?</h3>
+
+<p>Verilen doğum tarihi ve yaş hesaplaması için mevcut veya istenen tarih kullanılarak bu <strong>çevrimiçi yaş hesaplayıcısını</strong> kullanabilirsiniz. Her iki tarihin de GG/AA/YYYY biçiminde biçimlendirildiğinden emin olun. Doğum tarihi hesaplayıcısına erişmek için <a href="https://agecalculator.com">Yaş Hesaplayıcı</a>'yı ziyaret edin.</p>
+
+<h3>DOB Hesaplayıcısının Kullanımı Nedir?</h3>
+
+<p>DOB hesaplayıcısı, yılları, ayları ve günleri hesaba katarak bir kişinin veya nesnenin mevcut yaşını hesaplar. Yaşınızı elde etmek için DOB ve mevcut tarihi dd/aa/yyyy biçiminde girin.</p>
+
+<h3>Doğum Tarihi Hesaplayıcısı Kullanılarak Yılların Sayısı Nasıl Belirlenir?</h3>
+
+<p>Yaş hesaplayıcısını kullanarak yılların sayısını hesaplamak için, belirtilen formatta doğum tarihini ve mevcut tarihi girdikten sonra işe başlayın. Hesaplayıcı, yaşları yıl, ay ve gün olarak verir, "yıllar" yaşı veya yılların sayısını temsil eder.</p>
+
+<h3>Yaş Hesaplayıcı Nasıl Kullanılır?</h3>
+
+<p>Daha fazla bilgi için "<a href="how-to-use-age-calculator.html">Yaş hesaplayıcı nasıl kullanılır?</a>" makalemizi ziyaret edebilir veya ilginç blog yazılarımızı okuyabilirsiniz. <a href="top-10-famous-animals-and-their-age.html">En ünlü 10 hayvan ve yaşları</a>.</p>
+
+    
+
+
+
+<footer>
+  <nav>
+      <ul>
+          <li>
+              <a href="privacy-policy.html" target="_blank">Gizlilik Politikası</a>
+          </li>
+          <li><a href="terms-and-conditions.html">Şartlar</a></li>
+          <li><a href="faq.html" target="_blank">SSS</a></li>
+          <li><a href="about-us.html" target="_blank">Hakkımızda</a></li>
+          <li><a href="blog-home.html" target="_blank">Blog</a></li>
+          <li><a href="api-docs.html" target="_blank">API Belgeleri</a></li>
+          <li><a href="api-status.html" target="_blank">API Durumu</a></li>
+          <li>
+              <a href="contact-us.html" target="_blank">Bizimle İletişime Geçin</a>
+          </li>
+          <li><a href="mailto:hello@agecalculator.com" target="_blank">hello@agecalculator.com</a></li>
+      </ul>
+  </nav>
+</footer>
+
+
+  </div>
+</div>
+<script type="text/javascript">
+  function age() {
+  var d1 = document.getElementById('date').value;
+  var m1 = document.getElementById('month').value;
+  var y1 = document.getElementById('year').value;
+
+  var date = new Date();
+  var d2 = date.getDate();
+  var m2 = 1 + date.getMonth();
+  var y2 = date.getFullYear();
+  var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  if(d1 > d2){
+  	d2 = d2 + month[m2 - 1];
+  	m2 = m2 - 1;
+  }
+  if(m1 > m2){
+  	m2 = m2 + 12;
+  	y2 = y2 - 1;
+  }
+  var d = d2 - d1;
+  var m = m2 - m1;
+  var y = y2 - y1;
+
+  document.getElementById('age').innerHTML = 'Your Age is '+y+' Years '+m+' Months '+d+' Days';
+}
+</script>
+</body>
+</html>

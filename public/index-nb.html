@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Alderskalkulator - Age Calculator Online</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   
+    <meta content="Online alderskalkulator lar deg beregne din alder ved hjelp av din fødselsdato og finne alderen din raskt uten å måtte gjøre noen form for kompleks matematikk. Den vil gi svaret i år, måneder og dager.
+    " name="description">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
+    
+<style media="screen">
+    body{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #2782e3;
+	font-size: 15px;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+}
+* {
+	box-sizing: border-box;
+}
+.container{
+	width:520px;
+	height: auto;
+	margin: 100px auto;
+	background-color: #eee;
+	border-radius: 5px;
+}
+.text-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.base{
+	width: 100%;
+	 
+	margin: 0;
+	overflow: hidden;
+	display: block;
+	float: none;
+}
+.block{
+	width: 135px;
+	padding: 5px 20px;
+ 
+	margin-left: 20px;
+	display: inline-block;
+	float: left;
+}
+.base h1{
+	font-size: 26px;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: normal;
+  margin-top: 0px;
+  box-shadow: 0px 2px #bababa;
+  background: white;
+  font-size: 34px;
+	color: navy;
+}
+ 
+.title{
+	font-size: 20px;
+	text-align: left;
+	font-family: sans-serif;
+	font-weight: normal;
+	line-height: 0.5;
+	letter-spacing: 0.5px;
+	word-spacing: 2.7px;
+	color: #1073d0;
+}
+input[type=text] {
+	width: 140px;
+	margin: auto;
+	outline: none;
+    min-height: 50px;
+	border: 2px solid #1073d0;
+	padding: 12px;
+	background-color: #f7f7f7;
+    border-radius: 2px;
+    color: #1073d0;
+    font-size: 17px;
+}
+input[type=text]:focus{
+	background-color: #ffffff;
+	border: 2px solid orange;
+	outline: none;
+}
+input[type=button]{
+	width: 150px;
+	margin-left: 35%;
+  margin-top: 40px;
+	outline: none;
+	border: none;
+	border-radius: 2px;
+	background-color: #0761b6;
+	color: #ffffff;
+	padding: 14px 16px;
+	text-align: center;
+	font-size: 16px;
+}
+input[type=button]:hover{
+	background-color: #003669;
+}
+ 
+#age{
+	display: block;
+	margin: 10px;
+    margin-top: 35px;
+	padding: 10px;
+    padding-bottom: 20px;
+	overflow: hidden;
+	font-family: verdana;
+	font-size: 23px;
+	font-weight: normal;
+	line-height: 1.5;
+	word-spacing: 2.7px;
+	color: navy;
+}
+
+      footer {
+        margin: 0 auto 10px;
+      }
+
+      footer nav {
+        padding: 2px 2px;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 0 5px #ddd;
+      }
+
+      footer li {
+        margin: 5px;
+        display: inline-block;
+      }
+
+      /* footer li:last-child {
+        float: center;
+      } */
+
+      footer a {
+        color: #999;
+        font-size: 0.8rem;
+        text-decoration: none;
+
+        -webkit-transition: 0.5s;
+           -moz-transition: 0.5s;
+                transition: 0.5s;
+      }
+
+      footer a:hover {
+        color: #333;
+      }
+
+  </style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Age Calculator",
+    "applicationCategory": "UtilitiesApplication",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "ratingCount": "5"
+    }
+  }
+  </script>
+
+  <link rel="canonical" href="https://agecalculator.com/nb/">
+<link rel="alternate" hreflang="ar" href="https://agecalculator.com/ar/">
+<link rel="alternate" hreflang="bg" href="https://agecalculator.com/bg/">
+<link rel="alternate" hreflang="cs" href="https://agecalculator.com/cs/">
+<link rel="alternate" hreflang="da" href="https://agecalculator.com/da/">
+<link rel="alternate" hreflang="de" href="https://agecalculator.com/de/">
+<link rel="alternate" hreflang="el" href="https://agecalculator.com/el/">
+<link rel="alternate" hreflang="en" href="https://agecalculator.com/">
+<link rel="alternate" hreflang="es" href="https://agecalculator.com/es/">
+<link rel="alternate" hreflang="et" href="https://agecalculator.com/et/">
+<link rel="alternate" hreflang="fi" href="https://agecalculator.com/fi/">
+<link rel="alternate" hreflang="fr" href="https://agecalculator.com/fr/">
+<link rel="alternate" hreflang="he" href="https://agecalculator.com/he/">
+<link rel="alternate" hreflang="hi" href="https://agecalculator.com/hi/">
+<link rel="alternate" hreflang="hu" href="https://agecalculator.com/hu/">
+<link rel="alternate" hreflang="id" href="https://agecalculator.com/id/">
+<link rel="alternate" hreflang="it" href="https://agecalculator.com/it/">
+<link rel="alternate" hreflang="ja" href="https://agecalculator.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://agecalculator.com/ko/">
+<link rel="alternate" hreflang="lt" href="https://agecalculator.com/lt/">
+<link rel="alternate" hreflang="lv" href="https://agecalculator.com/lv/">
+<link rel="alternate" hreflang="nb" href="https://agecalculator.com/nb/">
+<link rel="alternate" hreflang="nl" href="https://agecalculator.com/nl/">
+<link rel="alternate" hreflang="pl" href="https://agecalculator.com/pl/">
+<link rel="alternate" hreflang="pt" href="https://agecalculator.com/pt/">
+<link rel="alternate" hreflang="ro" href="https://agecalculator.com/ro/">
+<link rel="alternate" hreflang="ru" href="https://agecalculator.com/ru/">
+<link rel="alternate" hreflang="sk" href="https://agecalculator.com/sk/">
+<link rel="alternate" hreflang="sl" href="https://agecalculator.com/sl/">
+<link rel="alternate" hreflang="sv" href="https://agecalculator.com/sv/">
+<link rel="alternate" hreflang="th" href="https://agecalculator.com/th/">
+<link rel="alternate" hreflang="tr" href="https://agecalculator.com/tr/">
+<link rel="alternate" hreflang="uk" href="https://agecalculator.com/uk/">
+<link rel="alternate" hreflang="vi" href="https://agecalculator.com/vi/">
+<link rel="alternate" hreflang="zh" href="https://agecalculator.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://agecalculator.com/">
+
+</head>
+<body>
+
+<div class="container">
+
+  
+  <form>
+  	<div class="base">
+  		<div class="enter">
+  		<h1>Alderskalkulator</h1>
+  	</div>
+  <div class="block">
+  	<p class="title">Dato</p>
+  	<input type="text" name="date" id="date" placeholder="dd" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">Måned</p>
+    <input type="text" name="month" id="month" placeholder="mm" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">År</p>
+    <input type="text" name="year" id="year" placeholder="åååå" required="required" minlength="4" maxlength="4" />
+  </div>
+  </div>
+  <div class="base">
+  	<div class="enter">
+    <input type="button" name="submit" value="Send inn" onclick="age()" />
+    </div>
+  </div>
+    <div id="age"></div>
+  </form>
+
+
+
+  
+  <div class="text-content">
+    <p>Denne alderskalkulatoren bestemmer en persons alder basert på deres fødselsdato. Metoder for aldersberegning kan variere mellom kulturer, men generelt sett økes en persons alder med 1 år på hver bursdag.</p>
+
+<p>Denne gratis nettbaserte alderskalkulatoren er et verdifullt og enkelt verktøy som kan brukes i mange situasjoner. Den kan bestemme alderen til enkeltpersoner fra nyfødte til eldre ved å beregne år, måneder og dager, ved hjelp av inndata av fødselsdato og gjeldende dato.</p>
+
+<div id="calc">
+<h2>Hva gjør en Alderskalkulator?</h2>
+</div>
+
+<p><strong>Nettbasert alderskalkulator er et nettbasert verktøy</strong> designet for å beregne en persons alder på en bestemt dato, gitt at deres fødselsdato (dob) er kjent. I mange vestlige kulturer avrundes aldersberegningen typisk nedover, så hvis en person har levd i 8 år og 9 måneder, blir alderen deres betraktet som 8 år.</p>
+
+<h3>Fødselsdato (DOB) Kalkulator</h3>
+
+<p>Fødselsdato (DOB) kalkulator gjør det mulig å bestemme alder basert på fødselsdato. For å bruke denne alderskalkulatoren, skriv inn de nødvendige verdiene i den angitte inndataboksen.</p>
+
+<ul>
+    <li>DOB i form av DD/MM/ÅÅÅÅ</li>
+    <li>Den spesifikke datoen du ønsker å beregne alderen for, skal skrives inn i samme format som dd/mm/åååå</li>
+</ul>
+
+<p style="text-align: center;"><img src="img/screenshot-1.jpg" style="max-width:100%; max-height:100%;"></img></p>
+
+<h2>Hvordan bruker jeg Alderskalkulator?</h2>
+
+<p>For å bestemme en persons alder ved hjelp av en bursdagskalkulator, følg disse trinnene:</p>
+
+<ul>
+    <li><strong>Trinn 1</strong>: Gå til www.agecalculator.com</li>
+    <li><strong>Trinn 2</strong>: Skriv inn fødselsdatoen i alderskalkulatorens inndataboks ved hjelp av formatet DD/MM/ÅÅÅÅ.</li>
+    <li><strong>Trinn 3</strong>: Trykk på <strong>&quot;Send inn&quot;</strong>-knappen for å beregne personens alder.</li>
+    <li><strong>Trinn 4</strong>: Klikk på <strong>&quot;Nullstill&quot;</strong>-knappen for å tømme inndataboksen og skrive inn nye verdier.</li>
+</ul>
+
+<div id="formula">
+<h2>Formel for Alderskalkulator</h2>
+</div>
+
+<p>Ifølge Oxford Dictionary refererer &ldquo;Alder&rdquo; til varigheten av en persons liv eller tilstedeværelsen av et objekt. Beregning av alder innebærer å sammenligne en persons fødselsdato med datoen for alderen som kreves. Ved å trekke fødselsdatoen fra den gitte datoen får vi personens alder, representert av formelen: Alder = Gitt dato - Fødselsdato. Nedenfor er trinnene for å beregne en persons alder fra deres fødselsdato til en spesifisert dato.</p>
+
+<ul>
+    <li><strong>Trinn 1:</strong> Beregn først det totale antallet fullstendige år ved å trekke fødselsåret fra gjeldende år. For eksempel, hvis gjeldende år er 2024 og fødselsåret er 1998, er antall fullstendige år 26.</li>
+    <li><strong>Trinn 2:</strong> Deretter bestemmer vi antall fullstendige måneder ved å trekke fødselsmåneden fra <a href="https://www.oxfordreference.com/display/10.1093/oi/authority.20110803095355563">gjeldende måned</a>. Hvis gjeldende måned er tidligere enn fødselsmåneden, reduserer vi antallet fullstendige år med 1 og legger til 12 til gjeldende måned for å justere. Deretter beregner vi differansen (gjeldende måned - fødselsmåned). For eksempel, hvis fødselsmåneden er februar og gjeldende måned er april, er det totale antallet måneder 2. Hvis fødselsmåneden er november og gjeldende måned er april, er det totale antallet måneder 4 + 12 = 16, og differansen er 16 - 11 = 5.</li>
+    <li><strong>Trinn 3:</strong> På samme måte som i forrige trinn, bestemmer vi også antall dager ved å trekke fødselsdatoen fra gjeldende dato. Imidlertid, hvis gjeldende dato er tidligere enn fødselsdatoen, trekker vi 1 fra antallet fullstendige måneder og legger til 30/31/28/29 til gjeldende dato, avhengig av antallet dager i den forrige måneden før gjeldende måned.</li>
+    <li><strong>Trinn 4:</strong> Til slutt gir alderskalkulatoren alderen i dager, måneder og år.</li>
+</ul>
+
+<h2>Eksempler som viser hvordan man beregner alder</h2>
+
+<p>Nedenfor er eksempler som illustrerer hvordan man beregner alder og metodikken som brukes av bursdagskalkulatoren for bedre forståelse.</p>
+
+<p><strong>Eksempel 1:</strong> John's fødselsdato er 25. juli 1985 (25/07/1985). Bestem hans alder den 28. januar 2021, og bekreft det ved å bruke alderskalkulatoren.</p>
+
+
+
+
+
+
+
+<p><strong>Løsning:</strong></p>
+
+<p>Anvendelse av formelen for å beregne Johns alder:</p>
+
+<p>En persons alder = Gitt dato - Fødselsdato.</p>
+
+<p>Johns fødselsdato = 25. juli 1985.</p>
+
+<p>Gitt dato = 28. januar 2021.</p>
+
+<p>Merk at gjeldende måned er mindre enn fødselsmåneden. Det vil si, januar (1) er mindre enn juli (7). Derfor betrakter vi år 2020 som gjeldende år og tar også hensyn til 12 + 1 (Jan) - 7 (Juli) = 6 måneder.</p>
+
+<p>Forskjell i år = 2020 - 1985 = 35 år.</p>
+
+<p>Antall gjenværende dager = 3 dager.</p>
+
+<p><strong>Svar:</strong> Dermed er Johns alder 35 år, 6 måneder og 3 dager.</p>
+
+<p><strong>Eksempel 2:</strong> Peters fødselsdato er 13. juli 1992. Beregn hans alder den 21. april 2016, og bekreft det ved å bruke alderskalkulatoren.</p>
+
+<p><strong>Løsning:</strong></p>
+
+<p>Å bruke formelen for å beregne Peters alder:</p>
+
+<p>En persons alder = Dagens dato - Fødselsdato.</p>
+
+<p>Her er en litt annerledes tilnærming for å forstå aldersformelen tydeligere.</p>
+
+<p>Peters fødselsdato = 13. juli 1992.</p>
+
+<p>Forskjell i år = 2015 - 1992 = 23 år. (Denne beregningen strekker seg fra 13. juli 1992 til 13. juli 2015).</p>
+
+<p>Antall gjenværende måneder fra 13. juli 2015 til 13. april 2016 = 9 måneder.</p>
+
+<p>Antall gjenværende dager fra 13. april 2016 til 21. april 2016 = 8 dager.</p>
+
+<p><strong>Svar:</strong> Derfor er Peters alder 23 år, 9 måneder og 8 dager.</p>
+
+<p>På samme måte kan du bruke alderskalkulatoren for å fastslå alderen til personer med de oppgitte fødselsdatoene og gjeldende datoer frem til 26. august 2021:</p>
+
+<ul>
+    <li>13. juli 1992</li>
+    <li>21. april 2016</li>
+</ul>
+
+<p><b>☛ Flere kalkulatorer:</b></p>
+
+<table border="1">
+    <tbody>
+        <tr>
+            <td>
+            <p><a href="https://select-statistics.co.uk/calculators/">Statistikk</a></p>
+            </td>
+            <td>
+            <p><a href="https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/">Sammenhengende rente</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><a href="https://www.dadsworksheets.com/fraction-calculator.html">Brøk</a></p>
+            </td>
+            <td>
+            <p><a href="https://mathforyou.net/en/online/calculus/derivative/">Derivert</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><a href="https://www.wikihow.com/Calculate-Percentages">Prosent</a></p>
+            </td>
+            <td>
+            <p><a href="https://www.cuemath.com/calculators/integral-calculator/">Integral</a></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Ofte stilte spørsmål om Alderskalkulator</h2>
+
+<h3>Hvordan Beregne Alder på Alderskalkulator?</h3>
+
+<p>Du kan bruke denne <strong>nettbaserte alderskalkulatoren</strong> for å bestemme alder basert på den angitte fødselsdatoen og gjeldende eller ønsket dato for aldersberegning. Sørg for at begge datoene er formatert som DD/MM/ÅÅÅÅ. Få tilgang til fødselsdato-kalkulatoren ved å besøke <a href="https://agecalculator.com">Alderskalkulator</a>.</p>
+
+<h3>Hva er Bruken av DOB-kalkulatoren?</h3>
+
+<p>DOB-kalkulatoren beregner den nåværende alderen til en person eller gjenstand, med hensyn til år, måneder og dager. Bare skriv inn DOB og gjeldende dato i dd/mm/åååå-format for å få alderen din.</p>
+
+<h3>Hvordan Bestemme Antall År Ved Bruk av Fødselsdato-kalkulatoren?</h3>
+
+<p>For å beregne antall år ved hjelp av alderskalkulatoren, begynn med å skrive inn fødselsdatoen og den gjeldende datoen i det angitte formatet. Kalkulatoren gir alderen i år, måneder og dager, der "år" representerer alderen eller antall år.</p>
+
+<h3>Hvordan Bruke Alderskalkulatoren?</h3>
+
+<p>For å lære mer kan du besøke artikkelen vår "<a href="how-to-use-age-calculator.html">Hvordan bruke alderskalkulatoren?</a>" eller du kan lese våre interessante blogginnlegg. <a href="top-10-famous-animals-and-their-age.html">Topp 10 kjente dyr og alderen deres</a>.</p>
+
+    
+
+
+
+<footer>
+  <nav>
+    <ul>
+      <li><a href="privacy-policy.html" target="_blank">Personvernspolicy</a></li>
+      <li><a href="terms-and-conditions.html">Vilkår</a></li>
+      <li><a href="faq.html" target="_blank">Ofte stilte spørsmål</a></li>
+      <li><a href="about-us.html" target="_blank">Om oss</a></li>
+      <li><a href="blog-home.html" target="_blank">Blogg</a></li>
+      <li><a href="api-docs.html" target="_blank">API-dokumentasjon</a></li>
+      <li><a href="api-status.html" target="_blank">API-status</a></li>
+      <li><a href="contact-us.html" target="_blank">Kontakt oss</a></li>
+      <li><a href="mailto:hello@agecalculator.com" target="_blank">hello@agecalculator.com</a></li>
+    </ul>
+  </nav>
+</footer>
+
+
+  </div>
+</div>
+<script type="text/javascript">
+  function age() {
+  var d1 = document.getElementById('date').value;
+  var m1 = document.getElementById('month').value;
+  var y1 = document.getElementById('year').value;
+
+  var date = new Date();
+  var d2 = date.getDate();
+  var m2 = 1 + date.getMonth();
+  var y2 = date.getFullYear();
+  var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  if(d1 > d2){
+  	d2 = d2 + month[m2 - 1];
+  	m2 = m2 - 1;
+  }
+  if(m1 > m2){
+  	m2 = m2 + 12;
+  	y2 = y2 - 1;
+  }
+  var d = d2 - d1;
+  var m = m2 - m1;
+  var y = y2 - y1;
+
+  document.getElementById('age').innerHTML = 'Your Age is '+y+' Years '+m+' Months '+d+' Days';
+}
+</script>
+</body>
+</html>

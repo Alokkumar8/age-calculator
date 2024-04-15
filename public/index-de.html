@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Altersrechner - Age Calculator</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   
+    <meta content="Online-Altersrechner ermöglicht es Ihnen, Ihr Alter mithilfe Ihres Geburtsdatums und Ihrer Geburtsdaten zu berechnen und Ihr Alter schnell zu finden, ohne komplexe Mathematik durchführen zu müssen. Es liefert die Antwort in Jahren, Monaten und Tagen." name="description">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
+    
+<style media="screen">
+    body{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #2782e3;
+	font-size: 15px;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+}
+* {
+	box-sizing: border-box;
+}
+.container{
+	width:520px;
+	height: auto;
+	margin: 100px auto;
+	background-color: #eee;
+	border-radius: 5px;
+}
+.text-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.base{
+	width: 100%;
+	 
+	margin: 0;
+	overflow: hidden;
+	display: block;
+	float: none;
+}
+.block{
+	width: 135px;
+	padding: 5px 20px;
+ 
+	margin-left: 20px;
+	display: inline-block;
+	float: left;
+}
+.base h1{
+	font-size: 26px;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: normal;
+  margin-top: 0px;
+  box-shadow: 0px 2px #bababa;
+  background: white;
+  font-size: 34px;
+	color: navy;
+}
+ 
+.title{
+	font-size: 20px;
+	text-align: left;
+	font-family: sans-serif;
+	font-weight: normal;
+	line-height: 0.5;
+	letter-spacing: 0.5px;
+	word-spacing: 2.7px;
+	color: #1073d0;
+}
+input[type=text] {
+	width: 140px;
+	margin: auto;
+	outline: none;
+    min-height: 50px;
+	border: 2px solid #1073d0;
+	padding: 12px;
+	background-color: #f7f7f7;
+    border-radius: 2px;
+    color: #1073d0;
+    font-size: 17px;
+}
+input[type=text]:focus{
+	background-color: #ffffff;
+	border: 2px solid orange;
+	outline: none;
+}
+input[type=button]{
+	width: 150px;
+	margin-left: 35%;
+  margin-top: 40px;
+	outline: none;
+	border: none;
+	border-radius: 2px;
+	background-color: #0761b6;
+	color: #ffffff;
+	padding: 14px 16px;
+	text-align: center;
+	font-size: 16px;
+}
+input[type=button]:hover{
+	background-color: #003669;
+}
+ 
+#age{
+	display: block;
+	margin: 10px;
+    margin-top: 35px;
+	padding: 10px;
+    padding-bottom: 20px;
+	overflow: hidden;
+	font-family: verdana;
+	font-size: 23px;
+	font-weight: normal;
+	line-height: 1.5;
+	word-spacing: 2.7px;
+	color: navy;
+}
+
+      footer {
+        margin: 0 auto 10px;
+      }
+
+      footer nav {
+        padding: 2px 2px;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 0 5px #ddd;
+      }
+
+      footer li {
+        margin: 5px;
+        display: inline-block;
+      }
+
+      /* footer li:last-child {
+        float: center;
+      } */
+
+      footer a {
+        color: #999;
+        font-size: 0.8rem;
+        text-decoration: none;
+
+        -webkit-transition: 0.5s;
+           -moz-transition: 0.5s;
+                transition: 0.5s;
+      }
+
+      footer a:hover {
+        color: #333;
+      }
+
+  </style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Age Calculator",
+    "applicationCategory": "UtilitiesApplication",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "ratingCount": "5"
+    }
+  }
+  </script>
+
+  <link rel="canonical" href="https://agecalculator.com/de/">
+<link rel="alternate" hreflang="ar" href="https://agecalculator.com/ar/">
+<link rel="alternate" hreflang="bg" href="https://agecalculator.com/bg/">
+<link rel="alternate" hreflang="cs" href="https://agecalculator.com/cs/">
+<link rel="alternate" hreflang="da" href="https://agecalculator.com/da/">
+<link rel="alternate" hreflang="de" href="https://agecalculator.com/de/">
+<link rel="alternate" hreflang="el" href="https://agecalculator.com/el/">
+<link rel="alternate" hreflang="en" href="https://agecalculator.com/">
+<link rel="alternate" hreflang="es" href="https://agecalculator.com/es/">
+<link rel="alternate" hreflang="et" href="https://agecalculator.com/et/">
+<link rel="alternate" hreflang="fi" href="https://agecalculator.com/fi/">
+<link rel="alternate" hreflang="fr" href="https://agecalculator.com/fr/">
+<link rel="alternate" hreflang="he" href="https://agecalculator.com/he/">
+<link rel="alternate" hreflang="hi" href="https://agecalculator.com/hi/">
+<link rel="alternate" hreflang="hu" href="https://agecalculator.com/hu/">
+<link rel="alternate" hreflang="id" href="https://agecalculator.com/id/">
+<link rel="alternate" hreflang="it" href="https://agecalculator.com/it/">
+<link rel="alternate" hreflang="ja" href="https://agecalculator.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://agecalculator.com/ko/">
+<link rel="alternate" hreflang="lt" href="https://agecalculator.com/lt/">
+<link rel="alternate" hreflang="lv" href="https://agecalculator.com/lv/">
+<link rel="alternate" hreflang="nb" href="https://agecalculator.com/nb/">
+<link rel="alternate" hreflang="nl" href="https://agecalculator.com/nl/">
+<link rel="alternate" hreflang="pl" href="https://agecalculator.com/pl/">
+<link rel="alternate" hreflang="pt" href="https://agecalculator.com/pt/">
+<link rel="alternate" hreflang="ro" href="https://agecalculator.com/ro/">
+<link rel="alternate" hreflang="ru" href="https://agecalculator.com/ru/">
+<link rel="alternate" hreflang="sk" href="https://agecalculator.com/sk/">
+<link rel="alternate" hreflang="sl" href="https://agecalculator.com/sl/">
+<link rel="alternate" hreflang="sv" href="https://agecalculator.com/sv/">
+<link rel="alternate" hreflang="th" href="https://agecalculator.com/th/">
+<link rel="alternate" hreflang="tr" href="https://agecalculator.com/tr/">
+<link rel="alternate" hreflang="uk" href="https://agecalculator.com/uk/">
+<link rel="alternate" hreflang="vi" href="https://agecalculator.com/vi/">
+<link rel="alternate" hreflang="zh" href="https://agecalculator.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://agecalculator.com/">
+</head>
+<body>
+
+<div class="container">
+  <form>
+    <div class="base">
+      <div class="enter">
+        <h1>Altersrechner</h1>
+      </div>
+      <div class="block">
+        <p class="title">Tag</p>
+        <input type="text" name="date" id="date" placeholder="tt" required="required" minlength="1" maxlength="2" />
+      </div>
+      <div class="block">
+        <p class="title">Monat</p>
+        <input type="text" name="month" id="month" placeholder="mm" required="required" minlength="1" maxlength="2" />
+      </div>
+      <div class="block">
+        <p class="title">Jahr</p>
+        <input type="text" name="year" id="year" placeholder="jjjj" required="required" minlength="4" maxlength="4" />
+      </div>
+    </div>
+    <div class="base">
+      <div class="enter">
+        <input type="button" name="submit" value="Senden" onclick="age()" />
+      </div>
+    </div>
+    <div id="age"></div>
+  </form>
+
+  
+
+  <div class="text-content">
+    <p>Dieser Altersrechner bestimmt das Alter einer Person basierend auf ihrem Geburtsdatum. Die Methoden zur Altersberechnung können je nach Kultur variieren, aber im Allgemeinen wird das Alter einer Person an jedem Geburtstag um 1 Jahr erhöht.</p>
+
+<p>Dieser kostenlose Online-Altersrechner ist ein wertvolles und einfaches Werkzeug, das in zahlreichen Szenarien anwendbar ist. Er kann das Alter von Personen von Neugeborenen bis Senioren berechnen, indem Jahre, Monate und Tage anhand ihres Geburtsdatums und des aktuellen Datums ermittelt werden.</p>
+
+<div id="calc">
+  <h2>Was macht ein Altersrechner?</h2>
+</div>
+
+<p><strong>Der Online-Altersrechner ist ein webbasiertes Tool</strong>, das entworfen wurde, um das Alter einer Person an einem bestimmten Datum zu berechnen, sofern ihr Geburtsdatum bekannt ist. In vielen westlichen Kulturen wird das Alter üblicherweise abgerundet, sodass, wenn eine Person 8 Jahre und 9 Monate gelebt hat, ihr Alter als 8 Jahre betrachtet wird.</p>
+
+<h3>Geburtsdatum (DOB) Rechner</h3>
+
+<p>Der Geburtsdatum-DOB-Rechner ermöglicht es uns, das Alter basierend auf dem Geburtsdatum zu bestimmen. Um diesen Altersrechner zu nutzen, geben Sie die erforderlichen Werte in das bereitgestellte Eingabefeld ein.</p>
+
+<ul>
+  <li>Geburtsdatum im Format TT/MM/JJJJ</li>
+  <li>Das spezifische Datum, für das Sie das Alter berechnen möchten, sollte im gleichen Format wie TT/MM/JJJJ eingegeben werden</li>
+</ul>
+
+<p style="text-align: center;"><img src="img/screenshot-1.jpg" style="max-width:100%; max-height:100%;"></p>
+
+<h2>Wie benutze ich den Altersrechner?</h2>
+
+<p>Um das Alter einer Person mit einem Geburtstagsrechner zu bestimmen, befolgen Sie diese Schritte:</p>
+
+<ul>
+  <li><strong>Schritt 1</strong>: Gehen Sie zu www.agecalculator.com</li>
+  <li><strong>Schritt 2</strong>: Geben Sie das Geburtsdatum in das Eingabefeld des Altersrechners im Format TT/MM/JJJJ ein.</li>
+  <li><strong>Schritt 3</strong>: Drücken Sie die <strong>"Absenden"</strong>-Schaltfläche, um das Alter der Person zu berechnen.</li>
+  <li><strong>Schritt 4</strong>: Klicken Sie auf die <strong>"Zurücksetzen"</strong>-Schaltfläche, um den Eingabetext zu löschen und neue Werte einzugeben.</li>
+</ul>
+
+<div id="formula">
+  <h2>Formel für den Altersrechner</h2>
+</div>
+
+<p>Gemäß dem Oxford Dictionary bezieht sich "Alter" auf die Dauer des Lebens einer Person oder das Vorhandensein eines Objekts. Die Berechnung des Alters beinhaltet den Vergleich des Geburtsdatums einer Person mit dem Datum, für das das Alter erforderlich ist. Durch Subtrahieren des Geburtsdatums vom gegebenen Datum ergibt sich das Alter der Person, dargestellt durch die Formel: Alter = Gegebenes Datum - Geburtsdatum. Nachfolgend sind die Schritte zur Berechnung des Alters einer Person von ihrem Geburtsdatum bis zu einem bestimmten Datum aufgeführt.</p>
+
+<ul>
+  <li><strong>Schritt 1:</strong> Berechnen Sie zunächst die Gesamtzahl der vollständigen Jahre, indem Sie das Geburtsjahr vom aktuellen Jahr subtrahieren. Wenn das aktuelle Jahr beispielsweise 2024 und das Geburtsjahr 1998 ist, beträgt die Anzahl der vollständigen Jahre 26.</li>
+  <li><strong>Schritt 2:</strong> Bestimmen Sie anschließend die Anzahl der vollständigen Monate, indem Sie den Geburtsmonat vom <a href="https://www.oxfordreference.com/display/10.1093/oi/authority.20110803095355563">aktuellen Monat</a> subtrahieren. Wenn der aktuelle Monat früher als der Geburtsmonat ist, verringern Sie die Anzahl der vollständigen Jahre um 1 und addieren Sie 12 zum aktuellen Monat, um anzupassen. Berechnen Sie dann den Unterschied (aktueller Monat - Geburtsmonat). Wenn beispielsweise der Geburtsmonat Februar und der aktuelle Monat April ist, beträgt die Gesamtzahl der Monate 2. Wenn der Geburtsmonat November und der aktuelle Monat April ist, beträgt die Gesamtzahl der Monate 4 + 12 = 16, und der Unterschied beträgt 16 - 11 = 5.</li>
+  <li><strong>Schritt 3:</strong> Ähnlich wie im vorherigen Schritt bestimmen wir auch die Anzahl der Tage, indem wir das Geburtsdatum vom aktuellen Datum subtrahieren. Wenn das aktuelle Datum früher als das Geburtsdatum ist, subtrahieren wir 1 von der Anzahl der vollen Monate und addieren 30/31/28/29 zum aktuellen Datum, abhängig von der Anzahl der Tage im vorherigen Monat vor dem aktuellen Monat.</li>
+  <li><strong>Schritt 4:</strong> Abschließend gibt der Altersrechner das Alter in Tagen, Monaten und Jahren aus.</li>
+</ul>
+
+<h2>Beispiele zur Berechnung des Alters</h2>
+
+<p>Nachfolgend finden Sie Beispiele, die zeigen, wie das Alter berechnet wird, und die Methodik, die vom Geburtstagsrechner verwendet wird, für ein besseres Verständnis.</p>
+
+<p><strong>Beispiel 1:</strong> Johns Geburtsdatum ist der 25. Juli 1985 (25/07/1985). Bestimmen Sie sein Alter am 28. Januar 2021 und validieren Sie es mithilfe des Altersrechners.</p>
+
+
+
+
+
+
+
+<p><strong>Lösung:</strong></p>
+
+<p>Anwendung der Formel zur Berechnung von Johns Alter:</p>
+
+<p>Alter einer Person = Gegebenes Datum - Geburtsdatum.</p>
+
+<p>Johns Geburtsdatum = 25. Juli 1985.</p>
+
+<p>Gegebenes Datum = 28. Januar 2021.</p>
+
+<p>Beachten Sie, dass der aktuelle Monat kleiner ist als der Geburtsmonat. Das heißt, Januar (1) ist kleiner als Juli (7). Daher betrachten wir das Jahr 2020 als das aktuelle Jahr und berücksichtigen auch 12 + 1 (Jan) - 7 (Juli) = 6 Monate.</p>
+
+<p>Jahresunterschied = 2020 - 1985 = 35 Jahre.</p>
+
+<p>Anzahl der verbleibenden Tage = 3 Tage.</p>
+
+<p><strong>Antwort:</strong> Daher beträgt Johns Alter 35 Jahre, 6 Monate und 3 Tage.</p>
+
+<p><strong>Beispiel 2:</strong> Peters Geburtsdatum ist der 13. Juli 1992. Berechnen Sie sein Alter am 21. April 2016 und bestätigen Sie es mithilfe des Altersrechners.</p>
+
+<p><strong>Lösung:</strong></p>
+
+<p>Verwendung der Formel zur Berechnung von Peters Alter:</p>
+
+<p>Alter einer Person = Aktuelles Datum - Geburtsdatum.</p>
+
+<p>Hier ist ein etwas anderer Ansatz, um die Altersformel klarer zu verstehen.</p>
+
+<p>Peters Geburtsdatum = 13. Juli 1992.</p>
+
+<p>Jahresunterschied = 2015 - 1992 = 23 Jahre. (Diese Berechnung erstreckt sich vom 13. Juli 1992 bis zum 13. Juli 2015).</p>
+
+<p>Anzahl der verbleibenden Monate vom 13. Juli 2015 bis zum 13. April 2016 = 9 Monate.</p>
+
+<p>Anzahl der verbleibenden Tage vom 13. April 2016 bis zum 21. April 2016 = 8 Tage.</p>
+
+<p><strong>Antwort:</strong> Daher beträgt Peters Alter 23 Jahre, 9 Monate und 8 Tage.</p>
+
+<p>Ähnlich können Sie den Altersrechner verwenden, um die Alter von Personen anhand der bereitgestellten Geburts- und aktuellen Daten bis zum 26. August 2021 zu ermitteln:</p>
+
+<ul>
+    <li>13. Juli 1992</li>
+    <li>21. April 2016</li>
+</ul>
+
+<p><b>☛ Weitere Rechner:</b></p>
+
+<table border="1">
+    <tbody>
+        <tr>
+            <td>
+            <p><a href="https://select-statistics.co.uk/calculators/">Statistik</a></p>
+            </td>
+            <td>
+            <p><a href="https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/">Zinseszins</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><a href="https://www.dadsworksheets.com/fraction-calculator.html">Bruch</a></p>
+            </td>
+            <td>
+            <p><a href="https://mathforyou.net/en/online/calculus/derivative/">Ableitung</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><a href="https://www.wikihow.com/Calculate-Percentages">Prozentrechnung</a></p>
+            </td>
+            <td>
+            <p><a href="https://www.cuemath.com/calculators/integral-calculator/">Integral</a></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>FAQs zum Altersrechner</h2>
+
+<h3>Wie berechnet man das Alter mit dem Altersrechner?</h3>
+
+<p>Sie können diesen <strong>Online-Altersrechner</strong> verwenden, um das Alter basierend auf dem angegebenen Geburtsdatum und dem aktuellen oder gewünschten Datum für die Altersberechnung zu bestimmen. Stellen Sie sicher, dass beide Daten im Format TT/MM/JJJJ formatiert sind. Greifen Sie auf den Geburtsdatum-Rechner zu, indem Sie <a href="https://agecalculator.com">Altersrechner</a> besuchen.</p>
+
+<h3>Wofür wird der DOB-Rechner verwendet?</h3>
+
+<p>Der DOB-Rechner berechnet das aktuelle Alter einer Person oder eines Objekts unter Berücksichtigung von Jahren, Monaten und Tagen. Geben Sie einfach das Geburtsdatum und das aktuelle Datum im Format TT/MM/JJJJ ein, um Ihr Alter zu erhalten.</p>
+
+<h3>Wie bestimmt man die Anzahl der Jahre mit dem Geburtsdatum-Rechner?</h3>
+
+<p>Um die Anzahl der Jahre mit dem Altersrechner zu berechnen, geben Sie zunächst das Geburtsdatum und das aktuelle Datum im angegebenen Format ein. Der Rechner liefert das Alter in Jahren, Monaten und Tagen, wobei die "Jahre" das Alter oder die Anzahl der Jahre repräsentieren.</p>
+
+<h3>Wie verwendet man den Altersrechner?</h3>
+
+<p>Weitere Informationen finden Sie in unserem Artikel "<a href="how-to-use-age-calculator.html">Wie benutzt man den Altersrechner?</a>" oder lesen Sie unsere interessanten Blog-Beiträge. <a href="top-10-famous-animals-and-their-age.html">Top 10 berühmte Tiere und ihr Alter</a>.</p>
+
+   
+    
+
+
+    
+<footer>
+  <nav>
+    <ul>
+      <li>
+        <a href="privacy-policy.html" target="_blank">Datenschutzrichtlinie</a>
+      </li>
+      <li><a href="terms-and-conditions.html">Bedingungen</a></li>
+      <li><a href="faq.html" target="_blank">FAQ</a></li>
+      <li><a href="about-us.html" target="_blank">Über uns</a></li>
+      <li><a href="blog-home.html" target="_blank">Blog</a></li>
+      <li><a href="api-docs.html" target="_blank">API-Dokumentation</a></li>
+      <li><a href="api-status.html" target="_blank">API-Status</a></li>
+      <li>
+        <a href="contact-us.html" target="_blank">Kontaktiere uns</a>
+      </li>
+      <li><a href="mailto:hello@agecalculator.com" target="_blank">hello@agecalculator.com</a></li>
+    </ul>
+  </nav>
+</footer>
+
+  </div>
+</div>
+<script type="text/javascript">
+  function age() {
+  var d1 = document.getElementById('date').value;
+  var m1 = document.getElementById('month').value;
+  var y1 = document.getElementById('year').value;
+
+  var date = new Date();
+  var d2 = date.getDate();
+  var m2 = 1 + date.getMonth();
+  var y2 = date.getFullYear();
+  var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  if(d1 > d2){
+  	d2 = d2 + month[m2 - 1];
+  	m2 = m2 - 1;
+  }
+  if(m1 > m2){
+  	m2 = m2 + 12;
+  	y2 = y2 - 1;
+  }
+  var d = d2 - d1;
+  var m = m2 - m1;
+  var y = y2 - y1;
+
+  document.getElementById('age').innerHTML = 'Your Age is '+y+' Years '+m+' Months '+d+' Days';
+}
+</script>
+</body>
+</html>

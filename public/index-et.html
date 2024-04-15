@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Vanusekalkulaator - Age Calculator</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   
+    <meta content="Veebipõhine vanusekalkulaator võimaldab teil arvutada oma vanust kasutades teie sünnikuupäeva ja leida oma vanus kiiresti ilma keerulise matemaatikata. See tagastab vastuse aastates, kuudes ja päevades." name="description">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
+    
+<style media="screen">
+    body{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #2782e3;
+	font-size: 15px;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+}
+* {
+	box-sizing: border-box;
+}
+.container{
+	width:520px;
+	height: auto;
+	margin: 100px auto;
+	background-color: #eee;
+	border-radius: 5px;
+}
+.text-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.base{
+	width: 100%;
+	 
+	margin: 0;
+	overflow: hidden;
+	display: block;
+	float: none;
+}
+.block{
+	width: 135px;
+	padding: 5px 20px;
+ 
+	margin-left: 20px;
+	display: inline-block;
+	float: left;
+}
+.base h1{
+	font-size: 26px;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: normal;
+  margin-top: 0px;
+  box-shadow: 0px 2px #bababa;
+  background: white;
+  font-size: 34px;
+	color: navy;
+}
+ 
+.title{
+	font-size: 20px;
+	text-align: left;
+	font-family: sans-serif;
+	font-weight: normal;
+	line-height: 0.5;
+	letter-spacing: 0.5px;
+	word-spacing: 2.7px;
+	color: #1073d0;
+}
+input[type=text] {
+	width: 140px;
+	margin: auto;
+	outline: none;
+    min-height: 50px;
+	border: 2px solid #1073d0;
+	padding: 12px;
+	background-color: #f7f7f7;
+    border-radius: 2px;
+    color: #1073d0;
+    font-size: 17px;
+}
+input[type=text]:focus{
+	background-color: #ffffff;
+	border: 2px solid orange;
+	outline: none;
+}
+input[type=button]{
+	width: 150px;
+	margin-left: 35%;
+  margin-top: 40px;
+	outline: none;
+	border: none;
+	border-radius: 2px;
+	background-color: #0761b6;
+	color: #ffffff;
+	padding: 14px 16px;
+	text-align: center;
+	font-size: 16px;
+}
+input[type=button]:hover{
+	background-color: #003669;
+}
+ 
+#age{
+	display: block;
+	margin: 10px;
+    margin-top: 35px;
+	padding: 10px;
+    padding-bottom: 20px;
+	overflow: hidden;
+	font-family: verdana;
+	font-size: 23px;
+	font-weight: normal;
+	line-height: 1.5;
+	word-spacing: 2.7px;
+	color: navy;
+}
+
+      footer {
+        margin: 0 auto 10px;
+      }
+
+      footer nav {
+        padding: 2px 2px;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 0 5px #ddd;
+      }
+
+      footer li {
+        margin: 5px;
+        display: inline-block;
+      }
+
+      /* footer li:last-child {
+        float: center;
+      } */
+
+      footer a {
+        color: #999;
+        font-size: 0.8rem;
+        text-decoration: none;
+
+        -webkit-transition: 0.5s;
+           -moz-transition: 0.5s;
+                transition: 0.5s;
+      }
+
+      footer a:hover {
+        color: #333;
+      }
+
+  </style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Age Calculator",
+    "applicationCategory": "UtilitiesApplication",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "ratingCount": "5"
+    }
+  }
+  </script>
+
+  <link rel="canonical" href="https://agecalculator.com/et/">
+<link rel="alternate" hreflang="ar" href="https://agecalculator.com/ar/">
+<link rel="alternate" hreflang="bg" href="https://agecalculator.com/bg/">
+<link rel="alternate" hreflang="cs" href="https://agecalculator.com/cs/">
+<link rel="alternate" hreflang="da" href="https://agecalculator.com/da/">
+<link rel="alternate" hreflang="de" href="https://agecalculator.com/de/">
+<link rel="alternate" hreflang="el" href="https://agecalculator.com/el/">
+<link rel="alternate" hreflang="en" href="https://agecalculator.com/">
+<link rel="alternate" hreflang="es" href="https://agecalculator.com/es/">
+<link rel="alternate" hreflang="et" href="https://agecalculator.com/et/">
+<link rel="alternate" hreflang="fi" href="https://agecalculator.com/fi/">
+<link rel="alternate" hreflang="fr" href="https://agecalculator.com/fr/">
+<link rel="alternate" hreflang="he" href="https://agecalculator.com/he/">
+<link rel="alternate" hreflang="hi" href="https://agecalculator.com/hi/">
+<link rel="alternate" hreflang="hu" href="https://agecalculator.com/hu/">
+<link rel="alternate" hreflang="id" href="https://agecalculator.com/id/">
+<link rel="alternate" hreflang="it" href="https://agecalculator.com/it/">
+<link rel="alternate" hreflang="ja" href="https://agecalculator.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://agecalculator.com/ko/">
+<link rel="alternate" hreflang="lt" href="https://agecalculator.com/lt/">
+<link rel="alternate" hreflang="lv" href="https://agecalculator.com/lv/">
+<link rel="alternate" hreflang="nb" href="https://agecalculator.com/nb/">
+<link rel="alternate" hreflang="nl" href="https://agecalculator.com/nl/">
+<link rel="alternate" hreflang="pl" href="https://agecalculator.com/pl/">
+<link rel="alternate" hreflang="pt" href="https://agecalculator.com/pt/">
+<link rel="alternate" hreflang="ro" href="https://agecalculator.com/ro/">
+<link rel="alternate" hreflang="ru" href="https://agecalculator.com/ru/">
+<link rel="alternate" hreflang="sk" href="https://agecalculator.com/sk/">
+<link rel="alternate" hreflang="sl" href="https://agecalculator.com/sl/">
+<link rel="alternate" hreflang="sv" href="https://agecalculator.com/sv/">
+<link rel="alternate" hreflang="th" href="https://agecalculator.com/th/">
+<link rel="alternate" hreflang="tr" href="https://agecalculator.com/tr/">
+<link rel="alternate" hreflang="uk" href="https://agecalculator.com/uk/">
+<link rel="alternate" hreflang="vi" href="https://agecalculator.com/vi/">
+<link rel="alternate" hreflang="zh" href="https://agecalculator.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://agecalculator.com/">
+
+</head>
+<body>
+
+<div class="container">
+
+  
+  <form>
+  	<div class="base">
+  		<div class="enter">
+  		<h1>Vanusekalkulaator</h1>
+  	</div>
+  <div class="block">
+  	<p class="title">Kuupäev</p>
+  	<input type="text" name="date" id="date" placeholder="pp" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">Kuu</p>
+    <input type="text" name="month" id="month" placeholder="kk" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">Aasta</p>
+    <input type="text" name="year" id="year" placeholder="aaaa" required="required" minlength="4" maxlength="4" />
+  </div>
+  </div>
+  <div class="base">
+  	<div class="enter">
+    <input type="button" name="submit" value="Esita" onclick="age()" />
+    </div>
+  </div>
+    <div id="age"></div>
+  </form>
+
+
+
+
+
+  <div class="text-content">
+    <p>See vanusekalkulaator määrab inimese vanuse nende sünnikuupäeva põhjal. Vanuse arvutamise meetodid võivad erinevates kultuurides erineda, kuid üldiselt suureneb inimese vanus igal sünnipäeval ühe aasta võrra.</p>
+
+    <p>See tasuta veebipõhine vanusekalkulaator on väärtuslik ja lihtne tööriist, mida saab rakendada mitmesugustes olukordades. See võib arvutada nii vastsündinute kui ka vanurite vanust, arvutades aastad, kuud ja päevad, kasutades nende sünnikuupäeva ja praeguse kuupäeva sisendit.</p>
+    
+    <div id="calc">
+    <h2>Mida teeb vanusekalkulaator?</h2>
+    </div>
+    
+    <p><strong>Online vanusekalkulaator on veebipõhine tööriist</strong>, mis on loodud inimese vanuse arvutamiseks kindlal kuupäeval, eeldusel, et nende sünnikuupäev (DOB) on teada. Paljudes läänekultuurides ümardatakse vanust tavaliselt alla, nii et kui inimene on elanud 8 aastat ja 9 kuud, loetakse nende vanuseks 8 aastat.</p>
+    
+    <h3>Sünnikuupäeva (DOB) kalkulaator</h3>
+    
+    <p>Sünnikuupäeva DOB kalkulaator võimaldab meil vanuse määramiseks kasutada sünnikuupäeva. Selle vanusekalkulaatori kasutamiseks sisestage nõutud väärtused pakutud sisendkasti.</p>
+    
+    <ul>
+        <li>DOB kujul PP/KK/AAAA</li>
+        <li>Täpsustatud kuupäev, mille järgi soovite vanust arvutada, tuleks sisestada samas formaadis kui PP/KK/AAAA</li>
+    </ul>
+    
+    <p style="text-align: center;"><img src="img/screenshot-1.jpg" style="max-width:100%; max-height:100%;"></img></p>
+    
+    <h2>Kuidas kasutada vanusekalkulaatorit?</h2>
+    
+    <p>Inimese vanuse määramiseks sünnipäevakalkulaatori abil järgige neid samme:</p>
+    
+    <ul>
+        <li><strong>Samm 1</strong>: Minge veebisaidile www.agecalculator.com</li>
+        <li><strong>Samm 2</strong>: Sisestage sünnikuupäev vanusekalkulaatori sisendkasti kasutades formaati PP/KK/AAAA.</li>
+        <li><strong>Samm 3</strong>: Vajutage nuppu <strong>&quot;Esita&quot;</strong> inimese vanuse arvutamiseks.</li>
+        <li><strong>Samm 4</strong>: Klõpsake nuppu <strong>&quot;Lähtesta&quot;</strong> sisestusteksti puhastamiseks ja uute väärtuste sisestamiseks.</li>
+    </ul>
+    
+    <div id="formula">
+    <h2>Vanusekalkulaatori valem</h2>
+    </div>
+    
+    <p>Oxfordi sõnaraamatu kohaselt viitab &ldquo;Vanus&rdquo; inimese elueale või objekti olemasolule. Vanuse arvutamine hõlmab inimese sünnikuupäeva võrdlemist kuupäevaga, milleks vanust vajatakse. Sünnikuupäeva lahutamine antud kuupäevast annab inimese vanuse, mida esindab valem: Vanus = Antud kuupäev - Sünnikuupäev. Allpool on toodud sammud inimese vanuse arvutamiseks nende sünnikuupäevast määratud kuupäevani.</p>
+    
+    <ul>
+        <li><strong>Samm 1:</strong> Algselt arvutage täielike aastate koguarv, lahutades sünniaasta praegusest aastast. Näiteks kui praegune aasta on 2024 ja sünniaasta on 1998, on täielike aastate arv 26.</li>
+        <li><strong>Samm 2:</strong> Seejärel määrake täielike kuude arv, lahutades sünnikuu <a href="https://www.oxfordreference.com/display/10.1093/oi/authority.20110803095355563">praegusest kuust</a>. Kui praegune kuu on varem kui sünnikuu, vähendage täielike aastate arvu 1 võrra ja lisage praegusele kuule 12, et seda kohandada. Seejärel arvutage vahe (praegune kuu - sünnikuu). Näiteks kui sünnikuu on veebruar ja praegune kuu on aprill, on kokku kuude arv 2. Kui sünnikuu on november ja praegune kuu on aprill, on kokku kuude arv 4 + 12 = 16 ja vahe on 16 - 11 = 5.</li>
+        <li><strong>Samm 3:</strong> Sarnaselt eelmisele sammule määratleme ka päevade arvu, lahutades sünnikuupäeva praegusest kuupäevast. Kuid kui praegune kuupäev on varem kui sünnikuupäev, lahutame täielike kuude arvust 1 ja lisame praegusele kuupäevale 30/31/28/29, sõltuvalt päevade arvust eelmisel kuul enne praegust kuud.</li>
+        <li><strong>Samm 4:</strong> Lõpuks annab vanusekalkulaator vanuse päevades, kuudes ja aastates.</li>
+    </ul>
+    
+    <h2>Näited, kuidas vanust arvutada</h2>
+    
+    <p>Allpool on näited, mis illustreerivad, kuidas vanust arvutada ja millist metoodikat sünnipäevakalkulaator kasutab parema mõistmise huvides.</p>
+    
+    <p><strong>Näide 1:</strong> Johni sünnikuupäev on 25. juuli 1985 (25/07/1985). Määrake tema vanus 28. jaanuaril 2021 ning kontrollige seda vanusekalkulaatori abil.</p>
+</div>
+
+
+
+
+
+
+
+<p><strong>Lahendus:</strong></p>
+
+<p>Rakendades valemit Johni vanuse arvutamiseks:</p>
+
+<p>Inimese vanus = Antud kuupäev - Sünnikuupäev.</p>
+
+<p>Johni sünnikuupäev = 25. juuli 1985.</p>
+
+<p>Antud kuupäev = 28. jaanuar 2021.</p>
+
+<p>Pange tähele, et praegune kuu on väiksem kui sünnikuu. See tähendab, et jaanuar (1) on väiksem kui juuli (7). Seetõttu peame praeguseks aastaks arvestama 2020. aastat ja võtma arvesse ka 12 + 1 (jaanuar) - 7 (juuli) = 6 kuud.</p>
+
+<p>Aastate vahe = 2020 - 1985 = 35 aastat.</p>
+
+<p>Jäänud päevade arv = 3 päeva.</p>
+
+<p><strong>Vastus:</strong> Seega on Johni vanus 35 aastat, 6 kuud ja 3 päeva.</p>
+
+<p><strong>Näide 2:</strong> Peteri sünnikuupäev on 13. juuli 1992. Arvutage tema vanus 21. aprillil 2016 ja kinnitage see vanusekalkulaatori abil.</p>
+
+<p><strong>Lahendus:</strong></p>
+
+<p>Kasutades valemit Peteri vanuse arvutamiseks:</p>
+
+<p>Inimese vanus = Praegune kuupäev - Sünnikuupäev.</p>
+
+<p>Siin on veidi erinev lähenemisviis vanuse valemi paremaks mõistmiseks.</p>
+
+<p>Peteri sünnikuupäev = 13. juuli 1992.</p>
+
+<p>Aastate vahe = 2015 - 1992 = 23 aastat. (See arvutus ulatub 13. juulist 1992 kuni 13. juulini 2015).</p>
+
+<p>Jäänud kuude arv 13. juulist 2015 kuni 13. aprillini 2016 = 9 kuud.</p>
+
+<p>Jäänud päevade arv 13. aprillist 2016 kuni 21. aprillini 2016 = 8 päeva.</p>
+
+<p><strong>Vastus:</strong> Seega on Peteri vanus 23 aastat, 9 kuud ja 8 päeva.</p>
+
+<p>Sarnaselt saate kasutada vanusekalkulaatorit inimeste vanuste kindlaksmääramiseks sünnikuupäevade ja praeguste kuupäevade alusel kuni 26. augustini 2021:</p>
+
+<ul>
+    <li>13. juuli 1992</li>
+    <li>21. aprill 2016</li>
+</ul>
+
+<p><b>☛ Rohkem kalkulaatoreid:</b></p>
+
+<table border="1">
+    <tbody>
+        <tr>
+            <td>
+            <p><a href="https://select-statistics.co.uk/calculators/">Statistika</a></p>
+            </td>
+            <td>
+            <p><a href="https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/">Liitintress</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><a href="https://www.dadsworksheets.com/fraction-calculator.html">Murdarv</a></p>
+            </td>
+            <td>
+            <p><a href="https://mathforyou.net/en/online/calculus/derivative/">Derivaat</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><a href="https://www.wikihow.com/Calculate-Percentages">Protsent</a></p>
+            </td>
+            <td>
+            <p><a href="https://www.cuemath.com/calculators/integral-calculator/">Integraal</a></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Vanusekalkulaatori KKK</h2>
+
+<h3>Kuidas arvutada vanust vanusekalkulaatoriga?</h3>
+
+<p>Saate seda <strong>veebipõhist vanusekalkulaatorit</strong> kasutada vanuse määramiseks, lähtudes antud sünnikuupäevast ja praegusest või soovitud kuupäevast vanuse arvutamiseks. Veenduge, et mõlemad kuupäevad oleksid vormindatud kujul PP/KK/AAAA. Juurdepääs sünnikuupäeva kalkulaatorile leiate <a href="https://agecalculator.com">Vanusekalkulaatorist</a>.</p>
+
+<h3>Milleks on DOB-kalkulaatorit kasutada?</h3>
+
+<p>DOB-kalkulaator arvutab inimese või objekti praeguse vanuse, arvestades aastaid, kuid ka kuid ja päevi. Lihtsalt sisestage DOB ja praegune kuupäev formaadis pp/kk/aaaa, et saada oma vanus.</p>
+
+<h3>Kuidas kindlaks määrata aastate arv sünnikuupäeva kalkulaatoriga?</h3>
+
+<p>Aastate arvu arvutamiseks vanusekalkulaatori abil alustage sünnikuupäeva ja praeguse kuupäeva sisestamisest määratud formaadis. Kalkulaator annab vanuse aastates, kuudes ja päevades, "aastad" esindavad vanust või aastate arvu.</p>
+
+<h3>Kuidas kasutada vanusekalkulaatorit?</h3>
+
+<p>Lisateabe saamiseks võite külastada meie artiklit "<a href="how-to-use-age-calculator.html">Kuidas kasutada vanusekalkulaatorit?</a>" või lugeda huvitavaid blogipostitusi. <a href="top-10-famous-animals-and-their-age.html">Top 10 kuulsat looma ja nende vanus</a>.</p>
+
+   
+    
+
+
+
+<footer>
+  <nav>
+      <ul>
+          <li><a href="privacy-policy.html" target="_blank">Privaatsuspoliitika</a></li>
+          <li><a href="terms-and-conditions.html">Kasutustingimused</a></li>
+          <li><a href="faq.html" target="_blank">KKK</a></li>
+          <li><a href="about-us.html" target="_blank">Meist</a></li>
+          <li><a href="blog-home.html" target="_blank">Blogi</a></li>
+          <li><a href="api-docs.html" target="_blank">API dokumentatsioon</a></li>
+          <li><a href="api-status.html" target="_blank">API olek</a></li>
+          <li><a href="contact-us.html" target="_blank">Võta meiega ühendust</a></li>
+          <li><a href="mailto:hello@agecalculator.com" target="_blank">hello@agecalculator.com</a></li>
+      </ul>
+  </nav>
+</footer>
+
+
+  </div>
+</div>
+<script type="text/javascript">
+  function age() {
+  var d1 = document.getElementById('date').value;
+  var m1 = document.getElementById('month').value;
+  var y1 = document.getElementById('year').value;
+
+  var date = new Date();
+  var d2 = date.getDate();
+  var m2 = 1 + date.getMonth();
+  var y2 = date.getFullYear();
+  var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  if(d1 > d2){
+  	d2 = d2 + month[m2 - 1];
+  	m2 = m2 - 1;
+  }
+  if(m1 > m2){
+  	m2 = m2 + 12;
+  	y2 = y2 - 1;
+  }
+  var d = d2 - d1;
+  var m = m2 - m1;
+  var y = y2 - y1;
+
+  document.getElementById('age').innerHTML = 'Your Age is '+y+' Years '+m+' Months '+d+' Days';
+}
+</script>
+</body>
+</html>

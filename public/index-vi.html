@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Trình Tính Tuổi - Age Calculator Online</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   
+    <meta content="Trình tính tuổi trực tuyến cho phép bạn tính tuổi của mình bằng cách sử dụng ngày sinh của bạn và tìm tuổi của mình một cách nhanh chóng mà không cần phải làm bất kỳ loại toán phức tạp nào. Nó sẽ trả lời bằng năm, tháng và ngày." name="description">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
+    
+<style media="screen">
+    body{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #2782e3;
+	font-size: 15px;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+}
+* {
+	box-sizing: border-box;
+}
+.container{
+	width:520px;
+	height: auto;
+	margin: 100px auto;
+	background-color: #eee;
+	border-radius: 5px;
+}
+.text-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.base{
+	width: 100%;
+	 
+	margin: 0;
+	overflow: hidden;
+	display: block;
+	float: none;
+}
+.block{
+	width: 135px;
+	padding: 5px 20px;
+ 
+	margin-left: 20px;
+	display: inline-block;
+	float: left;
+}
+.base h1{
+	font-size: 26px;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: normal;
+  margin-top: 0px;
+  box-shadow: 0px 2px #bababa;
+  background: white;
+  font-size: 34px;
+	color: navy;
+}
+ 
+.title{
+	font-size: 20px;
+	text-align: left;
+	font-family: sans-serif;
+	font-weight: normal;
+	line-height: 0.5;
+	letter-spacing: 0.5px;
+	word-spacing: 2.7px;
+	color: #1073d0;
+}
+input[type=text] {
+	width: 140px;
+	margin: auto;
+	outline: none;
+    min-height: 50px;
+	border: 2px solid #1073d0;
+	padding: 12px;
+	background-color: #f7f7f7;
+    border-radius: 2px;
+    color: #1073d0;
+    font-size: 17px;
+}
+input[type=text]:focus{
+	background-color: #ffffff;
+	border: 2px solid orange;
+	outline: none;
+}
+input[type=button]{
+	width: 150px;
+	margin-left: 35%;
+  margin-top: 40px;
+	outline: none;
+	border: none;
+	border-radius: 2px;
+	background-color: #0761b6;
+	color: #ffffff;
+	padding: 14px 16px;
+	text-align: center;
+	font-size: 16px;
+}
+input[type=button]:hover{
+	background-color: #003669;
+}
+ 
+#age{
+	display: block;
+	margin: 10px;
+    margin-top: 35px;
+	padding: 10px;
+    padding-bottom: 20px;
+	overflow: hidden;
+	font-family: verdana;
+	font-size: 23px;
+	font-weight: normal;
+	line-height: 1.5;
+	word-spacing: 2.7px;
+	color: navy;
+}
+
+      footer {
+        margin: 0 auto 10px;
+      }
+
+      footer nav {
+        padding: 2px 2px;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 0 5px #ddd;
+      }
+
+      footer li {
+        margin: 5px;
+        display: inline-block;
+      }
+
+      /* footer li:last-child {
+        float: center;
+      } */
+
+      footer a {
+        color: #999;
+        font-size: 0.8rem;
+        text-decoration: none;
+
+        -webkit-transition: 0.5s;
+           -moz-transition: 0.5s;
+                transition: 0.5s;
+      }
+
+      footer a:hover {
+        color: #333;
+      }
+
+  </style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "operatingSystem": "Windows, Mac, Linux, Chromebook, Andriod, iOS",
+    "name": "Age Calculator",
+    "applicationCategory": "UtilitiesApplication",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.7,
+      "worstRating": 1,
+      "bestRating": 5,
+      "reviewCount": 5
+    },
+  }
+  </script>
+
+  <link rel="canonical" href="https://agecalculator.com/vi/">
+<link rel="alternate" hreflang="ar" href="https://agecalculator.com/ar/">
+<link rel="alternate" hreflang="bg" href="https://agecalculator.com/bg/">
+<link rel="alternate" hreflang="cs" href="https://agecalculator.com/cs/">
+<link rel="alternate" hreflang="da" href="https://agecalculator.com/da/">
+<link rel="alternate" hreflang="de" href="https://agecalculator.com/de/">
+<link rel="alternate" hreflang="el" href="https://agecalculator.com/el/">
+<link rel="alternate" hreflang="en" href="https://agecalculator.com/">
+<link rel="alternate" hreflang="es" href="https://agecalculator.com/es/">
+<link rel="alternate" hreflang="et" href="https://agecalculator.com/et/">
+<link rel="alternate" hreflang="fi" href="https://agecalculator.com/fi/">
+<link rel="alternate" hreflang="fr" href="https://agecalculator.com/fr/">
+<link rel="alternate" hreflang="he" href="https://agecalculator.com/he/">
+<link rel="alternate" hreflang="hi" href="https://agecalculator.com/hi/">
+<link rel="alternate" hreflang="hu" href="https://agecalculator.com/hu/">
+<link rel="alternate" hreflang="id" href="https://agecalculator.com/id/">
+<link rel="alternate" hreflang="it" href="https://agecalculator.com/it/">
+<link rel="alternate" hreflang="ja" href="https://agecalculator.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://agecalculator.com/ko/">
+<link rel="alternate" hreflang="lt" href="https://agecalculator.com/lt/">
+<link rel="alternate" hreflang="lv" href="https://agecalculator.com/lv/">
+<link rel="alternate" hreflang="nb" href="https://agecalculator.com/nb/">
+<link rel="alternate" hreflang="nl" href="https://agecalculator.com/nl/">
+<link rel="alternate" hreflang="pl" href="https://agecalculator.com/pl/">
+<link rel="alternate" hreflang="pt" href="https://agecalculator.com/pt/">
+<link rel="alternate" hreflang="ro" href="https://agecalculator.com/ro/">
+<link rel="alternate" hreflang="ru" href="https://agecalculator.com/ru/">
+<link rel="alternate" hreflang="sk" href="https://agecalculator.com/sk/">
+<link rel="alternate" hreflang="sl" href="https://agecalculator.com/sl/">
+<link rel="alternate" hreflang="sv" href="https://agecalculator.com/sv/">
+<link rel="alternate" hreflang="th" href="https://agecalculator.com/th/">
+<link rel="alternate" hreflang="tr" href="https://agecalculator.com/tr/">
+<link rel="alternate" hreflang="uk" href="https://agecalculator.com/uk/">
+<link rel="alternate" hreflang="vi" href="https://agecalculator.com/vi/">
+<link rel="alternate" hreflang="zh" href="https://agecalculator.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://agecalculator.com/">
+</head>
+<body>
+
+<div class="container">
+
+  
+  <form>
+  	<div class="base">
+  		<div class="enter">
+  		<h1>Trình Tính Tuổi</h1>
+  	</div>
+  <div class="block">
+  	<p class="title">Ngày</p>
+  	<input type="text" name="date" id="date" placeholder="ngày" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">Tháng</p>
+    <input type="text" name="month" id="month" placeholder="tháng" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">Năm</p>
+    <input type="text" name="year" id="year" placeholder="năm" required="required" minlength="4" maxlength="4" />
+  </div>
+  </div>
+  <div class="base">
+  	<div class="enter">
+    <input type="button" name="submit" value="Gửi" onclick="age()" />
+    </div>
+  </div>
+    <div id="age"></div>
+  </form>
+
+
+
+
+  
+  <div class="text-content">
+    <p>Trình tính tuổi này xác định tuổi của một người dựa trên ngày sinh của họ. Phương pháp tính tuổi có thể khác nhau giữa các văn hóa, nhưng nói chung, tuổi của một người được tăng thêm 1 vào mỗi ngày sinh nhật.</p>
+
+<p>Trình tính tuổi trực tuyến miễn phí này là một công cụ quý giá và đơn giản áp dụng trong nhiều tình huống. Nó có thể xác định tuổi của các cá nhân từ trẻ sơ sinh đến người cao tuổi bằng cách tính toán năm, tháng và ngày, sử dụng ngày sinh và ngày hiện tại.</p>
+
+<div id="calc">
+<h2>Trình Tính Tuổi Làm Gì?</h2>
+</div>
+
+<p><strong>Trình tính tuổi trực tuyến là một công cụ trên web</strong> được thiết kế để tính tuổi của một người vào một ngày cụ thể, với điều kiện ngày sinh (DOB) của họ được biết. Trong nhiều văn hóa phương Tây, tính tuổi thường được làm tròn xuống, vì vậy nếu một người đã sống được 8 năm và 9 tháng, tuổi của họ được coi là 8 tuổi.</p>
+
+<h3>Bộ Tính Tuổi (DOB) Calculator</h3>
+
+<p>Bộ tính tuổi DOB cho phép chúng ta xác định tuổi dựa trên ngày sinh. Để sử dụng trình tính tuổi này, nhập các giá trị cần thiết vào ô đầu vào được cung cấp.</p>
+
+<ul>
+    <li>DOB theo định dạng DD/MM/YYYY</li>
+    <li>Ngày cụ thể mà bạn muốn tính tuổi cũng nên được nhập cùng định dạng dd/mm/yyyy</li>
+</ul>
+
+<p style="text-align: center;"><img src="img/screenshot-1.jpg" style="max-width:100%; max-height:100%;"></p>
+
+<h2>Làm thế nào để Sử dụng age calculator?</h2>
+
+<p>Để xác định tuổi của một người bằng cách sử dụng bộ tính tuổi sinh nhật, làm theo các bước sau:</p>
+
+<ul>
+    <li><strong>Bước 1</strong>: Truy cập vào www.agecalculator.com</li>
+    <li><strong>Bước 2</strong>: Nhập ngày sinh vào ô đầu vào của bộ tính tuổi sử dụng định dạng DD/MM/YYYY.</li>
+    <li><strong>Bước 3</strong>: Nhấn nút <strong>"Gửi"</strong> để tính tuổi của người đó.</li>
+    <li><strong>Bước 4</strong>: Nhấp vào nút <strong>"Làm mới"</strong> để xóa văn bản đầu vào và nhập các giá trị mới.</li>
+</ul>
+
+<div id="formula">
+<h2>Công thức cho Bộ Tính Tuổi</h2>
+</div>
+
+<p>Theo Từ điển Oxford, &ldquo;Tuổi&rdquo; đề cập đến thời gian sống của một người hoặc sự tồn tại của một vật. Tính tuổi bao gồm so sánh ngày sinh của một người với ngày mà tuổi cần được xác định. Trừ ngày sinh từ ngày được cung cấp sẽ cho ra tuổi của người đó, được biểu diễn bằng công thức: Tuổi = Ngày được cung cấp - Ngày sinh. Dưới đây là các bước để tính tuổi của một người từ ngày sinh của họ đến một ngày cụ thể.</p>
+
+<ul>
+    <li><strong>Bước 1:</strong> Ban đầu, tính tổng số năm hoàn chỉnh bằng cách trừ năm sinh từ năm hiện tại. Ví dụ, nếu năm hiện tại là 2024 và năm sinh là 1998, số năm hoàn chỉnh là 26.</li>
+    <li><strong>Bước 2:</strong> Tiếp theo, xác định số tháng hoàn chỉnh bằng cách trừ tháng sinh từ <a href="https://www.oxfordreference.com/display/10.1093/oi/authority.20110803095355563">tháng hiện tại</a>. Nếu tháng hiện tại sớm hơn tháng sinh, giảm số năm hoàn chỉnh đi 1 và cộng thêm 12 vào tháng hiện tại để điều chỉnh. Sau đó, tính sự khác biệt (tháng hiện tại - tháng sinh). Ví dụ, nếu tháng sinh là Tháng Hai và tháng hiện tại là Tháng Tư, tổng số tháng là 2. Nếu tháng sinh là Tháng Mười Một và tháng hiện tại là Tháng Tư, tổng số tháng là 4 + 12 = 16, và sự khác biệt là 16 - 11 = 5.</li>
+    <li><strong>Bước 3:</strong> Tương tự như bước trước, chúng ta cũng xác định số ngày bằng cách trừ ngày sinh từ ngày hiện tại. Tuy nhiên, nếu ngày hiện tại sớm hơn ngày sinh, chúng ta trừ 1 từ số tháng hoàn chỉnh và cộng thêm 30/31/28/29 vào ngày hiện tại, tùy thuộc vào số ngày trong tháng trước đó liền trước tháng hiện tại.</li>
+    <li><strong>Bước 4:</strong> Kết luận, bộ tính tuổi cung cấp tuổi bằng ngày, tháng và năm.</li>
+</ul>
+
+<h2>Các Ví dụ Minh Họa Cách Tính Tuổi</h2>
+
+<p>Dưới đây là các ví dụ minh họa cách tính tuổi và phương pháp được sử dụng bởi bộ tính tuổi sinh nhật để hiểu rõ hơn.</p>
+
+<p><strong>Ví dụ 1:</strong> Ngày sinh của John là 25 tháng 7 năm 1985 (25/07/1985). Xác định tuổi của anh ấy vào ngày 28 tháng 1 năm 2021 và xác minh nó bằng bộ tính tuổi.</p>
+
+
+
+
+
+
+
+<p><strong>Giải Pháp:</strong></p>
+
+<p>Áp dụng công thức để tính tuổi của John:</p>
+
+<p>Tuổi của Một Người = Ngày được cung cấp - Ngày sinh.</p>
+
+<p>Ngày Sinh của John = 25 tháng 7 năm 1985.</p>
+
+<p>Ngày được cung cấp = 28 tháng 1 năm 2021.</p>
+
+<p>Lưu ý rằng tháng hiện tại nhỏ hơn tháng sinh. Đó là, Tháng Một (1) nhỏ hơn Tháng Bảy (7). Do đó, chúng ta coi năm 2020 là năm hiện tại và cũng tính đến 12 + 1 (Tháng Một) - 7 (Tháng Bảy) = 6 tháng.</p>
+
+<p>Chênh lệch Năm = 2020 - 1985 = 35 năm.</p>
+
+<p>Số ngày còn lại = 3 ngày.</p>
+
+<p><strong>Đáp Án:</strong> Vậy, tuổi của John là 35 năm, 6 tháng và 3 ngày.</p>
+
+<p><strong>Ví dụ 2:</strong> Ngày sinh của Peter là 13 tháng 7 năm 1992. Tính tuổi của anh ta vào ngày 21 tháng 4 năm 2016 và xác minh nó bằng bộ tính tuổi.</p>
+
+<p><strong>Giải Pháp:</strong></p>
+
+<p>Sử dụng công thức để tính tuổi của Peter:</p>
+
+<p>Tuổi của Một Người = Ngày hiện tại - Ngày sinh.</p>
+
+<p>Dưới đây là một cách tiếp cận hơi khác để hiểu rõ hơn về công thức tuổi.</p>
+
+<p>Ngày Sinh của Peter = 13 tháng 7 năm 1992.</p>
+
+<p>Chênh lệch Năm = 2015 - 1992 = 23 năm. (Phép tính này kéo dài từ ngày 13 tháng 7 năm 1992 đến ngày 13 tháng 7 năm 2015).</p>
+
+<p>Số tháng còn lại từ ngày 13 tháng 7 năm 2015 đến ngày 13 tháng 4 năm 2016 = 9 tháng.</p>
+
+<p>Số ngày còn lại từ ngày 13 tháng 4 năm 2016 đến ngày 21 tháng 4 năm 2016 = 8 ngày.</p>
+
+<p><strong>Đáp Án:</strong> Vì vậy, tuổi của Peter là 23 năm, 9 tháng và 8 ngày.</p>
+
+<p>Tương tự, bạn có thể sử dụng bộ tính tuổi để xác định tuổi của các cá nhân với ngày sinh và ngày hiện tại được cung cấp cho đến ngày 26 tháng 8 năm 2021:</p>
+
+<ul>
+    <li>13 tháng 7 năm 1992</li>
+    <li>21 tháng 4 năm 2016</li>
+</ul>
+
+
+
+
+<p><b>☛ Các công cụ tính toán khác:</b></p>
+
+<table border="1">
+    <tbody>
+        <tr>
+            <td>
+            <p><a href="https://select-statistics.co.uk/calculators/">Thống kê</a></p>
+            </td>
+            <td>
+            <p><a href="https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/">Lãi kép</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><a href="https://www.dadsworksheets.com/fraction-calculator.html">Phân số</a></p>
+            </td>
+            <td>
+            <p><a href="https://mathforyou.net/en/online/calculus/derivative/">Đạo hàm</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><a href="https://www.wikihow.com/Calculate-Percentages">Tỷ lệ phần trăm</a></p>
+            </td>
+            <td>
+            <p><a href="https://www.cuemath.com/calculators/integral-calculator/">Tích phân</a></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Câu hỏi thường gặp về Trình Tính Tuổi</h2>
+
+<h3>Làm thế nào để Tính Tuổi trên Trình Tính Tuổi?</h3>
+
+<p>Bạn có thể sử dụng <strong>trình tính tuổi trực tuyến</strong> này để xác định tuổi dựa trên ngày sinh đã cho và ngày hiện tại hoặc ngày mong muốn cho việc tính tuổi. Đảm bảo cả hai ngày được định dạng là DD/MM/YYYY. Truy cập trình tính tuổi theo ngày sinh bằng cách truy cập <a href="https://agecalculator.com">Trình Tính Tuổi</a>.</p>
+
+<h3>Việc sử dụng Bộ Tính Tuổi là gì?</h3>
+
+<p>Bộ tính tuổi tính toán tuổi hiện tại của một người hoặc đối tượng, tính đến năm, tháng và ngày. Chỉ cần nhập DOB và ngày hiện tại theo định dạng dd/mm/yyyy để nhận tuổi của bạn.</p>
+
+<h3>Làm thế nào để Xác định Số Năm Bằng Bộ Tính Tuổi?</h3>
+
+<p>Để tính số năm bằng trình tính tuổi, bắt đầu bằng cách nhập ngày sinh và ngày hiện tại theo định dạng được chỉ định. Bộ tính tuổi cung cấp tuổi theo năm, tháng và ngày, với "năm" đại diện cho tuổi hoặc số năm.</p>
+
+<h3>Làm thế nào để Sử dụng trình tính tuổi?</h3>
+
+<p>Để biết thêm thông tin, bạn có thể truy cập bài viết của chúng tôi "<a href="how-to-use-age-calculator.html">Làm thế nào để sử dụng trình tính tuổi?</a>" hoặc bạn có thể đọc các bài đăng blog thú vị của chúng tôi. <a href="top-10-famous-animals-and-their-age.html">10 loài động vật nổi tiếng và tuổi của họ</a>.</p>
+
+
+
+
+
+   
+
+<footer>
+  <nav>
+    <ul>
+      <li>
+        <a href="privacy-policy.html" target="_blank">Chính sách bảo mật</a>
+      </li>
+      <li><a href="terms-and-conditions.html">Điều khoản</a></li>
+      <li><a href="faq.html" target="_blank">Câu hỏi thường gặp</a></li>
+      <li><a href="about-us.html" target="_blank">Về chúng tôi</a></li>
+      <li><a href="blog-home.html" target="_blank">Blog</a></li>
+      <li><a href="api-docs.html" target="_blank">Tài liệu API</a></li>
+      <li><a href="api-status.html" target="_blank">Trạng thái API</a></li>
+      <li>
+        <a href="contact-us.html" target="_blank">Liên hệ</a>
+      </li>
+      <li><a href="mailto:hello@agecalculator.com" target="_blank">hello@agecalculator.com</a></li>
+    </ul>
+  </nav>
+</footer>
+
+
+  </div>
+</div>
+<script type="text/javascript">
+  function age() {
+  var d1 = document.getElementById('date').value;
+  var m1 = document.getElementById('month').value;
+  var y1 = document.getElementById('year').value;
+
+  var date = new Date();
+  var d2 = date.getDate();
+  var m2 = 1 + date.getMonth();
+  var y2 = date.getFullYear();
+  var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  if(d1 > d2){
+  	d2 = d2 + month[m2 - 1];
+  	m2 = m2 - 1;
+  }
+  if(m1 > m2){
+  	m2 = m2 + 12;
+  	y2 = y2 - 1;
+  }
+  var d = d2 - d1;
+  var m = m2 - m1;
+  var y = y2 - y1;
+
+  document.getElementById('age').innerHTML = 'Your Age is '+y+' Years '+m+' Months '+d+' Days';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Υπολογιστής Ηλικίας - age calculator</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   
+    <meta content="Ο διαδικτυακός υπολογιστής ηλικίας σάς επιτρέπει να υπολογίσετε την ηλικία σας χρησιμοποιώντας την ημερομηνία γέννησής σας και την ημερομηνία γέννησής σας και να βρείτε γρήγορα την ηλικία σας χωρίς να χρειαστεί να κάνετε οποιοδήποτε είδος πολύπλοκου μαθηματικού υπολογισμού. Θα επιστρέψει απάντηση σε έτη, μήνες και ημέρες." name="description">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
+    
+<style media="screen">
+    body{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #2782e3;
+	font-size: 15px;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+}
+* {
+	box-sizing: border-box;
+}
+.container{
+	width:520px;
+	height: auto;
+	margin: 100px auto;
+	background-color: #eee;
+	border-radius: 5px;
+}
+.text-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.base{
+	width: 100%;
+	 
+	margin: 0;
+	overflow: hidden;
+	display: block;
+	float: none;
+}
+.block{
+	width: 135px;
+	padding: 5px 20px;
+ 
+	margin-left: 20px;
+	display: inline-block;
+	float: left;
+}
+.base h1{
+	font-size: 26px;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: normal;
+  margin-top: 0px;
+  box-shadow: 0px 2px #bababa;
+  background: white;
+  font-size: 34px;
+	color: navy;
+}
+ 
+.title{
+	font-size: 20px;
+	text-align: left;
+	font-family: sans-serif;
+	font-weight: normal;
+	line-height: 0.5;
+	letter-spacing: 0.5px;
+	word-spacing: 2.7px;
+	color: #1073d0;
+}
+input[type=text] {
+	width: 140px;
+	margin: auto;
+	outline: none;
+    min-height: 50px;
+	border: 2px solid #1073d0;
+	padding: 12px;
+	background-color: #f7f7f7;
+    border-radius: 2px;
+    color: #1073d0;
+    font-size: 17px;
+}
+input[type=text]:focus{
+	background-color: #ffffff;
+	border: 2px solid orange;
+	outline: none;
+}
+input[type=button]{
+	width: 150px;
+	margin-left: 35%;
+  margin-top: 40px;
+	outline: none;
+	border: none;
+	border-radius: 2px;
+	background-color: #0761b6;
+	color: #ffffff;
+	padding: 14px 16px;
+	text-align: center;
+	font-size: 16px;
+}
+input[type=button]:hover{
+	background-color: #003669;
+}
+ 
+#age{
+	display: block;
+	margin: 10px;
+    margin-top: 35px;
+	padding: 10px;
+    padding-bottom: 20px;
+	overflow: hidden;
+	font-family: verdana;
+	font-size: 23px;
+	font-weight: normal;
+	line-height: 1.5;
+	word-spacing: 2.7px;
+	color: navy;
+}
+
+      footer {
+        margin: 0 auto 10px;
+      }
+
+      footer nav {
+        padding: 2px 2px;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 0 5px #ddd;
+      }
+
+      footer li {
+        margin: 5px;
+        display: inline-block;
+      }
+
+      /* footer li:last-child {
+        float: center;
+      } */
+
+      footer a {
+        color: #999;
+        font-size: 0.8rem;
+        text-decoration: none;
+
+        -webkit-transition: 0.5s;
+           -moz-transition: 0.5s;
+                transition: 0.5s;
+      }
+
+      footer a:hover {
+        color: #333;
+      }
+
+  </style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Age Calculator",
+    "applicationCategory": "UtilitiesApplication",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "ratingCount": "5"
+    }
+  }
+  </script>
+
+  <link rel="canonical" href="https://agecalculator.com/el/">
+<link rel="alternate" hreflang="ar" href="https://agecalculator.com/ar/">
+<link rel="alternate" hreflang="bg" href="https://agecalculator.com/bg/">
+<link rel="alternate" hreflang="cs" href="https://agecalculator.com/cs/">
+<link rel="alternate" hreflang="da" href="https://agecalculator.com/da/">
+<link rel="alternate" hreflang="de" href="https://agecalculator.com/de/">
+<link rel="alternate" hreflang="el" href="https://agecalculator.com/el/">
+<link rel="alternate" hreflang="en" href="https://agecalculator.com/">
+<link rel="alternate" hreflang="es" href="https://agecalculator.com/es/">
+<link rel="alternate" hreflang="et" href="https://agecalculator.com/et/">
+<link rel="alternate" hreflang="fi" href="https://agecalculator.com/fi/">
+<link rel="alternate" hreflang="fr" href="https://agecalculator.com/fr/">
+<link rel="alternate" hreflang="he" href="https://agecalculator.com/he/">
+<link rel="alternate" hreflang="hi" href="https://agecalculator.com/hi/">
+<link rel="alternate" hreflang="hu" href="https://agecalculator.com/hu/">
+<link rel="alternate" hreflang="id" href="https://agecalculator.com/id/">
+<link rel="alternate" hreflang="it" href="https://agecalculator.com/it/">
+<link rel="alternate" hreflang="ja" href="https://agecalculator.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://agecalculator.com/ko/">
+<link rel="alternate" hreflang="lt" href="https://agecalculator.com/lt/">
+<link rel="alternate" hreflang="lv" href="https://agecalculator.com/lv/">
+<link rel="alternate" hreflang="nb" href="https://agecalculator.com/nb/">
+<link rel="alternate" hreflang="nl" href="https://agecalculator.com/nl/">
+<link rel="alternate" hreflang="pl" href="https://agecalculator.com/pl/">
+<link rel="alternate" hreflang="pt" href="https://agecalculator.com/pt/">
+<link rel="alternate" hreflang="ro" href="https://agecalculator.com/ro/">
+<link rel="alternate" hreflang="ru" href="https://agecalculator.com/ru/">
+<link rel="alternate" hreflang="sk" href="https://agecalculator.com/sk/">
+<link rel="alternate" hreflang="sl" href="https://agecalculator.com/sl/">
+<link rel="alternate" hreflang="sv" href="https://agecalculator.com/sv/">
+<link rel="alternate" hreflang="th" href="https://agecalculator.com/th/">
+<link rel="alternate" hreflang="tr" href="https://agecalculator.com/tr/">
+<link rel="alternate" hreflang="uk" href="https://agecalculator.com/uk/">
+<link rel="alternate" hreflang="vi" href="https://agecalculator.com/vi/">
+<link rel="alternate" hreflang="zh" href="https://agecalculator.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://agecalculator.com/">
+</head>
+<body>
+
+<div class="container">
+
+
+  <form>
+    <div class="base">
+        <div class="enter">
+            <h1>Υπολογιστής Ηλικίας</h1>
+        </div>
+        <div class="block">
+            <p class="title">Ημερομηνία</p>
+            <input type="text" name="date" id="date" placeholder="ηη" required="required" minlength="1" maxlength="2" />
+        </div>
+        <div class="block">
+            <p class="title">Μήνας</p>
+            <input type="text" name="month" id="month" placeholder="μμ" required="required" minlength="1" maxlength="2" />
+        </div>
+        <div class="block">
+            <p class="title">Έτος</p>
+            <input type="text" name="year" id="year" placeholder="έεέε" required="required" minlength="4" maxlength="4" />
+        </div>
+    </div>
+    <div class="base">
+        <div class="enter">
+            <input type="button" name="submit" value="Υποβολή" onclick="age()" />
+        </div>
+    </div>
+    <div id="age"></div>
+</form>
+
+
+
+  <div class="text-content">
+    <p>Ο αυτόματος υπολογιστής ηλικίας προσδιορίζει την ηλικία ενός ατόμου βάσει της ημερομηνίας γέννησής του. Οι μέθοδοι υπολογισμού της ηλικίας μπορεί να διαφέρουν ανάλογα με τον πολιτισμό, αλλά γενικά, η ηλικία ενός ατόμου αυξάνεται κατά 1 έτος σε κάθε γενέθλιο.</p>
+
+<p>Αυτός ο δωρεάν διαδικτυακός υπολογιστής ηλικίας είναι ένα πολύτιμο και απλό εργαλείο που εφαρμόζεται σε πολλές καταστάσεις. Μπορεί να προσδιορίσει την ηλικία ατόμων από νεογέννητα έως ηλικιωμένους υπολογίζοντας έτη, μήνες και ημέρες, χρησιμοποιώντας την ημερομηνία γέννησής τους και την τρέχουσα ημερομηνία ως είσοδο.</p>
+
+<div id="calc">
+    <h2>Τι κάνει ένας υπολογιστής ηλικίας;</h2>
+</div>
+
+<p><strong>Ο διαδικτυακός υπολογιστής ηλικίας</strong> είναι ένα εργαλείο που σχεδιάστηκε για να υπολογίζει την ηλικία ενός ατόμου σε μια συγκεκριμένη ημερομηνία, εφόσον είναι γνωστή η ημερομηνία γέννησής του. Σε πολλούς δυτικούς πολιτισμούς, ο υπολογισμός της ηλικίας συνήθως αποκόπτεται, οπότε αν ένα άτομο έχει ζήσει 8 χρόνια και 9 μήνες, η ηλικία του θεωρείται 8 χρόνια.</p>
+
+<h3>Υπολογιστής Ημερομηνίας Γέννησης (DOB)</h3>
+
+<p>Ο υπολογιστής ημερομηνίας γέννησης (DOB) μας επιτρέπει να προσδιορίσουμε την ηλικία με βάση την ημερομηνία γέννησης. Για να χρησιμοποιήσετε αυτόν τον υπολογιστή ηλικίας, εισαγάγετε τις απαιτούμενες τιμές στο παρεχόμενο πλαίσιο εισόδου.</p>
+
+<ul>
+    <li>DOB στη μορφή ΗΗ/ΜΜ/ΕΕΕΕ</li>
+    <li>Η συγκεκριμένη ημερομηνία για την οποία θέλετε να υπολογίσετε την ηλικία πρέπει να εισαχθεί με την ίδια μορφή ως ηη/μμ/εεεε</li>
+</ul>
+
+<p style="text-align: center;"><img src="img/screenshot-1.jpg" style="max-width:100%; max-height:100%;"></p>
+
+<h2>Πώς χρησιμοποιώ τον υπολογιστή ηλικίας;</h2>
+
+<p>Για να προσδιορίσετε την ηλικία ενός ατόμου χρησιμοποιώντας έναν υπολογιστή γενεθλίων, ακολουθήστε αυτά τα βήματα:</p>
+
+<ul>
+    <li><strong>Βήμα 1</strong>: Πηγαίνετε στο www.agecalculator.com</li>
+    <li><strong>Βήμα 2</strong>: Εισάγετε την ημερομηνία γέννησης στο πλαίσιο εισόδου του υπολογιστή ηλικίας χρησιμοποιώντας τη μορφή ΗΗ/ΜΜ/ΕΕΕΕ.</li>
+    <li><strong>Βήμα 3</strong>: Πατήστε το κουμπί <strong>"Υποβολή"</strong> για να υπολογιστεί η ηλικία του ατόμου.</li>
+    <li><strong>Βήμα 4</strong>: Κάντε κλικ στο κουμπί <strong>"Επαναφορά"</strong> για να εκκαθαρίσετε το κείμενο εισόδου και να εισάγετε νέες τιμές.</li>
+</ul>
+
+<div id="formula">
+    <h2>Τύπος για τον Υπολογισμό της Ηλικίας</h2>
+</div>
+
+<p>Σύμφωνα με το Λεξικό της Οξφόρδης, η "Ηλικία" αναφέρεται στη διάρκεια της ζωής ενός ατόμου ή στην ύπαρξη ενός αντικειμένου. Ο υπολογισμός της ηλικίας περιλαμβάνει τη σύγκριση της ημερομηνίας γέννησης ενός ατόμου με την ημερομηνία για την οποία απαιτείται η ηλικία. Αφαιρώντας την ημερομηνία γέννησης από τη δοθείσα ημερομηνία, προκύπτει η ηλικία του ατόμου, αναπαρίσταται από τον τύπο: Ηλικία = Δοθείσα ημερομηνία - Ημερομηνία γέννησης. Παρακάτω παρατίθενται τα βήματα για τον υπολογισμό της ηλικίας ενός ατόμου από την ημερομηνία γέννησής του έως μια καθορισμένη ημερομηνία.</p>
+
+<ul>
+    <li><strong>Βήμα 1:</strong> Αρχικά, υπολογίστε τον συνολικό αριθμό πλήρων ετών αφαιρώντας το έτος γέννησης από το τρέχον έτος. Για παράδειγμα, αν το τρέχον έτος είναι το 2024 και το έτος γέννησης είναι το 1998, ο αριθμός των πλήρων ετών είναι 26.</li>
+    <li><strong>Βήμα 2:</strong> Στη συνέχεια, καθορίστε τον αριθμό των πλήρων μηνών αφαιρώντας το μήνα γέννησης από τον <a href="https://www.oxfordreference.com/display/10.1093/oi/authority.20110803095355563">τρέχον μήνα</a>. Εάν ο τρέχων μήνας είναι προγενέστερος από τον μήνα γέννησης, μειώστε τον αριθμό των πλήρων ετών κατά 1 και προσθέστε 12 στον τρέχοντα μήνα για να προσαρμόσετε. Στη συνέχεια, υπολογίστε τη διαφορά (τρέχων μήνας - μήνας γέννησης). Για παράδειγμα, αν ο μήνας γέννησης είναι Φεβρουάριος και ο τρέχων μήνας είναι Απρίλιος, ο συνολικός αριθμός μηνών είναι 2. Αν ο μήνας γέννησης είναι Νοέμβριος και ο τρέχων μήνας είναι Απρίλιος, ο συνολικός αριθμός μηνών είναι 4 + 12 = 16, και η διαφορά είναι 16 - 11 = 5.</li>
+    <li><strong>Βήμα 3:</strong> Παρόμοια με το προηγούμενο βήμα, καθορίστε επίσης τον αριθμό των ημερών αφαιρώντας την ημερομηνία γέννησης από την τρέχουσα ημερομηνία. Ωστόσο, εάν η τρέχουσα ημερομηνία είναι προγενέστερη από την ημερομηνία γέννησης, αφαιρέστε 1 από τον αριθμό των πλήρων μηνών και προσθέστε 30/31/28/29 στην τρέχουσα ημερομηνία, ανάλογα με τον αριθμό των ημερών στον προηγούμενο μήνα πριν από τον τρέχοντα μήνα.</li>
+    <li><strong>Βήμα 4:</strong> Συνολικά, ο υπολογιστής ηλικίας δίνει την ηλικία σε ημέρες, μήνες και έτη.</li>
+</ul>
+
+<h2>Παραδείγματα που επεξηγούν πώς να υπολογίσετε την ηλικία</h2>
+
+<p>Παρακάτω παρουσιάζονται παραδείγματα που εξηγούν πώς να υπολογίσετε την ηλικία και η μεθοδολογία που χρησιμοποιείται από τον υπολογιστή γενεθλίων για καλύτερη κατανόηση.</p>
+
+<p><strong>Παράδειγμα 1:</strong> Η ημερομηνία γέννησης του John είναι 25 Ιουλίου 1985 (25/07/1985). Προσδιορίστε την ηλικία του στις 28 Ιανουαρίου 2021 και επιβεβαιώστε την χρησιμοποιώντας τον υπολογιστή ηλικίας.</p>
+
+
+
+
+
+
+
+<p><strong>Λύση:</strong></p>
+
+<p>Εφαρμόζοντας τον τύπο για τον υπολογισμό της ηλικίας του John:</p>
+
+<p>Ηλικία ενός Ατόμου = Δοθείσα ημερομηνία - Ημερομηνία γέννησης.</p>
+
+<p>Ημερομηνία Γέννησης του John = 25 Ιουλίου 1985.</p>
+
+<p>Δοθείσα ημερομηνία = 28 Ιανουαρίου 2021.</p>
+
+<p>Σημειώστε ότι ο τρέχων μήνας είναι μικρότερος από τον μήνα γέννησης. Αυτό σημαίνει ότι ο Ιανουάριος (1) είναι μικρότερος από τον Ιούλιο (7). Συνεπώς, θεωρούμε το έτος 2020 ως το τρέχον έτος και λαμβάνουμε υπόψη επίσης το 12 + 1 (Ιανουάριος) - 7 (Ιούλιος) = 6 μήνες.</p>
+
+<p>Διαφορά Ετών = 2020 - 1985 = 35 χρόνια.</p>
+
+<p>Αριθμός Υπολειπόμενων Ημερών = 3 ημέρες.</p>
+
+<p><strong>Απάντηση:</strong> Άρα, η ηλικία του John είναι 35 χρόνια, 6 μήνες και 3 ημέρες.</p>
+
+<p><strong>Παράδειγμα 2:</strong> Η ημερομηνία γέννησης του Peter είναι 13 Ιουλίου 1992. Υπολογίστε την ηλικία του στις 21 Απριλίου 2016 και επιβεβαιώστε το χρησιμοποιώντας τον υπολογιστή ηλικίας.</p>
+
+<p><strong>Λύση:</strong></p>
+
+<p>Χρησιμοποιώντας τον τύπο για να υπολογίσετε την ηλικία του Peter:</p>
+
+<p>Ηλικία ενός Ατόμου = Τρέχουσα ημερομηνία - Ημερομηνία γέννησης.</p>
+
+<p>Εδώ υπάρχει μια ελαφρώς διαφορετική προσέγγιση για να κατανοήσετε καλύτερα τον τύπο ηλικίας.</p>
+
+<p>Ημερομηνία Γέννησης του Peter = 13 Ιουλίου 1992.</p>
+
+<p>Διαφορά Ετών = 2015 - 1992 = 23 χρόνια. (Αυτός ο υπολογισμός εκτείνεται από τις 13 Ιουλίου 1992 έως τις 13 Ιουλίου 2015).</p>
+
+<p>Αριθμός Υπολειπόμενων Μηνών από τις 13 Ιουλίου 2015 έως τις 13 Απριλίου 2016 = 9 μήνες.</p>
+
+<p>Αριθμός Υπολειπόμενων Ημερών από τις 13 Απριλίου 2016 έως τις 21 Απριλίου 2016 = 8 ημέρες.</p>
+
+<p><strong>Απάντηση:</strong> Άρα, η ηλικία του Peter είναι 23 χρόνια, 9 μήνες και 8 ημέρες.</p>
+
+<p>Με παρόμοιο τρόπο, μπορείτε να χρησιμοποιήσετε τον υπολογιστή ηλικίας για να διαπιστώσετε τις ηλικίες ατόμων με τις δεδομένες ημερομηνίες γέννησης και τις τρέχουσες ημερομηνίες μέχρι τις 26 Αυγούστου 2021:</p>
+
+<ul>
+    <li>13 Ιουλίου 1992</li>
+    <li>21 Απριλίου 2016</li>
+</ul>
+
+<p><b>☛ Περισσότεροι υπολογιστές:</b></p>
+
+<table border="1">
+    <tbody>
+        <tr>
+            <td>
+            <p><a href="https://select-statistics.co.uk/calculators/">Στατιστικά</a></p>
+            </td>
+            <td>
+            <p><a href="https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/">Σύνθετο Επιτόκιο</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><a href="https://www.dadsworksheets.com/fraction-calculator.html">Κλάσμα</a></p>
+            </td>
+            <td>
+            <p><a href="https://mathforyou.net/en/online/calculus/derivative/">Παράγωγος</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><a href="https://www.wikihow.com/Calculate-Percentages">Ποσοστό</a></p>
+            </td>
+            <td>
+            <p><a href="https://www.cuemath.com/calculators/integral-calculator/">Ολοκλήρωμα</a></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Συχνές Ερωτήσεις για τον Υπολογιστή Ηλικίας</h2>
+
+<h3>Πώς να Υπολογίσετε την Ηλικία στον Υπολογιστή Ηλικίας;</h3>
+
+<p>Μπορείτε να χρησιμοποιήσετε αυτόν τον <strong>διαδικτυακό υπολογιστή ηλικίας</strong> για να προσδιορίσετε την ηλικία βασιζόμενοι στην ημερομηνία γέννησης και την τρέχουσα ή επιθυμητή ημερομηνία για τον υπολογισμό της ηλικίας. Βεβαιωθείτε ότι και οι δύο ημερομηνίες έχουν μορφοποιηθεί ως ΗΗ/ΜΜ/ΕΕΕΕ. Αποκτήστε πρόσβαση στον υπολογιστή ηλικίας γεννήσεων επισκεπτόμενοι το <a href="https://agecalculator.com">Υπολογιστή Ηλικίας</a>.</p>
+
+<h3>Ποια είναι η Χρήση του Υπολογιστή Ημερομηνίας Γέννησης;</h3>
+
+<p>Ο υπολογιστής ημερομηνίας γέννησης υπολογίζει την τρέχουσα ηλικία ενός ατόμου ή αντικειμένου, λαμβάνοντας υπόψη τα έτη, τους μήνες και τις ημέρες. Απλώς εισάγετε την ημερομηνία γέννησης και την τρέχουσα ημερομηνία σε μορφή ηη/μμ/εεεε για να λάβετε την ηλικία σας.</p>
+
+<h3>Πώς να Καθορίσετε τον Αριθμό των Ετών Χρησιμοποιώντας τον Υπολογιστή Ημερομηνίας Γέννησης;</h3>
+
+<p>Για να υπολογίσετε τον αριθμό των ετών χρησιμοποιώντας τον υπολογιστή ηλικίας, ξεκινήστε εισάγοντας την ημερομηνία γέννησης και την τρέχουσα ημερομηνία στην καθορισμένη μορφή. Ο υπολογιστής παρέχει την ηλικία σε χρόνια, μήνες και ημέρες, με τα "χρόνια" να αντιπροσωπεύουν την ηλικία ή τον αριθμό των ετών.</p>
+
+<h3>Πώς να Χρησιμοποιήσετε τον υπολογιστή ηλικίας;</h3>
+
+<p>Για να μάθετε περισσότερα μπορείτε να επισκεφθείτε το άρθρο μας "<a href="how-to-use-age-calculator.html">Πώς να χρησιμοποιήσετε τον υπολογιστή ηλικίας;</a>" ή μπορείτε να διαβάσετε τις ενδιαφέρουσες αναρτήσεις μας στο blog μας. <a href="top-10-famous-animals-and-their-age.html">Οι δέκα πιο διάσημοι ζώοι και η ηλικία τους</a>.</p>
+
+   
+    
+
+
+    
+<footer>
+  <nav>
+      <ul>
+          <li>
+              <a href="privacy-policy.html" target="_blank">Πολιτική Απορρήτου</a>
+          </li>
+          <li><a href="terms-and-conditions.html">Όροι</a></li>
+          <li><a href="faq.html" target="_blank">Συχνές Ερωτήσεις</a></li>
+          <li><a href="about-us.html" target="_blank">Σχετικά</a></li>
+          <li><a href="blog-home.html" target="_blank">Ιστολόγιο</a></li>
+          <li><a href="api-docs.html" target="_blank">Τεκμηρίωση API</a></li>
+          <li><a href="api-status.html" target="_blank">Κατάσταση API</a></li>
+          <li>
+              <a href="contact-us.html" target="_blank">Επικοινωνία</a>
+          </li>
+          <li><a href="mailto:hello@agecalculator.com" target="_blank">hello@agecalculator.com</a></li>
+      </ul>
+  </nav>
+</footer>
+
+
+  </div>
+</div>
+<script type="text/javascript">
+  function age() {
+  var d1 = document.getElementById('date').value;
+  var m1 = document.getElementById('month').value;
+  var y1 = document.getElementById('year').value;
+
+  var date = new Date();
+  var d2 = date.getDate();
+  var m2 = 1 + date.getMonth();
+  var y2 = date.getFullYear();
+  var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  if(d1 > d2){
+  	d2 = d2 + month[m2 - 1];
+  	m2 = m2 - 1;
+  }
+  if(m1 > m2){
+  	m2 = m2 + 12;
+  	y2 = y2 - 1;
+  }
+  var d = d2 - d1;
+  var m = m2 - m1;
+  var y = y2 - y1;
+
+  document.getElementById('age').innerHTML = 'Your Age is '+y+' Years '+m+' Months '+d+' Days';
+}
+</script>
+</body>
+</html>

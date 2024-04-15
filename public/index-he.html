@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>מחשבון גיל - age calculator</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   
+    <meta content="מחשבון גיל מקוון מאפשר לך לחשב את גילך באמצעות תאריך הלידה שלך ותאריך הלידה ולמצוא את גילך במהירות בלי צורך בכל סוג של מתמטיקה מורכבת. הוא יחזיר תשובה בשנים, חודשים וימים." name="description">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
+    
+<style media="screen">
+    body{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #2782e3;
+	font-size: 15px;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+}
+* {
+	box-sizing: border-box;
+}
+.container{
+	width:520px;
+	height: auto;
+	margin: 100px auto;
+	background-color: #eee;
+	border-radius: 5px;
+}
+.text-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.base{
+	width: 100%;
+	 
+	margin: 0;
+	overflow: hidden;
+	display: block;
+	float: none;
+}
+.block{
+	width: 135px;
+	padding: 5px 20px;
+ 
+	margin-left: 20px;
+	display: inline-block;
+	float: left;
+}
+.base h1{
+	font-size: 26px;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: normal;
+  margin-top: 0px;
+  box-shadow: 0px 2px #bababa;
+  background: white;
+  font-size: 34px;
+	color: navy;
+}
+ 
+.title{
+	font-size: 20px;
+	text-align: left;
+	font-family: sans-serif;
+	font-weight: normal;
+	line-height: 0.5;
+	letter-spacing: 0.5px;
+	word-spacing: 2.7px;
+	color: #1073d0;
+}
+input[type=text] {
+	width: 140px;
+	margin: auto;
+	outline: none;
+    min-height: 50px;
+	border: 2px solid #1073d0;
+	padding: 12px;
+	background-color: #f7f7f7;
+    border-radius: 2px;
+    color: #1073d0;
+    font-size: 17px;
+}
+input[type=text]:focus{
+	background-color: #ffffff;
+	border: 2px solid orange;
+	outline: none;
+}
+input[type=button]{
+	width: 150px;
+	margin-left: 35%;
+  margin-top: 40px;
+	outline: none;
+	border: none;
+	border-radius: 2px;
+	background-color: #0761b6;
+	color: #ffffff;
+	padding: 14px 16px;
+	text-align: center;
+	font-size: 16px;
+}
+input[type=button]:hover{
+	background-color: #003669;
+}
+ 
+#age{
+	display: block;
+	margin: 10px;
+    margin-top: 35px;
+	padding: 10px;
+    padding-bottom: 20px;
+	overflow: hidden;
+	font-family: verdana;
+	font-size: 23px;
+	font-weight: normal;
+	line-height: 1.5;
+	word-spacing: 2.7px;
+	color: navy;
+}
+
+      footer {
+        margin: 0 auto 10px;
+      }
+
+      footer nav {
+        padding: 2px 2px;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 0 5px #ddd;
+      }
+
+      footer li {
+        margin: 5px;
+        display: inline-block;
+      }
+
+      /* footer li:last-child {
+        float: center;
+      } */
+
+      footer a {
+        color: #999;
+        font-size: 0.8rem;
+        text-decoration: none;
+
+        -webkit-transition: 0.5s;
+           -moz-transition: 0.5s;
+                transition: 0.5s;
+      }
+
+      footer a:hover {
+        color: #333;
+      }
+
+  </style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Age Calculator",
+    "applicationCategory": "UtilitiesApplication",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "ratingCount": "5"
+    }
+  }
+  </script>
+
+  <link rel="canonical" href="https://agecalculator.com/he/">
+<link rel="alternate" hreflang="ar" href="https://agecalculator.com/ar/">
+<link rel="alternate" hreflang="bg" href="https://agecalculator.com/bg/">
+<link rel="alternate" hreflang="cs" href="https://agecalculator.com/cs/">
+<link rel="alternate" hreflang="da" href="https://agecalculator.com/da/">
+<link rel="alternate" hreflang="de" href="https://agecalculator.com/de/">
+<link rel="alternate" hreflang="el" href="https://agecalculator.com/el/">
+<link rel="alternate" hreflang="en" href="https://agecalculator.com/">
+<link rel="alternate" hreflang="es" href="https://agecalculator.com/es/">
+<link rel="alternate" hreflang="et" href="https://agecalculator.com/et/">
+<link rel="alternate" hreflang="fi" href="https://agecalculator.com/fi/">
+<link rel="alternate" hreflang="fr" href="https://agecalculator.com/fr/">
+<link rel="alternate" hreflang="he" href="https://agecalculator.com/he/">
+<link rel="alternate" hreflang="hi" href="https://agecalculator.com/hi/">
+<link rel="alternate" hreflang="hu" href="https://agecalculator.com/hu/">
+<link rel="alternate" hreflang="id" href="https://agecalculator.com/id/">
+<link rel="alternate" hreflang="it" href="https://agecalculator.com/it/">
+<link rel="alternate" hreflang="ja" href="https://agecalculator.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://agecalculator.com/ko/">
+<link rel="alternate" hreflang="lt" href="https://agecalculator.com/lt/">
+<link rel="alternate" hreflang="lv" href="https://agecalculator.com/lv/">
+<link rel="alternate" hreflang="nb" href="https://agecalculator.com/nb/">
+<link rel="alternate" hreflang="nl" href="https://agecalculator.com/nl/">
+<link rel="alternate" hreflang="pl" href="https://agecalculator.com/pl/">
+<link rel="alternate" hreflang="pt" href="https://agecalculator.com/pt/">
+<link rel="alternate" hreflang="ro" href="https://agecalculator.com/ro/">
+<link rel="alternate" hreflang="ru" href="https://agecalculator.com/ru/">
+<link rel="alternate" hreflang="sk" href="https://agecalculator.com/sk/">
+<link rel="alternate" hreflang="sl" href="https://agecalculator.com/sl/">
+<link rel="alternate" hreflang="sv" href="https://agecalculator.com/sv/">
+<link rel="alternate" hreflang="th" href="https://agecalculator.com/th/">
+<link rel="alternate" hreflang="tr" href="https://agecalculator.com/tr/">
+<link rel="alternate" hreflang="uk" href="https://agecalculator.com/uk/">
+<link rel="alternate" hreflang="vi" href="https://agecalculator.com/vi/">
+<link rel="alternate" hreflang="zh" href="https://agecalculator.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://agecalculator.com/">
+</head>
+<body>
+
+<div class="container">
+
+  
+  <form>
+  	<div class="base">
+  		<div class="enter">
+  		<h1>מחשבון גיל</h1>
+  	</div>
+  <div class="block">
+  	<p class="title">תאריך</p>
+  	<input type="text" name="date" id="date" placeholder="יום" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">חודש</p>
+    <input type="text" name="month" id="month" placeholder="חודש" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">שנה</p>
+    <input type="text" name="year" id="year" placeholder="שנה" required="required" minlength="4" maxlength="4" />
+  </div>
+  </div>
+  <div class="base">
+  	<div class="enter">
+    <input type="button" name="submit" value="שלח" onclick="age()" />
+    </div>
+  </div>
+    <div id="age"></div>
+  </form>
+
+
+  <div class="text-content">
+    <p>מחשבון גיל זה מקבל גילו של אדם על פי תאריך הלידה שלו. שיטות חישוב הגיל עשויות להשתנות ממדינה למדינה, אך באופן כללי, הגיל של אדם מתייחס לשנה אחת בכל יום הולדת שלו.</p>
+
+<p>מחשבון גיל מקוון זה הוא כלי חשוב ופשוט המיועד לשימוש במגוון רב של תרחישים. הוא יכול לקבוע את הגיל של אנשים מתחילת חייהם ועד סופם, על ידי חישוב שנים, חודשים וימים, באמצעות קלט של תאריך הלידה שלהם ותאריך היום הנוכחי.</p>
+
+<div id="calc">
+<h2>מה עושה מחשבון גיל?</h2>
+</div>
+
+<p><strong>מחשבון גיל מקוון הוא כלי בתוך האינטרנט</strong> שנועד לחשב את הגיל של אדם בתאריך ספציפי, בהנחה שתאריך הלידה (DOB) שלו ידוע. ברוב התרבויות המערביות, חישוב הגיל נעשה בדרך כלל על פי עיגול למטה, לכן אם אדם חי בן 8 שנים ו-9 חודשים, גילו נחשב כשמונה שנים.</p>
+
+<h3>מחשבון תאריך הלידה (DOB)</h3>
+
+<p>מחשבון תאריך הלידה (DOB) מאפשר לנו לקבוע גיל על פי תאריך הלידה. כדי להשתמש במחשבון גיל זה, יש להזין את הערכים הנדרשים בתיבת הקלט המסופקת.</p>
+
+<ul>
+    <li>תאריך הלידה בפורמט DD/MM/YYYY</li>
+    <li>התאריך הספציפי שברצונך לחשב את הגיל עבורו יש להזין באותו הפורמט dd/mm/yyyy</li>
+</ul>
+
+<p style="text-align: center;"><img src="img/screenshot-1.jpg" style="max-width:100%; max-height:100%;"></img></p>
+
+<h2>כיצד להשתמש במחשבון גיל?</h2>
+
+<p>כדי לקבוע את גילו של אדם באמצעות מחשבון יומולדות, יש לעקוב אחר השלבים הבאים:</p>
+
+<ul>
+    <li><strong>שלב 1</strong>: עבור אל www.agecalculator.com</li>
+    <li><strong>שלב 2</strong>: הזן את תאריך הלידה של האדם בתיבת הקלט של המחשבון גיל בפורמט DD/MM/YYYY.</li>
+    <li><strong>שלב 3</strong>: לחץ על לחצן ה<strong>&quot;שלח&quot;</strong> כדי לחשב את הגיל של האדם.</li>
+    <li><strong>שלב 4</strong>: לחץ על לחצן ה<strong>&quot;איפוס&quot;</strong> כדי לנקות את הטקסט הנכנס ולהזין ערכים חדשים.</li>
+</ul>
+
+<div id="formula">
+<h2>נוסחא למחשבון גיל</h2>
+</div>
+
+<p>לפי מילון אוקספורד, &ldquo;גיל&rdquo; מתייחס למשך חיים של אדם או לקיום עצם מסוים. חישוב הגיל כולל השוואת תאריך הלידה של אדם עם התאריך בו נדרש הגיל. פעולת החישוב היא פשוטה: נוציא את תאריך הלידה מהתאריך הנתון ונקבל את הגיל של האדם, כלומר הנוסחה היא: גיל = התאריך הנתון - תאריך הלידה. להלן השלבים לחישוב הגיל של אדם מתאריך הלידה שלו עד תאריך מסוים.</p>
+
+<ul>
+    <li><strong>שלב 1:</strong> בתחילה, נחשב את מספר השנים המלאות על ידי חיסור שנת הלידה מהשנה הנוכחית. לדוגמה, אם השנה הנוכחית היא 2024 ושנת הלידה היא 1998, מספר השנים המלאות הוא 26.</li>
+    <li><strong>שלב 2:</strong> לאחר מכן, נחשב את מספר החודשים המלאים על ידי חיסור חודש הלידה מה<strong><a href="https://www.oxfordreference.com/display/10.1093/oi/authority.20110803095355563">חודש הנוכחי</a></strong>. אם החודש הנוכחי קודם לחודש הלידה, יש להפחית את מספר השנים המלאות ב-1 ולהוסיף 12 לחודש הנוכחי כדי להתאים. לאחר מכן, נחשב את ההפרש (חודש הנוכחי - חודש הלידה). לדוגמה, אם חודש הלידה הוא פברואר והחודש הנוכחי הוא אפריל, מספר החודשים הכולל הוא 2. אם חודש הלידה הוא נובמבר והחודש הנוכחי הוא אפריל, מספר החודשים הכולל הוא 4 + 12 = 16, וההפרש הוא 16 - 11 = 5.</li>
+    <li><strong>שלב 3:</strong> כדי לחשב את מספר הימים, יש לחסור את תאריך הלידה מהתאריך הנוכחי. אם התאריך הנוכחי קודם לתאריך הלידה, יש להוריד 1 ממספר החודשים המלאים ולהוסיף 30/31/28/29 לתאריך הנוכחי, תלוי במספר הימים בחודש הקודם לחודש הנוכחי.</li>
+    <li><strong>שלב 4:</strong> לסיכום, מחשבון הגיל מציג את הגיל בימים, חודשים ושנים.</li>
+</ul>
+
+<h2>דוגמאות לחישוב גיל</h2>
+
+<p>להלן דוגמאות הממחישות איך לחשב את הגיל והמתודולוגיה המופעלת על ידי מחשבון היומולדות לצורך הבנה נכונה יותר.</p>
+
+<p><strong>דוגמה 1:</strong> תאריך הלידה של ג'ון הוא 25 ביולי 1985 (25/07/1985). לקבוע את גילו ב-28 בינואר 2021 ולאמת את זה באמצעות מחשבון הגיל.</p>
+
+
+
+
+
+
+
+<p><strong>פתרון:</strong></p>
+
+<p>החישוב המתואר לחישוב גילו של ג'ון:</p>
+
+<p>גיל האדם = תאריך נתון - תאריך הלידה.</p>
+
+<p>תאריך הלידה של ג'ון = 25 ביולי 1985.</p>
+
+<p>תאריך נתון = 28 בינואר 2021.</p>
+
+<p>שימו לב שהחודש הנוכחי קטן מהחודש בו נולד. כלומר, ינואר (1) הוא פחות מיולי (7). לכן, אנו מתייחסים לשנת 2020 כשנת הנוכחות וגם למוספים 12 + 1 (ינואר) - 7 (יולי) = 6 חודשים.</p>
+
+<p>הפרש בשנים = 2020 - 1985 = 35 שנים.</p>
+
+<p>מספר הימים הנותרים = 3 ימים.</p>
+
+<p><strong>תשובה:</strong> לכן, הגיל של ג'ון הוא 35 שנים, 6 חודשים ו-3 ימים.</p>
+
+<p><strong>דוגמה 2:</strong> תאריך הלידה של פיטר הוא 13 ביולי 1992. חשבו את גילו ב-21 באפריל 2016 ואשרו זאת באמצעות מחשבון הגיל.</p>
+
+<p><strong>פתרון:</strong></p>
+
+<p>שימוש בנוסחא לחישוב גילו של פיטר:</p>
+
+<p>גיל האדם = תאריך נוכחי - תאריך הלידה.</p>
+
+<p>כאן ניתן למצוא גישה מעט שונה להבנת הנוסחא לגיל.</p>
+
+<p>תאריך הלידה של פיטר = 13 ביולי 1992.</p>
+
+<p>הפרש בשנים = 2015 - 1992 = 23 שנים. (חישוב זה מתקיים מ-13 ביולי 1992 עד 13 ביולי 2015).</p>
+
+<p>מספר החודשים הנותרים מ-13 ביולי 2015 עד 13 באפריל 2016 = 9 חודשים.</p>
+
+<p>מספר הימים הנותרים מ-13 באפריל 2016 עד 21 באפריל 2016 = 8 ימים.</p>
+
+<p><strong>תשובה:</strong> לכן, הגיל של פיטר הוא 23 שנים, 9 חודשים ו-8 ימים.</p>
+
+<p>באותה המידה, תוכלו להשתמש במחשבון הגיל כדי לקבוע את הגילים של אנשים עם תאריכי לידה ותאריכים נוכחיים נתונים עד 26 באוגוסט 2021:</p>
+
+<ul>
+    <li>13 ביולי 1992</li>
+    <li>21 באפריל 2016</li>
+</ul>
+
+<p><b>☛ מחשבונים נוספים:</b></p>
+
+<table border="1">
+    <tbody>
+        <tr>
+            <td>
+            <p><a href="https://select-statistics.co.uk/calculators/">סטטיסטיקה</a></p>
+            </td>
+            <td>
+            <p><a href="https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/">ריבית מרובתית</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><a href="https://www.dadsworksheets.com/fraction-calculator.html">שבר</a></p>
+            </td>
+            <td>
+            <p><a href="https://mathforyou.net/en/online/calculus/derivative/">נגזרת</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><a href="https://www.wikihow.com/Calculate-Percentages">אחוזים</a></p>
+            </td>
+            <td>
+            <p><a href="https://www.cuemath.com/calculators/integral-calculator/">אינטגרל</a></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>שאלות נפוצות על מחשבון הגיל</h2>
+
+<h3>כיצד לחשב גיל באמצעות מחשבון הגיל?</h3>
+
+<p>ניתן להשתמש ב<strong>מחשבון הגיל המקוון</strong> כדי לקבוע את הגיל על פי תאריך הלידה והתאריך הנוכחי או הרצוי לחישוב הגיל. יש לוודא ששני התאריכים מהודרים בתבנית DD/MM/YYYY. ניתן לגשת למחשבון תאריך הלידה על ידי ביקור ב-<a href="https://agecalculator.com">מחשבון הגיל</a>.</p>
+
+<h3>מה השימוש של מחשבון DOB?</h3>
+
+<p>מחשבון DOB מחשב את הגיל הנוכחי של אדם או עצם, תוך ניכור של שנים, חודשים וימים. יש להזין תאריך הלידה והתאריך הנוכחי בפורמט dd/mm/yyyy כדי לקבל את הגיל שלך.</p>
+
+<h3>כיצד לקבוע את מספר השנים באמצעות מחשבון הגיל של תאריך הלידה?</h3>
+
+<p>כדי לחשב את מספר השנים באמצעות מחשבון הגיל, יש להתחיל בהזנת תאריך הלידה והתאריך הנוכחי בפורמט המסופק. המחשבון מספק את הגיל בשנים, חודשים וימים, כאשר "שנים" מייצגים את הגיל או מספר השנים.</p>
+
+<h3>כיצד להשתמש במחשבון הגיל?</h3>
+
+<p>כדי לקבל מידע נוסף, ניתן לבקר במאמר שלנו "<a href="how-to-use-age-calculator.html">איך להשתמש במחשבון הגיל?</a>" או ניתן לקרוא את פוסטי הבלוג המעניינים שלנו. <a href="top-10-famous-animals-and-their-age.html">10 בעלי חיים מפורסמים והגיל שלהם</a>.</p>
+
+   
+    
+
+
+
+<footer>
+  <nav>
+    <ul>
+      <li>
+        <a href="privacy-policy.html" target="_blank">מדיניות פרטיות</a>
+      </li>
+      <li><a href="terms-and-conditions.html">תנאים</a></li>
+      <li><a href="faq.html" target="_blank">שאלות נפוצות</a></li>
+      <li><a href="about-us.html" target="_blank">אודות</a></li>
+      <li><a href="blog-home.html" target="_blank">בלוג</a></li>
+      <li><a href="api-docs.html" target="_blank">מסמכי API</a></li>
+      <li><a href="api-status.html" target="_blank">סטטוס API</a></li>
+      <li>
+        <a href="contact-us.html" target="_blank">צור קשר</a>
+      </li>
+      <li><a href="mailto:hello@agecalculator.com" target="_blank">hello@agecalculator.com</a></li>
+    </ul>
+  </nav>
+</footer>
+
+
+  </div>
+</div>
+<script type="text/javascript">
+  function age() {
+  var d1 = document.getElementById('date').value;
+  var m1 = document.getElementById('month').value;
+  var y1 = document.getElementById('year').value;
+
+  var date = new Date();
+  var d2 = date.getDate();
+  var m2 = 1 + date.getMonth();
+  var y2 = date.getFullYear();
+  var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  if(d1 > d2){
+  	d2 = d2 + month[m2 - 1];
+  	m2 = m2 - 1;
+  }
+  if(m1 > m2){
+  	m2 = m2 + 12;
+  	y2 = y2 - 1;
+  }
+  var d = d2 - d1;
+  var m = m2 - m1;
+  var y = y2 - y1;
+
+  document.getElementById('age').innerHTML = 'Your Age is '+y+' Years '+m+' Months '+d+' Days';
+}
+</script>
+</body>
+</html>

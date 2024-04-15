@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Калькулятор віку - Age Calculator Online</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   
+    <meta content="Онлайн калькулятор віку дозволяє вам обчислити свій вік, використовуючи вашу дату народження, і знайти свій вік швидко, не виконуючи ніяких складних обчислень. Він поверне відповідь у роках, місяцях і днях.
+    " name="description">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
+    
+<style media="screen">
+    body{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #2782e3;
+	font-size: 15px;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+}
+* {
+	box-sizing: border-box;
+}
+.container{
+	width:520px;
+	height: auto;
+	margin: 100px auto;
+	background-color: #eee;
+	border-radius: 5px;
+}
+.text-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.base{
+	width: 100%;
+	 
+	margin: 0;
+	overflow: hidden;
+	display: block;
+	float: none;
+}
+.block{
+	width: 135px;
+	padding: 5px 20px;
+ 
+	margin-left: 20px;
+	display: inline-block;
+	float: left;
+}
+.base h1{
+	font-size: 26px;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: normal;
+  margin-top: 0px;
+  box-shadow: 0px 2px #bababa;
+  background: white;
+  font-size: 34px;
+	color: navy;
+}
+ 
+.title{
+	font-size: 20px;
+	text-align: left;
+	font-family: sans-serif;
+	font-weight: normal;
+	line-height: 0.5;
+	letter-spacing: 0.5px;
+	word-spacing: 2.7px;
+	color: #1073d0;
+}
+input[type=text] {
+	width: 140px;
+	margin: auto;
+	outline: none;
+    min-height: 50px;
+	border: 2px solid #1073d0;
+	padding: 12px;
+	background-color: #f7f7f7;
+    border-radius: 2px;
+    color: #1073d0;
+    font-size: 17px;
+}
+input[type=text]:focus{
+	background-color: #ffffff;
+	border: 2px solid orange;
+	outline: none;
+}
+input[type=button]{
+	width: 150px;
+	margin-left: 35%;
+  margin-top: 40px;
+	outline: none;
+	border: none;
+	border-radius: 2px;
+	background-color: #0761b6;
+	color: #ffffff;
+	padding: 14px 16px;
+	text-align: center;
+	font-size: 16px;
+}
+input[type=button]:hover{
+	background-color: #003669;
+}
+ 
+#age{
+	display: block;
+	margin: 10px;
+    margin-top: 35px;
+	padding: 10px;
+    padding-bottom: 20px;
+	overflow: hidden;
+	font-family: verdana;
+	font-size: 23px;
+	font-weight: normal;
+	line-height: 1.5;
+	word-spacing: 2.7px;
+	color: navy;
+}
+
+      footer {
+        margin: 0 auto 10px;
+      }
+
+      footer nav {
+        padding: 2px 2px;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 0 5px #ddd;
+      }
+
+      footer li {
+        margin: 5px;
+        display: inline-block;
+      }
+
+      /* footer li:last-child {
+        float: center;
+      } */
+
+      footer a {
+        color: #999;
+        font-size: 0.8rem;
+        text-decoration: none;
+
+        -webkit-transition: 0.5s;
+           -moz-transition: 0.5s;
+                transition: 0.5s;
+      }
+
+      footer a:hover {
+        color: #333;
+      }
+
+  </style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "operatingSystem": "Windows, Mac, Linux, Chromebook, Andriod, iOS",
+    "name": "Age Calculator",
+    "applicationCategory": "UtilitiesApplication",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.7,
+      "worstRating": 1,
+      "bestRating": 5,
+      "reviewCount": 5
+    },
+  }
+  </script>
+
+  <link rel="canonical" href="https://agecalculator.com/uk/">
+<link rel="alternate" hreflang="ar" href="https://agecalculator.com/ar/">
+<link rel="alternate" hreflang="bg" href="https://agecalculator.com/bg/">
+<link rel="alternate" hreflang="cs" href="https://agecalculator.com/cs/">
+<link rel="alternate" hreflang="da" href="https://agecalculator.com/da/">
+<link rel="alternate" hreflang="de" href="https://agecalculator.com/de/">
+<link rel="alternate" hreflang="el" href="https://agecalculator.com/el/">
+<link rel="alternate" hreflang="en" href="https://agecalculator.com/">
+<link rel="alternate" hreflang="es" href="https://agecalculator.com/es/">
+<link rel="alternate" hreflang="et" href="https://agecalculator.com/et/">
+<link rel="alternate" hreflang="fi" href="https://agecalculator.com/fi/">
+<link rel="alternate" hreflang="fr" href="https://agecalculator.com/fr/">
+<link rel="alternate" hreflang="he" href="https://agecalculator.com/he/">
+<link rel="alternate" hreflang="hi" href="https://agecalculator.com/hi/">
+<link rel="alternate" hreflang="hu" href="https://agecalculator.com/hu/">
+<link rel="alternate" hreflang="id" href="https://agecalculator.com/id/">
+<link rel="alternate" hreflang="it" href="https://agecalculator.com/it/">
+<link rel="alternate" hreflang="ja" href="https://agecalculator.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://agecalculator.com/ko/">
+<link rel="alternate" hreflang="lt" href="https://agecalculator.com/lt/">
+<link rel="alternate" hreflang="lv" href="https://agecalculator.com/lv/">
+<link rel="alternate" hreflang="nb" href="https://agecalculator.com/nb/">
+<link rel="alternate" hreflang="nl" href="https://agecalculator.com/nl/">
+<link rel="alternate" hreflang="pl" href="https://agecalculator.com/pl/">
+<link rel="alternate" hreflang="pt" href="https://agecalculator.com/pt/">
+<link rel="alternate" hreflang="ro" href="https://agecalculator.com/ro/">
+<link rel="alternate" hreflang="ru" href="https://agecalculator.com/ru/">
+<link rel="alternate" hreflang="sk" href="https://agecalculator.com/sk/">
+<link rel="alternate" hreflang="sl" href="https://agecalculator.com/sl/">
+<link rel="alternate" hreflang="sv" href="https://agecalculator.com/sv/">
+<link rel="alternate" hreflang="th" href="https://agecalculator.com/th/">
+<link rel="alternate" hreflang="tr" href="https://agecalculator.com/tr/">
+<link rel="alternate" hreflang="uk" href="https://agecalculator.com/uk/">
+<link rel="alternate" hreflang="vi" href="https://agecalculator.com/vi/">
+<link rel="alternate" hreflang="zh" href="https://agecalculator.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://agecalculator.com/">
+</head>
+<body>
+
+<div class="container">
+
+  
+  <form>
+  	<div class="base">
+  		<div class="enter">
+  		<h1>Калькулятор віку</h1>
+  	</div>
+  <div class="block">
+  	<p class="title">Дата</p>
+  	<input type="text" name="date" id="date" placeholder="дд" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">Місяць</p>
+    <input type="text" name="month" id="month" placeholder="мм" required="required" minlength="1" maxlength="2" />
+  </div>
+  <div class="block">
+  	<p class="title">Рік</p>
+    <input type="text" name="year" id="year" placeholder="рррр" required="required" minlength="4" maxlength="4" />
+  </div>
+  </div>
+  <div class="base">
+  	<div class="enter">
+    <input type="button" name="submit" value="Підтвердити" onclick="age()" />
+    </div>
+  </div>
+    <div id="age"></div>
+  </form>
+
+
+
+  
+  <div class="text-content">
+    <p>Цей калькулятор віку визначає вік особи на основі її дати народження. Методи розрахунку віку можуть відрізнятися в різних культурах, але, як правило, вік особи збільшується на 1 рік на кожні народини.</p>
+
+    <p>Цей безкоштовний онлайн калькулятор віку є цінним і простим у використанні інструментом, який може бути застосований в безлічі сценаріїв. Він може визначати вік осіб від новонароджених до літніх, обчислюючи роки, місяці та дні, використовуючи введення їх дати народження та поточної дати.</p>
+    
+    <div id="calc">
+    <h2>Що робить Калькулятор віку?</h2>
+    </div>
+    
+    <p><strong>Онлайн калькулятор віку - це веб-інструмент</strong>, призначений для розрахунку віку особи на певну дату, якщо відома їхня дата народження (ДН). У багатьох західних культурах розрахунок віку зазвичай округлюється вниз, тому якщо особа прожила 8 років і 9 місяців, її вік вважається 8 років.</p>
+    
+    <h3>Калькулятор Дати народження (ДН)</h3>
+    
+    <p>Калькулятор дати народження (ДН) дозволяє визначити вік на основі дати народження. Для використання цього калькулятора віку введіть потрібні значення в поле введення.</p>
+    
+    <ul>
+        <li>ДН у форматі ДД/ММ/РРРР</li>
+        <li>Конкретну дату, на яку ви бажаєте розрахувати вік, слід ввести у тому ж форматі дд/мм/рррр</li>
+    </ul>
+    
+    <p style="text-align: center;"><img src="img/screenshot-1.jpg" style="max-width:100%; max-height:100%;"></img></p>
+    
+    <h2>Як використовувати age calculator?</h2>
+    
+    <p>Щоб визначити вік людини за допомогою калькулятора днів народження, дотримуйтесь цих кроків::</p>
+    
+    <ul>
+        <li><strong>Крок 1</strong>: Перейдіть на www.agecalculator.com</li>
+        <li><strong>Крок 2</strong>: Введіть дату народження в поле введення калькулятора віку в форматі ДД/ММ/РРРР.</li>
+        <li><strong>Крок 3</strong>: Натисніть кнопку <strong>&quot;Підтвердити&quot;</strong>, щоб розрахувати вік людини.</li>
+        <li><strong>Крок 4</strong>: Натисніть кнопку <strong>&quot;Скинути&quot;</strong>, щоб очистити текст вводу та ввести нові значення.</li>
+    </ul>
+    
+    <div id="formula">
+    <h2>Формула для калькулятора віку</h2>
+    </div>
+    
+    <p>Згідно з Оксфордським словником, &ldquo;Вік&rdquo; відноситься до тривалості життя людини або існування об'єкта. Розрахунок віку передбачає порівняння дати народження людини з датою, для якої необхідний вік. Віднімаючи дату народження від заданої дати, отримуємо вік людини, який представлений формулою: Вік = Задана дата - Дата народження. Нижче наведено кроки для розрахунку віку людини від її дати народження до певної дати.</p>
+    
+    <ul>
+        <li><strong>Крок 1:</strong> Спочатку розрахуйте загальну кількість повних років, віднімаючи рік народження від поточного року. Наприклад, якщо поточний рік - 2024, а рік народження - 1998, то кількість повних років - 26.</li>
+        <li><strong>Крок 2:</strong> Подальшим чином, визначте кількість повних місяців, віднімаючи місяць народження від <a href="https://www.oxfordreference.com/display/10.1093/oi/authority.20110803095355563">поточного місяця</a>. Якщо поточний місяць попередній за місяць народження, зменште кількість повних років на 1 і додайте 12 до поточного місяця, щоб скоригувати. Потім розрахуйте різницю (поточний місяць - місяць народження). Наприклад, якщо місяць народження - Лютий, а поточний місяць - Квітень, загальна кількість місяців - 2. Якщо місяць народження - Листопад, а поточний місяць - Квітень, загальна кількість місяців - 4 + 12 = 16, а різниця - 16 - 11 = 5.</li>
+        <li><strong>Крок 3:</strong> Аналогічно попередньому кроку, ми також визначаємо кількість днів, віднімаючи дату народження від поточної дати. Однак, якщо поточна дата попередня за датою народження, віднімаємо 1 від кількості повних місяців і додаємо 30/31/28/29 до поточної дати, залежно від кількості днів у попередньому місяці перед поточним місяцем.</li>
+        <li><strong>Крок 4:</strong> У висновку калькулятор віку дає вік у днях, місяцях та роках.</li>
+    </ul>
+    
+    <h2>Приклади, що показують, як розрахувати вік</h2>
+    
+    <p>Нижче наведено приклади, які ілюструють, як розрахувати вік та методологію, яку застосовує калькулятор днів народження для кращого розуміння.</p>
+    
+    <p><strong>Приклад 1:</strong> Джон народився 25 липня 1985 року (25/07/1985). Визначте його вік на 28 січня 2021 року та перевірте це за допомогою калькулятора віку.</p>
+    
+
+
+
+
+    <p><strong>Розв'язок:</strong></p>
+
+    <p>Застосовуючи формулу для розрахунку віку Джона:</p>
+    
+    <p>Вік особи = Задана дата - Дата народження.</p>
+    
+    <p>Дата народження Джона = 25 липня 1985 року.</p>
+    
+    <p>Задана дата = 28 січня 2021 року.</p>
+    
+    <p>Зверніть увагу, що поточний місяць менший за місяць народження. Тобто, січень (1) менший за липень (7). Тому ми вважаємо рік 2020 року поточним роком, а також враховуємо 12 + 1 (січень) - 7 (липень) = 6 місяців.</p>
+    
+    <p>Різниця в роках = 2020 - 1985 = 35 років.</p>
+    
+    <p>Кількість залишкових днів = 3 дні.</p>
+    
+    <p><strong>Відповідь:</strong> Таким чином, вік Джона складає 35 років, 6 місяців і 3 дні.</p>
+    
+    <p><strong>Приклад 2:</strong> Дата народження Петра - 13 липня 1992 року. Розрахуйте його вік на 21 квітня 2016 року і підтвердіть це за допомогою калькулятора віку.</p>
+    
+    <p><strong>Розв'язок:</strong></p>
+    
+    <p>Використовуючи формулу для розрахунку віку Петра:</p>
+    
+    <p>Вік особи = Поточна дата - Дата народження.</p>
+    
+    <p>Тут трохи інший підхід для кращого розуміння формули віку.</p>
+    
+    <p>Дата народження Петра = 13 липня 1992 року.</p>
+    
+    <p>Різниця в роках = 2015 - 1992 = 23 роки. (Цей розрахунок відбувається з 13 липня 1992 року до 13 липня 2015 року).</p>
+    
+    <p>Кількість залишкових місяців з 13 липня 2015 року до 13 квітня 2016 року = 9 місяців.</p>
+    
+    <p>Кількість залишкових днів з 13 квітня 2016 року до 21 квітня 2016 року = 8 днів.</p>
+    
+    <p><strong>Відповідь:</strong> Отже, вік Петра складає 23 роки, 9 місяців і 8 днів.</p>
+    
+    <p>Аналогічно, ви можете скористатися калькулятором віку для визначення віку осіб з вказаними датами народження та поточними датами до 26 серпня 2021 року:</p>
+    
+    <ul>
+        <li>13 липня 1992 року</li>
+        <li>21 квітня 2016 року</li>
+    </ul>
+    
+
+
+
+
+
+    <p><b>☛ Більше калькуляторів:</b></p>
+
+<table border="1">
+    <tbody>
+        <tr>
+            <td>
+            <p><a href="https://select-statistics.co.uk/calculators/">Статистика</a></p>
+            </td>
+            <td>
+            <p><a href="https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/">Відсотковий приріст</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><a href="https://www.dadsworksheets.com/fraction-calculator.html">Дроби</a></p>
+            </td>
+            <td>
+            <p><a href="https://mathforyou.net/en/online/calculus/derivative/">Похідна</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><a href="https://www.wikihow.com/Calculate-Percentages">Відсотки</a></p>
+            </td>
+            <td>
+            <p><a href="https://www.cuemath.com/calculators/integral-calculator/">Інтеграл</a></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Часті питання про калькулятор віку</h2>
+
+<h3>Як обчислити вік за допомогою калькулятора віку?</h3>
+
+<p>Ви можете скористатися цим <strong>онлайн калькулятором віку</strong>, щоб визначити вік на основі вказаної дати народження та поточної або бажаної дати для розрахунку віку. Переконайтеся, що обидві дати відформатовані як ДД/ММ/РРРР. Для отримання доступу до калькулятора дати народження відвідайте <a href="https://agecalculator.com">Калькулятор віку</a>.</p>
+
+<h3>Як використовувати калькулятор ДН?</h3>
+
+<p>Калькулятор ДН обчислює поточний вік особи або об'єкта, враховуючи роки, місяці та дні. Просто введіть ДН та поточну дату у форматі дд/мм/рррр, щоб отримати свій вік.</p>
+
+<h3>Як визначити кількість років за допомогою калькулятора дати народження?</h3>
+
+<p>Щоб обчислити кількість років за допомогою калькулятора віку, спочатку введіть дату народження та поточну дату у вказаному форматі. Калькулятор надає вік у роках, місяцях та днях, де "роки" представляють вік або кількість років.</p>
+
+<h3>Як використовувати калькулятор віку?</h3>
+
+<p>Для отримання додаткової інформації відвідайте нашу статтю "<a href="how-to-use-age-calculator.html">Як використовувати калькулятор віку?</a>" або прочитайте наші цікаві блог-пости. <a href="top-10-famous-animals-and-their-age.html">Топ-10 відомих тварин та їх вік</a>.</p>
+
+    
+
+
+
+<footer>
+  <nav>
+    <ul>
+      <li>
+        <a href="privacy-policy.html" target="_blank">Політика конфіденційності</a>
+      </li>
+      <li><a href="terms-and-conditions.html">Умови</a></li>
+      <li><a href="faq.html" target="_blank">Часті питання</a></li>
+      <li><a href="about-us.html" target="_blank">Про нас</a></li>
+      <li><a href="blog-home.html" target="_blank">Блог</a></li>
+      <li><a href="api-docs.html" target="_blank">Документація API</a></li>
+      <li><a href="api-status.html" target="_blank">Статус API</a></li>
+      <li>
+        <a href="contact-us.html" target="_blank">Зв'язатися з нами</a>
+      </li>
+      <li><a href="mailto:hello@agecalculator.com" target="_blank">hello@agecalculator.com</a></li>
+    </ul>
+  </nav>
+</footer>
+
+
+  </div>
+</div>
+<script type="text/javascript">
+  function age() {
+  var d1 = document.getElementById('date').value;
+  var m1 = document.getElementById('month').value;
+  var y1 = document.getElementById('year').value;
+
+  var date = new Date();
+  var d2 = date.getDate();
+  var m2 = 1 + date.getMonth();
+  var y2 = date.getFullYear();
+  var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  if(d1 > d2){
+  	d2 = d2 + month[m2 - 1];
+  	m2 = m2 - 1;
+  }
+  if(m1 > m2){
+  	m2 = m2 + 12;
+  	y2 = y2 - 1;
+  }
+  var d = d2 - d1;
+  var m = m2 - m1;
+  var y = y2 - y1;
+
+  document.getElementById('age').innerHTML = 'Your Age is '+y+' Years '+m+' Months '+d+' Days';
+}
+</script>
+</body>
+</html>
