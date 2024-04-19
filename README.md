@@ -1,4 +1,4 @@
-# age-calculator
+# age-calculator online tool to calculate age by date of birth
 
 [age calculator](https://age-calculator.app)
 
