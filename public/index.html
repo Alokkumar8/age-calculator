@@ -108,7 +108,7 @@ input[type=button]:hover{
 	background-color: #003669;
 }
  
-#age{
+#age {
 	display: block;
 	margin: 10px;
     margin-top: 35px;
@@ -121,6 +121,21 @@ input[type=button]:hover{
 	line-height: 1.5;
 	word-spacing: 2.7px;
 	color: navy;
+}
+
+#aiText, #aiPrediction {
+	display: block;
+	margin: 10px;
+    margin-top: 35px;
+	padding: 10px;
+    padding-bottom: 20px;
+	overflow: hidden;
+	font-family: verdana;
+	font-size: 23px;
+	font-weight: normal;
+	line-height: 1.5;
+	word-spacing: 2.7px;
+	color: rgb(83, 68, 15);
 }
 
       footer {
@@ -242,6 +257,8 @@ input[type=button]:hover{
     </div>
   </div>
     <div id="age"></div>
+    <div id="aiText"></div>
+    <div id="aiPrediction"></div>
   </form>
 
 
@@ -459,7 +476,54 @@ input[type=button]:hover{
   var m = m2 - m1;
   var y = y2 - y1;
 
+  var aiText = ""
+  var aiPrediction = ""
+
+  if (m1 == 1){
+    aiText = "Your horoscope is Capricorn. You will find success in your career endeavors. People born in January are known for their ambition, determination, and practicality. They excel in planning and organizing, leading to recognition and financial gains."
+    aiPrediction = "✨In the future, AI predicts you will purchase a new car, enhancing your daily commute and adding convenience to your lifestyle."
+
+} else if (m1 == 2){
+  aiText = "Your horoscope is Aquarius. You will experience a surge of creativity. People born in February, like you, are known for their visionary thinking, independence, and humanitarian values. Embrace new ideas and opportunities for personal growth."
+  aiPrediction = "✨AI prediction: In the future, AI predicts you will enroll in a cooking class, discovering a new passion and expanding your culinary skills."
+} else if (m1 == 3){
+    aiText = "Your horoscope is Pisces. You will find emotional fulfillment in your relationships. People, born in March, are empathetic, compassionate, and intuitive individuals. Connect deeply with loved ones and trust your instincts."
+    aiPrediction = "✨AI prediction: In the future, AI predicts you will adopt a rescue pet, bringing joy and companionship into your life."
+} else if (m1 == 4){
+   aiText = "Your horoscope is Aries. You will channel your energy into ambitious pursuits. Arians, born in April, are courageous, energetic, and dynamic individuals. Take bold risks and pursue your passions with fearlessness."
+   aiPrediction = "✨AI prediction: In the future, AI predicts you will start your own business, leveraging your entrepreneurial spirit and leadership skills to achieve success."
+} else if (m1 == 5){
+    aiText = "Your horoscope is Taurus. You will focus on stability and security. Taureans, born in May, are reliable, patient, and steadfast individuals. Take practical steps towards your goals and enjoy the comforts of home."
+    aiPrediction = "✨AI prediction: In the future, AI predicts you will invest in a vacation home, providing a peaceful retreat for relaxation and enjoyment."
+} else if (m1 == 6){
+    aiText = "Your horoscope is Gemini. You will embrace your versatility and adaptability. Geminis, born in June, are curious, witty, and sociable individuals. Explore new interests and engage in meaningful conversations."
+    aiPrediction = "✨AI prediction: In the future, AI predicts you will join a book club, expanding your literary horizons and fostering stimulating discussions with like-minded individuals."
+} else if (m1 == 7){
+    aiText = "Your horoscope is Cancer. You will prioritize emotional well-being and self-care. Cancerians, born in July, are nurturing, empathetic, and sensitive individuals. Nurture your relationships and create a sanctuary of comfort."
+    aiPrediction = "✨AI prediction: In the future, AI predicts you will renovate your home, creating a cozy and inviting space for relaxation and rejuvenation."
+} else if (m1 == 8){
+   aiText = "Your horoscope is Leo. You will bask in the spotlight and embrace your creativity. Leos, born in August, are charismatic, generous, and confident individuals. Shine brightly and pursue your passions with confidence."
+   aiPrediction = "✨AI prediction: In the future, AI predicts you will showcase your artwork in a local gallery, receiving recognition for your creativity and talent."
+} else if (m1 == 9){
+    aiText = "Your horoscope is Virgo. You will focus on organization and efficiency. Virgos, born in September, are analytical, practical, and diligent individuals. Pay attention to details and strive for perfection in your endeavors."
+    aiPrediction = "✨AI prediction: In the future, AI predicts you will launch a successful blog, sharing your expertise and knowledge with a wide audience."
+} else if (m1 == 10){
+    aiText = "Your horoscope is Libra. You will seek balance and harmony in your relationships. Librans, born in October, are diplomatic, charming, and sociable individuals. Communicate openly and find compromise in conflicts."
+    aiPrediction = "✨AI prediction: In the future, AI predicts you will take a romantic trip to Italy with your partner, creating unforgettable memories and deepening your bond."
+} else if (m1 == 11){
+    aiText = "Your horoscope is Scorpio. You will embrace transformation and personal growth. Scorpios, born in November, are passionate, intense, and mysterious individuals. Dive deep into your emotions and embrace change fearlessly."
+    aiPrediction = "✨AI prediction: In the future, AI predicts you will volunteer for a meaningful cause, making a positive impact on your community and fostering personal growth."
+} else if (m1 == 12){
+    aiText = "Your horoscope is Sagittarius. You will embark on exciting adventures and pursue your dreams. Sagittarians, born in December, are adventurous, optimistic, and free-spirited individuals. Embrace spontaneity and explore new horizons."
+    aiPrediction = "✨AI prediction: In the future, AI predicts you will travel to France to explore the picturesque countryside and indulge in delicious cuisine, satisfying your wanderlust and creating unforgettable experiences."
+}
+
+
   document.getElementById('age').innerHTML = 'Your Age is '+y+' Years '+m+' Months '+d+' Days';
+
+  document.getElementById('aiText').innerHTML = aiText;
+
+  document.getElementById('aiPrediction').innerHTML = aiPrediction;
 }
 </script>
 </body>
