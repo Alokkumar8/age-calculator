@@ -1,127 +1,130 @@
 <!DOCTYPE html>
 <html lang="ar">
-<head>
-    <meta charset="utf-8">
-    <title> حاسب العمر عبر الإنترنت</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  
-    <meta content="مُحسّن حساب العمر عبر الإنترنت يُمَكِّنُكَ من حَساب عُمرك باستخدام تاريخ ميلادك وتاريخ اليوم ويُمكِنُك من العثور على عمرك بسرعة دون الحاجة إلى أي نوع من الرياضيات المُعقَّدة. سَيُعيد الجواب بالسنوات والأشهر والأيام." name="description">
+  <head>
+    <meta charset="utf-8" />
+    <title>حاسب العمر عبر الإنترنت</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <meta
+      content="مُحسّن حساب العمر عبر الإنترنت يُمَكِّنُكَ من حَساب عُمرك باستخدام تاريخ ميلادك وتاريخ اليوم ويُمكِنُك من العثور على عمرك بسرعة دون الحاجة إلى أي نوع من الرياضيات المُعقَّدة. سَيُعيد الجواب بالسنوات والأشهر والأيام."
+      name="description"
+    />
     <link rel="manifest" href="manifest.json" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <meta name="theme-color" content="#000000" />
 
     <!-- Favicon -->
-    <link href="favicon.ico" rel="icon">
-    
-  <style media="screen">
-    body{
-	font-family: Arial, Helvetica, sans-serif;
-	background-color: #2782e3;
-	font-size: 15px;
-	line-height: 1.5;
-	padding: 0;
-	margin: 0;
-}
-* {
-	box-sizing: border-box;
-}
-.container{
-	width:520px;
-	height: auto;
-	margin: 100px auto;
-	background-color: #eee;
-	border-radius: 5px;
-}
-.text-content {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-.base{
-	width: 100%;
-	 
-	margin: 0;
-	overflow: hidden;
-	display: block;
-	float: none;
-}
-.block{
-	width: 135px;
-	padding: 5px 20px;
- 
-	margin-left: 20px;
-	display: inline-block;
-	float: left;
-}
-.base h1{
-	font-size: 26px;
-	text-align: center;
-	font-family: sans-serif;
-	font-weight: normal;
-  margin-top: 0px;
-  box-shadow: 0px 2px #bababa;
-  background: white;
-  font-size: 34px;
-	color: navy;
-}
- 
-.title{
-	font-size: 20px;
-	text-align: left;
-	font-family: sans-serif;
-	font-weight: normal;
-	line-height: 0.5;
-	letter-spacing: 0.5px;
-	word-spacing: 2.7px;
-	color: #1073d0;
-}
-input[type=text] {
-	width: 140px;
-	margin: auto;
-	outline: none;
-    min-height: 50px;
-	border: 2px solid #1073d0;
-	padding: 12px;
-	background-color: #f7f7f7;
-    border-radius: 2px;
-    color: #1073d0;
-    font-size: 17px;
-}
-input[type=text]:focus{
-	background-color: #ffffff;
-	border: 2px solid orange;
-	outline: none;
-}
-input[type=button]{
-	width: 150px;
-	margin-left: 35%;
-  margin-top: 40px;
-	outline: none;
-	border: none;
-	border-radius: 2px;
-	background-color: #0761b6;
-	color: #ffffff;
-	padding: 14px 16px;
-	text-align: center;
-	font-size: 16px;
-}
-input[type=button]:hover{
-	background-color: #003669;
-}
- 
-#age{
-	display: block;
-	margin: 10px;
-    margin-top: 35px;
-	padding: 10px;
-    padding-bottom: 20px;
-	overflow: hidden;
-	font-family: verdana;
-	font-size: 23px;
-	font-weight: normal;
-	line-height: 1.5;
-	word-spacing: 2.7px;
-	color: navy;
-}
+    <link href="favicon.ico" rel="icon" />
+
+    <style media="screen">
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #2782e3;
+        font-size: 15px;
+        line-height: 1.5;
+        padding: 0;
+        margin: 0;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      .container {
+        width: 520px;
+        height: auto;
+        margin: 100px auto;
+        background-color: #eee;
+        border-radius: 5px;
+      }
+      .text-content {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .base {
+        width: 100%;
+
+        margin: 0;
+        overflow: hidden;
+        display: block;
+        float: none;
+      }
+      .block {
+        width: 135px;
+        padding: 5px 20px;
+
+        margin-left: 20px;
+        display: inline-block;
+        float: left;
+      }
+      .base h1 {
+        font-size: 26px;
+        text-align: center;
+        font-family: sans-serif;
+        font-weight: normal;
+        margin-top: 0px;
+        box-shadow: 0px 2px #bababa;
+        background: white;
+        font-size: 34px;
+        color: navy;
+      }
+
+      .title {
+        font-size: 20px;
+        text-align: left;
+        font-family: sans-serif;
+        font-weight: normal;
+        line-height: 0.5;
+        letter-spacing: 0.5px;
+        word-spacing: 2.7px;
+        color: #1073d0;
+      }
+      input[type="text"] {
+        width: 140px;
+        margin: auto;
+        outline: none;
+        min-height: 50px;
+        border: 2px solid #1073d0;
+        padding: 12px;
+        background-color: #f7f7f7;
+        border-radius: 2px;
+        color: #1073d0;
+        font-size: 17px;
+      }
+      input[type="text"]:focus {
+        background-color: #ffffff;
+        border: 2px solid orange;
+        outline: none;
+      }
+      input[type="button"] {
+        width: 150px;
+        margin-left: 35%;
+        margin-top: 40px;
+        outline: none;
+        border: none;
+        border-radius: 2px;
+        background-color: #0761b6;
+        color: #ffffff;
+        padding: 14px 16px;
+        text-align: center;
+        font-size: 16px;
+      }
+      input[type="button"]:hover {
+        background-color: #003669;
+      }
+
+      #age {
+        display: block;
+        margin: 10px;
+        margin-top: 35px;
+        padding: 10px;
+        padding-bottom: 20px;
+        overflow: hidden;
+        font-family: verdana;
+        font-size: 23px;
+        font-weight: normal;
+        line-height: 1.5;
+        word-spacing: 2.7px;
+        color: navy;
+      }
 
       footer {
         margin: 0 auto 10px;
@@ -149,208 +152,470 @@ input[type=button]:hover{
         text-decoration: none;
 
         -webkit-transition: 0.5s;
-           -moz-transition: 0.5s;
-                transition: 0.5s;
+        -moz-transition: 0.5s;
+        transition: 0.5s;
       }
 
       footer a:hover {
         color: #333;
       }
+    </style>
 
-  </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Age Calculator",
+        "operatingSystem": "Windows, Mac, Linux, Chromebook, Andriod, iOS",
+        "applicationCategory": "UtilitiesApplication",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.6",
+          "worstRating": 1,
+          "bestRating": 5,
+          "ratingCount": "5"
+        }
+      }
+    </script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "operatingSystem": "Windows, Mac, Linux, Chromebook, Andriod, iOS",
-    "name": "Age Calculator",
-    "applicationCategory": "UtilitiesApplication",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": 4.7,
-      "worstRating": 1,
-      "bestRating": 5,
-      "reviewCount": 5
-    },
-  }
-  </script>
+    <link rel="canonical" href="https://www.age-calculator.app/index-ar.html" />
+    <link
+      rel="alternate"
+      hreflang="ar"
+      href="https://www.age-calculator.app/index-ar.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="bg"
+      href="https://www.age-calculator.app/index-bg.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="cs"
+      href="https://www.age-calculator.app/index-cs.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="da"
+      href="https://www.age-calculator.app/index-da.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="de"
+      href="https://www.age-calculator.app/index-de.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="el"
+      href="https://www.age-calculator.app/index-el.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.age-calculator.app/"
+    />
+    <link
+      rel="alternate"
+      hreflang="es"
+      href="https://www.age-calculator.app/index-es.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="et"
+      href="https://www.age-calculator.app/index-et.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="fi"
+      href="https://www.age-calculator.app/index-fi.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="fr"
+      href="https://www.age-calculator.app/index-fr.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="he"
+      href="https://www.age-calculator.app/index-he.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="hi"
+      href="https://www.age-calculator.app/index-hi.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="hu"
+      href="https://www.age-calculator.app/index-hu.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="id"
+      href="https://www.age-calculator.app/index-id.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="it"
+      href="https://www.age-calculator.app/index-it.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="ja"
+      href="https://www.age-calculator.app/index-ja.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="ko"
+      href="https://www.age-calculator.app/index-ko.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="lt"
+      href="https://www.age-calculator.app/index-lt.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="lv"
+      href="https://www.age-calculator.app/index-lv.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="nb"
+      href="https://www.age-calculator.app/index-nb.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="nl"
+      href="https://www.age-calculator.app/index-nl.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="pl"
+      href="https://www.age-calculator.app/index-pl.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="pt"
+      href="https://www.age-calculator.app/index-pt.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="ro"
+      href="https://www.age-calculator.app/index-ro.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="ru"
+      href="https://www.age-calculator.app/index-ru.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="sk"
+      href="https://www.age-calculator.app/index-sk.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="sl"
+      href="https://www.age-calculator.app/index-sl.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="sv"
+      href="https://www.age-calculator.app/index-sv.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="th"
+      href="https://www.age-calculator.app/index-th.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="tr"
+      href="https://www.age-calculator.app/index-tr.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="uk"
+      href="https://www.age-calculator.app/index-uk.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="vi"
+      href="https://www.age-calculator.app/index-vi.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="zh"
+      href="https://www.age-calculator.app/index-zh.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://www.age-calculator.app/"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <div class="base">
+          <div class="enter">
+            <h1>حاسب العمر عبر الإنترنت</h1>
+          </div>
+          <div class="block">
+            <p class="title">التّاريخ</p>
+            <input
+              type="text"
+              name="date"
+              id="date"
+              placeholder="يوم"
+              required="required"
+              minlength="1"
+              maxlength="2"
+            />
+          </div>
+          <div class="block">
+            <p class="title">الشَّهر</p>
+            <input
+              type="text"
+              name="month"
+              id="month"
+              placeholder="شهر"
+              required="required"
+              minlength="1"
+              maxlength="2"
+            />
+          </div>
+          <div class="block">
+            <p class="title">السَّنَة</p>
+            <input
+              type="text"
+              name="year"
+              id="year"
+              placeholder="سنة"
+              required="required"
+              minlength="4"
+              maxlength="4"
+            />
+          </div>
+        </div>
+        <div class="base">
+          <div class="enter">
+            <input type="button" name="submit" value="إرسال" onclick="age()" />
+          </div>
+        </div>
+        <div id="age"></div>
+      </form>
 
-  <link rel="canonical" href="https://www.age-calculator.app/ar/">
-<link rel="alternate" hreflang="ar" href="https://www.age-calculator.app/ar/">
-<link rel="alternate" hreflang="bg" href="https://www.age-calculator.app/index-bg.html">
-<link rel="alternate" hreflang="cs" href="https://www.age-calculator.app/index-cs.html">
-<link rel="alternate" hreflang="da" href="https://www.age-calculator.app/index-da.html">
-<link rel="alternate" hreflang="de" href="https://www.age-calculator.app/index-de.html">
-<link rel="alternate" hreflang="el" href="https://www.age-calculator.app/index-el.html">
-<link rel="alternate" hreflang="en" href="https://www.age-calculator.app/">
-<link rel="alternate" hreflang="es" href="https://www.age-calculator.app/index-es.html">
-<link rel="alternate" hreflang="et" href="https://www.age-calculator.app/index-et.html">
-<link rel="alternate" hreflang="fi" href="https://www.age-calculator.app/index-fi.html">
-<link rel="alternate" hreflang="fr" href="https://www.age-calculator.app/index-fr.html">
-<link rel="alternate" hreflang="he" href="https://www.age-calculator.app/index-he.html">
-<link rel="alternate" hreflang="hi" href="https://www.age-calculator.app/index-hi.html">
-<link rel="alternate" hreflang="hu" href="https://www.age-calculator.app/index-hu.html">
-<link rel="alternate" hreflang="id" href="https://www.age-calculator.app/index-id.html">
-<link rel="alternate" hreflang="it" href="https://www.age-calculator.app/index-it.html">
-<link rel="alternate" hreflang="ja" href="https://www.age-calculator.app/index-ja.html">
-<link rel="alternate" hreflang="ko" href="https://www.age-calculator.app/index-ko.html">
-<link rel="alternate" hreflang="lt" href="https://www.age-calculator.app/index-lt.html">
-<link rel="alternate" hreflang="lv" href="https://www.age-calculator.app/index-lv.html">
-<link rel="alternate" hreflang="nb" href="https://www.age-calculator.app/index-nb.html">
-<link rel="alternate" hreflang="nl" href="https://www.age-calculator.app/index-nl.html">
-<link rel="alternate" hreflang="pl" href="https://www.age-calculator.app/index-pl.html">
-<link rel="alternate" hreflang="pt" href="https://www.age-calculator.app/index-pt.html">
-<link rel="alternate" hreflang="ro" href="https://www.age-calculator.app/index-ro.html">
-<link rel="alternate" hreflang="ru" href="https://www.age-calculator.app/index-ru.html">
-<link rel="alternate" hreflang="sk" href="https://www.age-calculator.app/index-sk.html">
-<link rel="alternate" hreflang="sl" href="https://www.age-calculator.app/index-sl.html">
-<link rel="alternate" hreflang="sv" href="https://www.age-calculator.app/index-sv.html">
-<link rel="alternate" hreflang="th" href="https://www.age-calculator.app/index-th.html">
-<link rel="alternate" hreflang="tr" href="https://www.age-calculator.app/index-tr.html">
-<link rel="alternate" hreflang="uk" href="https://www.age-calculator.app/index-uk.html">
-<link rel="alternate" hreflang="vi" href="https://www.age-calculator.app/index-vi.html">
-<link rel="alternate" hreflang="zh" href="https://www.age-calculator.app/index-zh.html">
-<link rel="alternate" hreflang="x-default" href="https://www.age-calculator.app/">
+      <div class="text-content">
+        <p>
+          يحدد هذا الجهاز الحاسب الآلي للعمر عمر الشخص بناءً على تاريخ ميلاده.
+          يمكن أن تختلف طرق حساب العمر من ثقافة إلى أخرى، ولكن بشكل عام، يتم
+          زيادة عمر الشخص بمقدار عام واحد في كل عيد ميلاد.
+        </p>
 
-</head>
-<body>
+        <p>
+          هذا الجهاز الحاسب الآلي للعمر عبر الإنترنت مجاني وهو أداة قيمة وبسيطة
+          قابلة للاستخدام في العديد من السيناريوهات. يمكنه تحديد عمر الأفراد من
+          الرضع إلى كبار السن من خلال حساب السنوات والشهور والأيام باستخدام
+          تاريخ ميلادهم والتاريخ الحالي.
+        </p>
 
-<div class="container">
-  <form>
-  	<div class="base">
-  		<div class="enter">
-  		<h1>حاسب العمر عبر الإنترنت</h1>
-  	</div>
-  <div class="block">
-  	<p class="title">التّاريخ</p>
-  	<input type="text" name="date" id="date" placeholder="يوم" required="required" minlength="1" maxlength="2" />
-  </div>
-  <div class="block">
-  	<p class="title">الشَّهر</p>
-    <input type="text" name="month" id="month" placeholder="شهر" required="required" minlength="1" maxlength="2" />
-  </div>
-  <div class="block">
-  	<p class="title">السَّنَة</p>
-    <input type="text" name="year" id="year" placeholder="سنة" required="required" minlength="4" maxlength="4" />
-  </div>
-  </div>
-  <div class="base">
-  	<div class="enter">
-    <input type="button" name="submit" value="إرسال" onclick="age()" />
-    </div>
-  </div>
-    <div id="age"></div>
-  </form>
+        <div id="calc">
+          <h2>ما الذي يفعله جهاز الحاسب الآلي للعمر؟</h2>
+        </div>
 
-  <div class="text-content">
-    <p>يحدد هذا الجهاز الحاسب الآلي للعمر عمر الشخص بناءً على تاريخ ميلاده. يمكن أن تختلف طرق حساب العمر من ثقافة إلى أخرى، ولكن بشكل عام، يتم زيادة عمر الشخص بمقدار عام واحد في كل عيد ميلاد.</p>
+        <p>
+          <strong>جهاز الحاسب الآلي للعمر عبر الإنترنت هو أداة ويب</strong>
+          مصممة لحساب عمر الشخص في تاريخ معين، شريطة معرفة تاريخ ميلاده. في
+          العديد من الثقافات الغربية، يقوم حساب العمر عادة بالتقريب لأسفل، لذلك
+          إذا عاش الشخص لمدة 8 سنوات و9 أشهر، يُعتبر عمره 8 سنوات.
+        </p>
 
-    <p>هذا الجهاز الحاسب الآلي للعمر عبر الإنترنت مجاني وهو أداة قيمة وبسيطة قابلة للاستخدام في العديد من السيناريوهات. يمكنه تحديد عمر الأفراد من الرضع إلى كبار السن من خلال حساب السنوات والشهور والأيام باستخدام تاريخ ميلادهم والتاريخ الحالي.</p>
-    
-    <div id="calc">
-    <h2>ما الذي يفعله جهاز الحاسب الآلي للعمر؟</h2>
-    </div>
-    
-    <p><strong>جهاز الحاسب الآلي للعمر عبر الإنترنت هو أداة ويب</strong> مصممة لحساب عمر الشخص في تاريخ معين، شريطة معرفة تاريخ ميلاده. في العديد من الثقافات الغربية، يقوم حساب العمر عادة بالتقريب لأسفل، لذلك إذا عاش الشخص لمدة 8 سنوات و9 أشهر، يُعتبر عمره 8 سنوات.</p>
-    
-    <h3>جهاز حاسب تاريخ الميلاد (DOB)</h3>
-    
-    <p>جهاز حاسب تاريخ الميلاد يتيح لنا تحديد العمر بناءً على تاريخ الميلاد. لاستخدام هذا الحاسب الآلي للعمر، أدخل القيم المطلوبة في الحقول المقدمة.</p>
-    
-    <ul>
-        <li>تاريخ الميلاد في شكل يوم/شهر/سنة</li>
-        <li>يجب إدخال التاريخ المحدد الذي ترغب في حساب العمر له بنفس التنسيق يوم/شهر/سنة</li>
-    </ul>
-    
-    <p style="text-align: center;"><img src="img/screenshot-1.jpg" style="max-width:100%; max-height:100%;" alt="حاسب العمر عبر الإنترنت"></p>
-    
-    <h2>كيف يمكنني استخدام جهاز الحاسب الآلي للعمر؟</h2>
-    
-    <p>لتحديد عمر الشخص باستخدام جهاز حاسب العمر، اتبع هذه الخطوات:</p>
-    
-    <ul>
-        <li><strong>الخطوة 1</strong>: اذهب إلى www.agecalculator.com</li>
-        <li><strong>الخطوة 2</strong>: أدخل تاريخ الميلاد في مربع الإدخال لجهاز حاسب العمر باستخدام التنسيق يوم/شهر/سنة.</li>
-        <li><strong>الخطوة 3</strong>: اضغط على زر "<strong>إرسال</strong>" لحساب عمر الشخص.</li>
-        <li><strong>الخطوة 4</strong>: انقر على زر "<strong>إعادة تعيين</strong>" لمسح النص المدخل وإدخال قيم جديدة.</li>
-    </ul>
-    
-    <div id="formula">
-    <h2>الصيغة لجهاز الحاسب الآلي للعمر</h2>
-    </div>
-    
-    <p>وفقًا لقاموس أكسفورد، يشير "العمر" إلى مدة حياة الشخص أو وجود الشيء. يشمل حساب العمر مقارنة تاريخ ميلاد الشخص مع التاريخ الذي يتم فيه طلب العمر. يعطي طرح تاريخ الميلاد من التاريخ المعطى عمر الشخص، يُمثل بالصيغة التالية: العمر = التاريخ المعطى - تاريخ الميلاد. فيما يلي الخطوات لحساب عمر الشخص من تاريخ ميلاده إلى تاريخ معين.</p>
-    
-    <ul>
-        <li><strong>الخطوة 1:</strong> في البداية، قم بحساب عدد السنوات الكاملة من خلال طرح سنة الميلاد من السنة الحالية. على سبيل المثال، إذا كانت السنة الحالية هي 2024 وكانت سنة الميلاد هي 1998، فإن عدد السنوات الكاملة هو 26.</li>
-        <li><strong>الخطوة 2:</strong> بعد ذلك، قم بتحديد عدد الشهور الكاملة عن طريق طرح شهر الميلاد من <a href="https://www.oxfordreference.com/display/10.1093/oi/authority.20110803095355563">الشهر الحالي</a>. إذا كان الشهر الحالي قبل شهر الميلاد، قلل من عدد السنوات الكاملة بواحد وأضف 12 إلى الشهر الحالي للتعديل. ثم، احسب الفارق (الشهر الحالي - شهر الميلاد). على سبيل المثال، إذا كان شهر الميلاد فبراير والشهر الحالي إبريل، فإن عدد الشهور الكلي هو 2. إذا كان شهر الميلاد نوفمبر والشهر الحالي إبريل، فإن عدد الشهور الكلي هو 4 + 12 = 16، والفارق هو 16 - 11 = 5.</li>
-        <li><strong>الخطوة 3:</strong> بالمثل للخطوة السابقة، نحدد أيضًا عدد الأيام عن طريق طرح تاريخ الميلاد من التاريخ الحالي. ومع ذلك، إذا كان التاريخ الحالي قبل تاريخ الميلاد، نطرح واحدًا من عدد الشهور الكاملة ونضيف 30/31/28/29 إلى التاريخ الحالي، اعتمادًا على عدد الأيام في الشهر السابق الذي يسبق الشهر الحالي.</li>
-        <li><strong>الخطوة 4:</strong> في الختام، يقدم جهاز الحاسب الآلي للعمر العمر بالأيام والشهور والسنوات.</li>
-    </ul>
-    
-    <h2>أمثلة توضيحية عن كيفية حساب العمر</h2>
-    
-    <p>فيما يلي أمثلة توضيحية لكيفية حساب العمر والمنهجية المستخدمة من قبل جهاز حاسب العمر لفهم أوضح.</p>
-    
-    <p><strong>المثال 1:</strong> تاريخ ميلاد جون هو 25 يوليو 1985 (25/07/1985). حدد عمره في 28 يناير 2021، وقم بالتحقق من ذلك باستخدام جهاز حاسب العمر.</p>
-    
-    <p><strong>الحل:</strong></p>
-    
-    <p>تطبيق الصيغة لحساب عمر جون:</p>
-    
-    <p>عمر الشخص = التاريخ المعطى - تاريخ الميلاد.</p>
-    
-    <p>تاريخ ميلاد جون = 25 يوليو 1985.</p>
-    
-    <p>التاريخ المعطى = 28 يناير 2021.</p>
-    
-    <p>لاحظ أن الشهر الحالي أقل من شهر الميلاد. أي أن يناير (1) أقل من يوليو (7). لذلك، نعتبر عام 2020 كالسنة الحالية ونأخذ أيضًا في الاعتبار 12 + 1 (يناير) - 7 (يوليو) = 6 أشهر.</p>
-    
-    <p>الفارق بالسنوات = 2020 - 1985 = 35 عامًا.</p>
-    
-    <p>عدد الأيام المتبقية = 3 أيام.</p>
-    
-    <p><strong>الجواب:</strong> بالتالي، عمر جون هو 35 عامًا و6 أشهر و3 أيام.</p>
-    
-    <p><strong>المثال 2:</strong> تاريخ ميلاد بيتر هو 13 يوليو 1992. احسب عمره في 21 أبريل 2016، وقم بالتحقق من ذلك باستخدام جهاز حاسب العمر.</p>
-    
-    <p><strong>الحل:</strong></p>
-    
-    <p>استخدام الصيغة لحساب عمر بيتر:</p>
-    
-    <p>عمر الشخص = التاريخ الحالي - تاريخ الميلاد.</p>
-    
-    <p>هنا نستخدم نهجًا مختلفًا قليلاً لفهم صيغة العمر بوضوح أكبر.</p>
-    
-    <p>تاريخ ميلاد بيتر = 13 يوليو 1992.</p>
-    
-    <p>الفارق بالسنوات = 2015 - 1992 = 23 عامًا. (يمتد هذا الحساب من 13 يوليو 1992 إلى 13 يوليو 2015).</p>
-    
-    <p>عدد الشهور المتبقية من 13 يوليو 2015 إلى 13 أبريل 2016 = 9 أشهر.</p>
-    
-    <p>عدد الأيام المتبقية من 13 أبريل 2016 إلى 21 أبريل 2016 = 8 أيام.</p>
-    
-    <p><strong>الجواب:</strong> لذا، عمر بيتر هو 23 عامًا و9 أشهر و8 أيام.</p>
-    
-    <p>بالمثل، يمكنك استخدام جهاز حاسب العمر لتحديد أعمار الأفراد بالتواريخ الميلادية والتواريخ الحالية المقدمة حتى 26 أغسطس 2021:</p>
-    
-    <ul>
-        <li>13 يوليو 1992</li>
-        <li>21 أبريل 2016</li>
-    </ul>
-    
-    <p><b>☛ المراجع:</b></p>
-    
-    <table border="1">
-        <tbody>
+        <h3>جهاز حاسب تاريخ الميلاد (DOB)</h3>
+
+        <p>
+          جهاز حاسب تاريخ الميلاد يتيح لنا تحديد العمر بناءً على تاريخ الميلاد.
+          لاستخدام هذا الحاسب الآلي للعمر، أدخل القيم المطلوبة في الحقول
+          المقدمة.
+        </p>
+
+        <ul>
+          <li>تاريخ الميلاد في شكل يوم/شهر/سنة</li>
+          <li>
+            يجب إدخال التاريخ المحدد الذي ترغب في حساب العمر له بنفس التنسيق
+            يوم/شهر/سنة
+          </li>
+        </ul>
+
+        <p style="text-align: center">
+          <img
+            src="img/screenshot-1.jpg"
+            style="max-width: 100%; max-height: 100%"
+            alt="حاسب العمر عبر الإنترنت"
+          />
+        </p>
+
+        <h2>كيف يمكنني استخدام جهاز الحاسب الآلي للعمر؟</h2>
+
+        <p>لتحديد عمر الشخص باستخدام جهاز حاسب العمر، اتبع هذه الخطوات:</p>
+
+        <ul>
+          <li><strong>الخطوة 1</strong>: اذهب إلى www.agecalculator.com</li>
+          <li>
+            <strong>الخطوة 2</strong>: أدخل تاريخ الميلاد في مربع الإدخال لجهاز
+            حاسب العمر باستخدام التنسيق يوم/شهر/سنة.
+          </li>
+          <li>
+            <strong>الخطوة 3</strong>: اضغط على زر "<strong>إرسال</strong>"
+            لحساب عمر الشخص.
+          </li>
+          <li>
+            <strong>الخطوة 4</strong>: انقر على زر "<strong>إعادة تعيين</strong
+            >" لمسح النص المدخل وإدخال قيم جديدة.
+          </li>
+        </ul>
+
+        <div id="formula">
+          <h2>الصيغة لجهاز الحاسب الآلي للعمر</h2>
+        </div>
+
+        <p>
+          وفقًا لقاموس أكسفورد، يشير "العمر" إلى مدة حياة الشخص أو وجود الشيء.
+          يشمل حساب العمر مقارنة تاريخ ميلاد الشخص مع التاريخ الذي يتم فيه طلب
+          العمر. يعطي طرح تاريخ الميلاد من التاريخ المعطى عمر الشخص، يُمثل
+          بالصيغة التالية: العمر = التاريخ المعطى - تاريخ الميلاد. فيما يلي
+          الخطوات لحساب عمر الشخص من تاريخ ميلاده إلى تاريخ معين.
+        </p>
+
+        <ul>
+          <li>
+            <strong>الخطوة 1:</strong> في البداية، قم بحساب عدد السنوات الكاملة
+            من خلال طرح سنة الميلاد من السنة الحالية. على سبيل المثال، إذا كانت
+            السنة الحالية هي 2024 وكانت سنة الميلاد هي 1998، فإن عدد السنوات
+            الكاملة هو 26.
+          </li>
+          <li>
+            <strong>الخطوة 2:</strong> بعد ذلك، قم بتحديد عدد الشهور الكاملة عن
+            طريق طرح شهر الميلاد من
+            <a
+              href="https://www.oxfordreference.com/display/10.1093/oi/authority.20110803095355563"
+              >الشهر الحالي</a
+            >. إذا كان الشهر الحالي قبل شهر الميلاد، قلل من عدد السنوات الكاملة
+            بواحد وأضف 12 إلى الشهر الحالي للتعديل. ثم، احسب الفارق (الشهر
+            الحالي - شهر الميلاد). على سبيل المثال، إذا كان شهر الميلاد فبراير
+            والشهر الحالي إبريل، فإن عدد الشهور الكلي هو 2. إذا كان شهر الميلاد
+            نوفمبر والشهر الحالي إبريل، فإن عدد الشهور الكلي هو 4 + 12 = 16،
+            والفارق هو 16 - 11 = 5.
+          </li>
+          <li>
+            <strong>الخطوة 3:</strong> بالمثل للخطوة السابقة، نحدد أيضًا عدد
+            الأيام عن طريق طرح تاريخ الميلاد من التاريخ الحالي. ومع ذلك، إذا كان
+            التاريخ الحالي قبل تاريخ الميلاد، نطرح واحدًا من عدد الشهور الكاملة
+            ونضيف 30/31/28/29 إلى التاريخ الحالي، اعتمادًا على عدد الأيام في
+            الشهر السابق الذي يسبق الشهر الحالي.
+          </li>
+          <li>
+            <strong>الخطوة 4:</strong> في الختام، يقدم جهاز الحاسب الآلي للعمر
+            العمر بالأيام والشهور والسنوات.
+          </li>
+        </ul>
+
+        <h2>أمثلة توضيحية عن كيفية حساب العمر</h2>
+
+        <p>
+          فيما يلي أمثلة توضيحية لكيفية حساب العمر والمنهجية المستخدمة من قبل
+          جهاز حاسب العمر لفهم أوضح.
+        </p>
+
+        <p>
+          <strong>المثال 1:</strong> تاريخ ميلاد جون هو 25 يوليو 1985
+          (25/07/1985). حدد عمره في 28 يناير 2021، وقم بالتحقق من ذلك باستخدام
+          جهاز حاسب العمر.
+        </p>
+
+        <p><strong>الحل:</strong></p>
+
+        <p>تطبيق الصيغة لحساب عمر جون:</p>
+
+        <p>عمر الشخص = التاريخ المعطى - تاريخ الميلاد.</p>
+
+        <p>تاريخ ميلاد جون = 25 يوليو 1985.</p>
+
+        <p>التاريخ المعطى = 28 يناير 2021.</p>
+
+        <p>
+          لاحظ أن الشهر الحالي أقل من شهر الميلاد. أي أن يناير (1) أقل من يوليو
+          (7). لذلك، نعتبر عام 2020 كالسنة الحالية ونأخذ أيضًا في الاعتبار 12 +
+          1 (يناير) - 7 (يوليو) = 6 أشهر.
+        </p>
+
+        <p>الفارق بالسنوات = 2020 - 1985 = 35 عامًا.</p>
+
+        <p>عدد الأيام المتبقية = 3 أيام.</p>
+
+        <p>
+          <strong>الجواب:</strong> بالتالي، عمر جون هو 35 عامًا و6 أشهر و3 أيام.
+        </p>
+
+        <p>
+          <strong>المثال 2:</strong> تاريخ ميلاد بيتر هو 13 يوليو 1992. احسب
+          عمره في 21 أبريل 2016، وقم بالتحقق من ذلك باستخدام جهاز حاسب العمر.
+        </p>
+
+        <p><strong>الحل:</strong></p>
+
+        <p>استخدام الصيغة لحساب عمر بيتر:</p>
+
+        <p>عمر الشخص = التاريخ الحالي - تاريخ الميلاد.</p>
+
+        <p>هنا نستخدم نهجًا مختلفًا قليلاً لفهم صيغة العمر بوضوح أكبر.</p>
+
+        <p>تاريخ ميلاد بيتر = 13 يوليو 1992.</p>
+
+        <p>
+          الفارق بالسنوات = 2015 - 1992 = 23 عامًا. (يمتد هذا الحساب من 13 يوليو
+          1992 إلى 13 يوليو 2015).
+        </p>
+
+        <p>عدد الشهور المتبقية من 13 يوليو 2015 إلى 13 أبريل 2016 = 9 أشهر.</p>
+
+        <p>عدد الأيام المتبقية من 13 أبريل 2016 إلى 21 أبريل 2016 = 8 أيام.</p>
+
+        <p>
+          <strong>الجواب:</strong> لذا، عمر بيتر هو 23 عامًا و9 أشهر و8 أيام.
+        </p>
+
+        <p>
+          بالمثل، يمكنك استخدام جهاز حاسب العمر لتحديد أعمار الأفراد بالتواريخ
+          الميلادية والتواريخ الحالية المقدمة حتى 26 أغسطس 2021:
+        </p>
+
+        <ul>
+          <li>13 يوليو 1992</li>
+          <li>21 أبريل 2016</li>
+        </ul>
+
+        <p><b>☛ المراجع:</b></p>
+
+        <table border="1">
+          <tbody>
             <tr>
-                <td>
-                <p><a href="https://select-statistics.co.uk/calculators/">آلة حاسبة للإحصائيات</a></p>
-                </td>
-                <td>
-                <p><a href="https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/">آلة حاسبة للفائدة المركبة</a></p>
-                </td>
+              <td>
+                <p>
+                  <a href="https://select-statistics.co.uk/calculators/"
+                    >آلة حاسبة للإحصائيات</a
+                  >
+                </p>
+              </td>
+              <td>
+                <p>
+                  <a
+                    href="https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/"
+                    >آلة حاسبة للفائدة المركبة</a
+                  >
+                </p>
+              </td>
             </tr>
             <!-- <tr>
                 <td>
@@ -368,97 +633,135 @@ input[type=button]:hover{
                 <p><a href="https://www.cuemath.com/calculators/integral-calculator/">آلة حاسبة للتكامل</a></p>
                 </td>
             </tr> -->
-        </tbody>
-    </table>
-    
-    <h2>أسئلة شائعة حول جهاز حاسب العمر</h2>
-    
-    <h3>كيف يتم حساب العمر باستخدام جهاز حاسب العمر؟</h3>
-    
-    <p>يمكنك استخدام <strong>جهاز حاسب العمر عبر الإنترنت</strong> لتحديد العمر بناءً على تاريخ الميلاد المعطى والتاريخ الحالي أو المطلوب لحساب العمر. تأكد من أن كلا التاريخين مهيأين بالتنسيق يوم/شهر/سنة. قم بالوصول إلى جهاز حاسب تاريخ الميلاد عن طريق النقر <a href="https://www.age-calculator.app">age calculator</a>.</p>
-    
-    <h3>ما هو استخدام جهاز حاسب تاريخ الميلاد؟</h3>
-    
-    <p>يقوم جهاز حاسب تاريخ الميلاد بحساب العمر الحالي لشخص أو شيء، مع احتساب السنوات والشهور والأيام. قم ببساطة بإدخال تاريخ الميلاد والتاريخ الحالي في التنسيق يوم/شهر/سنة للحصول على عمرك.</p>
-    
-    <h3>كيف يمكنني حساب عمري؟</h3>
-    
-    <!-- <p>لحساب العمر، يمكنك إما استخدام "<a href="https://www.age-calculator.app/how-to-know-my-age">جهاز حاسب مدى عمري؟</a>" أو اتباع طرق الحساب اليدوية المذكورة في <a href="https://www.age-calculator.app/5-ways-to-calculate-age">5 طرق لحساب العمر</a>.</p> -->
-    
-    <h3>كيف يتم تحديد عدد السنوات باستخدام جهاز حاسب تاريخ الميلاد؟</h3>
-    
-    <p>لحساب عدد السنوات باستخدام جهاز حاسب العمر، ابدأ بإدخال تاريخ الميلاد والتاريخ الحالي في التنسيق المحدد. يوفر الحاسب الآلي للعمر العمر بالسنوات والشهور والأيام، حيث يُمثل "السنوات" العمر أو عدد السنوات.</p>
+          </tbody>
+        </table>
 
-    <h4>Share it</h4>
-    
-      <ul>
-        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fage-calculator.app&text=Age%20Calculator">Tweet</a>
-      </ul>
-      <ul>
-        <a href="https://pinterest.com/pin/create/bookmarklet/?media=&url=https%3A%2F%2Fage-calculator.app&description=Age%20Calculator">Pin it</a>
-      </ul>
-      <ul>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fage-calculator.app">Facebook</a>
-      </ul>
-      <ul>
-        <a href="https://api.whatsapp.com/send?text=Age%20Calculator%20https%3A%2F%2Fage-calculator.app">Whatsapp</a>
-      </ul>
-    
+        <h2>أسئلة شائعة حول جهاز حاسب العمر</h2>
 
-      
-    <footer>
-      <nav>
+        <h3>كيف يتم حساب العمر باستخدام جهاز حاسب العمر؟</h3>
+
+        <p>
+          يمكنك استخدام <strong>جهاز حاسب العمر عبر الإنترنت</strong> لتحديد
+          العمر بناءً على تاريخ الميلاد المعطى والتاريخ الحالي أو المطلوب لحساب
+          العمر. تأكد من أن كلا التاريخين مهيأين بالتنسيق يوم/شهر/سنة. قم
+          بالوصول إلى جهاز حاسب تاريخ الميلاد عن طريق النقر
+          <a href="https://www.age-calculator.app">age calculator</a>.
+        </p>
+
+        <h3>ما هو استخدام جهاز حاسب تاريخ الميلاد؟</h3>
+
+        <p>
+          يقوم جهاز حاسب تاريخ الميلاد بحساب العمر الحالي لشخص أو شيء، مع احتساب
+          السنوات والشهور والأيام. قم ببساطة بإدخال تاريخ الميلاد والتاريخ
+          الحالي في التنسيق يوم/شهر/سنة للحصول على عمرك.
+        </p>
+
+        <h3>كيف يمكنني حساب عمري؟</h3>
+
+        <!-- <p>لحساب العمر، يمكنك إما استخدام "<a href="https://www.age-calculator.app/how-to-know-my-age">جهاز حاسب مدى عمري؟</a>" أو اتباع طرق الحساب اليدوية المذكورة في <a href="https://www.age-calculator.app/5-ways-to-calculate-age">5 طرق لحساب العمر</a>.</p> -->
+
+        <h3>كيف يتم تحديد عدد السنوات باستخدام جهاز حاسب تاريخ الميلاد؟</h3>
+
+        <p>
+          لحساب عدد السنوات باستخدام جهاز حاسب العمر، ابدأ بإدخال تاريخ الميلاد
+          والتاريخ الحالي في التنسيق المحدد. يوفر الحاسب الآلي للعمر العمر
+          بالسنوات والشهور والأيام، حيث يُمثل "السنوات" العمر أو عدد السنوات.
+        </p>
+
+        <h4>Share it</h4>
+
         <ul>
-          <li>
-            <a href="privacy-policy.html" target="_blank">سياسة الخصوصية</a>
-          </li>
-          <li><a href="terms-and-conditions.html">الشروط</a></li>
-          <li><a href="faq.html" target="_blank">الأسئلة الشائعة</a></li>
-          <li><a href="about-us.html" target="_blank">حول</a></li>
-          <li><a href="blog-home.html" target="_blank">المدونة</a></li>
-          <li><a href="api-docs.html" target="_blank">وثائق الواجهة البرمجية</a></li>
-          <li><a href="api-status.html" target="_blank">حالة الواجهة البرمجية</a></li>
-          <li>
-            <a href="contact-us.html" target="_blank">اتصل بنا</a>
-          </li>
-          <li>
-            <a href="https://play.google.com/store/apps/details?id=age.agecalculator.calculator">حاسب العمر عبر الإنترنت</a>
-          </li>
-          <li><a href="mailto:hello@agecalculator.com" target="_blank">hello@agecalculator.com</a></li>
-        
+          <a
+            href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fage-calculator.app&text=Age%20Calculator"
+            >Tweet</a
+          >
         </ul>
-      </nav>
-    </footer>
+        <ul>
+          <a
+            href="https://pinterest.com/pin/create/bookmarklet/?media=&url=https%3A%2F%2Fage-calculator.app&description=Age%20Calculator"
+            >Pin it</a
+          >
+        </ul>
+        <ul>
+          <a
+            href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fage-calculator.app"
+            >Facebook</a
+          >
+        </ul>
+        <ul>
+          <a
+            href="https://api.whatsapp.com/send?text=Age%20Calculator%20https%3A%2F%2Fage-calculator.app"
+            >Whatsapp</a
+          >
+        </ul>
 
-  </div>
-</div>
+        <footer>
+          <nav>
+            <ul>
+              <li>
+                <a href="privacy-policy.html" target="_blank">سياسة الخصوصية</a>
+              </li>
+              <li><a href="terms-and-conditions.html">الشروط</a></li>
+              <li><a href="faq.html" target="_blank">الأسئلة الشائعة</a></li>
+              <li><a href="about-us.html" target="_blank">حول</a></li>
+              <li><a href="blog-home.html" target="_blank">المدونة</a></li>
+              <li>
+                <a href="api-docs.html" target="_blank"
+                  >وثائق الواجهة البرمجية</a
+                >
+              </li>
+              <li>
+                <a href="api-status.html" target="_blank"
+                  >حالة الواجهة البرمجية</a
+                >
+              </li>
+              <li>
+                <a href="contact-us.html" target="_blank">اتصل بنا</a>
+              </li>
+              <li>
+                <a
+                  href="https://play.google.com/store/apps/details?id=age.agecalculator.calculator"
+                  >حاسب العمر عبر الإنترنت</a
+                >
+              </li>
+              <li>
+                <a href="mailto:hello@agecalculator.com" target="_blank"
+                  >hello@agecalculator.com</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </footer>
+      </div>
+    </div>
 
-<script type="text/javascript">
-  function age() {
-  var d1 = document.getElementById('date').value;
-  var m1 = document.getElementById('month').value;
-  var y1 = document.getElementById('year').value;
+    <script type="text/javascript">
+      function age() {
+        var d1 = document.getElementById("date").value;
+        var m1 = document.getElementById("month").value;
+        var y1 = document.getElementById("year").value;
 
-  var date = new Date();
-  var d2 = date.getDate();
-  var m2 = 1 + date.getMonth();
-  var y2 = date.getFullYear();
-  var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        var date = new Date();
+        var d2 = date.getDate();
+        var m2 = 1 + date.getMonth();
+        var y2 = date.getFullYear();
+        var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-  if(d1 > d2){
-  	d2 = d2 + month[m2 - 1];
-  	m2 = m2 - 1;
-  }
-  if(m1 > m2){
-  	m2 = m2 + 12;
-  	y2 = y2 - 1;
-  }
-  var d = d2 - d1;
-  var m = m2 - m1;
-  var y = y2 - y1;
+        if (d1 > d2) {
+          d2 = d2 + month[m2 - 1];
+          m2 = m2 - 1;
+        }
+        if (m1 > m2) {
+          m2 = m2 + 12;
+          y2 = y2 - 1;
+        }
+        var d = d2 - d1;
+        var m = m2 - m1;
+        var y = y2 - y1;
 
-  document.getElementById('age').innerHTML = 'Your Age is '+y+' Years '+m+' Months '+d+' Days';
-}
-</script>
-</body>
+        document.getElementById("age").innerHTML =
+          "Your Age is " + y + " Years " + m + " Months " + d + " Days";
+      }
+    </script>
+  </body>
 </html>
