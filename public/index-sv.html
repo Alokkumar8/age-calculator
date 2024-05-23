@@ -1,127 +1,130 @@
 <!DOCTYPE html>
 <html lang="sv">
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Åldersberäknare</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-   
-    <meta content="Online-ålderskalkylatorn låter dig beräkna din ålder med hjälp av ditt födelsedatum och dob och hitta din ålder snabbt utan att behöva göra någon form av komplex matematik. Den kommer att returnera svar i år, månader och dagar." name="description">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <meta
+      content="Online-ålderskalkylatorn låter dig beräkna din ålder med hjälp av ditt födelsedatum och dob och hitta din ålder snabbt utan att behöva göra någon form av komplex matematik. Den kommer att returnera svar i år, månader och dagar."
+      name="description"
+    />
     <link rel="manifest" href="manifest.json" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <meta name="theme-color" content="#000000" />
 
     <!-- Favicon -->
-    <link href="favicon.ico" rel="icon">
-    
-<style media="screen">
-    body{
-	font-family: Arial, Helvetica, sans-serif;
-	background-color: #2782e3;
-	font-size: 15px;
-	line-height: 1.5;
-	padding: 0;
-	margin: 0;
-}
-* {
-	box-sizing: border-box;
-}
-.container{
-	width:520px;
-	height: auto;
-	margin: 100px auto;
-	background-color: #eee;
-	border-radius: 5px;
-}
-.text-content {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-.base{
-	width: 100%;
-	 
-	margin: 0;
-	overflow: hidden;
-	display: block;
-	float: none;
-}
-.block{
-	width: 135px;
-	padding: 5px 20px;
- 
-	margin-left: 20px;
-	display: inline-block;
-	float: left;
-}
-.base h1{
-	font-size: 26px;
-	text-align: center;
-	font-family: sans-serif;
-	font-weight: normal;
-  margin-top: 0px;
-  box-shadow: 0px 2px #bababa;
-  background: white;
-  font-size: 34px;
-	color: navy;
-}
- 
-.title{
-	font-size: 20px;
-	text-align: left;
-	font-family: sans-serif;
-	font-weight: normal;
-	line-height: 0.5;
-	letter-spacing: 0.5px;
-	word-spacing: 2.7px;
-	color: #1073d0;
-}
-input[type=text] {
-	width: 140px;
-	margin: auto;
-	outline: none;
-    min-height: 50px;
-	border: 2px solid #1073d0;
-	padding: 12px;
-	background-color: #f7f7f7;
-    border-radius: 2px;
-    color: #1073d0;
-    font-size: 17px;
-}
-input[type=text]:focus{
-	background-color: #ffffff;
-	border: 2px solid orange;
-	outline: none;
-}
-input[type=button]{
-	width: 150px;
-	margin-left: 35%;
-  margin-top: 40px;
-	outline: none;
-	border: none;
-	border-radius: 2px;
-	background-color: #0761b6;
-	color: #ffffff;
-	padding: 14px 16px;
-	text-align: center;
-	font-size: 16px;
-}
-input[type=button]:hover{
-	background-color: #003669;
-}
- 
-#age{
-	display: block;
-	margin: 10px;
-    margin-top: 35px;
-	padding: 10px;
-    padding-bottom: 20px;
-	overflow: hidden;
-	font-family: verdana;
-	font-size: 23px;
-	font-weight: normal;
-	line-height: 1.5;
-	word-spacing: 2.7px;
-	color: navy;
-}
+    <link href="favicon.ico" rel="icon" />
+
+    <style media="screen">
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #2782e3;
+        font-size: 15px;
+        line-height: 1.5;
+        padding: 0;
+        margin: 0;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      .container {
+        width: 520px;
+        height: auto;
+        margin: 100px auto;
+        background-color: #eee;
+        border-radius: 5px;
+      }
+      .text-content {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .base {
+        width: 100%;
+
+        margin: 0;
+        overflow: hidden;
+        display: block;
+        float: none;
+      }
+      .block {
+        width: 135px;
+        padding: 5px 20px;
+
+        margin-left: 20px;
+        display: inline-block;
+        float: left;
+      }
+      .base h1 {
+        font-size: 26px;
+        text-align: center;
+        font-family: sans-serif;
+        font-weight: normal;
+        margin-top: 0px;
+        box-shadow: 0px 2px #bababa;
+        background: white;
+        font-size: 34px;
+        color: navy;
+      }
+
+      .title {
+        font-size: 20px;
+        text-align: left;
+        font-family: sans-serif;
+        font-weight: normal;
+        line-height: 0.5;
+        letter-spacing: 0.5px;
+        word-spacing: 2.7px;
+        color: #1073d0;
+      }
+      input[type="text"] {
+        width: 140px;
+        margin: auto;
+        outline: none;
+        min-height: 50px;
+        border: 2px solid #1073d0;
+        padding: 12px;
+        background-color: #f7f7f7;
+        border-radius: 2px;
+        color: #1073d0;
+        font-size: 17px;
+      }
+      input[type="text"]:focus {
+        background-color: #ffffff;
+        border: 2px solid orange;
+        outline: none;
+      }
+      input[type="button"] {
+        width: 150px;
+        margin-left: 35%;
+        margin-top: 40px;
+        outline: none;
+        border: none;
+        border-radius: 2px;
+        background-color: #0761b6;
+        color: #ffffff;
+        padding: 14px 16px;
+        text-align: center;
+        font-size: 16px;
+      }
+      input[type="button"]:hover {
+        background-color: #003669;
+      }
+
+      #age {
+        display: block;
+        margin: 10px;
+        margin-top: 35px;
+        padding: 10px;
+        padding-bottom: 20px;
+        overflow: hidden;
+        font-family: verdana;
+        font-size: 23px;
+        font-weight: normal;
+        line-height: 1.5;
+        word-spacing: 2.7px;
+        color: navy;
+      }
 
       footer {
         margin: 0 auto 10px;
@@ -149,315 +152,673 @@ input[type=button]:hover{
         text-decoration: none;
 
         -webkit-transition: 0.5s;
-           -moz-transition: 0.5s;
-                transition: 0.5s;
+        -moz-transition: 0.5s;
+        transition: 0.5s;
       }
 
       footer a:hover {
         color: #333;
       }
+    </style>
 
-  </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Age Calculator",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Windows, Mac, Linux, Chromebook, Andriod, iOS",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": 4.7,
+          "worstRating": 1,
+          "bestRating": 5,
+          "reviewCount": 5
+        }
+      }
+    </script>
 
+    <link rel="canonical" href="https://www.age-calculator.app/index-sv.html" />
+    <link
+      rel="alternate"
+      hreflang="ar"
+      href="https://www.age-calculator.app/index-ar.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="bg"
+      href="https://www.age-calculator.app/index-bg.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="cs"
+      href="https://www.age-calculator.app/index-cs.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="da"
+      href="https://www.age-calculator.app/index-da.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="de"
+      href="https://www.age-calculator.app/index-de.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="el"
+      href="https://www.age-calculator.app/index-el.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.age-calculator.app/"
+    />
+    <link
+      rel="alternate"
+      hreflang="es"
+      href="https://www.age-calculator.app/index-es.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="et"
+      href="https://www.age-calculator.app/index-et.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="fi"
+      href="https://www.age-calculator.app/index-fi.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="fr"
+      href="https://www.age-calculator.app/index-fr.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="he"
+      href="https://www.age-calculator.app/index-he.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="hi"
+      href="https://www.age-calculator.app/index-hi.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="hu"
+      href="https://www.age-calculator.app/index-hu.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="id"
+      href="https://www.age-calculator.app/index-id.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="it"
+      href="https://www.age-calculator.app/index-it.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="ja"
+      href="https://www.age-calculator.app/index-ja.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="ko"
+      href="https://www.age-calculator.app/index-ko.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="lt"
+      href="https://www.age-calculator.app/index-lt.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="lv"
+      href="https://www.age-calculator.app/index-lv.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="nb"
+      href="https://www.age-calculator.app/index-nb.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="nl"
+      href="https://www.age-calculator.app/index-nl.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="pl"
+      href="https://www.age-calculator.app/index-pl.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="pt"
+      href="https://www.age-calculator.app/index-pt.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="ro"
+      href="https://www.age-calculator.app/index-ro.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="ru"
+      href="https://www.age-calculator.app/index-ru.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="sk"
+      href="https://www.age-calculator.app/index-sk.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="sl"
+      href="https://www.age-calculator.app/index-sl.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="sv"
+      href="https://www.age-calculator.app/index-sv.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="th"
+      href="https://www.age-calculator.app/index-th.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="tr"
+      href="https://www.age-calculator.app/index-tr.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="uk"
+      href="https://www.age-calculator.app/index-uk.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="vi"
+      href="https://www.age-calculator.app/index-vi.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="zh"
+      href="https://www.age-calculator.app/index-zh.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://www.age-calculator.app/"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <div class="base">
+          <div class="enter">
+            <h1>Åldersberäknare</h1>
+          </div>
+          <div class="block">
+            <p class="title">Datum</p>
+            <input
+              type="text"
+              name="date"
+              id="date"
+              placeholder="dd"
+              required="required"
+              minlength="1"
+              maxlength="2"
+            />
+          </div>
+          <div class="block">
+            <p class="title">Månad</p>
+            <input
+              type="text"
+              name="month"
+              id="month"
+              placeholder="mm"
+              required="required"
+              minlength="1"
+              maxlength="2"
+            />
+          </div>
+          <div class="block">
+            <p class="title">År</p>
+            <input
+              type="text"
+              name="year"
+              id="year"
+              placeholder="åååå"
+              required="required"
+              minlength="4"
+              maxlength="4"
+            />
+          </div>
+        </div>
+        <div class="base">
+          <div class="enter">
+            <input
+              type="button"
+              name="submit"
+              value="Skicka in"
+              onclick="age()"
+            />
+          </div>
+        </div>
+        <div id="age"></div>
+      </form>
 
-  <link rel="canonical" href="https://www.age-calculator.app/index-sv.html">
-<link rel="alternate" hreflang="ar" href="https://www.age-calculator.app/index-ar.html">
-<link rel="alternate" hreflang="bg" href="https://www.age-calculator.app/index-bg.html">
-<link rel="alternate" hreflang="cs" href="https://www.age-calculator.app/index-cs.html">
-<link rel="alternate" hreflang="da" href="https://www.age-calculator.app/index-da.html">
-<link rel="alternate" hreflang="de" href="https://www.age-calculator.app/index-de.html">
-<link rel="alternate" hreflang="el" href="https://www.age-calculator.app/index-el.html">
-<link rel="alternate" hreflang="en" href="https://www.age-calculator.app/">
-<link rel="alternate" hreflang="es" href="https://www.age-calculator.app/index-es.html">
-<link rel="alternate" hreflang="et" href="https://www.age-calculator.app/index-et.html">
-<link rel="alternate" hreflang="fi" href="https://www.age-calculator.app/index-fi.html">
-<link rel="alternate" hreflang="fr" href="https://www.age-calculator.app/index-fr.html">
-<link rel="alternate" hreflang="he" href="https://www.age-calculator.app/index-he.html">
-<link rel="alternate" hreflang="hi" href="https://www.age-calculator.app/index-hi.html">
-<link rel="alternate" hreflang="hu" href="https://www.age-calculator.app/index-hu.html">
-<link rel="alternate" hreflang="id" href="https://www.age-calculator.app/index-id.html">
-<link rel="alternate" hreflang="it" href="https://www.age-calculator.app/index-it.html">
-<link rel="alternate" hreflang="ja" href="https://www.age-calculator.app/index-ja.html">
-<link rel="alternate" hreflang="ko" href="https://www.age-calculator.app/index-ko.html">
-<link rel="alternate" hreflang="lt" href="https://www.age-calculator.app/index-lt.html">
-<link rel="alternate" hreflang="lv" href="https://www.age-calculator.app/index-lv.html">
-<link rel="alternate" hreflang="nb" href="https://www.age-calculator.app/index-nb.html">
-<link rel="alternate" hreflang="nl" href="https://www.age-calculator.app/index-nl.html">
-<link rel="alternate" hreflang="pl" href="https://www.age-calculator.app/index-pl.html">
-<link rel="alternate" hreflang="pt" href="https://www.age-calculator.app/index-pt.html">
-<link rel="alternate" hreflang="ro" href="https://www.age-calculator.app/index-ro.html">
-<link rel="alternate" hreflang="ru" href="https://www.age-calculator.app/index-ru.html">
-<link rel="alternate" hreflang="sk" href="https://www.age-calculator.app/index-sk.html">
-<link rel="alternate" hreflang="sl" href="https://www.age-calculator.app/index-sl.html">
-<link rel="alternate" hreflang="sv" href="https://www.age-calculator.app/index-sv.html">
-<link rel="alternate" hreflang="th" href="https://www.age-calculator.app/index-th.html">
-<link rel="alternate" hreflang="tr" href="https://www.age-calculator.app/index-tr.html">
-<link rel="alternate" hreflang="uk" href="https://www.age-calculator.app/index-uk.html">
-<link rel="alternate" hreflang="vi" href="https://www.age-calculator.app/index-vi.html">
-<link rel="alternate" hreflang="zh" href="https://www.age-calculator.app/index-zh.html">
-<link rel="alternate" hreflang="x-default" href="https://www.age-calculator.app/">
-</head>
-<body>
+      <div class="text-content">
+        <p>
+          Denna åldersberäknare bestämmer en persons ålder baserat på deras
+          födelsedatum. Metoder för åldersberäkning kan variera mellan olika
+          kulturer, men generellt sett ökar en persons ålder med ett år för
+          varje födelsedag.
+        </p>
 
-<div class="container">
+        <p>
+          Denna kostnadsfria online-åldersberäknare är ett värdefullt och enkelt
+          verktyg som kan användas i många olika situationer. Den kan fastställa
+          åldern hos individer från spädbarn till äldre genom att beräkna år,
+          månader och dagar med hjälp av deras födelsedatum och aktuellt datum.
+        </p>
 
-  
-  <form>
-  	<div class="base">
-  		<div class="enter">
-  		<h1>Åldersberäknare</h1>
-  	</div>
-  <div class="block">
-  	<p class="title">Datum</p>
-  	<input type="text" name="date" id="date" placeholder="dd" required="required" minlength="1" maxlength="2" />
-  </div>
-  <div class="block">
-  	<p class="title">Månad</p>
-    <input type="text" name="month" id="month" placeholder="mm" required="required" minlength="1" maxlength="2" />
-  </div>
-  <div class="block">
-  	<p class="title">År</p>
-    <input type="text" name="year" id="year" placeholder="åååå" required="required" minlength="4" maxlength="4" />
-  </div>
-  </div>
-  <div class="base">
-  	<div class="enter">
-    <input type="button" name="submit" value="Skicka in" onclick="age()" />
+        <div id="calc">
+          <h2>Vad gör en åldersberäknare?</h2>
+        </div>
+
+        <p>
+          <strong>Online åldersberäknare är ett webbaserat verktyg</strong>
+          utformat för att beräkna en persons ålder på ett specifikt datum,
+          förutsatt att deras födelsedatum (dob) är känt. I många västerländska
+          kulturer avrundas åldersberäkningen vanligtvis nedåt, så om en person
+          har levt i 8 år och 9 månader, betraktas deras ålder som 8 år.
+        </p>
+
+        <h3>Födelsedatum (DOB) Beräknare</h3>
+
+        <p>
+          Födelsedatum DOB-kalkylatorn gör det möjligt för oss att fastställa
+          ålder baserat på födelsedatum. För att använda denna åldersberäknare,
+          ange de nödvändiga värdena i den tillhandahållna inmatningsrutan.
+        </p>
+
+        <ul>
+          <li>DOB i form av DD/MM/ÅÅÅÅ</li>
+          <li>
+            Det specifika datumet för vilket du vill beräkna åldern ska anges i
+            samma format som dd/mm/åååå
+          </li>
+        </ul>
+
+        <p style="text-align: center">
+          <img
+            src="img/screenshot-1.jpg"
+            style="max-width: 100%; max-height: 100%"
+            alt="Åldersberäknare"
+          />
+        </p>
+
+        <h2>Hur använder jag åldersberäknaren?</h2>
+
+        <p>
+          För att fastställa en persons ålder med hjälp av en
+          födelsedagskalkylator, följ dessa steg:
+        </p>
+
+        <ul>
+          <li><strong>Steg 1</strong>: Gå till www.agecalculator.com</li>
+          <li>
+            <strong>Steg 2</strong>: Ange födelsedatumet i åldersberäknarens
+            inmatningsruta med formatet DD/MM/ÅÅÅÅ.
+          </li>
+          <li>
+            <strong>Steg 3</strong>: Tryck på
+            <strong>"Skicka in"</strong>-knappen för att beräkna personens
+            ålder.
+          </li>
+          <li>
+            <strong>Steg 4</strong>: Klicka på
+            <strong>"Återställ"</strong>-knappen för att rensa inmatningstexten
+            och ange nya värden.
+          </li>
+        </ul>
+
+        <div id="formula">
+          <h2>Formel för åldersberäknare</h2>
+        </div>
+
+        <p>
+          Enligt Oxford-ordlistan refererar &ldquo;Ålder&rdquo; till
+          varaktigheten av en persons liv eller existensen av en objekt. Att
+          beräkna ålder innebär att jämföra en persons födelsedatum med datumet
+          för vilket åldern önskas. Genom att subtrahera födelsedatumet från det
+          angivna datumet erhålls personens ålder, representerad av formeln:
+          Ålder = Givet datum - Födelsedatum. Nedan följer stegen för att
+          beräkna en persons ålder från deras födelsedatum till ett angivet
+          datum.
+        </p>
+
+        <ul>
+          <li>
+            <strong>Steg 1:</strong> Beräkna initialt det totala antalet
+            fullständiga år genom att subtrahera födelseåret från det nuvarande
+            året. Till exempel, om det nuvarande året är 2024 och födelseåret är
+            1998, är antalet fullständiga år 26.
+          </li>
+          <li>
+            <strong>Steg 2:</strong> Därefter bestäm det totala antalet
+            fullständiga månader genom att subtrahera födelsemånaden från
+            <a
+              href="https://www.oxfordreference.com/display/10.1093/oi/authority.20110803095355563"
+              >nuvarande månad</a
+            >. Om nuvarande månad är tidigare än födelsemånaden minskar antalet
+            fullständiga år med 1 och lägg till 12 på nuvarande månad för att
+            justera. Beräkna sedan skillnaden (nuvarande månad - födelsemånad).
+            Till exempel, om födelsemånaden är februari och nuvarande månaden är
+            april, är det totala månadsantalet 2. Om födelsemånaden är november
+            och nuvarande månaden är april är det totala månadsantalet 4 + 12 =
+            16, och skillnaden är 16 - 11 = 5.
+          </li>
+          <li>
+            <strong>Steg 3:</strong> Liksom tidigare steg bestämmer vi även
+            antalet dagar genom att subtrahera födelsedatumet från det nuvarande
+            datumet. Om det nuvarande datumet är tidigare än födelsedatumet
+            subtraherar vi 1 från antalet fullständiga månader och lägger till
+            30/31/28/29 på det nuvarande datumet, beroende på antalet dagar i
+            föregående månad före nuvarande månad.
+          </li>
+          <li>
+            <strong>Steg 4:</strong> Slutligen ger åldersberäknaren åldern i
+            dagar, månader och år.
+          </li>
+        </ul>
+
+        <h2>Exempel som visar hur man beräknar ålder</h2>
+
+        <p>
+          Nedan finns exempel som illustrerar hur man beräknar ålder och den
+          metod som används av födelsedagskalkylatorn för tydligare förståelse.
+        </p>
+
+        <p>
+          <strong>Exempel 1:</strong> Johns födelsedatum är den 25 juli 1985
+          (25/07/1985). Bestäm hans ålder den 28 januari 2021 och validera den
+          med hjälp av åldersberäknaren.
+        </p>
+
+        <p><strong>Lösning:</strong></p>
+
+        <p>Genom att tillämpa formeln för att beräkna Johns ålder:</p>
+
+        <p>En persons ålder = Givet datum - Födelsedatum.</p>
+
+        <p>Johns födelsedatum = 25 juli 1985.</p>
+
+        <p>Givet datum = 28 januari 2021.</p>
+
+        <p>
+          Observera att den nuvarande månaden är mindre än födelsemånaden. Det
+          vill säga, januari (1) är mindre än juli (7). Därför betraktar vi år
+          2020 som det nuvarande året och tar också hänsyn till 12 + 1 (jan) - 7
+          (juli) = 6 månader.
+        </p>
+
+        <p>Års skillnad = 2020 - 1985 = 35 år.</p>
+
+        <p>Antal återstående dagar = 3 dagar.</p>
+
+        <p>
+          <strong>Svar:</strong> Således är Johns ålder 35 år, 6 månader och 3
+          dagar.
+        </p>
+
+        <p>
+          <strong>Exempel 2:</strong> Peters födelsedatum är den 13 juli 1992.
+          Beräkna hans ålder den 21 april 2016 och bekräfta den med hjälp av
+          åldersberäknaren.
+        </p>
+
+        <p><strong>Lösning:</strong></p>
+
+        <p>Genom att använda formeln för att beräkna Peters ålder:</p>
+
+        <p>En persons ålder = Aktuellt datum - Födelsedatum.</p>
+
+        <p>
+          Här är en något annorlunda metod för att förstå åldersformeln
+          tydligare.
+        </p>
+
+        <p>Peters födelsedatum = 13 juli 1992.</p>
+
+        <p>
+          Års skillnad = 2015 - 1992 = 23 år. (Denna beräkning sträcker sig från
+          den 13 juli 1992 till den 13 juli 2015).
+        </p>
+
+        <p>
+          Antal återstående månader från den 13 juli 2015 till den 13 april 2016
+          = 9 månader.
+        </p>
+
+        <p>
+          Antal återstående dagar från den 13 april 2016 till den 21 april 2016
+          = 8 dagar.
+        </p>
+
+        <p>
+          <strong>Svar:</strong> Således är Peters ålder 23 år, 9 månader och 8
+          dagar.
+        </p>
+
+        <p>
+          På liknande sätt kan du använda åldersberäknaren för att fastställa
+          åldrarna hos personer med de angivna födelsedatumen och aktuella
+          datumen fram till den 26 augusti 2021:
+        </p>
+
+        <ul>
+          <li>13 juli 1992</li>
+          <li>21 april 2016</li>
+        </ul>
+
+        <p><b>☛ Fler kalkylatorer:</b></p>
+
+        <table border="1">
+          <tbody>
+            <tr>
+              <td>
+                <p>
+                  <a href="https://select-statistics.co.uk/calculators/"
+                    >Statistik</a
+                  >
+                </p>
+              </td>
+              <td>
+                <p>
+                  <a
+                    href="https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/"
+                    >Ränta på ränta</a
+                  >
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>
+                  <a
+                    href="https://www.dadsworksheets.com/fraction-calculator.html"
+                    >Bråk</a
+                  >
+                </p>
+              </td>
+              <td>
+                <p>
+                  <a
+                    href="https://mathforyou.net/en/online/calculus/derivative/"
+                    >Derivata</a
+                  >
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>
+                  <a href="https://www.wikihow.com/Calculate-Percentages"
+                    >Procent</a
+                  >
+                </p>
+              </td>
+              <td>
+                <p>
+                  <a
+                    href="https://www.cuemath.com/calculators/integral-calculator/"
+                    >Integral</a
+                  >
+                </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Vanliga frågor om Åldersberäknaren</h2>
+
+        <h3>Hur beräknar jag ålder med Åldersberäknaren?</h3>
+
+        <p>
+          Du kan använda denna <strong>online åldersberäknare</strong> för att
+          fastställa ålder baserat på det angivna födelsedatumet och det
+          nuvarande eller önskade datumet för åldersberäkning. Se till att båda
+          datumen är formaterade som DD/MM/ÅÅÅÅ. Kom åt födelsedatumkalkylatorn
+          genom att besöka
+          <a href="https://www.age-calculator.app">Åldersberäknare</a>.
+        </p>
+
+        <h3>Vad är användningen av DOB-kalkylatorn?</h3>
+
+        <p>
+          DOB-kalkylatorn beräknar den aktuella åldern på en person eller objekt
+          med hänsyn till år, månader och dagar. Ange helt enkelt DOB och det
+          aktuella datumet i formatet dd/mm/åååå för att få din ålder.
+        </p>
+
+        <h3>
+          Hur bestämmer jag antalet år med hjälp av födelsedatumkalkylatorn?
+        </h3>
+
+        <p>
+          För att beräkna antalet år med åldersberäknaren börja med att ange
+          födelsedatumet och det aktuella datumet i det angivna formatet.
+          Kalkylatorn ger åldern i år, månader och dagar, där "år" representerar
+          åldern eller antalet år.
+        </p>
+
+        <h3>Hur använder jag åldersberäknaren?</h3>
+
+        <p>
+          För att lära dig mer kan du besöka vår artikel "<a
+            href="how-to-use-age-calculator.html"
+            >Hur man använder åldersberäknaren?</a
+          >" eller så kan du läsa våra intressanta blogginlägg.
+          <a href="top-10-famous-animals-and-their-age.html"
+            >Topp 10 kända djur och deras ålder</a
+          >.
+        </p>
+
+        <h4>Share it</h4>
+
+        <ul>
+          <a
+            href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fage-calculator.app&text=Age%20Calculator"
+            >Tweet</a
+          >
+        </ul>
+        <ul>
+          <a
+            href="https://pinterest.com/pin/create/bookmarklet/?media=&url=https%3A%2F%2Fage-calculator.app&description=Age%20Calculator"
+            >Pin it</a
+          >
+        </ul>
+        <ul>
+          <a
+            href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fage-calculator.app"
+            >Facebook</a
+          >
+        </ul>
+        <ul>
+          <a
+            href="https://api.whatsapp.com/send?text=Age%20Calculator%20https%3A%2F%2Fage-calculator.app"
+            >Whatsapp</a
+          >
+        </ul>
+
+        <footer>
+          <nav>
+            <ul>
+              <li>
+                <a href="privacy-policy.html" target="_blank"
+                  >Integritetspolicy</a
+                >
+              </li>
+              <li><a href="terms-and-conditions.html">Villkor</a></li>
+              <li><a href="faq.html" target="_blank">FAQ</a></li>
+              <li><a href="about-us.html" target="_blank">Om oss</a></li>
+              <li><a href="blog-home.html" target="_blank">Blogg</a></li>
+              <li>
+                <a href="api-docs.html" target="_blank">API-dokumentation</a>
+              </li>
+              <li><a href="api-status.html" target="_blank">API-status</a></li>
+              <li>
+                <a href="contact-us.html" target="_blank">Kontakta oss</a>
+              </li>
+              <li>
+                <a
+                  href="https://play.google.com/store/apps/details?id=age.agecalculator.calculator"
+                  >Åldersberäknare</a
+                >
+              </li>
+              <li>
+                <a href="mailto:hello@agecalculator.com" target="_blank"
+                  >hello@agecalculator.com</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </footer>
+      </div>
     </div>
-  </div>
-    <div id="age"></div>
-  </form>
+    <script type="text/javascript">
+      function age() {
+        var d1 = document.getElementById("date").value;
+        var m1 = document.getElementById("month").value;
+        var y1 = document.getElementById("year").value;
 
+        var date = new Date();
+        var d2 = date.getDate();
+        var m2 = 1 + date.getMonth();
+        var y2 = date.getFullYear();
+        var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
+        if (d1 > d2) {
+          d2 = d2 + month[m2 - 1];
+          m2 = m2 - 1;
+        }
+        if (m1 > m2) {
+          m2 = m2 + 12;
+          y2 = y2 - 1;
+        }
+        var d = d2 - d1;
+        var m = m2 - m1;
+        var y = y2 - y1;
 
-  
-  <div class="text-content">
-    <p>Denna åldersberäknare bestämmer en persons ålder baserat på deras födelsedatum. Metoder för åldersberäkning kan variera mellan olika kulturer, men generellt sett ökar en persons ålder med ett år för varje födelsedag.</p>
-
-    <p>Denna kostnadsfria online-åldersberäknare är ett värdefullt och enkelt verktyg som kan användas i många olika situationer. Den kan fastställa åldern hos individer från spädbarn till äldre genom att beräkna år, månader och dagar med hjälp av deras födelsedatum och aktuellt datum.</p>
-    
-    <div id="calc">
-    <h2>Vad gör en åldersberäknare?</h2>
-    </div>
-    
-    <p><strong>Online åldersberäknare är ett webbaserat verktyg</strong> utformat för att beräkna en persons ålder på ett specifikt datum, förutsatt att deras födelsedatum (dob) är känt. I många västerländska kulturer avrundas åldersberäkningen vanligtvis nedåt, så om en person har levt i 8 år och 9 månader, betraktas deras ålder som 8 år.</p>
-    
-    <h3>Födelsedatum (DOB) Beräknare</h3>
-    
-    <p>Födelsedatum DOB-kalkylatorn gör det möjligt för oss att fastställa ålder baserat på födelsedatum. För att använda denna åldersberäknare, ange de nödvändiga värdena i den tillhandahållna inmatningsrutan.</p>
-    
-    <ul>
-        <li>DOB i form av DD/MM/ÅÅÅÅ</li>
-        <li>Det specifika datumet för vilket du vill beräkna åldern ska anges i samma format som dd/mm/åååå</li>
-    </ul>
-    
-    <p style="text-align: center;"><img src="img/screenshot-1.jpg" style="max-width:100%; max-height:100%;" alt="Åldersberäknare"></p>
-    
-    <h2>Hur använder jag åldersberäknaren?</h2>
-    
-    <p>För att fastställa en persons ålder med hjälp av en födelsedagskalkylator, följ dessa steg:</p>
-    
-    <ul>
-        <li><strong>Steg 1</strong>: Gå till www.agecalculator.com</li>
-        <li><strong>Steg 2</strong>: Ange födelsedatumet i åldersberäknarens inmatningsruta med formatet DD/MM/ÅÅÅÅ.</li>
-        <li><strong>Steg 3</strong>: Tryck på <strong>"Skicka in"</strong>-knappen för att beräkna personens ålder.</li>
-        <li><strong>Steg 4</strong>: Klicka på <strong>"Återställ"</strong>-knappen för att rensa inmatningstexten och ange nya värden.</li>
-    </ul>
-    
-    <div id="formula">
-    <h2>Formel för åldersberäknare</h2>
-    </div>
-    
-    <p>Enligt Oxford-ordlistan refererar &ldquo;Ålder&rdquo; till varaktigheten av en persons liv eller existensen av en objekt. Att beräkna ålder innebär att jämföra en persons födelsedatum med datumet för vilket åldern önskas. Genom att subtrahera födelsedatumet från det angivna datumet erhålls personens ålder, representerad av formeln: Ålder = Givet datum - Födelsedatum. Nedan följer stegen för att beräkna en persons ålder från deras födelsedatum till ett angivet datum.</p>
-    
-    <ul>
-        <li><strong>Steg 1:</strong> Beräkna initialt det totala antalet fullständiga år genom att subtrahera födelseåret från det nuvarande året. Till exempel, om det nuvarande året är 2024 och födelseåret är 1998, är antalet fullständiga år 26.</li>
-        <li><strong>Steg 2:</strong> Därefter bestäm det totala antalet fullständiga månader genom att subtrahera födelsemånaden från <a href="https://www.oxfordreference.com/display/10.1093/oi/authority.20110803095355563">nuvarande månad</a>. Om nuvarande månad är tidigare än födelsemånaden minskar antalet fullständiga år med 1 och lägg till 12 på nuvarande månad för att justera. Beräkna sedan skillnaden (nuvarande månad - födelsemånad). Till exempel, om födelsemånaden är februari och nuvarande månaden är april, är det totala månadsantalet 2. Om födelsemånaden är november och nuvarande månaden är april är det totala månadsantalet 4 + 12 = 16, och skillnaden är 16 - 11 = 5.</li>
-        <li><strong>Steg 3:</strong> Liksom tidigare steg bestämmer vi även antalet dagar genom att subtrahera födelsedatumet från det nuvarande datumet. Om det nuvarande datumet är tidigare än födelsedatumet subtraherar vi 1 från antalet fullständiga månader och lägger till 30/31/28/29 på det nuvarande datumet, beroende på antalet dagar i föregående månad före nuvarande månad.</li>
-        <li><strong>Steg 4:</strong> Slutligen ger åldersberäknaren åldern i dagar, månader och år.</li>
-    </ul>
-    
-    <h2>Exempel som visar hur man beräknar ålder</h2>
-    
-    <p>Nedan finns exempel som illustrerar hur man beräknar ålder och den metod som används av födelsedagskalkylatorn för tydligare förståelse.</p>
-    
-    <p><strong>Exempel 1:</strong> Johns födelsedatum är den 25 juli 1985 (25/07/1985). Bestäm hans ålder den 28 januari 2021 och validera den med hjälp av åldersberäknaren.</p>
-    
-
-
-
-
-
-
-    <p><strong>Lösning:</strong></p>
-
-    <p>Genom att tillämpa formeln för att beräkna Johns ålder:</p>
-    
-    <p>En persons ålder = Givet datum - Födelsedatum.</p>
-    
-    <p>Johns födelsedatum = 25 juli 1985.</p>
-    
-    <p>Givet datum = 28 januari 2021.</p>
-    
-    <p>Observera att den nuvarande månaden är mindre än födelsemånaden. Det vill säga, januari (1) är mindre än juli (7). Därför betraktar vi år 2020 som det nuvarande året och tar också hänsyn till 12 + 1 (jan) - 7 (juli) = 6 månader.</p>
-    
-    <p>Års skillnad = 2020 - 1985 = 35 år.</p>
-    
-    <p>Antal återstående dagar = 3 dagar.</p>
-    
-    <p><strong>Svar:</strong> Således är Johns ålder 35 år, 6 månader och 3 dagar.</p>
-    
-    <p><strong>Exempel 2:</strong> Peters födelsedatum är den 13 juli 1992. Beräkna hans ålder den 21 april 2016 och bekräfta den med hjälp av åldersberäknaren.</p>
-    
-    <p><strong>Lösning:</strong></p>
-    
-    <p>Genom att använda formeln för att beräkna Peters ålder:</p>
-    
-    <p>En persons ålder = Aktuellt datum - Födelsedatum.</p>
-    
-    <p>Här är en något annorlunda metod för att förstå åldersformeln tydligare.</p>
-    
-    <p>Peters födelsedatum = 13 juli 1992.</p>
-    
-    <p>Års skillnad = 2015 - 1992 = 23 år. (Denna beräkning sträcker sig från den 13 juli 1992 till den 13 juli 2015).</p>
-    
-    <p>Antal återstående månader från den 13 juli 2015 till den 13 april 2016 = 9 månader.</p>
-    
-    <p>Antal återstående dagar från den 13 april 2016 till den 21 april 2016 = 8 dagar.</p>
-    
-    <p><strong>Svar:</strong> Således är Peters ålder 23 år, 9 månader och 8 dagar.</p>
-    
-    <p>På liknande sätt kan du använda åldersberäknaren för att fastställa åldrarna hos personer med de angivna födelsedatumen och aktuella datumen fram till den 26 augusti 2021:</p>
-    
-    <ul>
-        <li>13 juli 1992</li>
-        <li>21 april 2016</li>
-    </ul>
-    
-
-
-
-
-
-
-    <p><b>☛ Fler kalkylatorer:</b></p>
-
-<table border="1">
-    <tbody>
-        <tr>
-            <td>
-            <p><a href="https://select-statistics.co.uk/calculators/">Statistik</a></p>
-            </td>
-            <td>
-            <p><a href="https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/">Ränta på ränta</a></p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-            <p><a href="https://www.dadsworksheets.com/fraction-calculator.html">Bråk</a></p>
-            </td>
-            <td>
-            <p><a href="https://mathforyou.net/en/online/calculus/derivative/">Derivata</a></p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-            <p><a href="https://www.wikihow.com/Calculate-Percentages">Procent</a></p>
-            </td>
-            <td>
-            <p><a href="https://www.cuemath.com/calculators/integral-calculator/">Integral</a></p>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-<h2>Vanliga frågor om Åldersberäknaren</h2>
-
-<h3>Hur beräknar jag ålder med Åldersberäknaren?</h3>
-
-<p>Du kan använda denna <strong>online åldersberäknare</strong> för att fastställa ålder baserat på det angivna födelsedatumet och det nuvarande eller önskade datumet för åldersberäkning. Se till att båda datumen är formaterade som DD/MM/ÅÅÅÅ. Kom åt födelsedatumkalkylatorn genom att besöka <a href="https://www.age-calculator.app">Åldersberäknare</a>.</p>
-
-<h3>Vad är användningen av DOB-kalkylatorn?</h3>
-
-<p>DOB-kalkylatorn beräknar den aktuella åldern på en person eller objekt med hänsyn till år, månader och dagar. Ange helt enkelt DOB och det aktuella datumet i formatet dd/mm/åååå för att få din ålder.</p>
-
-<h3>Hur bestämmer jag antalet år med hjälp av födelsedatumkalkylatorn?</h3>
-
-<p>För att beräkna antalet år med åldersberäknaren börja med att ange födelsedatumet och det aktuella datumet i det angivna formatet. Kalkylatorn ger åldern i år, månader och dagar, där "år" representerar åldern eller antalet år.</p>
-
-<h3>Hur använder jag åldersberäknaren?</h3>
-
-<p>För att lära dig mer kan du besöka vår artikel "<a href="how-to-use-age-calculator.html">Hur man använder åldersberäknaren?</a>" eller så kan du läsa våra intressanta blogginlägg. <a href="top-10-famous-animals-and-their-age.html">Topp 10 kända djur och deras ålder</a>.</p>
-
-
-<h4>Share it</h4>
-    
-      <ul>
-        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fage-calculator.app&text=Age%20Calculator">Tweet</a>
-      </ul>
-      <ul>
-        <a href="https://pinterest.com/pin/create/bookmarklet/?media=&url=https%3A%2F%2Fage-calculator.app&description=Age%20Calculator">Pin it</a>
-      </ul>
-      <ul>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fage-calculator.app">Facebook</a>
-      </ul>
-      <ul>
-        <a href="https://api.whatsapp.com/send?text=Age%20Calculator%20https%3A%2F%2Fage-calculator.app">Whatsapp</a>
-      </ul>
-    
-      
-<footer>
-  <nav>
-    <ul>
-      <li>
-        <a href="privacy-policy.html" target="_blank">Integritetspolicy</a>
-      </li>
-      <li><a href="terms-and-conditions.html">Villkor</a></li>
-      <li><a href="faq.html" target="_blank">FAQ</a></li>
-      <li><a href="about-us.html" target="_blank">Om oss</a></li>
-      <li><a href="blog-home.html" target="_blank">Blogg</a></li>
-      <li><a href="api-docs.html" target="_blank">API-dokumentation</a></li>
-      <li><a href="api-status.html" target="_blank">API-status</a></li>
-      <li>
-        <a href="contact-us.html" target="_blank">Kontakta oss</a>
-      </li>
-      <li>
-        <a href="https://play.google.com/store/apps/details?id=age.agecalculator.calculator">Åldersberäknare</a>
-      </li>
-      <li><a href="mailto:hello@agecalculator.com" target="_blank">hello@agecalculator.com</a></li>
-    </ul>
-  </nav>
-</footer>
-
-
-  </div>
-</div>
-<script type="text/javascript">
-  function age() {
-  var d1 = document.getElementById('date').value;
-  var m1 = document.getElementById('month').value;
-  var y1 = document.getElementById('year').value;
-
-  var date = new Date();
-  var d2 = date.getDate();
-  var m2 = 1 + date.getMonth();
-  var y2 = date.getFullYear();
-  var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-
-  if(d1 > d2){
-  	d2 = d2 + month[m2 - 1];
-  	m2 = m2 - 1;
-  }
-  if(m1 > m2){
-  	m2 = m2 + 12;
-  	y2 = y2 - 1;
-  }
-  var d = d2 - d1;
-  var m = m2 - m1;
-  var y = y2 - y1;
-
-  document.getElementById('age').innerHTML = 'Your Age is '+y+' Years '+m+' Months '+d+' Days';
-}
-</script>
-</body>
+        document.getElementById("age").innerHTML =
+          "Your Age is " + y + " Years " + m + " Months " + d + " Days";
+      }
+    </script>
+  </body>
 </html>
